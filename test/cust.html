@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>main layout</title>
+    <meta name="keywords" content="관련 검색어 단어로 분리하고, 단어마다 ','로 구분하여 입력하고, 자세하게 기술하도록 한다.">
+    <meta name="description" content="해당 사이트의 자세한 설명을 검색허와 함께 입력하여 기술하도록 한다.">
+    <meta name="title" content="기관명이나 사이트명을 입력한다.">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .contents {clear:both;}
+        .vs{width: 100%;}
+        .vs .pic {display: block; width: 100%;}
+        .page {clear: both; width: 100vw; min-height: 100vh;}
+        .page_tit{text-align: center; line-height: 3.6;}
+        #page1 {background: red;}
+        #page3 {background: blue;}
+    </style>
+</head>
+<body>    
+            <div class="wrap">
+<!--       헤더시작-->
+        <header class="hd">
+            <a href="index.html" class="logo">
+<!--            <img src="https://placehold.it/120x50/333" alt="로고">-->
+            <img src="https://loremflickr.com/120/50" alt="로고"></a>
+            <nav id="tnb">
+                <ul class="menu">
+                    <li><a href="login.html">login</a></li>
+                    <li><a href="join.html">join</a></li>
+                    <li><a href="mailto.html">contact us</a></li>
+                </ul>
+            </nav>
+            <nav id="gnb">
+                <ul class="menu">
+                    <li><a href="intro.html">introduce</a></li>
+                    <li><a href="prod.html">product</a></li>
+                    <li><a href="serv.html">service</a></li>
+                    <li><a href="come.html">come to</a></li>
+                    <li><a href="cust.html">customer</a></li>
+                </ul>
+            </nav>
+        </header>
+<!--        헤더끝-->
+        <main class="contents"></main>
+        <figure class="vs">
+            <img src="https://placehold.it/1200x400/333" alt="배너" class="pic">
+        </figure>
+        <div class="page" id="page1">
+            <h2 class="page_tit">매장후기</h2>
+            <div class="page_wrap"></div>
+        </div>
+        <div class="page" id="page2">
+            <h2 class="page_tit">음식후기</h2>
+            <div class="page_wrap"></div>
+        </div>
+        <div class="page" id="page3">
+            <h2 class="page_tit">고객불만</h2>
+            <div class="page_wrap"></div>
+        </div>
+        <div class="page" id="page4">
+            <h2 class="page_tit">고객문의</h2>
+            <div class="page_wrap"></div>
+        </div>
+        <footer class="ft">
+        <p class="addr">대전광역시 동구 판암동 806 / 010-8688-7167</p>
+        <p class="copyright">Copyright &copy; YSH CO, LTD. All rights reserved. @ 2019</p>
+        </footer>
+    </div>
+</body>
+</html>
