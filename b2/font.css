@@ -1,0 +1,38 @@
+@charset utf-8;
+@font-face {
+    font-family:"nsc";
+    src:local("./font/NotoSansCJKkr-Black"), url("./font/NotoSansCJKkr-Black.otf.eot") format("embedded-opentype"), url("./font/NotoSansCJKkr-Black.woff") format("woff"), url("./font/NotoSansCJKkr-Black") format("opentype");
+    font-weight:900;
+    font-style: normal;
+}
+@font-face {
+    font-family:"nscb";
+    src:local("./font/NotoSansCJKkr-Bold"), url("./font/NotoSansCJKkr-Bold.woff"), format("woff"), url("./font/NotoSansCJKkr-Bold") format("opentype");
+    font-weight:700;
+    font-style: normal;
+}
+@font-face {
+    font-family:"nscdl";
+    src:local("./font/NotoSansCJKkr-DemiLight"), url("./font/NotoSansCJKkr-DemiLight.eot"), format("embedded-opentype"), url("./font/NotoSansCJKkr-DemiLight.woff") format("woff"), url("./font/NotoSansCJKkr-DemiLight"), format("opentype");
+    font-weight:300;
+    font-style: normal;
+}
+@font-face {
+    font-family:"nscl";
+    src:local("./font/NotoSansCJKkr-Light"), url("./font/NotoSansCJKkr-Light.eot"), format("embedded-opentype"), url("./font/NotoSansCJKkr-Light.woff") format("woff"), url("./font/NotoSansCJKkr-Light"), format("opentype");
+    font-weight:150;
+    font-style: normal;
+}
+@font-face {
+    font-family:"nscm";
+    src:local("./font/NotoSansCJKkr-Medium"), url("./font/NotoSansCJKkr-Medium.eot"), format("embedded-opentype"), url("./font/NotoSansCJKkr-Medium.woff") format("woff"), url("./font/NotoSansCJKkr-Medium"), format("opentype");
+    font-weight:500;
+    font-style: normal;
+}
+@font-face {
+    font-family:"nscr";
+    src:local("./font/NotoSansCJKkr-Regular"), url("./font/NotoSansCJKkr-Regular.eot"), format("embedded-opentype"), url("./font/NotoSansCJKkr-Regular.woff") format("woff"), url("./font/NotoSansCJKkr-Regular"), format("opentype");
+    font-weight:300;
+    font-style: normal;
+}
+
