@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>논산소개</title>
+    <meta name="title" content="논산시를 소개합니다~">
+    <meta name="keywords" content="논산, 여행, 행사, 축제, 딸기, 젓갈, 곶감, 황산벌, 소개">
+    <meta name="description" content="논산소개, 논산은 포효하는 호랑이 형상을 하고 있는한반도의 단전부에 위치해 있는 중요한 힘의 원천지">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="png" href="./data/%EB%85%BC%EC%82%B0%EC%BA%90%EB%A6%AD%ED%84%B0%20%EC%95%84%EC%9D%B4%EC%BD%98.png">
+    <meta property="og:title" content="논산시를 소개합니다.">
+    <meta property="og:description" content="논산소개, 논산은 포효하는 호랑이 형상을 하고 있는한반도의 단전부에 위치해 있는 중요한 힘의 원천지">
+    <meta property="og:image" content="">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="icon" type="png" sizes="32x32" href="./data/논산캐릭터 아이콘.png">
+    <link rel="stylesheet" href="common.css">
+    <style>
+  
+    /* 메인페이지 콘텐츠 스타일 */
+    #vdo { width: 100%; height: 100%; }
+    #vd1 { display: block; width: 100%; min-height: 100% }
+    #cover_page { position: absolute; width: 100%; height: 100%; z-index: 10; top: 0; left: 0;}
+    .tit { background-image: url("./data/nonsanlogo.png"); width: 359px; height: 134px; margin: 90px auto; margin-top: 200px; }
+    #frm1 { width: 1000px; height: 80px; margin: 0 auto; background-color: rgba(0,0,0,0.6); }
+    #keyword { display: block; height: 70px; width: 910px; font-size: 18px; text-indent: 24px; margin: 5px; float: left; opacity: 0.6; transition: 0.5s; }    
+    #search { display: block; width: 70px;height: 70px; float: right; margin: 5px; background-color: #777; background-image: url("./data/icon_png/search2.png"); text-indent: -9999px; background-size: 50px 50px ; background-position: center center; background-repeat: no-repeat; opacity: 0.6; transition: 0.5s; }
+    #keyword:focus { opacity: 1; width: 800px; }
+    #keyword:focus ~ #search { opacity: 1; }
+    #page2, #page3 {background-image: url("./data/main_movie.png"); background-repeat: no-repeat; background-size: cover; }
+    #page2 {background-attachment: fixed; padding-top: 40px; }
+    #insight { background-color: #f0f0f0; height: 95%;}
+    .page_tit { text-align: center; line-height: 100px; font-size: 48px; }
+    .thum_lst li { float: left; width: 373px; margin-left: 40px; position: relative; overflow: hidden; height: 320px; margin-top: 40px;} 
+    .thum_lst li.col8 { width: 786px; }
+    .thum_lst li a { color: #333; display: block; width: 360px;height: 300px; overflow: hidden; border: 3px solid transparent; margin: 7px auto; transition: 0.6s; transition-delay: 0.1s; background-color: #e1e1e1; }
+    .thum_lst li a:after { content:"▶"; position: absolute; bottom: 27px; right: 24px; display: none; }
+    .thum_lst li a:hover { border: 3px solid #fe3c08; background-color: #fff; color: #fe3c08; }
+    .thum_lst li a:hover:after { display: block; }
+    .cate_tit { padding: 14px; color: #fe3c08; text-decoration: underline; }
+    .lst_tit {padding: 14px;}
+    .lst_com { padding: 14px;}
+    .lst_date { padding: 14px; position: absolute; bottom: 14px; left: 5px;}
+    .thum_lst li.col8 a { width: 770px; color: #fff; background-image:url(./data/strawberryevent1.jpg); background-size: cover; }
+    #vs_con { margin-top: 50px; }
+    #vs { width: 100%; overflow-x: hidden; background-color: #fff; padding-top: 50px; position: relative; }
+    .img_box {width: 400%;}
+    .img_box li {float: left; width: 25%; }
+    .img_box li .pic { display: block; width: 580px; float: left; margin-left: 40px; margin-bottom: 40px; }
+    .img_box li .tit_box { width: 580px; float: right; margin-right: 40px;margin-bottom: 40px;}
+    .vs_tit {padding: 24px;}
+    .vs_com {padding: 24px;}
+    .more { display: block; width: 120px; height: 40px; border: 2px solid #333; color: #333; text-align: center; line-height: 40px; margin: 24px; }
+    .btn_box { position: absolute; right: 100px; bottom: 50px; z-index: 50; width: 500px; height: 14px; }
+    .btn_box li { width: 150px; margin-left: 12px; float:left; }
+    .btn_box li button { display: block; width: 150px;height: 14px; background-color: #666; }
+    .btn_box li.on button { background-color: #fe3c08; }
+    .ico_link { clear: both; margin-top: 50px; width: 100%;height: 64px;background: #fff; }
+    .ico_link li { float: left; width: 50%; height: 64px; }
+    .ico_link li a { display: block; color: #333; font-size: 22px; line-height: 64px; text-align: center; background: #fff; padding-left: 100px; }
+    .ico_link li a.item2 { background: #f0f0f0; }
+    .ico_link li a span { display: block; float: left; padding-left: 15px; }
+    .ico_link li a.itme1 .ico { background-repeat: no-repeat; background-image: url(./data/icon_png/location_icon.png); margin-top: 5px; width: 50px; height: 50px; padding-right: 15px;  }
+    .ico_link li a.item2 .ico { background-repeat: no-repeat; 
+         width: 50px; height: 50px; padding-right: 15px; background-image: url(./data/icon_png/tel_icon.png); margin-top: 5px; }  
+    
+    </style>
+</head>
+<body>
+   <div class="wrap">
+        <nav id="tnb">
+           <ul class="right menu">
+               <li><a href="">홈</a></li>
+               <li><a href="">로그인</a></li>
+               <li><a href="">회원가입</a></li>
+           </ul>
+        </nav>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="lst_btn">1</label>
+        <nav id="gnb">
+            <label for="ck1" class="close_btn">2</label>
+            <ul class="main">
+                <li><a href="">현  황</a></li>
+                <li><a href="">상  징</a></li>
+                <li><a href="">읍면동 소개</a></li>
+                <li><a href="">축제/행사</a></li>
+                <li><a href="">캘린더</a></li>
+            </ul>
+            <ul class="bottom">
+                <li><a href="">홈</a></li>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+            </ul>
+        </nav>
+        <div class="page" id="page1">
+            <figure id="vdo">
+                <video src="./data/nonsan.mp4" id="vd1" autoplay="true" loop></video>
+            </figure>
+            <section class="page_wrap" id="cover_page">
+                <h2 class="tit"></h2><!-- 사이즈 445*56 -->
+                <form action="" id="frm1"><input type="text" id="keyword"><input type="submit" id="search"></form>
+            </section>
+        </div>
+    </div>
+    <!-- 여기까지가 index page1 -->
+    <div class="page" id="page2">
+        <section class="page_wrap" id="insight">
+            <h2 class="page_tit">축제 / 행사</h2>
+                <ul class="thum_lst">
+                    <li class="col4"><a href="">
+                            <h4 class="cate_tit">축제 뉴스</h4>
+                            <h2 class="lst_tit">논산딸기축제</h2>
+                            <p class="lst_com">50여년의 재배역사와 전국 최대의 주산단지로서 비옥한 토양과 맑은 물, 풍부한 일조 조건에서 자라 맛과 향기, 당도 등에서 우수함을 인정받아 전국적으로 딸기하면 논산, 논산 특산품하면 딸기가 연상될 만큼 확실한 논산의 이미지 특산품으로 자리 매김을 하고 있습니다.</p>
+                            <span class="lst_date">2019.09.07</span></a></li>
+                    <li class="col4"><a href="">
+                            <h4 class="cate_tit">축제 뉴스</h4>
+                            <h2 class="lst_tit">논산딸기축제2</h2>
+                            <p class="lst_com">50여년의 재배역사와 전국 최대의 주산단지로서 비옥한 토양과 맑은 물, 풍부한 일조 조건에서 자라 맛과 향기, 당도 등에서 우수함을 인정받아 전국적으로 딸기하면 논산, 논산 특산품하면 딸기가 연상될 만큼 확실한 논산의 이미지 특산품으로 자리 매김을 하고 있습니다.</p>
+                            <span class="lst_date">2019.09.08</span></a></li>
+                    <li class="col4"><a href="">
+                            <h4 class="cate_tit">축제 뉴스</h4>
+                            <h2 class="lst_tit">양촌곶감축제</h2>
+                            <p class="lst_com">양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제양촌곶감축제</p>
+                            <h4 class="cate_tit">축제 뉴스</h4>
+                            <span class="lst_date">2019.09.09</span></a></li>
+                    <li class="col4"><a href="">
+                            <h2 class="lst_tit">강경발효젓갈축제</h2>
+                            <p class="lst_com">강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제강경발효젓갈축제</p>
+                            <span class="lst_date">2019.09.10</span></a></li>
+                    <li class="col8"><a href="">
+                            <h4 class="cate_tit">행사 뉴스</h4>
+                            <h2 class="lst_tit">황산벌전투재현행사</h2>
+                            <p class="lst_com">황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사황산벌전투재현행사</p>
+                            <span class="lst_date">2019.09.13</span>
+                        </a></li>
+                </ul>
+        </section>
+    </div>
+        <!-- 여기까지가 index page2 -->
+    <div class="page" id="page3">
+        <section class="page_wrap" id="vs_con">
+           <figure id="vs">
+               <ul class="img_box">
+                   <li>
+                       <img src="./data/strawberryevent1.jpg" alt="배너1" class="pic">
+                       <div class="tit_box">
+                           <h3 class="vs_tit">논산딸기축제</h3>
+                           <p class="vs_com">50여년의 재배역사와 전국 최대의 주산단지로서 비옥한 토양과 맑은 물, 풍부한 일조 조건에서 자라 맛과 향기, 당도 등에서 우수함을 인정받아 전국적으로 딸기하면 논산, 논산 특산품하면 딸기가 연상될 만큼 확실한 논산의 이미지 특산품으로 자리 매김을 하고 있습니다.</p>
+                           <a href="" class="more">viewmore</a>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="" alt="배너2" id="pic">
+                       <div class="tit_box">
+                           <h3 class="vs_tit">1</h3>
+                           <p class="vs_com">2</p>
+                           <a href="" class="more">3</a>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="" alt="배너3" id="pic">
+                       <div class="tit_box">
+                           <h3 class="vs_tit">1</h3>
+                           <p class="vs_com">2</p>
+                           <a href="" class="more">3</a>
+                       </div>
+                   </li>
+               </ul>
+               <ul class="btn_box">
+                   <li class="on"><button></button></li>
+                   <li><button></button></li>
+                   <li><button></button></li>
+               </ul>
+           </figure>
+            <ul class="ico_link" >
+                <li >
+                    <a href="" class="itme1">
+                        <span class="ico"></span><span>시청위치</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="" class="item2">
+                        <span class="ico"></span>
+                        <span>연락처</span>
+                    </a>
+                </li>
+            </ul>
+            <footer id="ft">
+                <ul class="fnb">
+                    <li><a href="">시청위치</a></li>
+                    <li><a href="">TEL.041-746-5114</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="" class="last">웹접근성</a></li>
+                </ul>
+                <p class="copyright">COPYRIGHTⓒ2018NONSAN CITY. ALL RIGHTS RESERVED</p>
+            </footer>
+        </section>
+    </div>
+    <a href="#" id="totop">↑</a>
+</body>
+</html>

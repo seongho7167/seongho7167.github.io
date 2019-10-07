@@ -1,0 +1,24 @@
+홈(home.html#page1)
+로그인(login.html#page2)
+회원가입(join.html#page3)
+
+현황(status.html#page4)
+상징(symbol.html#page5)
+읍면동 소개(introduce.html#page6)
+축제/행사(event.html#page7)
+캘린더(calendar.html#page8)
+
+축제뉴스_딸기(festival_news_strawberry.html#page9)
+축제뉴스_딸기2(festival_news2_strawberry.html#page10)
+축제뉴스_곶감(festival_news_persimmon.html#page11)
+축제뉴스_젓갈(festival_news_Salted_fish.html#page12)
+축제뉴스_전투재현행사(event_battle.html#page13)
+
+축제뉴스1(festival_news1.html#page14)
+축제뉴스2(festival_news2.html#page15)
+축제뉴스3(festival_news3.html#page16)
+
+시청위치(location.html#page17)
+연락처(tel_number.html#page18)
+개인정보처리방침(person_information.html#page19)
+웹접근성(web.html#page20)
