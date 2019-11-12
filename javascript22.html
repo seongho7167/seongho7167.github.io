@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <h2 id="txt"></h2>
+    </div>
+    <script>
+    for(var key in navigator){
+        document.write("<br>"+key+" : "+navigator[key]);
+    }
+    var data = document.getElementById("txt");
+    var txt = "<br>현재 사용중인 브라우저의 이름 : "+navigator.appName+"<br>";
+    txt += "해당 브라우저의 코드명 : "+navigator.appCodeName+"<br>";
+    txt += "현재 사용중인 브라우저의 버전 정보 : "+navigator.appVersion+"<br>";
+    txt += "userAgent 프로퍼티로 알 수 있는 추가 정보 : "+navigator.userAgent+"<br>";
+    txt += "현재 브라우저가 실행되고 있는 운영체제 : "+navigator.platform+"<br>";
+    txt += "현재 브라우저의 기본 언어설정 : "+navigator.language+"<br>";
+    txt += "브라우저의 제작사 : "+navigator.vendor+"<br>";
+    txt += "현재 기기의 최대 터치점 : "+navigator.maxTouchPoints+"<br>";
+    txt += "현재 브라우저의 엔진 : "+navigator.product+"<br>";
+    if(navigator.javaEnabled()){
+        txt += "현재 브라우저는 자바 애플릿을 실행할 수 있습니다.<br>";
+    } else {
+        txt += "현재 브라우저는 자바 애플릿을 실행할 수 없습니다.<br>";
+    }
+    if ( navigator.cookieEnabled) {
+        txt += "현재 브라우저는 쿠키를 사용할 수 있습니다.<br>";
+    } else { 
+        txt += "현재 브라우저는 쿠키를 사용할 수 없습니다.<br>";
+    }
+    var agent = navigator.userAgent.toLowerCase();
+    var brower = "정식 브라우저가 아님";
+    if(agent.indexOf("opera")!=-1){
+        brower = "오페라";
+    } else if(agent.indexOf("chrome")!=-1){
+        brower = "크롬";
+    } else if ( agent.indexOf("safari")!=-1){
+        brower = "사파리";
+    } else if (agent.indexOf("firefox")!=-1){
+        brower = "파이어폭스";
+    } else if ((navigator.appName=="Netscape" && navigator.userAgent.search("Trident")!=-1)||agent.indexOf("msie")!=-1){
+        brower = "익스플로러";
+    }
+    var pc = "win36|win32|win64|mac|macintel";
+    var dev1, dev2;
+    if(navigator.platform){
+        if(pc.indexOf(navigator.platform.toLowerCase())<0){
+            dev1 = "모바일";
+        } else {
+            dev1 = "데스크탑";
+        }
+    }
+    var mobile = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'Windows SE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson', 'Mobile', 'Symbian', 'Opera Mobi', 'Opera Mini', 'IEmobile');
+    for (var key in mobile){
+        if(navigator.userAgent.match(mobile[key]!=null)){
+            dev2 = "모바일";
+        }else {
+            dev2 = "데스크탑";
+        }
+    }
+    txt+="<br>현재 브라우저의 종류 : "+brower;
+    txt+="<br>pc기준으로 현재 디바이스 알아보기 : "+dev1;
+    txt+="<br>mobile기준으로 현재 디바이스 알아보기 : "+dev2;
+    data.innerHTML = txt; 
+</script>
+</body>
+</html>
