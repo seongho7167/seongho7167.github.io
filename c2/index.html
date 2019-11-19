@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>피자알볼로</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="피자, pizza, 알볼로, 피자알볼로, pizzaalvolo, alvolo, 피자 맛집, 신선한 재료, 수제피자, 수제피자 전문점, 피자 전문전, 온라인 서비스, 온라인 주문">
+    <meta name="description" content="피자알볼로에서는 언제나 맛있고 신선한 재료로 만든 수제피자만을 제공합니다.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="PizzaAlvolo">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="PizzaAlvolo">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.11">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+    <style>
+    .vs_wrap { width: 1920px;  overflow: hidden;}
+    .vs_box { width: 5760px; height: 630px; }
+    .vs_box .vs { width: 1920px; height: 630px; float: left; }
+    .scr_box { width: 40px; height: 60px; position: absolute; left:940px; top: 820px; animation: scrAni 1.7s infinite ease-in-out; }
+        @keyframes scrAni {
+        from { transform: translateY(0px); opacity: 1; } 
+        to { transform: translateY(40px); opacity: 0; }
+     }
+    .scr_box.on { visibility: hidden; }
+    .scr_box .ar1 { position: relative; }
+    .scr_box .ar1:before { content:""; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(45deg);position: absolute; left: -2px;}
+    .scr_box .ar1:after { content:""; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(-45deg); position: absolute; left: 15px;}
+    .scr_box .ar2 { position: relative; }
+    .scr_box .ar2:before { content:""; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(45deg);position: absolute; left: -2px; top: 15px;}
+    .scr_box .ar2:after { content:""; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(-45deg); position: absolute; left: 15px; top:15px; }
+    .scr_box .ar3 { position: relative; }
+    .scr_box .ar3:before { content:""; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(45deg);position: absolute; left: -2px; top: 30px;}
+    .scr_box .ar3:after { content:""; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(-45deg); position: absolute; left: 15px; top:30px; }
+
+
+    .con_box { height: 733px; margin-top:-10px; position: relative; }
+    .con_tit { font-family: bear; font-size: 60px; color : #3dbedf; }
+    .tit_bar { display: block; width: 35px; height: 6px; background-color: #3dbedf; margin-top: 28px; }
+    .con_text { margin-top: 68px; height: 320px; }
+    .con_text span { display: block; font-family: mel; font-size: 18px; line-height: 2; color: #00203b;}
+    .more { float: right; }
+    .more a { font-family: mel; color: #00203b; }
+    .more:hover a { color: #ff3a1d; }
+
+    .con_box2 { height: 1234px; position: relative; }
+    .con_box2 .img_box { margin-top: 25px; height: 900px; }
+    .con_box2 .img_box .img { width: 410px; height: 342px; float: left; margin-left: 25px; position: relative; }
+    .con_box2 .img_box .img:after { content: ""; position: absolute; display: block; width: 410px; height: 342px; background-color: rgba(0,0,0,0.6); transition: 0.3s; top:0; }
+    .con_box2 .img_box .img:hover:after { opacity: 0; }
+    .con_box2 .img_box .img .it { display: block; width: 410px; height: 342px; box-sizing: border-box; border: 3px solid #3dbedf; transition: 0.3s; overflow: hidden; }
+    .con_box2 .img_box .img:hover a { border-color: #ff3a1d; }
+    .con_box2 .img_box .item1 { margin-left: 0px; }
+    .con_box2 .img_box .item4 { margin-left: 0px; margin-top: 116px; }
+    .con_box2 .img_box .item5 { margin-top: 116px; }
+    .con_box2 .img_box .item6 { margin-top: 116px; }
+    .con_box2 .img_box .img img { width: 404px; height: 336px; transition: 0.3s;  }
+    .con_box2 .img_box .img:hover img { transform: scale(1.1); }
+    .con_box2 .img_box .img span { display: block; text-align: center; padding-top: 26px; font-size: 22px; font-family: mel; color: #00203b; }
+
+    .totop { display: block; width: 50px; height: 50px; border-radius: 50px; border: 1px solid #00203b; position: fixed; top: 800px; right: 100px; box-shadow: 1px 1px #88929b; transition: 0.5s;}
+    .totop.on { opacity: 0;}
+    .totop:before { content: ""; position: absolute; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(-45deg); top:20px; left: 5px; }
+    .totop:after { content: ""; position: absolute; display: block; width: 25px; height: 2px; background-color: #00203b; transform: rotate(45deg); top:20px; left:22px; }
+        
+    </style>
+<body>
+    <div id="wrap">
+        <header class="hd">
+            <a class="logo" href=""><img src="./data/logo.png" alt="로고"></a>
+            <nav class="tnb_wrap">
+                <ul class="tnb_box">
+                    <li class="tnb item1"><a href="">로그인</a></li>
+                    <li class="tnb item2"><a href="">회원가입</a></li>
+                    <li class="tnb item3"><a class="last" href="">마이페이지</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb_wrap">
+                <ul class="gnb_box">
+                    <li class="gnb item1">
+                        <a class="dp1" href="">브랜드</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">피자알볼로 이야기</a></li>
+                            <li class="sub it2"><a href="">피자알볼로 비전</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item2">
+                        <a class="dp1" href="">피자</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">전체메뉴</a></li>
+                            <li class="sub it2"><a href="">세트메뉴</a></li>
+                            <li class="sub it3"><a href="">카테고리 메뉴</a></li>
+                            <li class="sub it4"><a href="">1인 메뉴</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="gnb item3">
+                        <a class="dp1" href="">멤버십</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">나의 멤버십</a></li>
+                            <li class="sub it2"><a href="">멤버십혜택 안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item4">
+                        <a class="dp1" href="">새소식</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">새로운 메뉴</a></li>
+                            <li class="sub it2"><a href="">이벤트</a></li>
+                        </ul>                    
+                    </li>
+                    <li class="gnb item5">
+                        <a class="dp1" href="">매장안내</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <figure class="vs_wrap">
+            <ul class="vs_box">
+                <li class="vs item1">
+                    <a href=""><img src="./data/vs01.png" alt="vs_img1"></a>
+                </li>
+                <li class="vs item2">
+                    <a href=""><img src="./data/vs02.png" alt="vs_img2"></a>
+                </li>
+                <li class="vs item3">
+                    <a href=""><img src="./data/vs03.png" alt="vs_img3"></a>
+                </li>
+                <!-- <ul class="btn_box">
+                    <li class="btn_item1">
+                        <button class="btn1 on"></button>
+                    </li>
+                    <li class="btn_item2">
+                        <button class="btn2"></button>
+                    </li>
+                    <li class="btn_item3">
+                        <button class="btn3"></button>
+                    </li>
+                </ul> -->
+            </ul>
+            <div class="scr_box">
+                <span class="ar1"></span>
+                <span class="ar2"></span>
+                <span class="ar3"></span>
+            </div>
+        </figure>
+        <main class="content_wrap">
+            <div class="con_box">
+                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
+                <span class="tit_bar"></span>
+                <p class="con_text">
+                    <span class="txt">피자도 요리이고 과학</span>
+                    <span class="txt">“좋은 재료에 정성을 쏟아 만드는 것이 알볼로 피자맛의 </span>
+                    <span class="txt">핵심 레시피이자 경쟁력입니다.”</span>
+                    <span class="txt">피자를 떠올릴 때, 일반적으로 비만을 유발하고 건강에 </span>
+                    <span class="txt">좋지 않은 패스트푸드로 저평가 되고 있습니다. </span>
+                    <span class="txt">하지만 피자는 우리가 생각하는 것 이상으로 영양학적으로</span>
+                    <span class="txt">우수한 식품이고 과학적인 발효식품입니다. </span>
+                    <span class="txt">피자도 얼마든지 건강한 요리이자 과학적인 음식이라는 </span>
+                    <span class="txt">인식을 많은 사람들에게 꼭 심어주고 싶습니다.</span>
+                </p>
+                <div class="more"><a href="">더보기</a></div>
+            </div>
+            <div class="con_box2">
+                <h2 class="con_tit">ALVOLO <br>NEW MENU</h2>
+                <span class="tit_bar"></span>
+                <ul class="img_box">
+                    <li class="img item1">
+                        <a class="it" href="">
+                            <img src="./data/Jeonju%20bulback%20pizza.jpg" alt="전주불백">
+                        </a>
+                        <a href="">
+                            <span>전주불백피자</span>
+                        </a>
+                    </li>
+                    <li class="img item2">
+                        <a class="it" href="">
+                            <img src="./data/Ggumeul Pizza.jpg" alt="꿈을피자">
+                        </a>
+                        <a href="">
+                            <span>꿈을피자</span>
+                        </a>
+                    </li>
+                    <li class="img item3">
+                        <a class="it" href="">
+                            <img src="./data/Busan%20Pizza.png" alt="부산피자">
+                        </a>
+                        <a href="">
+                            <span>부산피자</span>
+                        </a>
+                    </li>
+                    <li class="img item4">
+                        <a class="it" href="">
+                            <img src="./data/Shrimp%20&%20Hot%20Chicken%20Gold.jpg" alt="쉬림프핫치킨">
+                        </a>
+                        <a href="">
+                            <span>쉬림프&핫치킨골드피자</span>
+                        </a>
+                    </li>
+                    <li class="img item5">
+                        <a class="it" href="">
+                            <img src="./data/Sweet%20Pumpkin%20Gold%20Pizza.jpg" alt="단호박골드">
+                        </a>
+                        <a href="">
+                            <span>단호박골드피자</span>
+                        </a>
+                    </li>
+                    <li class="img item6">
+                        <a class="it" href="">
+                            <img src="./data/Ukke%20Pizza.jpg" alt="어깨피자">
+                        </a>
+                        <a href="">
+                            <span>어깨피자</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="more"><a href="">메뉴페이지로</a></div>
+            </div>
+        </main>
+        <footer class="ft">
+            <a href="" class="flogo"><img src="./data/logo.png" alt="logo"></a>
+            <ul class="sns_box">
+                <li class="sns item1"><a href="" class="sns_img1"></a></li>
+                <li class="sns item2"><a href="" class="sns_img2"></a></li>
+                <li class="sns item3"><a href="" class="sns_img3"></a></li>
+                <li class="sns item4"><a href="" class="sns_img4"></a></li>
+                <li class="sns item5"><a href="" class="sns_img5"></a></li>
+            </ul>
+            <p class="ft_con">
+                <span>㈜ALVOLO F&C</span>
+                <span>대표 : 이재욱</span>
+                <span>서울시 양천구 신월로 358 남부필타운 2층 전관</span>
+            </p>
+            <p class="ft_con2">
+                <span>사업자번호 : 117-81-73358</span>
+                <span>Tel : 02-2645-8495</span>
+                <span>Fax : 02-2604-5171</span> 
+            </p>
+            <p class="ft_con3">
+                <span>통신판매번호 : 제2015-서울양천-0524호</span>    
+            </p>
+            <p>
+                <span class="copyright">copyright © Alvolo F&C all rights reserved</span>
+            </p>
+        </footer>
+        <a class="totop on" href="#"></a>
+    </div>
+</body>
+</html>

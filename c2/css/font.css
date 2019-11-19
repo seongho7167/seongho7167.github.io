@@ -1,0 +1,19 @@
+@charset utf-8;
+@font-face {
+    font-family:"bear";
+    src:local("./font/bear"), url("./font/bear.eot") format("embedded-opentype"), url("./font/bear.woff") format("woff");
+    font-weight:900;
+    font-style: normal;
+}
+@font-face { 
+    font-family:"mel";
+    src:local("./font/BinggraeMelona"), url("./font/BinggraeMelona.woff") format("woff"), url("./font/BinggraeMelona.otf") format("opentype"), url("./font/BinggraeMelona.ttf") format("truetype");
+    font-weight:400;
+    font-style: normal;
+}
+@font-face { 
+    font-family:"mel_bold";
+    src:local("./font/BinggraeMelona-Bold"), url("./font/BinggraeMelona_Bold.woff") format("woff"), url("./font/BinggraeMelona_Bold.otf") format("opentype"), url("./font/BinggraeMelona_Bold.ttf") format("truetype");
+    font-weight:900;
+    font-style: normal;
+}

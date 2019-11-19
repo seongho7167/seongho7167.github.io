@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>피자알볼로</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="피자, pizza, 알볼로, 피자알볼로, pizzaalvolo, alvolo, 피자 맛집, 신선한 재료, 수제피자, 수제피자 전문점, 피자 전문전, 온라인 서비스, 온라인 주문">
+    <meta name="description" content="피자알볼로에서는 언제나 맛있고 신선한 재료로 만든 수제피자만을 제공합니다.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="PizzaAlvolo">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="PizzaAlvolo">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.11">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+    <style>
+        .vs_wrap { width: 1920px; height: 400px; position: relative; margin-top: 135px;}
+        .vs_box { position: absolute; top: 180px; left:784px; text-align: center;}
+        .vs_box h2 { color: #dfe4e7; font-size: 48px; }
+        .vs_box span { color: #dfe4e7; font-size: 16px; padding-top: 26px; }
+        
+        .content_wrap { width: 1280px; height: auto; position: relative; margin: 0 auto; }
+        .bcr_box { width: 160px; height: auto; margin-top: 40px; float: right; position: relative; z-index: 99; }
+        .bcr_box .item1 { position: relative; cursor: pointer; }
+        .bcr_box .item1:before { content: ""; position: absolute; display: block; width: 15px; height: 1px; background-color: #3dbedf; transform: rotate(45deg); left:73px; top: 5px; }
+        .bcr_box .item1:after { content: ""; position: absolute; display: block; width: 15px; height: 1px; background-color: #3dbedf; transform: rotate(-45deg); left:73px; top: 15px; }
+        .bcr_box img { display: block; width: 23px; height: 23px; float: left; }
+        .bcr_box span { display: block; font-size: 14px; color: #3dbedf; float: left; padding-left: 25px; cursor: pointer; }
+        .bcr_box .it1 { padding-left: 8px;}
+        .bcr_box span:hover { color: #00203b; }
+        .con_box { width: 1280px; height: 675px; position: relative; }
+        .con_box:after { content: ""; display: block; position: absolute; top: 675px; width: 320px; height: 1px; background-color: #00203b; } 
+        .con_box .con_tit { padding-top: 120px; font-family: bear; font-size: 60px; color : #3dbedf; }
+        .con_box2 .con_tit { padding-top: 120px; font-family: bear; font-size: 60px; color : #3dbedf; }
+        .tit_bar { display: block; width: 35px; height: 6px; background-color: #3dbedf; margin-top: 28px; }
+        .con_text { margin-top: 68px; height: 320px; }
+        .con_text span { display: block; font-family: mel; font-size: 18px; line-height: 2; color: #00203b; } 
+        .con_text .txt.it1 { font-size: 24px; }
+        .con_text .it3 { text-indent: 25px; }
+        .con_text .txt1 { padding-top: 20px; }
+        
+        .intro_box { width: 1195px; height: 650px; margin: 0 auto; position: relative; }
+        .intro_box img { display: block; width: 1195px; height: 650px; }
+        .intro_box:before { content: ""; display: block; position: absolute; width: 1195px; height: 650px; background-color: #00203b; opacity: 0.6; transition: 0.3s; }
+        .intro_box:hover:before { opacity: 0; }
+        .intro_box2 { width: 1280px; height: 620px; position: relative; }
+        .intro_box2 li { width: 303px; height: 303px; float: left; margin-left: 90px; margin-top: 100px; text-align: center; position: relative; }
+        .intro_box2 li:before { content: ""; display: block; position: absolute; width: 303px; height: 303px; border-radius: 400px; background-color: #00203b; opacity: 0.6; transition: 0.3s; }
+        .intro_box2 li:hover:before { opacity: 0; }
+        .intro_box2 li span { display: block; font-size: 22px; color : #00203b; font-family: mel; line-height: 3.8; }
+        
+        .lnb_wrap { width: 200px; height: 50px; position: absolute; top: 674px; }
+        .lnb_wrap label { display: block; }
+        .lnb_wrap .btn1 { margin-left: 200px; width: 35px; height: 40px; padding-top: 20px; margin-top: -20px; opacity: 1; transition: 0.3s; cursor: pointer; }
+        .lnb_wrap .btn_bar { display: block; width: 35px; height: 4px; background-color: #3dbedf; position: relative; margin-top: 13px; }
+        .lnb_wrap .btn_bar:after { content: ""; display: block; position: absolute; width: 35px; height: 4px; background-color: #3dbedf; top: 13px; transition: 0.3s; }
+        .lnb_wrap .btn1:hover .btn_bar:after { transform: rotate(-45deg) translateX(15px) translateY(8px); width: 25px; }
+        .lnb_wrap .btn_bar:before { content: ""; display: block; position: absolute; width: 35px; height: 4px; background-color: #3dbedf; top: -13px; transition: 0.3s; }
+        .lnb_wrap .btn1:hover .btn_bar:before { transform: rotate(45deg) translateX(14px) translateY(-7px); width: 25px; }
+        .lnb_wrap .ck { display: none; }
+        .lnb_wrap .lnb_box { width: 200px; height: 100px; font-family: bear; font-size: 24px; margin-top: -40px; margin-left: -300px; text-align: right; opacity: 0; transition: 0.5s; }
+        .lnb_wrap .lnb_box span { display: block; cursor: pointer; color:#3dbedf; }
+        .lnb_wrap .lnb_box span:hover { color: #ff3a1d; }
+        .lnb_wrap .lnb_box .item2 { padding-top: 25px; }
+        .lnb_wrap .btn2 { display: block; width: 40px; height: 40px; position: absolute; top:-40px; left:210px; padding-top: 0px; opacity: 0; transition: 0.3s;  }
+        .lnb_wrap .btn2 .btn_bar2 { display: block; width: 25px; height: 4px; position: absolute; background-color:#3dbedf; top: 0px; left:0px; transform: rotate(-35deg); transition: 0.3s; }
+        .lnb_wrap .btn2:hover .btn_bar2 { width: 35px; transform: rotate(-45deg) translateY(-4px) translateX(-13px); background-color: #ff3a1d; }
+        .lnb_wrap .btn2 .btn_bar3 { display: block; position: absolute; width: 25px; height: 4px; background-color: #3dbedf; top: 13px; left:0px; transform: rotate(35deg); transition: 0.3s; }
+        .lnb_wrap .btn2:hover .btn_bar3 { width: 35px; transform: rotate(45deg) translateY(4px) translateX(-13px); background-color: #ff3a1d; }
+        
+        #ck1:checked ~ .lnb_box { margin-left: 35px; opacity: 1; }
+        #ck1:checked ~ .btn1 { opacity: 0; }
+        #ck1:checked ~ .lnb_box .btn2 { opacity: 1; }
+    </style>
+<body>
+    <div id="wrap">
+        <header class="hd">
+            <a class="logo" href=""><img src="./data/logo.png" alt="로고"></a>
+            <nav class="tnb_wrap">
+                <ul class="tnb_box">
+                    <li class="tnb item1"><a href="">로그인</a></li>
+                    <li class="tnb item2"><a href="">회원가입</a></li>
+                    <li class="tnb item3"><a class="last" href="">마이페이지</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb_wrap">
+                <ul class="gnb_box">
+                    <li class="gnb item1">
+                        <a class="dp1" href="">브랜드</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">피자알볼로 이야기</a></li>
+                            <li class="sub it2"><a href="">피자알볼로 비전</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item2">
+                        <a class="dp1" href="">피자</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">전체메뉴</a></li>
+                            <li class="sub it2"><a href="">세트메뉴</a></li>
+                            <li class="sub it3"><a href="">카테고리 메뉴</a></li>
+                            <li class="sub it4"><a href="">1인 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item3">
+                        <a class="dp1" href="">멤버십</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">나의 멤버십</a></li>
+                            <li class="sub it2"><a href="">멤버십혜택 안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item4">
+                        <a class="dp1" href="">새소식</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="">새로운 메뉴</a></li>
+                            <li class="sub it2"><a href="">이벤트</a></li>
+                        </ul>                    
+                    </li>
+                    <li class="gnb item5">
+                        <a class="dp1" href="">매장안내</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <figure class="vs_wrap">
+            <img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C.png" alt="소개">
+            <div class="vs_box">
+                <h2 class="vs_tit">피자 알볼로 소개</h2>
+                <span class="vs_con">믿음과 신뢰의 외식기업, 대한민국 전통 피자가게</span>
+            </div>
+        </figure>
+        <nav class="lnb_wrap">
+            <input type="checkbox" id="ck1" class="ck">
+            <label for="ck1" class="btn1"><span class="btn_bar"></span></label>
+            <ul class="lnb_box">
+                <label for="ck1" class="btn2"><span class="btn_bar2"></span><span class="btn_bar3"></span></label>
+                <li class="lnb item1"><span>피자알볼로 소개</span></li>
+                <li class="lnb item2"><span>피자알볼로 비전</span></li>
+            </ul>
+        </nav>
+        <main class="content_wrap">
+            <ul class="bcr_box">
+                <li class="bcr item1"><img src="./data/home_ico.png" alt="home">
+                <span class="it1">Home</span></li>
+                <li class="bcr item2"><span class="it2">Story</span></li>
+            </ul>
+            <div class="con_box">
+                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
+                <span class="tit_bar"></span>
+                <p class="con_text">
+                    <span class="txt it1">피자도 요리이고 과학</span>
+                    <span class="txt it2">“좋은 재료에 정성을 쏟아 만드는 것이 알볼로 피자맛의 핵심 레시피이자 경쟁력입니다.” </span>
+                    <span class="txt1 it3">피자를 떠올릴 때, 일반적으로 비만을 유발하고 건강에 좋지 않은 패스트푸드로 저평가 되고 있습니다. 하지만 피자는 우리가 생각하는 것 이상으로 영양학적으로 우수한 </span>
+                    <span class="txt it3">식품이고 과학적인 발효식품입니다. 우리나라의 대부분의 피자가 미국식으로 너무 상업화되다보니 매뉴얼에 의해 정형화되고 자극적인 음식으로 만들어진게 사실입니다. </span>
+                    <span class="txt it3">조리를 전공한 우리 형제는 이탈리아 전통피자에 한국식 피자를 접목 우리 입맛에 맞는 웰빙수제피자를 만들었습니다. 피자도 얼마든지 건강한 요리이자 과학적인 음식이</span>
+                    <span class="txt it3">라는 인식을 많은 사람들에게 꼭 심어주고 싶습니다.</span>
+                </p>
+            </div>
+            <div class="con_box2">
+                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
+                <span class="tit_bar"></span>
+                <p class="con_text">
+                    <span class="txt it1">피자로 새로운 세상의 문을 열다.</span>
+                    <span class="txt it3">저희 형제는 어릴 때 부터 비행기와 하늘을 무척 좋아했습니다. 라이트형제가 비행기를 처음 발명하여 성공했듯이 세상에서 가장 맛있는 피자를 만들어 온 세상에 널리 </span>
+                    <span class="txt it3">알리고 싶은 저희 형제의 꿈과 열정을 담고 싶었습니다. 그렇게 해서 탄생한 것이 이태리어로 '비행하다, 비상하다'의 뜻인 알볼로입니다. 피자알볼로만의 최고의 맛과 </span>
+                    <span class="txt it3">서비스를 제공하고 피자알볼로가 점점 비상하는 모습을 보여주어 많은 이들에게 꿈과 희망을 주는 피자가게가 되고 싶습니다.</span>
+                </p>
+            </div>
+            <div class="intro_box"><img src="./data/intro2.png" alt="소개2"></div>
+            <ul class="intro_box2">
+                <li class="intro item1"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C3.png" alt="소개3"><span>도우에 집중하다</span></li>
+                <li class="intro item2"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C4.png" alt="소개4"><span>기본에 집착하다</span></li>
+                <li class="intro item3"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C5.png" alt="소개5"><span>사람을 생각하다</span></li>
+            </ul>
+        </main>
+        <footer class="ft">
+            <a href="" class="flogo"><img src="./data/logo.png" alt="logo"></a>
+            <ul class="sns_box">
+                <li class="sns item1"><a href="" class="sns_img1"></a></li>
+                <li class="sns item2"><a href="" class="sns_img2"></a></li>
+                <li class="sns item3"><a href="" class="sns_img3"></a></li>
+                <li class="sns item4"><a href="" class="sns_img4"></a></li>
+                <li class="sns item5"><a href="" class="sns_img5"></a></li>
+            </ul>
+            <p class="ft_con">
+                <span>㈜ALVOLO F&C</span>
+                <span>대표 : 이재욱</span>
+                <span>서울시 양천구 신월로 358 남부필타운 2층 전관</span>
+            </p>
+            <p class="ft_con2">
+                <span>사업자번호 : 117-81-73358</span>
+                <span>Tel : 02-2645-8495</span>
+                <span>Fax : 02-2604-5171</span> 
+            </p>
+            <p class="ft_con3">
+                <span>통신판매번호 : 제2015-서울양천-0524호</span>    
+            </p>
+            <p>
+                <span class="copyright">copyright © Alvolo F&C all rights reserved</span>
+            </p>
+        </footer>
+        <a class="totop on" href="#"></a>
+    </div>
+</body>
+</html>
