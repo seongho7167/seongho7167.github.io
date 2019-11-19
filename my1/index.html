@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COFFEE_ENGLAND</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="카페, 커피, 싱글오리진, 분위기, 따뜻, 계절, 예쁨, 시원함, 대전, 중구, 선화동, 대흥동, 예쁜카페, 원두, 원두볶는집">
+    <meta name="description" content="세상에 당신만을 위한 싱글오리진 원두를 즐겨보세요.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/32x32icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/32x32icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/favicon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="COFFEE_ENGLAND">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="COFFEE_ENGLAND">
+    <meta property="og:image" content="./data/og_image.png">
+    <meta property="og:updated_time" content="2019.10.21">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <style>
+        * { margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; }
+        ul { list-style: none; }        
+        a { text-decoration: none; } 
+        
+        .wrap { width: 100%; height: auto; }
+        .bc_box { width: 100%; height: 125px; background-image: url(./data/bc.png); position: relative; }
+        #hd_wrap { width: 1150px; height: auto; margin: 0 auto; }
+        .tl_box { position: absolute; top:15px; width: 78px; height: 95px; background-image:url(./data/logo.png); background-position: center; background-repeat: no-repeat; display: inline-block; z-index: 5; }
+        .tnb_box { width: 1050px; height: 46px; position: absolute; top:20px; }
+        .tnb_box ul { float: right; }
+        .tnb_box ul li { float: left; margin-left: 35px; }
+        .tnb_box ul li a { font-size: 14px; color: #2d2d2d; }
+        .tnb_box ul li a:hover { color: #5f2900; font-weight: 500; }
+        .tnb_box ul li:after { content: "|"; margin-left: 30px }
+        .tnb_box ul li:last-child::after { display: none; }
+        
+        .search_box {width: 35px; height: 35px; position: absolute; top:15px; right:420px; }
+        .ck { display: none; }
+        .search_btn { display: block; width: 35px; height: 35px; box-sizing: border-box; border: 1px solid #aaa; background-image: url(./data/search_icon.png); background-position: center; background-repeat: no-repeat; }
+        .keyword { width: 195px; height: 35px; position: absolute; top:0px; left: 40px; box-sizing: border-box; }
+        .keyword_box { display: block; float: left; width:0px; height: 32px; transition: 0.5s; visibility: hidden; }
+        .search { display: block; float: left; width: 35px; height: 35px; margin-left: 5px; display: none; }
+        #ck1:checked ~ .keyword #keyword { width: 150px; visibility: visible; }
+        #ck1:checked ~ .keyword .search { display: block; }
+        
+        .mnb_box { width: 1054px; height: 55px; position: absolute; top:70px; left: 780px;}
+        .mnb_box .mnb_box2:before { content: ""; display: block; width: 1920px; height: 0px; background-color: #4a0000; position: absolute; top:55px; left: -780px; opacity: 0.7; transition: 0.6s; z-index: 3;}
+		.mnb_box .mnb_box2:hover:before { height: 120px; }
+		.mnb_box ul .mnb { float: left; margin-left: 23px; }
+        .mnb_box .mnb .menu { display: block; width: 131px; height: 18px; font-size: 14px; color: #2d2d2d; font-weight: bold; overflow: hidden; }
+        .mnb_box .mnb .menu .menu_box { width: 131px; height: 36px; transition: 0.3s; }
+        .mnb_box .mnb:hover .menu_box { margin-top: -18px; }
+        .mnb_box .mnb .menu .menu_box span { display: block; }
+        .mnb_box ul .mnb a:hover { color: #4a0000; }
+		.mnb_box ul .mnb .sub { display: block; height: 0px; margin-top: 40px; position: relative; z-index: 5; overflow: hidden; transition:0.6s; }
+		.mnb_box ul:hover .sub { height: 120px; }
+		.mnb_box ul .mnb .sub:before { content: "" ; display: block; width: 0px; height: 2px; background-color: #ddb200; position: absolute; top:110px; transition:0.3s; }
+		.mnb_box ul .mnb .sub:hover:before { width: 131px;}
+		.mnb_box ul .mnb .sub a { display: block; font-weight: 400; padding-top: 14px; color: #f7f6f2; font-size: 14px;  }
+		.mnb_box ul .mnb .sub a:hover { color: #ddb200; }
+		
+		.vs { width: 1920px; height: auto; position: relative;  }
+        .vs_box { position: relative; width: 1920px; height: 721px; overflow:hidden; }
+        .ra { display: none; }
+        .rdo_btn { width: 150px; height: 25px; position: absolute; top:600px; left: 900px; }
+        .rdo_btn li { width: 25px; height: 25px; float: left; margin-left: 15px;}
+        .rdo_btn li button { display: block; position: absolute; width: 20px; height: 20px; box-sizing: border-box; border: 2px solid #fff; background-color: #520000; border-radius: 20px; top:0; left: 0; }
+        .rdo_btn li .r_btn2 { left: 40px; }
+        .rdo_btn li .r_btn3 { left: 80px; }
+        .vs_box .rdo_btn li .on { background-color: #ddb200; }
+        .vs_box .img_wrap { width: 5760px; height: 658px; }
+        .vs_box .img_box { margin: 0;padding: 0; float: left; width: 1920px; height: 658px; }
+        /* #rdo1:checked ~ .img_wrap { margin-left: 0;}
+        #rdo2:checked ~ .img_wrap { margin-left: -1920px;}
+        #rdo3:checked ~ .img_wrap { margin-left: -3840px;}
+        #rdo1:checked ~ .text_box1 { display: block; }
+        #rdo1:checked ~ .rdo_btn li .rdo_box1 { background-color: #ddb200; }
+        #rdo2:checked ~ .rdo_btn li .rdo_box2 { background-color: #ddb200; }
+        #rdo3:checked ~ .rdo_btn li .rdo_box3 { background-color: #ddb200; } */
+        .text_box1 { width: 128px; height: 40px; border-radius: 5px; transition:0.1s; margin-top: -415px; margin-left: 515px; border: 1px solid #5f2900;  position: relative; z-index: 99; }
+		.text_box1:hover { background-color: #5f2900; }
+		.text_box1:hover a { color: #f7f6f2; }
+		.text_box1 a { display: block; text-align: center; line-height: 2.4; color: #5f2900; }
+		.text_box2 { width: 1048px; height: 63px; background-color: #1c0000; position: relative; float: left; z-index: 99; }
+        .text_box2 a { display: block;  margin-left: 400px; line-height: 3.4; }
+        .text_box2 a span { color: #f7f6f2; }
+        .text_box2 a .circle1 { display: block; width: 35px; height: 35px; float: left; border: 1px solid #f7f6f2; border-radius: 50px; position: relative; margin-top: -48px; margin-left: 590px;}
+        .text_box2 a .circle1:hover { border: 1px solid #ddb200; }
+        .text_box2 a .circle1:before { content: ""; display: block; position: absolute; width: 25px; height: 2px; background-color: #f7f6f2; transform: rotate(0deg); top:17px; left: 5px;}
+        .text_box2 a .circle1:hover:before { background-color: #ddb200; }
+        .text_box2 a .circle1:after { content: ""; display: block; position: absolute; width: 25px; height: 2px; background-color: #f7f6f2; transform: rotate(90deg); top:17px; left: 5px;}
+        .text_box2 a .circle1:hover:after { background-color: #ddb200; }
+		.text_box2 a #not1 { font-size: 18px; font-weight: bold; margin-top: -5px;}
+		.text_box2 a img { display: block; width: 50px; height: 50px; position: absolute; top:6px; left:985px; }
+		.text_box3 { width:872px; height: 63px; background-color: #f7f6f2; position: relative; float: left; }
+		.text_box3 a { display: block; font-size: 18px; font-weight: bold; }
+		.text_box3 a span { display: block; font-size: 18px; font-weight: bold; color: #2d2d2d; position: absolute; top:20px;  left:130px; }
+        .text_box3 a .circle2 { display: block; width: 35px; height: 35px; float: left; border: 1px solid #2d2d2d; border-radius: 50px; position: relative; margin-top: -5px; margin-left: 300px; }
+        .text_box3 a .circle2:before { content: ""; display: block; position: absolute; width: 20px; height: 2px; background-color: #2d2d2d; transform: rotate(45deg); top:19px; left: 1px; }
+        .text_box3 a .circle2:after { content: ""; display: block; position: absolute; width: 20px; height: 2px; background-color: #2d2d2d; transform: rotate(-45deg); top:19px; left: 14px;}
+		
+		.mem { width: 1920px; height: 260px; position: relative; background-image: url(./data/mem_box.png);background-position: center; background-repeat: no-repeat; }
+		.mem_tit { font-size: 24px; font-weight: 400; margin-left: 740px; padding-top: 49px; color: #2d2d2d; }
+		.mem_text { font-size: 16px; margin-left: 740px; color: #5f2900; margin-top: 13px; }
+		.mem_btn { width: 128px; height: 40px; position: absolute; top:0; left: 0; border: 2px solid #5f2900; border-radius: 5px; }
+		#m_btn1 { top: 85px; left:1246px; transition: 0.1s; }
+		#m_btn1:hover { background-color: #5f2900; }
+		#m_btn1:hover a { color: #f7f6f2; }
+		#m_btn1 a { display: block; text-align: center; line-height: 2.4; color: #5f2900; }
+		#m_btn2 { top: 85px; left: 1385px; transition: 0.1s; }
+		#m_btn2:hover { background-color: #5f2900; }
+		#m_btn2:hover a { color: #f7f6f2; }
+		#m_btn2 a { display: block; text-align: center; line-height: 2.4; color: #5f2900; }
+		#m_btn3 { width: 266px; height: 40px; left:1246px; top: 160px; }
+		#m_btn3 a { display: block; text-align: center; line-height: 2.4; color: #5f2900; }
+		#m_btn3:hover { background-color: #5f2900; }
+		#m_btn3:hover a { color: #f7f6f2; }
+		
+		.bean { width: 1920px; height: 572px; position: relative; margin-top: -1px; background-image: url(./data/wall01.png); background-position: center; background-repeat: no-repeat; }
+		.bean img { display: block; position: absolute; top:67px; left: 462px;}
+		.bean_box { float: left; margin-left: 1060px; margin-top: 101px; position: relative; }
+		.bean_hd { color: #e59d9d; font-size: 24px; }
+		.bean_tit { color: #f7f6f2; font-size: 40px; padding-top: 15px; }
+		.bean_text { color: #f7f6f2; font-size: 20px; padding-top: 35px; }
+		.text_box4 { width: 128px; height: 40px; position: absolute; top: 236px; border: 2px solid #f7f6f2; border-radius: 5px; transition:0.1s; }
+		.text_box4 a { display: block; text-align: center; line-height: 2.4; color: #f7f6f2; }
+		.text_box4:hover { background-color: #f7f6f2; opacity: 0.7; }
+		.text_box4:hover a { color: #ab2900; font-weight: bold; }
+		
+		.fav { width: 1920px;height: 800px; position: relative; background-image: url(./data/wall02.png); background-repeat: no-repeat; background-position: center; }
+		.fav_box { position: relative; float: left; margin-top: 386px; margin-left: 460px; }
+		.fav_tit { font-size: 24px; color: #f2e7ba; font-weight: 400; text-align: right; }
+		.fav_text { font-size: 14px; color: #f2e7ba; text-align: right; padding-top: 25px; line-height: 2.0; }
+        .fav_img1 { width: 220px; height: 315px; border: 10px solid #f2e7ba; background-image: url(./data/coffee01.png); background-size: cover; background-repeat: no-repeat; position: absolute; top:265px; left: 1357px; z-index: 5; transition: 0.6s; }
+        .fav_img1:after { content: ""; display: block; position: absolute; width: 220px; height: 315px; background-color: rgba(0,0,0,0.7); transition: 0.6s; }
+        .fav_img1:hover { transform: scale(1.1) rotate(15deg); }
+        .fav_img1:hover:after { background-color: transparent; }
+        .fav_img2 { width: 284px; height: 392px; border: 10px solid #f2e7ba; background-image: url(./data/coffee02.png); background-size: cover; background-repeat: no-repeat; position: absolute; top:151px; left:1153px ; transform: rotate(7deg);z-index: 3; transition:0.6s;}
+        .fav_img2:after { content: ""; display: block; position: absolute;  width: 284px; height: 392px; background-color: rgba(0,0,0,0.7); transition: 0.6s; }
+        .fav_img2:hover { transform: scale(1.1) rotate(-10deg); z-index: 7; }
+        .fav_img2:hover:after { background-color: transparent; }
+        .fav_img3 { width: 284px; height: 392px; border: 10px solid #f2e7ba; background-image: url(./data/coffee03.png); background-size: cover; background-repeat: no-repeat; position: absolute; top:194px; left:928px ; transform: rotate(-3deg); transition: 0.6s; }
+        .fav_img3:after { content: ""; display: block; position: absolute; width: 284px; height: 392px; background-color: rgba(0,0,0,0.7); transition: 0.6s; }
+        .fav_img3:hover { transform: scale(1.1) rotate(-7deg); z-index: 7; }
+        .fav_img3:hover:after { background-color: transparent; }
+		.text_box5 { width: 128px; height: 40px; position: absolute; top: 225px; left: 234px; border: 1px solid #f2e7ba; border-radius: 5px; transition:0.1s; }
+		.text_box5 a { display: block; text-align: center; line-height: 2.4; color: #f2e7ba; }
+		.text_box5:hover { background-color: #f2e7ba; opacity: 0.7; }
+		.text_box5:hover a { color: #ab2900; font-weight: bold; }
+        
+        .sto { width: 1920px; height: 986px; position: relative; background-image: url(./data/wall03.png); background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+        .sto_logo { position: relative; width: 273px; height: 273px; border-radius: 200px; background-color: #f7f6f2; float: left; margin-top: 390px; margin-left: 820px; transition: 0.6s;  transform-style: preserve-3d; }
+        .sto_logo:hover { transform: perspective(600px) rotateY(180deg) scale(0.8); }
+        .sto_logo img { display: block; width: 174px; height: auto; margin: 30px auto; }
+        .sto_logo a { display: block; width: 273px; height: 273px; border-radius: 200px; position: absolute; background-color: #f7f6f2; top:0px; left: 0px; text-align: center;  transform: rotateY(-180deg); transition: 0.6s; }
+        .sto_logo a span { display: block; color: #5f2900; font-size: 24px; font-weight: bold; padding-top: 80px; }
+        
+        .ft { position: relative; width: 1920px; height: 336px; background-color: #1c0000; }
+        .fnb_box { width: 1050px; height: 136px; position: relative; margin: 0 auto; }
+        .fnb { width: 150px; float: left; margin-top: 33px; }
+        .fnb a { color : #f7f6f2; font-size: 14px; opacity: 0.6; }
+        .fnb a:hover { opacity: 1; }
+        .fnb a:after { content: ""; position: absolute; width: 0px; height: 1px; display: block; background-color: #e3bd00; transition: 0.3s;}
+        .fnb a:hover:after { width: 130px; }
+        .fnb_sub { margin-top: 5px;}
+        .fnb_sub a { color: #f7f6f2; font-size: 11px; }
+        .ft_box { position: absolute; top: 160px; left: 360px; }
+        .ft_box_fnb2 { width: 1050px; height: auto; margin-left: 130px; }
+        .fnb2 { float: left; margin-left: 10px; }
+        .fnb2:after { content: "|"; margin-left: 10px; color: #553535; }
+        .fnb2:last-child:after { display: none; }
+        .fnb2 a { color: #553535; font-size: 11px; }
+        .fnb2 a:hover { color: #e3bd00; transition: 0.1s;}
+        .ft_btn_box { width: 420px; height: 50px; float: left; margin-top: 20px; margin-left: 385px;  }
+        .ft_btn { width: 128px; height: 40px; border: 1px solid #553535; border-radius: 5px; float: left; margin-left: 10px; transition: 0.1s; }
+        .ft_btn:hover { background-color: #f7f6f2; opacity: 0.7; }
+        .ft_btn a { display: block; text-align: center; line-height: 2.4; color: #553535; transition:0.1s; }
+        .ft_btn:hover a { color: #1c0000; font-weight: bold; }
+        .footer { width: 1050px; height: auto; clear: both; margin-left: 300px; }
+        .footer span { color : #553535; font-size: 11px; }
+        .copyright { color: #553535; clear: both; font-size: 11px;  padding-left: 460px; padding-top: 5px;}
+        .ft_logo { width:33px; height: 255px; background-image: url(./data/f_logo.png); background-position: center; background-repeat: no-repeat; position: absolute; top:-130px; right: 220px; }
+	</style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bc_box"></div>
+        <header id="hd_wrap">
+            <a href="./index.html"><figure class="tl_box"></figure></a>
+            <nav class="tnb_box">
+                <ul>
+                    <li class="tnb"><a href="./login.html">Sign In</a></li>
+                    <li class="tnb"><a href="#">My Page</a></li>
+                    <li class="tnb"><a href="#">Customer Service</a></li>
+                    <li class="tnb"><a href="#">Find a Store</a></li>
+                </ul>
+            </nav>
+            <form class="search_box">
+                <input type="checkbox" id="ck1" class="ck"> 
+                <label class="search_btn" for="ck1"></label>
+                <div class="keyword">
+                    <input type="text" class="keyword_box" id="keyword">
+                    <input type="submit" value="검색" class="search" placeholder="검색어 입력">
+                </div>
+            </form>
+            <nav class="mnb_box">
+                <ul class="mnb_box2">
+                    <li class="mnb">
+                        <a class="menu" href="./sub1.html"><div class="menu_box"><span>BRAND</span><span>브랜드</span></div></a>
+                        <ul class="sub">
+                            <li><a href="./sub1.html">커피잉글랜드 <br>이야기</a></li>
+                            <li><a href="#">원두 이야기</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="./sub2.html"><div class="menu_box"><span>MENU</span><span>메뉴</span></div></a>
+                        <ul class="sub">
+                            <li><a href="./sub2.html">커피 & 음료</a></li>
+                            <li><a href="#">디저트</a></li>
+                            <li><a href="#">베이크</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>STORE</span><span>매장</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">매장소개</a></li>
+                            <li><a href="./come.html">매장찾기</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>MEMBERSHIP</span><span>멤버십</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">나의 멤버십 등급</a></li>
+                            <li><a href="#">e-Gift Card</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>WHAT'S NEW</span><span>뉴스</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">새소식</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="vs">
+            <figure class="vs_box">
+                <!-- <input type="radio" name="rdo" id="rdo1" class="ra" checked>
+                <input type="radio" name="rdo" id="rdo2" class="ra">
+                <input type="radio" name="rdo" id="rdo3" class="ra"> -->
+                <ul class="rdo_btn">
+                    <li class="item1"><button class="r_btn1 on"></button></li>
+                    <li class="item2"><button class="r_btn2"></button></li>
+                    <li class="item3"><button class="r_btn3"></button></li>
+                </ul>
+                <ul class="img_wrap">
+                    <li class="img_box">
+                        <img src="./data/main01.jpg" alt="banner01">
+                        <div class="text_box1"><a href="#">자세히 보기</a></div>
+                    </li>
+                    <li class="img_box"><img src="./data/main02.jpg" alt="banner02"></li>
+                    <li class="img_box"><img src="./data/main03.jpg" alt="banner03"></li>
+                </ul>
+                <ul>
+                    <li class="text_box2">
+                        <a href="#">
+                            <span id="not1">공지사항</span>
+                            <span >싱글오리진 원두 게이샤 판매 조기종료!</span>
+                            <span class="circle1"></span>
+                        </a>
+                    </li>
+                    <li class="text_box3">
+                        <a href="#">
+                            <span>COFFEE ENGLAND EVENT</span>
+                            <span class="circle2"></span>
+                        </a>
+                    </li>
+                </ul>
+            </figure>
+            <figure class="mem">
+                <div class="mem_box">
+                    <h4 class="mem_tit">커피 잉글랜드만의 <b>특별한</b> 혜택, <b>마이 멤버십</b></h4>
+                        <p class="mem_text">커피 잉글랜드의 회원이세요? 로그인 후, 멤버십을 확인해보세요. <br>
+                        아직 회원이 아니세요? 가입을 통해 멤버십 혜택을 즐기세요.</p>
+                        <p class="mem_text">회원가입 후, 커피잉글랜드 e-Gift Card를 <br> 
+                        <b>“나에게 선물하기”로 구매하시고, 편리하게 등록하세요!</b> <br>
+                        카드를 등록하여 마이 멤버십 회원이 되신 후, <br>
+                        첫 구매를 하시면 무료 음료 쿠폰을 드립니다!</p>
+                </div>
+                <div class="mem_btn" id="m_btn1"><a href="./join.html">회원가입</a></div>
+                <div class="mem_btn" id="m_btn2"><a href="./login.html">로그인</a></div>
+                <div class="mem_btn" id="m_btn3"><a href="#">e-Gift Card</a></div>
+            </figure>
+            <figure class="bean">
+                <img src="./data/singleorigin.png" alt="single">
+                <div class="bean_box">
+                    <h4 class="bean_hd">세상에 당신만을 위한 싱글오리진 원두</h4>
+                    <h2 class="bean_tit">코스타리카 산타테레사</h2>
+                    <p class="bean_text">게이샤 품종으로 재배되어 향미가 뛰어나고 <br>
+                    파나마 게이샤의 네츄럴가공방식과 달리 워시드방식으로 <br>
+                    생산되어 깨끗한 산미와 단말을 갖고 있는 커피입니다.</p>
+                    <div class="text_box4"><a href="#">자세히 보기</a></div>
+                </div>
+            </figure>
+            <figure class="fav">
+                <div class="fav_box">
+                    <h4 class="fav_tit">다양한 메뉴를 <br>
+                    커피 잉글랜드에서 즐겨보세요.</h4>
+                    <p class="fav_text">커피 잉글랜드만의 특별함을 경험할 수 있는  최상의 원두 <br>
+                    최상의 원두와 완벽한 어울림을 자랑하는 인테리어 공간 <br>
+                    다양한 음료와 새로운 도전으로 가치를 더하는 메뉴 <br>
+                    소중한 사람에게 마음을 전하는 커피 잉글랜드 기프트카드</p>
+                    <div class="text_box5"><a href="#">자세히 보기</a></div>
+                </div>    
+                <div class="fav_img1"></div>
+                <div class="fav_img2"></div>
+                <div class="fav_img3"></div>
+            </figure>
+            <figure class="sto">
+                <div class="sto_box">
+                    <div class="sto_logo"><img src="./data/logo2.png" alt="logo"><a href="#"><span>매장소개 <br> 바로가기</span></a></div>
+                </div>
+            </figure>
+        </main>
+        <footer class="ft">
+            <ul class="fnb_box">
+                <li class="fnb">
+                    <a href="./sub1.html">BRAND</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="./sub1.html">커피잉글랜드 이야기</a></li>
+                        <li class="fnb_sub"><a href="#">원두 이야기</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="./sub2.html">MENU</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="./sub2.html">커피 & 음료</a></li>
+                        <li class="fnb_sub"><a href="#">디저트</a></li>
+                        <li class="fnb_sub"><a href="#">베이크</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">STORE</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">매장소개</a></li>
+                        <li class="fnb_sub"><a href="#">매장찾기</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">MEMBERSHIP</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">나의 멤버십 등급</a></li>
+                        <li class="fnb_sub"><a href="#">e-Gift Card</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">WHAT'S NEW</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">이벤트</a></li>
+                        <li class="fnb_sub"><a href="#">새소식</a></li>
+                        <li class="fnb_sub"><a href="#">공지사항</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">CUSTOMER SERVICE</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">자주하는 질문</a></li>
+                        <li class="fnb_sub"><a href="#">고객의 소리</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="ft_box">
+                <ul class="ft_box_fnb2">
+                    <li class="fnb2"><a href="#">개인정보처리방침</a></li>
+                    <li class="fnb2"><a href="#">영상정보처리기기 운영관리 방침</a></li>
+                    <li class="fnb2"><a href="#">홈페이지 이용약관</a></li>
+                    <li class="fnb2"><a href="#">위치정보 이용약관</a></li>
+                    <li class="fnb2"><a href="#">e-Gift Card 이용약관</a></li>
+                    <li class="fnb2"><a href="#">비회원 이용약관</a></li>
+                    <li class="fnb2"><a href="#">윤리경영팀</a></li>
+                </ul>
+                <ul class="ft_btn_box">
+                    <li class="ft_btn" id="ft_btn1"><a href="./come.html">찾아오시는 길</a></li>
+                    <li class="ft_btn" id="ft_btn2"><a href="#">신규입점제의</a></li>
+                    <li class="ft_btn" id="ft_btn3"><a href="#">사이트맵</a></li>
+                </ul>
+                <div class="footer">
+                    <span>사업자등록번호 : 201-81-21514</span>
+                    <span>(주)커피잉글랜드 대표이사 : 양성호</span>
+                    <span>TEL : 042) 3015-1100</span>
+                    <span>개인정보 책임자 : 양종환</span>
+                </div>
+                <p class="copyright">ⓒ 2019 Coffee England Company. All Rights Reserved.</p>
+                <div class="ft_logo"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
