@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COFFEE_ENGLAND</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="카페, 커피, 싱글오리진, 분위기, 따뜻, 계절, 예쁨, 시원함, 대전, 중구, 선화동, 대흥동, 예쁜카페, 원두, 원두볶는집">
+    <meta name="description" content="세상에 당신만을 위한 싱글오리진 원두를 즐겨보세요.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/32x32icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/32x32icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/favicon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="COFFEE_ENGLAND">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="COFFEE_ENGLAND">
+    <meta property="og:image" content="./data/og_image.png">
+    <meta property="og:updated_time" content="2019.10.21">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/come.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script> 
+     function initialize() { 
+     var myLatlng1 = new google.maps.LatLng(36.327981, 127.415720); 
+     var myLatlng2 = new google.maps.LatLng(36.325270, 127.422531); 
+
+     var mapOptions1 = { 
+        zoom: 17, 
+        center: myLatlng1, 
+        mapTypeId: google.maps.MapTypeId.ROADMAP 
+     } 
+
+     var mapOptions2 = { 
+        zoom: 17, 
+        center: myLatlng2, 
+        mapTypeId: google.maps.MapTypeId.ROADMAP 
+     } 
+
+      var map1 = new google.maps.Map(document.getElementById('map_canvas1'), mapOptions1); 
+      var map2 = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions2); 
+      var marker1=new google.maps.Marker({position:myLatlng1, map: map1, title: '선화점'});
+      var marker2=new google.maps.Marker({position:myLatlng2, map: map2, title: '대흥점'});
+     } 
+</script> 
+<style>
+    .content { width: 1150px; margin: 0px auto; position: relative; }
+    .content .con_tit { position: relative; text-align: center; margin-top: 30px; }
+    .map_tit_box { width: 900px; height: 40px; margin: 30px auto; margin-bottom: 0px;}
+    .map_tit_box h3 { width: 450px; height: 40px; float: left; text-align: center; line-height: 40px; background-color: #f7f6f2; cursor: pointer; }
+    .map_tit_box .on { background-color: #4a0000; color: #f7f6f2; }
+    
+    .map_fr { width: 900px; height: 600px; background-color: #eee; margin: 0px auto; }
+    .map_fr li { width: 900px; height: 600px; display: none; }
+    .map_fr .on { display: block; }
+    .map_tit { width: 200px; height: 40px; text-align: center; margin: 0 auto; line-height: 40px; }
+
+    .map_tit { width: 200px; height: 40px; text-align: center; margin: 0 auto; line-height: 40px; }
+    .wrap .ft { position: relative; width: 1920px; height: 336px; background-color: #1c0000; margin-top: 100px; margin-left: 0px; }
+
+</style>
+</head>
+<body onload="initialize()">
+    <div class="wrap">
+        <div class="bc_box"></div>
+        <header id="hd_wrap">
+            <a href="./index.html"><figure class="tl_box"></figure></a>
+            <nav class="tnb_box">
+                <ul>
+                    <li class="tnb"><a href="./login.html">Sign In</a></li>
+                    <li class="tnb"><a href="#">My Page</a></li>
+                    <li class="tnb"><a href="#">Customer Service</a></li>
+                    <li class="tnb"><a href="#">Find a Store</a></li>
+                </ul>
+            </nav>
+            <form class="search_box">
+                <input type="checkbox" id="ck1" class="ck"> 
+                <label class="search_btn" for="ck1"></label>
+                <div class="keyword">
+                    <input type="text" class="keyword_box" id="keyword">
+                    <input type="submit" value="검색" class="search" placeholder="검색어 입력">
+                </div>
+            </form>
+            <nav class="mnb_box">
+                <ul class="mnb_box2">
+                    <li class="mnb">
+                        <a class="menu" href="./sub1.html"><div class="menu_box"><span>BRAND</span><span>브랜드</span></div></a>
+                        <ul class="sub">
+                            <li><a href="./sub1.html">커피잉글랜드 <br>이야기</a></li>
+                            <li><a href="#">원두 이야기</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="./sub2.html"><div class="menu_box"><span>MENU</span><span>메뉴</span></div></a>
+                        <ul class="sub">
+                            <li><a href="./sub2.html">커피 & 음료</a></li>
+                            <li><a href="#">디저트</a></li>
+                            <li><a href="#">베이크</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>STORE</span><span>매장</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">매장소개</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>MEMBERSHIP</span><span>멤버십</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">나의 멤버십 등급</a></li>
+                            <li><a href="#">e-Gift Card</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>WHAT'S NEW</span><span>뉴스</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">새소식</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="content">
+            <div class="con_box">
+                <h2 class="con_tit">찾아오시는길</h2>
+                <span></span>
+                <div class="map_box">
+                    <div class="map_tit_box">
+                        <h3 class="map_tit1 on">선화점</h3>
+                        <h3 class="map_tit2">대흥점</h3>
+                    </div>
+                    <ul class="map_fr">
+                        <li class="map1 on">
+                             <div id="map_canvas1"style="width:900px; height:600px;"></div> 
+                        </li>
+                        <li class="map2">
+                             <div id="map_canvas2"style="width:900px; height:600px;"></div> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer class="ft">
+            <ul class="fnb_box">
+                <li class="fnb">
+                    <a href="./sub1.html">BRAND</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="./sub1.html">커피잉글랜드 이야기</a></li>
+                        <li class="fnb_sub"><a href="#">원두 이야기</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="./sub2.html">MENU</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="./sub2.html">커피 & 음료</a></li>
+                        <li class="fnb_sub"><a href="#">디저트</a></li>
+                        <li class="fnb_sub"><a href="#">베이크</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">STORE</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">매장소개</a></li>
+                        <li class="fnb_sub"><a href="#">매장찾기</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">MEMBERSHIP</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">나의 멤버십 등급</a></li>
+                        <li class="fnb_sub"><a href="#">e-Gift Card</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">WHAT'S NEW</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">이벤트</a></li>
+                        <li class="fnb_sub"><a href="#">새소식</a></li>
+                        <li class="fnb_sub"><a href="#">공지사항</a></li>
+                    </ul>
+                </li>
+                <li class="fnb">
+                    <a href="#">CUSTOMER SERVICE</a>
+                    <ul>
+                        <li class="fnb_sub"><a href="#">자주하는 질문</a></li>
+                        <li class="fnb_sub"><a href="#">고객의 소리</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="ft_box">
+                <ul class="ft_box_fnb2">
+                    <li class="fnb2"><a href="#">개인정보처리방침</a></li>
+                    <li class="fnb2"><a href="#">영상정보처리기기 운영관리 방침</a></li>
+                    <li class="fnb2"><a href="#">홈페이지 이용약관</a></li>
+                    <li class="fnb2"><a href="#">위치정보 이용약관</a></li>
+                    <li class="fnb2"><a href="#">e-Gift Card 이용약관</a></li>
+                    <li class="fnb2"><a href="#">비회원 이용약관</a></li>
+                    <li class="fnb2"><a href="#">윤리경영팀</a></li>
+                </ul>
+                <ul class="ft_btn_box">
+                    <li class="ft_btn" id="ft_btn1"><a href="#">찾아오시는 길</a></li>
+                    <li class="ft_btn" id="ft_btn2"><a href="#">신규입점제의</a></li>
+                    <li class="ft_btn" id="ft_btn3"><a href="#">사이트맵</a></li>
+                </ul>
+                <div class="footer">
+                    <span>사업자등록번호 : 201-81-21514</span>
+                    <span>(주)커피잉글랜드 대표이사 : 양성호</span>
+                    <span>TEL : 042) 3015-1100</span>
+                    <span>개인정보 책임자 : 양종환</span>
+                </div>
+                <p class="copyright">ⓒ 2019 Coffee England Company. All Rights Reserved.</p>
+                <div class="ft_logo"></div>
+            </div>
+        </footer> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COFFEE_ENGLAND</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="카페, 커피, 싱글오리진, 분위기, 따뜻, 계절, 예쁨, 시원함, 대전, 중구, 선화동, 대흥동, 예쁜카페, 원두, 원두볶는집">
+    <meta name="description" content="세상에 당신만을 위한 싱글오리진 원두를 즐겨보세요.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/32x32icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/32x32icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/favicon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="COFFEE_ENGLAND">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="COFFEE_ENGLAND">
+    <meta property="og:image" content="./data/og_image.png">
+    <meta property="og:updated_time" content="2019.10.21">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/sub01.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <style>
+        .content { width: 1150px; height: auto; margin: 0 auto; position: relative; }
+        .hd_img { margin-left: -377px;}
+
+        .tit_box { width: 400px; height: auto; color: #fff; margin-top: -100px; margin-bottom: 100px; font-size: 20px; }
+        .brc_wrap { width: 220px; height: 50px; position: absolute; top: 210px; right:0px; }
+        .xi-home-o { display: block; float: left; margin-top:9px; }
+        .brc_box { float: right; }
+        .brc_box li { float: left; line-height: 1.8; padding-left: 20px; position: relative; }
+        .brc_box .item1::before { content: ""; position: absolute;  width: 10px; height: 1px; border-right: 10px; background-color: #fff; top:17px; left: 73px; transform: rotate(35deg); }
+        .brc_box .item1::after { content: ""; position: absolute;  width: 10px; height: 1px; border-right: 10px; background-color: #fff; top:11px; left: 73px; transform: rotate(-35deg); }
+        .brc_box li a { color: #fff; font-size: 12px; }
+        .brc_box li a:hover { color: #e3bd00; }
+
+        .lnb_wrap { width: 220px; height: 110px; position: relative; float: left; }
+        .lnb_wrap .lnb_box .lnb1 { width: 220px; height: 55px; overflow: hidden; transition: 0.3s; box-sizing: border-box; }
+        .lnb_wrap .lnb_box .lnb1:hover { height: 135px; }
+        .lnb_wrap .lnb_box .lnb2 { width: 220px; height: 56px; overflow: hidden; transition: 0.3s; box-sizing: border-box; }
+        .lnb_wrap .lnb_box .lnb2:hover { height: 135px; }
+        .lnb_wrap .lnb_box .lnb1:before { content:""; display: block; width: 220px; height: 1px; background-color: #2d2d2d; box-sizing: border-box; }
+        .lnb_wrap .lnb_box .lnb1:after { content:""; display: block; width: 220px; height: 1px; background-color: #2d2d2d; box-sizing: border-box; position: absolute; top:55px; }
+        .lnb_wrap .lnb_box .lnb2 { position: relative; }
+        .lnb_wrap .lnb_box .lnb2:before { content:""; display: block; width: 220px; height: 1px; background-color: #2d2d2d; box-sizing: border-box; }
+        .lnb_wrap .lnb_box .lnb2:after { content:""; display: block; width: 220px; height: 1px; background-color: #2d2d2d; box-sizing: border-box; position: absolute; top:55px; }
+        .lnb_wrap .lnb_box a { display: block; text-indent: 10px; font-size:14px; color: #2d2d2d; font-weight: bold; position: relative; }
+        .lnb_wrap .lnb_box .lnb1:hover .text1 { color: #5f2900; }
+        .lnb_wrap .lnb_box .lnb2:hover .text2 { color: #5f2900; }
+        .lnb_wrap .lnb_box span { display: block; padding-top: 5px; position: relative; }
+        .lnb_wrap .lnb_box .text1:before { content: ""; display: block; width: 0px; height: 1px; background-color: #5f2900; position: absolute; left: 10px; top: 22px; transition: 0.3s;}
+        .lnb_wrap .lnb_box .text1:hover:before { width: 180px; }
+        .lnb_wrap .lnb_box .text1:after { content: ""; display: block; width: 0px; height: 1px; background-color: #5f2900; position: absolute; left: 10px; transition: 0.3s;}
+        .lnb_wrap .lnb_box .text1:hover:after { width: 180px; }
+
+        .lnb_wrap .lnb_box .text2:before { content: ""; display: block; width: 0px; height: 1px; background-color: #5f2900; position: absolute; left: 10px; top: 22px; transition: 0.3s;}
+        .lnb_wrap .lnb_box .text2:hover:before { width: 180px; }
+        .lnb_wrap .lnb_box .text2:after { content: ""; display: block; width: 0px; height: 1px; background-color: #5f2900; position: absolute; left: 10px; transition: 0.3s;}
+        .lnb_wrap .lnb_box .text2:hover:after { width: 180px; }
+
+        .lnb_wrap .sub { width: 220px; height: 75px; margin-top: 5px;}
+        .lnb_wrap .sub li { width: 220px; height: 25px; }
+        .lnb_wrap .sub li a { display: block; line-height: 2.0; padding-top: 5px; }
+        .lnb_wrap .sub li a:hover { color:#5f2900; }
+
+        .con1_box { width: 820px; height: 550px; float: right; position: relative; }
+        .con1_box:after { content: ""; display: block; position: absolute; width: 820px; height: 320px; background-color: rgba(0,0,0,0.6); top:0; transition:0.3s; }
+        .con1_box:hover:after { background-color: transparent; }
+        .con1_box img { width: 820px; height: 320px; }
+        .con1_tit { line-height: 3.0; color: #5f2900; }
+        .con1_text { line-height: 1.6; }
+
+        .con2_box { width: 820px; height: 480px; position: relative; clear: both; overflow: hidden; margin-left: 320px; background-image: url(data/)}
+        .con2_box:after { content: ""; display: block; position: absolute; width: 430px; height: 350px; border-radius: 300px; background-color: rgba(0,0,0,0.6); top:0; transition:0.3s; }
+        .con2_box:hover:after { background-color: transparent; }
+        .con2_box img { display: block; float: left; width: 430px; height: 350px; border-radius: 300px;}
+        .con2_box .con2_text { width: 1150px; height: 400px; padding-top: 30px; margin-left: 1200px; transition: 1s;}
+        .con2_text.on { margin-left: 500px; }
+        .con2_box span{ display: block; text-indent: 30px; line-height: 2; font-size: 14px; color: #5f2900; font-weight: bold; }
+        .con2_box span:first-child { font-size: 18px; }
+
+        .con3_box { width:950px; height: 480px; position: relative; clear: both; overflow: hidden; margin-left: 200px; }
+        .con3_box:after { content: ""; display: block; position: absolute; width: 430px; height: 350px; border-radius: 300px; background-color: rgba(0,0,0,0.6); top:0; transition:0.3s; right: 0; }
+        .con3_box:hover:after { background-color: transparent; }
+        .con3_box img { display: block; width: 430px; height: 350px; border-radius: 300px; float: right;}
+        .con3_box .text_box { width: 420px; height: 480px; margin-left: -1500px; transition: 1s; }
+        .con3_box .text_box.on { margin-left: 0px;}
+        .con3_tit { line-height: 3.0; color: #5f2900; margin-left: 100px; font-size: 18px;}
+        .con3_text { line-height: 1.6; }
+        .con3_box span { display: block; line-height: 2; font-size: 14px; color: #5f2900; font-weight: bold; text-align: right; }
+        
+        .con4_box { width:820px; height: 480px; position: relative; clear: both; margin-left: 320px; }
+        .con4_box:after { content: ""; display: block; position: absolute; width: 820px; height: 320px; background-color: rgba(0,0,0,0.6); top:0; transition:0.3s; }
+        .con4_box:hover:after { background-color: transparent; }
+        .con4_box img { width: 820px; height: 320px; }
+        .con4_box .con4_text { clear: both; line-height: 1.6; color: #2d2d2d; margin-top: 30px; }
+        .con4_box .con4_text span { display: block; }
+        
+	</style>
+	</head>
+    <body>
+       <div class="wrap">
+        <div class="bc_box"></div>
+        <header id="hd_wrap">
+            <a href="./index.html"><figure class="tl_box"></figure></a>
+            <nav class="tnb_box">
+                <ul>
+                    <li class="tnb"><a href="./login.html">Sign In</a></li>
+                    <li class="tnb"><a href="#">My Page</a></li>
+                    <li class="tnb"><a href="#">Customer Service</a></li>
+                    <li class="tnb"><a href="#">Find a Store</a></li>
+                </ul>
+            </nav>
+            <form class="search_box">
+                <input type="checkbox" id="ck1" class="ck"> 
+                <label class="search_btn" for="ck1"></label>
+                <div class="keyword">
+                    <input type="text" class="keyword_box" id="keyword">
+                    <input type="submit" value="검색" class="search" placeholder="검색어 입력">
+                </div>
+            </form>
+            <nav class="mnb_box">
+                <ul class="mnb_box2">
+                    <li class="mnb">
+                        <a class="menu" href="./sub1.html"><div class="menu_box"><span>BRAND</span><span>브랜드</span></div></a>
+                        <ul class="sub">
+                            <li><a href="./sub1.html">커피잉글랜드 <br>이야기</a></li>
+                            <li><a href="#">원두 이야기</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="./sub2.html"><div class="menu_box"><span>MENU</span><span>메뉴</span></div></a>
+                        <ul class="sub">
+                            <li><a href="./sub2.html">커피 & 음료</a></li>
+                            <li><a href="#">디저트</a></li>
+                            <li><a href="#">베이크</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>STORE</span><span>매장</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">매장소개</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>MEMBERSHIP</span><span>멤버십</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">나의 멤버십 등급</a></li>
+                            <li><a href="#">e-Gift Card</a></li>
+                        </ul>
+                    </li>
+                    <li class="mnb">
+                        <a class="menu" href="#"><div class="menu_box"><span>WHAT'S NEW</span><span>뉴스</span></div></a>
+                        <ul class="sub">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">새소식</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="vs">
+            <figure class="content">
+<!--이미지 크기는 1920*240-->
+                <img class="hd_img" src="./data/sub_img.png" alt="이미지">
+                <div class="tit_box">
+                    <h2 class="vs_tit">COFFEE ENGLAND STORY</h2>
+                    <h4 class="vs_tit2">커피잉글랜드 이야기</h4>
+                </div>
+                <div class="brc_wrap">
+                    <ul class="brc_box">
+                        <li class="item1"><a href="./index.html"><i class="xi-home-o"></i>HOME</a></li>
+                        <li class="item2"><a href="./sub1.html">커피잉글랜드 이야기</a></li>
+                    </ul>
+                </div>
+                <div class="lnb_wrap">
+                    <ul class="lnb_box">
+                        <li class="lnb1"><a class="text1" href="./sub1.html"><span>COFFEE ENGLAND STORY</span><span>커피잉글랜드 이야기</span></a>
+                            <ul class="sub local1">
+                                <li class="it1"><a href="#">local menu1</a></li>
+                                <li class="it2"><a href="#">local menu2</a></li>
+                                <li class="it3"><a href="#">local menu3</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb2"><a class="text2" href="#"><span>COFFEE BEAN STORY</span><span>커피원두 이야기</span></a>
+                            <ul class="sub local2">
+                                <li class="it1"><a href="#">local menu1</a></li>
+                                <li class="it2"><a href="#">local menu2</a></li>
+                                <li class="it3"><a href="#">local menu3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="con1_box">
+                    <img src="./data/sub_img2.png" alt="" class="con1_img">
+                    <h2 class="con1_tit">“커피 이상의 특별한 경험을 소개합니다.”</h2>
+                    <p class="con1_text">국내 생활 속에 스며들어 전 세계의 커피 문화를 선도하고 있는 커피잉글랜드가 일상을 풍요롭게 하는 제3의 공간으로서 고객과 함께하며 새로운 커피문화를 정착시키고 있습니다.</p>
+                </div>
+                <div class="con2_box">
+                    <img src="./data/sub_img3.png" alt="" class="con2_img">
+                    <p class="con2_text">
+                        <span>커피잉글랜드는</span>
+                        <span>지난 2010년 대전 선화동 1호점을 시작으로,</span>
+                        <span>내방하는 단골고객들에게</span>
+                        <span>특별한 커피잉글랜드만의 경험을 전달하며</span>
+                        <span>대전 지역 커피문화를 선도하는 매장으로</span>
+                        <span>성장해 오고 있습니다.</span>
+                    </p>
+                </div>
+                <div class="con3_box">
+                    <img src="./data/sub_img4.png" alt="" class="con3_img">
+                    <div class="text_box">
+                        <h2 class="con3_tit">“지역사회와 커피 지식을 나누고 있습니다.”</h2>
+                        <p class="con3_text">
+                            <span>커피잉글랜드는 모든 직원을 파트너로 존중하고 있으며,</span>
+                            <span>커피 전문가(Coffee Master) 과정을 통과한</span>
+                            <span>숙련된 바리스타들은 뛰어난 지식과 열정을 통해</span>
+                            <span>고객의 일상을 풍요롭게 하는 최고의 서비스를 제공해 드리며,</span>
+                            <span>지역사회와 커피 지식을 나누고 있습니다.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="con4_box">
+                    <img src="./data/sub_img5.png" alt="" class="con4_img">
+                    <p class="con4_text">
+                        <span>커피잉글랜드는 대전지역 2개 매장에서 10명의 파트너들이 근무하는 커피 전문 매장으로,</span>
+                        <span>최상급 아라비카 원두의 윤리적 구매와 9년 이상의 전문적인 로스팅 기술을 통한 철저한 품질 관리를 통해</span>
+                        <span>특별한 커피잉글랜드의 경험과 문화를 한 잔의 커피와 함께 제공하고 있습니다.</span><br>
+                        <span>가까운 커피잉글랜드 매장이나 트위터, 페이스북, 블로그, 유튜브를 방문하면 매일 새로운 커피잉글랜드를 경험할 수 있습니다.</span>
+                    </p>
+                </div>
+            </figure>
+            </main>
+            <div class="ft">
+                <ul class="fnb_box">
+                    <li class="fnb">
+                        <a href="./sub1.html">BRAND</a>
+                        <ul>
+                            <li class="fnb_sub"><a href="./sub1.html">커피잉글랜드 이야기</a></li>
+                            <li class="fnb_sub"><a href="#">원두 이야기</a></li>
+                        </ul>
+                    </li>
+                    <li class="fnb">
+                        <a href="./sub2.html">MENU</a>
+                        <ul>
+                            <li class="fnb_sub"><a href="./sub2.html">커피 & 음료</a></li>
+                            <li class="fnb_sub"><a href="#">디저트</a></li>
+                            <li class="fnb_sub"><a href="#">베이크</a></li>
+                        </ul>
+                    </li>
+                    <li class="fnb">
+                        <a href="#">STORE</a>
+                        <ul>
+                            <li class="fnb_sub"><a href="#">매장소개</a></li>
+                            <li class="fnb_sub"><a href="#">매장찾기</a></li>
+                        </ul>
+                    </li>
+                    <li class="fnb">
+                        <a href="#">MEMBERSHIP</a>
+                        <ul>
+                            <li class="fnb_sub"><a href="#">나의 멤버십 등급</a></li>
+                            <li class="fnb_sub"><a href="#">e-Gift Card</a></li>
+                        </ul>
+                    </li>
+                    <li class="fnb">
+                        <a href="#">WHAT'S NEW</a>
+                        <ul>
+                            <li class="fnb_sub"><a href="#">이벤트</a></li>
+                            <li class="fnb_sub"><a href="#">새소식</a></li>
+                            <li class="fnb_sub"><a href="#">공지사항</a></li>
+                        </ul>
+                    </li>
+                    <li class="fnb">
+                        <a href="#">CUSTOMER SERVICE</a>
+                        <ul>
+                            <li class="fnb_sub"><a href="#">자주하는 질문</a></li>
+                            <li class="fnb_sub"><a href="#">고객의 소리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="ft_box">
+                    <ul class="ft_box_fnb2">
+                        <li class="fnb2"><a href="#">개인정보처리방침</a></li>
+                        <li class="fnb2"><a href="#">영상정보처리기기 운영관리 방침</a></li>
+                        <li class="fnb2"><a href="#">홈페이지 이용약관</a></li>
+                        <li class="fnb2"><a href="#">위치정보 이용약관</a></li>
+                        <li class="fnb2"><a href="#">e-Gift Card 이용약관</a></li>
+                        <li class="fnb2"><a href="#">비회원 이용약관</a></li>
+                        <li class="fnb2"><a href="#">윤리경영팀</a></li>
+                    </ul>
+                    <ul class="ft_btn_box">
+                        <li class="ft_btn" id="ft_btn1"><a href="#">찾아오시는 길</a></li>
+                        <li class="ft_btn" id="ft_btn2"><a href="#">신규입점제의</a></li>
+                        <li class="ft_btn" id="ft_btn3"><a href="#">사이트맵</a></li>
+                    </ul>
+                    <div class="footer">
+                        <span>사업자등록번호 : 201-81-21514</span>
+                        <span>(주)커피잉글랜드 대표이사 : 양성호</span>
+                        <span>TEL : 042) 3015-1100</span>
+                        <span>개인정보 책임자 : 양종환</span>
+                    </div>
+                    <p class="copyright">ⓒ 2019 Coffee England Company. All Rights Reserved.</p>
+                    <div class="ft_logo"></div>
+                </div>
+            </div> 
+        </div> 
+    </body>
+</html>
