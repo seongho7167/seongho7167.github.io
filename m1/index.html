@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>agoda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<!--    모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <meta name="keywords" content="전세계 호텔정보 No.1">
+    <meta name="description" content="전세계 200만개 이상의 호텔정보를 한곳에서 확인할수 있는 곳!">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="agoda">
+    <meta property="og:description" content="전세계 200만개 이상의 호텔정보를 한곳에서 확인할수 있는 곳!">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="agoda">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.19">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="./jquery-1.11.1.js"></script>
+    <style>
+        * { margin: 0; padding: 0; }
+        html, body { width: 100%; font-family: 'Noto Sans KR', sans-serif; }
+        ul, li { list-style: none; }
+        a { text-decoration: none; }
+        button, label, input { border: 0; background-color: transparent; outline: 0; }
+        button, label, input, a { user-select: none; }
+        
+        .ck { display: none; }
+        #wrap { width: 100vw; height: 100vh; position: relative; }
+        .hd { position: fixed; left:0; top:0; z-index: 100; width: 100vw; border-bottom: 1px solid #555; background-color: rgba(255,255,255,0.7); }
+        .logo { width: 130px; display: block; margin: 10px auto; }
+        .logo img { display: block; width: 130px; }
+        .lst_btn { display: block; width: 60px; height: 60px; cursor: pointer; position: absolute; top:5px; right: 0; }
+        .line_box { position: relative; margin-top: 15px; }
+        .line_box span { display: block; position: absolute; width: 30px; height: 4px; background-color: #555; left: 15px; transition: 0.3s; }
+        .line_box span:nth-child(2) { top: 13px; }
+        .line_box span:nth-child(3) { top: 26px; }
+        #ck1:checked ~ .hd .lst_btn .line_box .line1 { transform: rotate(45deg); top:13px;  }
+        #ck1:checked ~ .hd .lst_btn .line_box .line2 { opacity: 0; }
+        #ck1:checked ~ .hd .lst_btn .line_box .line3 { transform: rotate(-45deg); top:13px; }
+        #gnb { width: 260px; height: 100vh; position: fixed; top: 0; background-color: rgba(255,255,255,0.9); overflow: hidden; z-index: 105; left: -300px; transition: 0.5s; }
+        #ck1:checked ~ #gnb { left:0px; }
+        .gnb_tit { color: #777; width: 130px; height: 60px; line-height: 60px; margin: 0 auto; text-align: center; font-size: 28px; }
+        .thumb_menu { position: relative; border-top: 1px solid #ccc; border-bottom: 1px solid #aaa; height: 40px;}
+        .thumb_menu li { float: left; height: 40px; line-height: 40px; text-align: center; margin-left: 40px; }
+        .thumb_menu li a, .thumb_menu li label { display: block; color: #777; }
+        #cover { width: 100vw; height: 100vh; position: fixed; top:0; left: 0; opacity: 0; background-color: rgba(0,0,0,0.7); z-index: -10; transition: 0.5s; }
+        #ck1:checked ~ #cover { opacity: 1; z-index: 10; }
+        .menu { clear: both; position: relative; margin-top: 0px;}
+        .menu li { clear: both; }
+        .menu li a { display: block; width: 260px; text-align: center; height: 50px; line-height: 50px; color: #777; border-top: 1px solid #ccc; border-bottom: 1px solid #aaa; }
+        #gnb img { display: block; width: 80px; opacity: 0.8; margin: 0 auto; margin-top: 300px; }
+        #search, #login { width: 100vw; height: 100vh; position:fixed; top:-100vh; left: 0; background-color: rgba(0,0,0,0.9); color:#fff; text-align: center; z-index: 130; transition: 0.5s; }
+        #ck2:checked ~ #search { top:0; }
+        #ck3:checked ~ #login { top:0; }
+        #search .close_btn { display: block; width: 40px; height: 40px; line-height: 40px; position: relative; margin-left: 310px; margin-top: 30px; }
+        #search .close_btn:before { content: ""; display: block; position: absolute; top:15px; left: 0; width: 30px; height: 3px; background-color: #fff; transform: rotate(45deg); }
+        #search .close_btn:after { content: ""; display: block; position: absolute; top:15px; left: 0; width: 30px; height: 3px; background-color: #fff; transform: rotate(-45deg); }
+        .search_tit { display: block; width: 200px; height: 60px; text-align: center; clear: both; font-size: 20px; margin: 0 auto; line-height: 60px; }
+        #search_bar { background-color: #fff; width: 300px; height: 40px; border-radius: 5px; border: 2px solid #ccc; text-align: center; }
+        #login .close_btn { display: block; width: 40px; height: 40px; line-height: 40px; position: relative; margin-left: 310px; margin-top: 30px; }
+        #login .close_btn:before { content: ""; display: block; position: absolute; top:15px; left: 0; width: 30px; height: 3px; background-color: #fff; transform: rotate(45deg); }
+        #login .close_btn:after { content: ""; display: block; position: absolute; top:15px; left: 0; width: 30px; height: 3px; background-color: #fff; transform: rotate(-45deg); }
+        #login img { display: block; width: 100px; margin: 0 auto; }
+        #login .log_tit { width: 200px; text-align: center; margin: 0 auto; height: 100px; line-height: 100px; }
+        #login input { display: block; width: 300px; height: 40px; border-radius: 5px; background-color: #fff; margin: 0 auto; text-align: center; border: 2px solid #ccc; }
+        #login #m_pw { margin-top: 5px; }
+        .log_btn_box { position: relative; margin-top: 50px; }
+        .log_btn_box li button { display: block; width: 300px; height: 40px; border-radius: 5px; background-color: #fff; margin: 0 auto; text-align: center; border: 2px solid #ccc; color:#777;  }
+        .log_btn_box .log_btn2 { margin-top: 5px; }
+        
+        #vs { width: 100%; height: 100%; position: relative; overflow: hidden; }
+        .img_box { width: 400%; height: 100%; }
+        .img_box li { float: left; width: 25%; height: 100%; position: relative; }
+        .img_box li img { display: block; float: left; height: 667px; }
+        .img_box li .vs_tit { position: absolute; top: 150px; left: 70px; }
+        .img_box li .vs_con { position: absolute; top: 200px; left:20px; }
+        .img_box li .more { color: #777; width: 150px; height: 40px; display: block; font-size: 24px; text-align: center; position: absolute; top:550px; left: 112px; background-color: rgba(255,255,255,0.7); border-radius: 5px; }
+        .img_box .tit2 { color: #fff; }
+        .img_box .con2 { color: #fff; }
+        
+        .page { clear: both; min-height: 100vh; position: relative; }
+        .page_box { width: 80vw; height: 75vh; overflow: hidden; margin: 0 auto; padding-top: 20vh; }
+        .page_tit { position: absolute; top: 85px; left: 128px; color:#777;  }
+        .page_tit span { display: block; width: 70px; height: 3px; background-color: #777; transition: 1s 0.5s; }
+        .page_tit .bar1 { margin-left: -200px; margin-top: -40px; }
+        .page_tit .bar2 { margin-top: 40px;  margin-left: 350px; }
+        .page_tit .pg1_text { }
+    </style>
+    <script>
+    $(document).ready(function(){
+        function nextAni(){
+            var width = parseInt($(".img_box li").width());
+            $(".img_box").not(":animated").animate({"margin-left":-width+"px"}, 500, function(){
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+                $(".img_box").css("margin-left","0px");
+            })     
+        }
+        var intv = setInterval(function(){nextAni();}, 3000);
+    });
+    </script>
+    <script>
+//        window.addEventListener('load', function(){
+//            document.body.style.height = (document.documentElement.clientHeight+5)+
+//        })
+    $(document).ready(function(){
+//        function.collap(){
+//            $("#ck1").removeProp("checked");//선택자의 체크박스 체크를 제거하는 문장
+//        }
+//        
+        $("#gnb .menu li a").click(function(){
+            var tar = parseInt($(this).attr("data-index")); // data-index 는 사용자 정의 클래스
+            console.log(tar);
+            var ofs = $("#page"+tar).offset();
+            //offset(); 은 지정된 좌표의 거리를 계산. 각 지정된 페이지의 아이디를 #page$로 하면 페이지의 수에 맞춰 data-index의 반환값에 맞춰 지정 페이지로 스크롤할수있다. 즉, $ = data-index 값
+            var sc = ofs.top;
+            $("body, html").animate({scrollTop:sc}, 500);
+            $("#ck1").prop("checked", false); 
+            $(".page_tit .bar1").css("margin-left","0px");
+            $(".page_tit .bar2").css("margin-left","50px");
+        });
+    });
+        
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <input type="checkbox" id="ck1" class="ck" name="">
+        <input type="checkbox" id="ck2" class="ck" name="">
+        <input type="checkbox" id="ck3" class="ck" name="">
+        <header class="hd">
+            <a href="" class="logo"><img src="./img/agoda_logo2.png" alt="logo"></a>
+            <label for="ck1" class="lst_btn">
+                <div class="line_box">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </div>
+            </label>
+        </header>
+        <span id="cover"></span>
+        <nav id="gnb">
+           <h2 class="gnb_tit">MENU</h2>
+           <ul class="thumb_menu">
+               <li><a href="index.html" class="lang">언어</a></li>
+               <li><label for="ck2" class="search_call">검색</label></li>
+               <li><label for="ck3" class="log_call">로그인</label></li>
+           </ul>
+            <ul class="menu">
+                <li><a href="javascript:;" data-index="1">소개</a></li>
+                <li><a href="javascript:;" data-index="2">숙소</a></li>
+                <li><a href="javascript:;" data-index="3">예약</a></li>
+                <li><a href="javascript:;" data-index="4">문의</a></li>
+            </ul>
+            <img src="./img/agoda-logo-v2.png" alt="logo">
+        </nav>
+        <div id="search">
+            <label for="ck2" class="close_btn"></label>
+            <form action="" id="search_frm">
+                <label for="search_bar" class="search_tit">검색어를 입력하세요.</label>
+                <input type="text" id="search_bar" placeholder="20자내로 검색어를 입력하세요." autofocus autocomplete="on" pattern="[a-zA-Z0-9]{20}">
+                <button type="submit" class="serach_btn"></button>
+            </form>
+        </div>
+        <div id="login">
+            <label for="ck3" class="close_btn"></label>
+            <form action="" id="login_form" method="post" name="">
+            <img src="./img/agoda_logo.png" alt="logo">
+            <h2 class="log_tit">환영합니다!</h2>
+            <input type="text" id="m_id" name="id" autofocus required maxlength="15" pattern="[a-zA-Z0-9]{4,15}" placeholder="아이디 입력">
+            <input type="password" id="m_pw" name="pw" autocomplete="off" required pattern="[a-zA-Z0-9]{20}" placeholder="패스워드 입력">
+            <ul class="log_btn_box">
+                <li class="log_btn1"><button>로그인</button></li>
+                <li class="log_btn2"><button>아고다 회원 가입하기</button></li>
+            </ul>
+            </form>
+        </div>
+        <figure id="vs" class="page">
+            <ul class="img_box">
+                <li class="img item1">
+                    <div class="con_box">
+                        <img src="./img/sinra14.jpg" alt="vs1" class="image1">
+                        <h2 class="vs_tit">여행은 아고다와 함께!</h2>
+                        <p class="vs_con">아직도 숙박비용 때문에 여행을 망설이시나요?</p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                <li class="img item2">
+                    <div class="con_box">
+                        <img src="./img/sinra15.jpg" alt="vs2" class="image2">
+                        <h2 class="vs_tit tit2">여행은 아고다와 함께!</h2>
+                        <p class="vs_con con2">아직도 숙박비용 때문에 여행을 망설이시나요?</p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                <li class="img item3">
+                    <div class="con_box">
+                        <img src="./img/sinra21.jpg" alt="vs3" class="image3">
+                        <h2 class="vs_tit">여행은 아고다와 함께!</h2>
+                        <p class="vs_con">아직도 숙박비용 때문에 여행을 망설이시나요?</p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                <li class="img item4">
+                    <div class="con_box">
+                        <img src="./img/sinra22.jpg" alt="vs4" class="image4">
+                        <h2 class="vs_tit">여행은 아고다와 함께!</h2>
+                        <p class="vs_con">아직도 숙박비용 때문에 여행을 망설이시나요?</p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+            </ul>
+        </figure>
+        <div class="page" id="page1">
+            <div class="page_box">
+                <img src="./img/sinra06.jpg" alt="소개">
+                <h2 class="page_tit" id="pg1_tit">agoda 소개<span class="bar1"></span><span class="bar2"></span></h2>
+                <p class="pg1_text">
+                    <span>전 세계 200만개 이상의 호텔과 숙소에서</span> <span>나만의 특별한 여행을 즐겨보세요!</span>
+                </p>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <h2 class="page_tit">agada 숙소</h2>
+            <ul class="con_box">
+                <li class="con item1"><a href=""><img src="./img/sinra01.jpg" alt="con1"></a></li>
+                <li class="con item2"><a href=""><img src="./img/sinra02.jpg" alt="con2"></a></li>
+                <li class="con item3"><a href=""><img src="./img/sinra03.jpg" alt="con3"></a></li>
+                <li class="con item4"><a href=""><img src="./img/sinra04.jpg" alt="con4"></a></li>
+                <li class="con item5"><a href=""><img src="./img/sinra05.jpg" alt="con5"></a></li>
+            </ul>
+        </div>
+        <div class="page" id="page3">
+            <h2 class="page_tit">agada 예약</h2>
+            <ul class="con2_box">
+                <li class="con2 item1"><a href=""><img src="./img/sinra12.jpg" alt="con1"><span>예약하기</span></a></li>
+                <li class="con2 item2"><a href=""><img src="./img/sinra16.jpg" alt="con2"><span>예약하기</span></a></li>
+                <li class="con2 item3"><a href=""><img src="./img/sinra24.jpg" alt="con3"><span>예약하기</span></a></li>
+                <li class="con2 item4"><a href=""><img src="./img/sinra23.jpg" alt="con4"><span>예약하기</span></a></li>
+                <li class="con2 item5"><a href=""><img src="./img/sinra19.jpg" alt="con5"><span>예약하기</span></a></li>
+            </ul>
+        </div>
+        <div class="page" id="page4">
+            <h2 class="page_tit">agada 문의</h2>
+            <form action="" class="qa_frm">
+                <input type="text" id="qa_tit" placeholder="제목을 입력하세요.">
+                <input type="mail" id="qa_mail" placeholder="메일을 입력하세요.">
+                <input type="password" id="qa_pw" placeholder="문의 암호를 입력하세요.">
+                <textarea name="memo" id="qa_memo" cols="40" rows="7"></textarea>
+                <input type="submit" value="작성완료" class="com_btn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
