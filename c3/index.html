@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sk텔레콤</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="통신">
+    <meta name="description" content="대한민국 NO.1 통신">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="PizzaAlvolo">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="PizzaAlvolo">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.11">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!--    font-family: 'Noto Sans KR', sans-serif;-->
+
+<!--
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+-->
+    <style>
+        * { padding: 0; margin: 0; }
+        html, body { width: 100vw; height: 100vh; font-family: 'Noto Sans KR', sans-serif; }
+        ul, li { list-style: none; }
+        a { text-decoration: none; }
+        button { border: 0; outline: 0; background-color: transparent; }
+        .wrap { width: 100vw; height: 100vh; font-family: 'Noto Sans KR', sans-serif; }
+        .hd { width: 100vw; height: 80px; position: relative; }
+        .logo { width: 140px; height: 55px; display: block; float: left; margin-left: 76px; margin-top: 10px; }
+        .logo img { width: 140px; }
+        .gnb_wrap { float: left; margin-left: 300px; margin-top: 25px; height: 60px; }
+        .gnb_wrap .gnb { float: left; width: 150px; font-size: 14px; line-height: 40px; height: 60px; position: relative; font-weight: bold; text-align: center; z-index: 99; }
+        .gnb_wrap .gnb:after { content: ""; display: block; position: absolute; width: 0px; height: 4px; background-color: #cf0a2c; transition: 0.5s; top: 60px; transform: rotate(180deg); transform-origin: 0% 0%; left:150px; }
+        .gnb_wrap .gnb:before { content: ""; display: block; position: absolute; width: 0px; height: 3px; background-color: #cf0a2c; transition: 0.5s; transform: rotate(135deg); top: 61px; left: 150px; transform-origin: 0% 0%; }
+        .gnb_wrap .gnb:hover:after { width: 150px; }
+        .gnb_wrap .gnb:hover:before { width: 15px; }
+        .gnb_wrap .gnb a { color: #333; }
+        .gnb_wrap .gnb:hover .dp1 { color : #cf0a2c; }
+        .sub_box { position: absolute; width: 150px; height: 0px; background-color: rgba(207,10,44,0.5); transition: 0.3s; margin-top: 15px; opacity: 0; visibility: hidden; }
+        .gnb:hover .sub_box { height: 150px; opacity: 1; z-index: 99; visibility: visible; }
+        .sub_box .sub li { height: 40px; line-height: 40px; }
+        .sub_box .sub.it1 { margin-top: 15px; }
+        .sub_box .sub a { color: #fff;}
+        .sub_box .sub:hover { background-color: #cf0a2c; }
+        .frm1 { position: relative; }
+        .open_btn { display: block; width: 30px; height: 30px; position: absolute; top: 30px; left: 1735px; cursor: pointer; }
+        .open_btn img { display: block; width: 30px; height: 30px; }
+        .ck1 { display: none; }
+        .search_box { width: 100vw; height: 0px; background-color: #ddd; position: absolute; top: 80px; visibility: hidden; z-index: 50; }
+        #sr_box:checked ~ .search_box { height: 100px; visibility: visible; }
+        .clo_btn { width: 30px; height: 30px; margin-left: 1745px; display: block; margin-top: 15px;  }
+        .clo_btn img { display: block; width: 25px; height: 25px; }
+        .search_box .search_fr { width: 675px; height: 40px; display: block; margin: 0 auto; position: relative; visibility: hidden; }
+        .search_box .search_fr .search_text { width: 675px; height: 40px; display: block; margin-top: -17px; text-indent: 15px; }
+        .search_box .search_fr .search_btn { width: 40px; height: 40px; display: block; position: absolute; top: 2px; left: 637px; cursor: pointer; }
+        #sr_box:checked ~ .search_box .search_fr .search_text { height: 40px; visibility: visible; }
+        .myt { display: block; width: 40px; height: 40px; background-image: url("./data/myt.png"); background-size: 30px 30px; background-position: center; background-repeat: no-repeat; position: absolute; top: 25px; right: 100px; cursor: pointer; }
+        .myt:before { content: "|"; display: block; position: absolute; top: 5px; left: -7px; font-size: 20px; color: #333; }
+        .tnb_box { width: 260px; height: 0px; position: absolute; top: 60px; right: 90px; overflow: hidden; transition: 0.3s; opacity: 0; }
+        #tnb_btn:checked ~ .tnb_box { height: 60px; opacity: 1; }
+        .tnb_box li { float: left; margin-left: 10px; font-size: 12px; }
+        .tnb_box li:after { content: "|"; margin-left: 10px; }
+        .tnb_box li:last-child:after { content: ""; }
+        .tnb_box li a { color: #333; }
+        .tnb_box li a:hover { color: #cf0a2c; }
+        
+        .vs_wrap { width: 1850px; height: 1500px; position: relative; font-family: 'Noto Sans KR', sans-serif; }
+        .vs_box li { float: left; margin: 0; padding: 0; position: relative; }
+        .vs_box li a { display: block; overflow: hidden;  }
+        .vs_box li img { display: block; transition: 0.3s; }
+        .vs_wrap .item1 { width: 925px; height: 615px; position: relative; }
+        .vs_wrap .item1:after { content: "무한한 자류를 펼치다"; display: block; position: absolute; top: 0; left: 0; width: 925px; height: 615px; background-color: rgba(0,0,0,0.7); opacity: 0; transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 615px; cursor: pointer; }
+        .vs_wrap .item1:hover:after { opacity: 1; }
+        .vs_wrap .item2 { width: 615px; height: 615px; }
+        .vs_wrap .item2:after { content: "사업분야"; display: block; position: absolute; top: 0; left: 0; width: 615px; height: 615px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 615px; cursor: pointer;  }
+        .vs_wrap .item2:hover:after { opacity: 1; }
+        .vs_wrap .item3 { width: 310px; height: 615px; }
+        .vs_wrap .item3:after { content: "무선이어폰의 새로운 혁명"; display: block; position: absolute; top: 0; left: 0; width: 310px; height: 615px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 615px; cursor: pointer; }
+        .vs_wrap .item3:hover:after { opacity: 1; }
+        .vs_wrap .item4 { width: 310px; height: 275px; }
+        .vs_wrap .item5 { width: 615px; height: 275px; }
+        .vs_wrap .item5:after { content: "기술력 소개"; display: block; position: absolute; top: 0; left: 0; width: 615px; height: 275px; background-color: rgba(0,0,0,0.7); opacity: 0; transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 275px; cursor: pointer; }
+        .vs_wrap .item5:hover:after { opacity: 1; }
+        .vs_wrap .item6 { width: 615px; height: 275px; }
+        .vs_wrap .item6:after { content: "핸드폰 카메라의 새로운 물결"; display: block; position: absolute; top: 0; left: 0; width: 615px; height: 275px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 275px; cursor: pointer; }
+        .vs_wrap .item6:hover:after { opacity: 1; }
+        .vs_wrap .item7 { width: 310px; height: 275px; }
+        .vs_wrap .item8 { width: 310px; height: 310px; }
+        .vs_wrap .item8:after { content: "5G 초시대의 시작"; display: block; position: absolute; top: 0; left: 0; width: 310px; height: 310px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 310px; cursor: pointer;  }
+        .vs_wrap .item8:hover:after { opacity: 1; }
+        .vs_wrap .item9 { width: 310px; height: 300px; clear: both; }
+        .vs_wrap .item10 { width: 615px; height: 610px; margin-top: -310px; }
+        .vs_wrap .item10:after { content: "VR콘텐츠의 중심"; display: block; position: absolute; top: 0px; left: 0; width: 615px; height: 610px; background-color: rgba(0,0,0,0.7);opacity: 0; transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 610px; cursor: pointer; }
+        .vs_wrap .item10:hover:after { opacity: 1; }
+        .vs_wrap .item11 { width: 925px; height: 610px; margin-top: -310px; }
+        .vs_wrap .item11:after { content: "0한 사람들을 위한 0페스티벌"; display: block; position: absolute; top: 0px; left: 0; width: 925px; height: 610px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 610px; cursor: pointer; }
+        .vs_wrap .item11:hover:after { opacity: 1; }
+        .vs_wrap .item1 img { width: 925px; height: 615px; }
+        .vs_wrap li:hover img { transform: scale(1.1); }
+        .vs_wrap .item2 img { width: 615px; height: 615px; }
+        .vs_wrap .item3 img { width: 310px; height: 615px; }
+        .vs_wrap .item4 img { width: 310px; height: 275px; }
+        .vs_wrap .item5 img { width: 615px; height: 275px; }
+        .vs_wrap .item6 img { width: 615px; height: 275px; }
+        .vs_wrap .item7 img { width: 310px; height: 275px; }
+        .vs_wrap .item8 img { width: 310px; height: 310px; }
+        .vs_wrap .item9 img { width: 310px; height: 300px; }
+        .vs_wrap .item10 img { width: 615px; height: 610px; }
+        .vs_wrap .item11 img { width: 925px; height: 610px; }
+        
+        .bar_wrap { width: 70px; height: 970px; position: fixed; top: 0; right:0; }
+        .bar_wrap .pot_box { position: relative; width: 70px; height: 200px; margin-left: 38px; margin-top: 413px; }
+        .bar_wrap .pot_box span { display: block; width: 10px; height: 10px; border-radius: 20px; background-color: #bbb; margin-top: 17px; cursor: pointer; }
+        .bar_wrap .pot_box .on { width: 10px; height: 10px; background-color: transparent; border:3px solid #cf0a2c; margin-left: -3px; }
+        .bar_wrap .txt { display: block; transform: rotate(90deg); width: 100px; height: 70px; line-height: 70px; margin-left: -5px; margin-top: 160px; }
+        .bar_wrap img { display: block; width: 15px; height: 25px; margin-left: 36px; margin-top: 50px; animation: updown 3s infinite ease-in-out; }
+        @keyframes updown { 
+            from { transform: translateY(-15px); }
+            50% { transform: translateY(0px); }
+            to { transform:translateY(-15px); }
+        }
+        
+        .rdo { display: none; }
+        .con1_wrap { width: 1920px; position: relative; clear: both; height: 812px; background-color: #fffef5; }
+        .con1_box { width: 1180px; height: 734px; margin: 0 auto; }
+        .con1_box .con1_tit { width: 1180px; height: 200px; text-align: center; font-size: 48px; font-weight: bold; line-height: 200px; }
+        .con1_box .con1_btn_box { width: 280px; height: 420px; border-right: 1px solid #555; border-left: 1px solid #aaa; float: left; box-sizing: border-box; background-color: #fff; }
+        .con1_box .con1_btn_box label { display: block; width: 280px; height: 70px; text-align: center; line-height: 70px; border-top: 1px solid #aaa; border-bottom: 1px solid #555; box-sizing: border-box; } 
+        .con1_box .con1_btn_box label:last-child { border-bottom: 2px solid #555; }
+        .con1_box .con1_btn_box label span { display: block; color: #555; }
+        .con1_box .con1_btn_box label:hover span { color: #fff; background-color: #cf0a2c; cursor: pointer; }
+        .con1_box .con1_2_fr { width: 900px; height: 420px; float: left; position: relative; background-color: #fff; }
+        .con1_box .con1_2_fr ul { display: none; }
+        .con1_box .con1_2_fr ul li { width: 300px; height: 210px; float: left; text-align: center; line-height: 30px; border: 1px solid #aaa; box-sizing: border-box; border-bottom: 1px solid #555; border-right: 1px solid #555; }
+        .con1_box .con1_2_fr ul li:nth-child(4), .con1_box .con1_2_fr ul li:nth-child(5), .con1_box .con1_2_fr ul li:last-child { border-bottom: 2px solid #555; }
+        .con1_box .con1_2_fr ul li:nth-child(3), .con1_box .con1_2_fr ul li:last-child { border-right: 2px solid #555; }
+        .con1_box .con1_2_fr ul li span { display: block; color: #333;  padding: 14px; font-size: 14px;  }
+        .con1_box .con1_2_fr ul li span:nth-child(1) { padding-top: 80px; }
+        .con1_box .con1_2_fr ul li:hover { background-color: #cf0a2c; transform: scale(1.05); }
+        .con1_box .con1_2_fr ul li:hover span { color: #fff; }
+        
+        #ra1:checked ~ .con1_btn_box .con1_btn span { background-color: #cf0a2c; color:#fff; }
+        #ra2:checked ~ .con1_btn_box .con2_btn span { background-color: #cf0a2c; color:#fff; }
+        #ra3:checked ~ .con1_btn_box .con3_btn span { background-color: #cf0a2c; color:#fff; }
+        #ra4:checked ~ .con1_btn_box .con4_btn span { background-color: #cf0a2c; color:#fff; }
+        #ra5:checked ~ .con1_btn_box .con5_btn span { background-color: #cf0a2c; color:#fff; }
+        #ra6:checked ~ .con1_btn_box .con6_btn span { background-color: #cf0a2c; color:#fff; }
+        
+        #ra1:checked ~ .con1_2_fr .con1_fr { display: block; }
+        #ra2:checked ~ .con1_2_fr .con2_fr { display: block; }
+        #ra3:checked ~ .con1_2_fr .con3_fr { display: block; }
+        #ra4:checked ~ .con1_2_fr .con4_fr { display: block; }
+        #ra5:checked ~ .con1_2_fr .con5_fr { display: block; }
+        #ra6:checked ~ .con1_2_fr .con6_fr { display: block; }
+    </style>
+</head>
+<body>
+   <div class="wrap">
+       <header class="hd">
+           <a href="#" class="logo"><img src="./data/SKlogo.png" alt="logo"></a>
+           <nav class="gnb_wrap">
+               <ul class="gnb_box">
+                   <li class="gnb item1">
+                       <a href="" class="dp1">상품서비스</a>
+                       <ul class="sub_box">
+                           <li class="sub it1"><a href="">요금제</a></li>
+                           <li class="sub it2"><a href="">부가서비스</a></li>
+                           <li class="sub it3"><a href="">인터넷/집전화/IPTV</a></li>
+                       </ul>
+                   </li>
+                   <li class="gnb item2">
+                       <a href="" class="dp1">다이렉트샵</a>
+                       <ul class="sub_box">
+                           <li class="sub it1"><a href="">휴대폰</a></li>
+                           <li class="sub it2"><a href="">홈/인터넷</a></li>
+                           <li class="sub it3"><a href="">보안상품</a></li>
+                       </ul>
+                   </li>
+                   <li class="gnb item3">
+                       <a href="" class="dp1">T멤버십</a>
+                       <ul class="sub_box">
+                           <li class="sub it1"><a href="">멤버십 가입</a></li>
+                           <li class="sub it2"><a href="">멤버십 혜택</a></li>
+                           <li class="sub it3"><a href="">VIP</a></li>
+                       </ul>
+                   </li>
+                   <li class="gnb item4">
+                       <a href="" class="dp1">로밍</a>
+                       <ul class="sub_box">
+                           <li class="sub it1"><a href="">로밍안내</a></li>
+                           <li class="sub it2"><a href="">로밍상품</a></li>
+                           <li class="sub it3"><a href="">로밍센터</a></li>
+                       </ul>
+                   </li>
+                   <li class="gnb item5">
+                       <a href="" class="dp1">혜택/이벤트</a>
+                       <ul class="sub_box">
+                           <li class="sub it1"><a href="">혜택/할인</a></li>
+                           <li class="sub it2"><a href="">이벤트</a></li>
+                       </ul>
+                   </li>
+                   <li class="gnb item6">
+                       <a href="" class="dp1">고객지원</a>
+                       <ul class="sub_box">
+                           <li class="sub it1"><a href="">서비스안내</a></li>
+                           <li class="sub it2"><a href="">공지사항</a></li>
+                           <li class="sub it3"><a href="">고객의견</a></li>
+                       </ul>
+                   </li>
+               </ul>
+           </nav>
+           <form action="" class="frm1">
+                <label for =sr_box class="open_btn"><img src="./data/search.png" alt="search_icon"></label>
+                <input type="checkbox" class="ck1" id="sr_box">
+                <div class="search_box">
+                    <label for =sr_box class="clo_btn"><img src="./data/close.png" alt="close_icon"></label>
+                    <div class="search_fr">
+                        <input type="text" class="search_text" placeholder="검색어를 입력해주세요.(한글, 영문, 숫자만 입력가능합니다.)">
+                        <button class="search_btn"><img src="./data/search.png" alt="search_icon"></button>
+                    </div>
+                </div>
+           </form>
+           <input type="checkbox" class="ck1" id="tnb_btn">
+           <label for="tnb_btn" class="myt"></label>
+           <ul class="tnb_box">
+               <li class="tnb item1"><a href="">로그인</a></li>
+               <li class="tnb item2"><a href="">회원가입</a></li>
+               <li class="tnb item3"><a href="">간편조회</a></li>
+               <li class="tnb item4"><a href="">주문확인</a></li>
+           </ul>
+       </header>
+       <figure class="vs_wrap">
+           <ul class="vs_box">
+               <li class="vs item1"><a href=""><img src="./data/vs1.png" alt="ban1"></a></li>
+               <li class="vs item2"><a href=""><img src="./data/vs2.png" alt="ban2"></a></li>
+               <li class="vs item3"><a href=""><img src="./data/vs3.png" alt="ban3"></a></li>
+               <li class="vs item4"><a href=""><img src="./data/vs4.png" alt="ban4"></a></li>
+               <li class="vs item5"><a href=""><img src="./data/vs5.png" alt="ban5"></a></li>
+               <li class="vs item6"><a href=""><img src="./data/vs6.png" alt="ban6"></a></li>
+               <li class="vs item7"><a href=""><img src="./data/vs7.png" alt="ban7"></a></li>
+               <li class="vs item8"><a href=""><img src="./data/vs8.png" alt="ban8"></a></li>
+               <li class="vs item9"><a href=""><img src="./data/vs9.png" alt="ban9"></a></li>
+               <li class="vs item10"><a href=""><img src="./data/vs10.png" alt="ban10"></a></li>
+               <li class="vs item11"><a href=""><img src="./data/vs11.png" alt="ban11"></a></li>
+           </ul>
+       </figure>
+       <div class="bar_wrap">
+           <div class="pot_box">
+               <span class="pot1 on"></span>
+               <span class="pot2"></span>
+               <span class="pot3"></span>
+               <span class="pot4"></span>
+           </div>
+           <span class="txt">scrolldown</span>
+           <img src="./data/down_arrow.png" alt="arrow">
+       </div>
+       <div class="con1_wrap">
+           <div class="con1_box">
+               <h2 class="con1_tit">궁금하신 점을 고객지원 자주하는 질문에서 찾아보세요.</h2>
+               <input type="radio" id="ra1" class="rdo" name="ra" checked>
+               <input type="radio" id="ra2" class="rdo" name="ra">
+               <input type="radio" id="ra3" class="rdo" name="ra">
+               <input type="radio" id="ra4" class="rdo" name="ra">
+               <input type="radio" id="ra5" class="rdo" name="ra">
+               <input type="radio" id="ra6" class="rdo" name="ra">
+               <div class="con1_btn_box">
+                   <label for="ra1" class="con1_btn"><a><span>휴대폰을 잃어버렸어요!</span></a></label>
+                   <label for="ra2" class="con2_btn"><a><span>데이터가 다 떨어졌어요.</span></a></label>
+                   <label for="ra3" class="con3_btn"><a><span>멤버십카드 신청/재발급 받고 싶어요.</span></a></label>
+                   <label for="ra4" class="con4_btn"><a><span>가족들이랑 결합해서 할인받고 싶어요.</span></a></label>
+                   <label for="ra5" class="con5_btn"><a><span>요금제 가입/변경은 어떻게 하나요?</span></a></label>
+                   <label for="ra6" class="con6_btn"><a><span>휴대폰 구매 할인에 대해 알려주세요.</span></a></label>
+               </div>
+               <div class="con1_2_fr">
+                   <ul class="con1_fr">
+                       <li class="con2 item1"><a href=""><span>[임대폰]스마트폰 임대 후 반납시 가까운 임대 가능 대리점을 통해서도 가능한가요?</span></a></li>
+                       <li class="con2 item2"><a href=""><span>[임대폰]스마트폰 임대는 어디서 가능한가요?</span></a></li>
+                       <li class="con2 item3"><a href=""><span>휴대폰 명의자만 T데이터셰어링 USIM습득신고를 할 수 있나요?</span></a></li>
+                       <li class="con2 item4"><a href=""><span>미인증회원도 임대폰 신청이 가능한가요?</span></a></li>
+                       <li class="con2 item5"><a href=""><span>임대폰 신청시 택배로 받을수 있나요?</span></a></li>
+                       <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
+                   </ul>
+                    <ul class="con2_fr">
+                       <li class="con2 item1"><a href=""><span>[데이터 리필하기] 리필한 데이터로 T데이터셰어링 서비스 이용이 가능한가요?</span></a></li>
+                       <li class="con2 item2"><a href=""><span>[데이터 리필하기] 선물받은 리필쿠폰 미사용시 새로운 리필구콘이 제공되면 소멸되나요?</span></a></li>
+                       <li class="con2 item3"><a href=""><span>T끼리 맞춤형 요금제에 대해 알려주세요.</span></a></li>
+                       <li class="con2 item4"><a href=""><span>[데이터 리필하기] 가족간 리필쿠폰 선물하기는 몇 번 이용할 수 있나요?</span></a></li>
+                       <li class="con2 item5"><a href=""><span>[데이터 리필하기] 가족간 리필쿠폰 선물하기를 하루에 2번 선물 할 수 있나요?</span></a></li>
+                       <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
+                   </ul>
+                   <ul class="con3_fr">
+                       <li class="con2 item1"><a href=""><span>알뜰폰(MVNO) 가입자도 멤버십 카드 발급이 가능한가요?</span></a></li>
+                       <li class="con2 item2"><a href=""><span>요금제를 변경해도 멤버십 카드는 그대로 이용할 수 있나요?</span></a></li>
+                       <li class="con2 item3"><a href=""><span>T멤버십 카드를 분실했는데, 휴대폰이 본인 명의가 아닐 경우 카드 재발급은 어떻게 받나요?</span></a></li>
+                       <li class="con2 item4"><a href=""><span>멤버십 카드 신청방법을 알려주세요.</span></a></li>
+                       <li class="con2 item5"><a href=""><span>가족간 명의 변경시 멤버십카드 사용자가 변경되지 않은 경우에도 멤버십 탈퇴로 재등록을 해야하나요?</span></a></li>
+                       <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
+                   </ul>
+                   <ul class="con4_fr">
+                       <li class="con2 item1"><a href=""><span>[온가족플랜] 결합중 이동전화를 중도해지시 할인반환금이 발생하나요?</span></a></li>
+                       <li class="con2 item2"><a href=""><span>[온가족플랜] 2회선 결합 중 1회선이 일반/직권해지, 번호이동 등 1회선으로 변경시 한가족 할인</span></a></li>
+                       <li class="con2 item3"><a href=""><span>[온가족플랜] 인터넷 명의와 동일한 이동전화 회선이 일반해지, 직권해지, 번호 이동시 어떻게 되나요?</span></a></li>
+                       <li class="con2 item4"><a href=""><span>[온가족플랜] 결합 중 인터넷 상품을 스마트다이렉트(100M) ->Giga(1G)로 변경가능한가요?</span></a></li>
+                       <li class="con2 item5"><a href=""><span>[온가족플랜] 집전화와 결합시 혜택은 없나요?</span></a></li>
+                       <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
+                   </ul>
+                   <ul class="con5_fr">
+                       <li class="con2 item1"><a href=""><span>팅요금제에서 팅외 요금제로의 변경방법을 알려주세요.</span></a></li>
+                       <li class="con2 item2"><a href=""><span>T아웃도어(공유) 요금제는 어떤 단말기로 가입 가능한가요?</span></a></li>
+                       <li class="con2 item3"><a href=""><span>가족 나눔데이터로 제공된 데이터 나눠쓰기는 어떻게 하면 되나요?</span></a></li>
+                       <li class="con2 item4"><a href=""><span>고객센터에서 가족나눔데이터 신청 가능한가요?</span></a></li>
+                       <li class="con2 item5"><a href=""><span>선택약정 할인제도 가입은 어디서 가능한가요?</span></a></li>
+                       <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
+                   </ul>
+                   <ul class="con6_fr">
+                       <li class="con2 item1"><a href=""><span>[LTE Watch 요금제] T아웃도어와 다른 점은?</span></a></li>
+                       <li class="con2 item2"><a href=""><span>[LTE Watch 요금제] LTE Watch(단독) 요금제도 T원넘버 서비스 이용 가능한가요?</span></a></li>
+                       <li class="con2 item3"><a href=""><span>[LTE Watch 요금제] Smart Watch는 LTE Watch 요금제만 이용 가능한가요?</span></a></li>
+                       <li class="con2 item4"><a href=""><span>[LTE Watch 요금제] LTE Smart Watch 외 다른 2nd Device에는 가입 불가능한가요?</span></a></li>
+                       <li class="con2 item5"><a href=""><span>본격 고객 맞춤형 꿀 tip 서비스 - 바로픽업</span></a></li>
+                       <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+    
+</body>
+</html>
