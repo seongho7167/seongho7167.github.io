@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>논산소개</title>
+    <script src="prefixfree.min.js"></script>
+    <meta name="title" content="논산시를 소개합니다~">
+    <meta name="keywords" content="논산, 여행, 행사, 축제, 딸기, 젓갈, 곶감, 황산벌, 소개">
+    <meta name="description" content="논산소개, 논산은 포효하는 호랑이 형상을 하고 있는한반도의 단전부에 위치해 있는 중요한 힘의 원천지">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="png" href="./data/%EB%85%BC%EC%82%B0%EC%BA%90%EB%A6%AD%ED%84%B0%20%EC%95%84%EC%9D%B4%EC%BD%98.png">
+    <meta property="og:title" content="논산시를 소개합니다.">
+    <meta property="og:description" content="논산소개, 논산은 포효하는 호랑이 형상을 하고 있는한반도의 단전부에 위치해 있는 중요한 힘의 원천지">
+    <meta property="og:image" content="">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="icon" type="png" sizes="32x32" href="./data/논산캐릭터 아이콘.png">
+    <link rel="stylesheet" href="sub_common.css">
+    <style>
+        .hd_tit2 { text-align: center; width: 300px; margin: 0 auto; color:#fff; font-size: 38px; margin-top: -160px; position: relative; z-index: 99; }
+        .bcr_box { position: relative; z-index: 99; float: right; margin-right: 290px; margin-top: -130px;}
+        .bcr_box:before { content: ""; display: block; position: absolute; width: 15px; height: 1px; background-color: #fff; transform: rotate(35deg); top: 19px; left: 70px; }
+        .bcr_box:after { content: ""; display: block; position: absolute; width: 15px; height: 1px; background-color: #fff; transform: rotate(-35deg); top: 10px; left: 70px; }
+        .bcr_box li { float: left; margin-left: 25px; }
+        .bcr_box li a { color: #fff; font-size: 14px; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .bcr_box li:hover a { color: #fe3c08; border-bottom: 1px solid #fe3c08 ;}
+        .page { width: 770px; height: 70px; margin: 0 auto; clear: both; margin-top: 160px; position: relative; }
+        .page #keyword2 { width: 760px; height: 60px; background-color: #fff; display: block; margin: 0px auto; border: 3px solid #aaa; transition: 0.3s; }
+        .page #keyword2:focus { box-shadow: 0px 0px 10px; }
+        .page #search2 { width: 50px; height: 50px; position: absolute; background-image: url("./data/icon.png/search.png"); background-position: center; background-repeat: no-repeat; background-size: 30px 30px; top: 7px; left: 710px; background-color: transparent; text-indent: -9999px; }
+        .content_wrap { width: 1240px; height: 1100px; position: relative; clear: both; margin: 80px auto; }
+        .content_wrap:before { content: ""; display: block; position: absolute; width: 1240px; height: 119px; border-top: 1px dotted #000; border-bottom: 1px solid crimson;}
+        .content_wrap:after { content: ""; display: block; position: absolute; width: 1920px; height: 1180px; background-color: #eee; top: 120px; left: -340px; }
+        #ra1:checked ~ .con_box .item1 { display: block; }
+        .ra { display: none; }
+        .con_box { position: relative; z-index: 6;}
+        .con_box .con { display: none; }
+        .btn_box { height: 120px; }
+        .btn_box label { display: block; float: left; width: 1240px; height: 120px; text-align: center; line-height: 120px; font-size: 24px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; box-sizing: border-box; font-weight: bold; position: relative; z-index: 5; cursor: pointer; z-index: 5; }
+        #ra1:checked ~ .btn_box .con_btn1 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
+        .btn_box label span { display: block; margin-top: -15px; }
+        .btn_box label .txt { line-height: 0; margin-top: -25px; font-size: 18px; font-weight: normal; }
+        .brn_btn_box { width: 1240px; position: relative; clear: both; margin-top: 40px; }
+        .brn_btn_box label { display: block; width: 200px; height: 50px; background-color: #fff; text-align: center; line-height: 50px; float: left; margin-left: 5px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; box-shadow: 1px 1px; cursor: pointer; margin-top: 5px;}
+        #rad1:checked ~ .brn_btn_box .item1 { background-color: crimson; color:#fff; }
+        #rad2:checked ~ .brn_btn_box .item2 { background-color: crimson; color:#fff; }
+        #rad3:checked ~ .brn_btn_box .item3 { background-color: crimson; color:#fff; }
+        #rad4:checked ~ .brn_btn_box .item4 { background-color: crimson; color:#fff; }
+        #rad5:checked ~ .brn_btn_box .item5 { background-color: crimson; color:#fff; }
+        #rad6:checked ~ .brn_btn_box .item6 { background-color: crimson; color:#fff; }
+        #rad7:checked ~ .brn_btn_box .item7 { background-color: crimson; color:#fff; }
+        #rad8:checked ~ .brn_btn_box .item8 { background-color: crimson; color:#fff; }
+        #rad9:checked ~ .brn_btn_box .item9 { background-color: crimson; color:#fff; }
+        #rad10:checked ~ .brn_btn_box .item10 { background-color: crimson; color:#fff; }
+        #rad11:checked ~ .brn_btn_box .item11 { background-color: crimson; color:#fff; }
+        #rad12:checked ~ .brn_btn_box .item12 { background-color: crimson; color:#fff; }
+        #rad13:checked ~ .brn_btn_box .item13 { background-color: crimson; color:#fff; }
+        #rad14:checked ~ .brn_btn_box .item14 { background-color: crimson; color:#fff; }
+        #rad15:checked ~ .brn_btn_box .item15 { background-color: crimson; color:#fff; }
+        #rad1:checked ~ .brn_box .it1 { display: block; }
+        #rad2:checked ~ .brn_box .it2 { display: block; }
+        #rad3:checked ~ .brn_box .it3 { display: block; }
+        #rad4:checked ~ .brn_box .it4 { display: block; }
+        #rad5:checked ~ .brn_box .it5 { display: block; }
+        #rad6:checked ~ .brn_box .it6 { display: block; }
+        #rad7:checked ~ .brn_box .it7 { display: block; }
+        #rad8:checked ~ .brn_box .it8 { display: block; }
+        #rad9:checked ~ .brn_box .it9 { display: block; }
+        #rad10:checked ~ .brn_box .it10 { display: block; }
+        #rad11:checked ~ .brn_box .it11 { display: block; }
+        #rad12:checked ~ .brn_box .it12 { display: block; }
+        #rad13:checked ~ .brn_box .it13 { display: block; }
+        #rad14:checked ~ .brn_box .it14 { display: block; }
+        #rad15:checked ~ .brn_box .it15 { display: block; }
+        .brn_box .brn { display: none; }
+        .brn_con_box { margin-top: -80px; }
+        .brn_con_box img { display: block; width: 350px; height: 233px; cursor: pointer; }
+        .brn_con_fr { position: relative; width: 350px; height: 233px; float: left; margin-top: 40px; margin-left: 47px; cursor: pointer; }
+        .brn_con_fr .brn_bc { display: block; width: 350px; height: 233px; background-color: rgba(0,0,0,0.7); position: absolute; top: 0; left: 0; opacity: 0; transition: 0.3s; }
+        .brn_con_fr:hover .brn_bc { opacity: 1; }
+        .brn_con_fr a { display: block; margin: 0 auto; margin-top: -170px; position: relative; z-index: 19;}
+        .brn_con_fr a span { display: block; text-align: center; line-height: 2.4; color: #fff; font-size: 14px; opacity: 0; transition: 0.3s; }
+        .brn_con_fr:hover a span { opacity: 1; }
+/*
+        .brn_con_fr span{ display: none; width: 350px; height: 233px; background-color: rgba(0,0,0,0.7); position: absolute; top:40px; left: 47px; }
+        .brn_con_fr:hover span{ display: block; }
+        .brn_con_fr a span { display: none; color: #fff; text-align: center; font-size: 14px; background-color: transparent; padding-top: 50px; }
+        .brn_con_fr:hover a span { display: block; }
+        .brn_con_fr a span:nth-child(2) { padding-top: 100px;}
+        .brn_con_fr2 { position: relative; }
+        .brn_con_fr2 span{ display: none; width: 350px; height: 233px; background-color: rgba(0,0,0,0.7); position: absolute; top: 40px; left: 444px; }
+        .brn_con_fr2:hover span{ display: block; }
+*/
+        .brn_box .brn h2 { width: 200px; height: 250px; line-height: 250px; text-align: center; margin: 0 auto; }
+        .brn_box .brn p { width: 1020px; padding: 110px; padding-top: 10px; text-align: center; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+
+    });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bc_box">
+            <img src="./data/읍면동배경.png" alt="읍면동배경이미지">
+        </div>
+        <nav id="tnb">
+            <ul class="right_menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li ><a class="last" href="sign.html">회원가입</a></li>
+            </ul>
+        </nav>
+        <div class="hd_wrap">
+            <h2 class="hd_tit">논산시를 소개합니다</h2>
+            <div class="search_wrap">
+                <form action="" id="frm1">
+                    <input type="checkbox" id="search">
+                    <label for="search" class="sear_btn"><img src="./data/icon.png/search.png" alt="검색아이콘"></label>
+                    <input type="text" id="keyword" placeholder="검색어를 입력하세요." autofocus>
+                </form>
+            </div>
+            <input type="checkbox" id="ck1">
+            <label for="ck1" class="lst_btn">
+                <span class="lst_bar"></span>
+            </label>
+            <nav id="gnb">
+                <label for="ck1" class="close_btn"></label>
+                <ul class="main">
+                    <li><a href="sub1.html">현  황</a></li>
+                    <li><a href="sub2.html">상  징</a></li>
+                    <li><a href="sub3.html">읍면동 소개</a></li>
+                    <li><a href="sub4.html">축제/행사</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="sign.html">회원가입</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1 class="hd_tit2">읍면동 소개</h1>
+        <ul class="bcr_box">
+            <li class="brc item1"><a href="index.html">Home</a></li>
+            <li class="brc item2"><a href="sub3.html">읍면동</a></li>
+        </ul>
+        <div class="page" id="page1">
+            <form action="" id="frm2">
+                <input type="text" id="keyword2">
+                <input type="submit" id="search2">
+            </form>
+        </div>
+        <figure class="content_wrap">
+            <input type="radio" id="ra1" class="ra" name="rdo" checked>
+            <div class="btn_box">
+                <label for="ra1" class="con_btn1"><span>읍면동 전체 소개</span><span class="txt">City Brand</span></label>
+            </div>
+            <ul class="con_box">
+                <li class="con item1">
+                    <div class="brn_wrap">
+                        <input type="radio" class="ra" id="rad1" name="rad" checked>
+                        <input type="radio" class="ra" id="rad2" name="rad">
+                        <input type="radio" class="ra" id="rad3" name="rad">
+                        <input type="radio" class="ra" id="rad4" name="rad">
+                        <input type="radio" class="ra" id="rad5" name="rad">
+                        <input type="radio" class="ra" id="rad6" name="rad">
+                        <input type="radio" class="ra" id="rad7" name="rad">
+                        <input type="radio" class="ra" id="rad8" name="rad">
+                        <input type="radio" class="ra" id="rad9" name="rad">
+                        <input type="radio" class="ra" id="rad10" name="rad">
+                        <input type="radio" class="ra" id="rad11" name="rad">
+                        <input type="radio" class="ra" id="rad12" name="rad">
+                        <input type="radio" class="ra" id="rad13" name="rad">
+                        <input type="radio" class="ra" id="rad14" name="rad">
+                        <input type="radio" class="ra" id="rad15" name="rad">
+                        <div class="brn_btn_box">
+                            <label for="rad1" class="brn_btn item1">강경읍</label>
+                            <label for="rad2" class="brn_btn item2">연무읍</label>
+                            <label for="rad3" class="brn_btn item3">성동면</label>
+                            <label for="rad4" class="brn_btn item4">광석면</label>
+                            <label for="rad5" class="brn_btn item5">노성면</label>
+                            <label for="rad6" class="brn_btn item6">상월면</label>
+                            <label for="rad7" class="brn_btn item7">부적면</label>
+                            <label for="rad8" class="brn_btn item8">연산면</label>
+                            <label for="rad9" class="brn_btn item9">벌곡면</label>
+                            <label for="rad10" class="brn_btn item10">양촌명</label>
+                            <label for="rad11" class="brn_btn item11">가야곡면</label>
+                            <label for="rad12" class="brn_btn item12">은진면</label>
+                            <label for="rad13" class="brn_btn item13">채운면</label>
+                            <label for="rad14" class="brn_btn item14">취암동</label>
+                            <label for="rad15" class="brn_btn item15">부창동</label>
+                        </div>
+                        <ul class="brn_box">
+                            <li class="brn it1">
+                                <h2>강경읍</h2>
+                                <p>강경의 지명은 江景浦에서 유래되었는데 금강을 낀 포구의 이름이 이 지방의 지명으로 대표하게 되었다. 동국여지승람에 은진현 강경호가 있으며 미내교비에도 강경촌이라는 지명이 기록된 것으로 미루어 보면 오래전부터 지어내려온 지명인 것같다. 1914년 군명을 폐합하여 행정구역 재편성 때에 채운면의 城西里를 병합하여 강경포의 이름을 따서 江景面으로 하였으며 1931년 江景邑으로 승격하여 지금에 이르고 있다.</p>
+                                <div class="brn_con_box">
+                                    <div class="brn_con_fr">
+                                        <img src="./data/강경읍.jpg" alt="강경읍 이미지">
+                                        <span class="brn_bc"></span>
+                                        <a href=""><span>제7경 옥녀봉과 금강</span><span>충청남도 논산시 강경읍 옥녀봉로73번길</span> </a>
+                                    </div>
+                                    <div class="brn_con_fr">
+                                        <img src="./data/강경읍2.jpg" alt="강경읍 이미지">
+                                        <span class="brn_bc"></span>
+                                        <a href=""><span>강경근대역사전시관</span><span>충청남도 논산시 강경읍 대흥로34번길 6</span></a>
+                                    </div>
+                                    <div class="brn_con_fr">
+                                        <img src="./data/강경읍3.jpg" alt="강경읍 이미지">
+                                        <span class="brn_bc"></span>
+                                        <a href=""><span>강경역사관</span><span>충청남도 논산시 강경읍 계백로167번길 50</span></a>
+                                    </div>
+                                    <div class="brn_con_fr">
+                                        <img src="./data/강경읍4.jpg" alt="강경읍 이미지">
+                                        <span class="brn_bc"></span>
+                                        <a href=""><span>죽림서원</span><span>충청남도 논산시 강경읍 금백로 20-3</span></a>
+                                    </div>
+                                    <div class="brn_con_fr">
+                                        <img src="./data/강경읍5.jpg" alt="강경읍 이미지">
+                                        <span class="brn_bc"></span>
+                                        <a href=""><span>강경젓갈축제</span><span>충청남도 논산시 강경읍 금백로 45
+</span><span>기간 : 2019. 10. 16(수)~10.20(일)​</span></a>
+                                    </div>
+                                    <div class="brn_con_fr">
+                                        <img src="./data/강경읍6.jpg" alt="강경읍 이미지">
+                                        <span class="brn_bc"></span>
+                                        <a href=""><span>강경근대문화거리</span><span>충청남도 논산시 강경읍 서창리
+</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+                <li class="con item2">2</li>
+                <li class="con item3">3</li>
+            </ul>
+        </figure>
+        <footer id="ft">
+                <ul class="fnb">
+                    <li><a href="location.html#page17">우) 32987 충청남도 논산시 시민로210번길 9 내동</a></li>
+                    <li><a href="tel_number.html#page18">TEL.041-746-5114 | FAX. 041-746-5699</a></li>
+                    <li><a href="person_information.html#page19">개인정보처리방침</a></li>
+                    <li><a href="web.html#page20" class="last">웹접근성</a></li>
+                </ul>
+                <p class="copyright">COPYRIGHTⓒ2018NONSAN CITY. ALL RIGHTS RESERVED</p>
+        </footer>
+    </div>
+    <a href="#" id="totop">▲</a>
+</body>
+</html>

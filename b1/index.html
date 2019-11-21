@@ -18,47 +18,52 @@
     <style>
   
     /* 메인페이지 콘텐츠 스타일 */
-    #vdo { display: block; width: 100%; height: 100%; position: absolute; top:0; left:0; }
-    #vd1 { display: block; width: 100%; min-height: 100% }
-    #cover_page { position: absolute; width: 100%; height: 100%; z-index: 10; top: 0; left: 0; }
-    .tit { background-image: url("./data/nonsanlogo.png"); width: 359px; height: 134px; margin: 90px auto; margin-top: 200px; }
-    #frm1 { width: 1000px; height: 80px; margin: 0 auto; background-color: rgba(0,0,0,0.6); }
-    #keyword { display: block; height: 70px; width: 910px; font-size: 18px; text-indent: 24px; margin: 5px; float: left; opacity: 0.6; transition: 0.5s; }    
-    #search { display: block; width: 70px;height: 70px; float: right; margin: 5px; background-color: #fff; background-image: url("./data/icon.png/search2.png"); text-indent: -9999px; background-size: 50px 50px ; background-position: center center; background-repeat: no-repeat; opacity: 0.6; transition: 0.5s; cursor: pointer; }
+    #page1 { clear:both; min-width: 750px; position:relative; margin: 0px auto; padding-top: 550px; }
+    #vdo { display: block; height: 85%; position: absolute; top:-25px; left:0; }
+    #vd1 { display: block; width: 1920px; }
+    #cover_page { position: relative; width: 750px; z-index: 10; margin: 0px auto; height: 65px; }
+    #frm1 { width: 800px; height: 65px; background-color: rgba(0,0,0,0.6); }
+    #keyword { display: block; height: 55px; width: 720px; font-size: 18px; text-indent: 24px; margin: 5px; float: left; opacity: 0.6; transition: 0.5s; }    
+    #search { display: block; width: 55px;height: 55px; float: right; margin: 5px; background-color: #fff; background-image: url("./data/icon.png/search.png"); background-size: 50px 50px ; background-position: center center; background-repeat: no-repeat; opacity: 0.6; transition: 0.5s; text-indent:-9999px; cursor: pointer; background-size: 40px 40px; }
     #keyword:focus { display: block; opacity: 0.9; }
     #keyword:focus ~ #search { opacity: 0.9; }
+        #page_tit { display: block; position: absolute; top:-200px; left:74px; }
+
     #page2, #page3 {background-image: url("./data/background2.jpg"); background-repeat: no-repeat; background-size: cover; }
-    #page2 { background-attachment: fixed; width: 100%;height: 80%; }
-    #insight { background-color: #f0f0f0; height: 100%; }
+    #page2 { background-attachment: fixed; min-width: 1280px; height:100%; position: relative; width: 1920px; }
+    #insight { background-color: #f0f0f0; min-width: 960px; width:1440px; min-height: 680px; height: 780px; position: absolute; top: 100px; left: 238px; }
     .page_tit { text-align: center; line-height: 150px; font-size: 40px; }
-    .thum_lst li { float: left; width: 360px; margin-left: 45px; position: relative; overflow: hidden; height: 250px; border: 3px solid transparent; transition: 0.6s; transition-delay: 0.1s; background-color: #e1e1e1; } 
-    .thum_lst li.col8 { width: 770px; height: 250px; margin-top: 40px; background-image:url(./data/strawberryevent1.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; }
+    .thum_lst { margin: 0 auto; min-width: 960px;  min-height: 680px;}
+    .thum_lst li { float: left; width: 360px; margin-left: 73px; position: relative; overflow: hidden; height: 250px; border: 3px solid transparent; transition: 0.6s; transition-delay: 0.1s; background-color: #e1e1e1; } 
+    .thum_lst li.col8 { width: 800px; height: 250px; margin-top: 40px; background-image:url(./data/strawberryevent1.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; }
     .thum_lst li#art1 { margin-top: 40px;}
     .thum_lst li a { color: #333; display: block; width: 354px; height: 244px; overflow: hidden; }
     .thum_lst li a:after { content:"▶"; position: absolute; bottom: 15px; right: 20px; display: none; }
     .thum_lst li:hover { border: 3px solid #fe3c08; background-color: #fff; color: #fe3c08; }
     .thum_lst li a p { width: 320px; height: 40px; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; padding: 14px; }
-    .thum_lst li a #art2 { width: 700px; }
+    .thum_lst li a #art2 { width: 790px; }
     .cate_tit { padding: 14px; color: #fe3c08; text-decoration: underline; }
     .lst_tit {padding: 14px; }
     .lst_date { display: block; padding: 14px; padding-bottom: -10px; }
-    .thum_lst li.col8 a { width: 770px; color: #fff; }
-        
-    #vs_con { margin-top: 5px; }
-    #vs { width: 100%; overflow: hidden; background-color: #fff; padding-top: 50px; position: relative; }
-    .img_box { width: 400%; margin-left: 0; transition:0.5s; }
-    .img_box li {float: left; width: 25%; overflow: hidden; }
-    .img_box li .pic { display: block; width: 580px; padding-left: 40px; padding-bottom: 40px; float: left; }
-    .img_box li .tit_box { width: 580px; float: right; padding-right: 40px;margin-bottom: 40px;}
-    .vs_tit { padding: 24px; }
-    .vs_com { padding: 24px; }
-    .more { display: block; width: 120px; height: 40px; border: 2px solid #333; color: #333; text-align: center; line-height: 40px; margin: 24px; }
-    .btn_box { position: absolute; z-index: 50; width: 500px; height: 14px; top: 414px; left: 660px;}
+    .thum_lst li.col8 a { width: 800px; color: #fff; }
+    
+    #page3 { min-width: 1280px; width: 1920px; height: 780px; position: relative; }
+    #vs_con { min-width: 960px; width: 75%; position: absolute; top: 50px; left: 238px; }
+    #vs { min-width: 960px; width: 100%; overflow: hidden; background-color: #fff; padding-top: 50px; position: relative; }
+    .img_box { width: 400%; transition:0.5s; }
+    .img_box li { float: left; width: 25%; overflow: hidden; }
+    .img_box li .pic { display: block; width: 580px; padding-left: 100px; padding-bottom: 40px; float: left; }
+    .img_box li .tit_box { width: 580px; float: left; padding-left: 50px; }
+    .vs_tit { padding: 24px; font-size: 24px; }
+    .vs_com { padding: 24px; padding-top: 14px; }
+    .more { display: block; width: 120px; height: 40px; border: 2px solid #333; color: #333; text-align: center; line-height: 40px; margin: 24px; transition: 0.5s; }
+    .more:hover { background-color: #fe3c08; color:#fff; }
+    .btn_box { position: absolute; z-index: 50; width: 500px; height: 14px; top: 380px; left: 740px;}
     .btn_box li { width: 150px; margin-left: 12px; float:left; }
     .btn_box li label { display: block; width: 150px; height: 14px; background-color: #666; }
     #ra1:checked ~ .img_box { margin-left: 0; }
-    #ra2:checked ~ .img_box { margin-left: -1240px; }
-    #ra3:checked ~ .img_box { margin-left: -2520px; }
+    #ra2:checked ~ .img_box { margin-left: -100%; }
+    #ra3:checked ~ .img_box { margin-left: -200%; }
     #ra1:checked ~ .btn_box .item1 label { background-color: #fe3c08; }
     #ra2:checked ~ .btn_box .item2 label { background-color: #fe3c08; }
     #ra3:checked ~ .btn_box .item3 label { background-color: #fe3c08; }
@@ -77,31 +82,32 @@
    <div class="wrap">
         <nav id="tnb">
            <ul class="right_menu">
-               <li><a href="">홈</a></li>
-               <li><a href="">로그인</a></li>
-               <li ><a class="last" href="">회원가입</a></li>
+               <li><a href="index.html">홈</a></li>
+               <li><a href="login.html">로그인</a></li>
+               <li ><a class="last" href="sign.html">회원가입</a></li>
            </ul>
         </nav>
         <input type="checkbox" id="ck1">
-        <label for="ck1" class="lst_btn">1</label>
+        <label for="ck1" class="lst_btn">
+            <span class="lst_bar"></span>
+        </label>
         <nav id="gnb">
-            <label for="ck1" class="close_btn">2</label>
+            <label for="ck1" class="close_btn"></label>
             <ul class="main">
-                <li><a href="">현  황</a></li>
-                <li><a href="">상  징</a></li>
-                <li><a href="">읍면동 소개</a></li>
-                <li><a href="">축제/행사</a></li>
-                <li><a href="">캘린더</a></li>
+                <li><a href="sub1.html">현  황</a></li>
+                <li><a href="sub2.html">상  징</a></li>
+                <li><a href="sub3.html">읍면동 소개</a></li>
+                <li><a href="sub4.html">축제/행사</a></li>
             </ul>
             <ul class="bottom">
-                <li><a href="">홈</a></li>
-                <li><a href="">로그인</a></li>
-                <li><a href="">회원가입</a></li>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="sign.html">회원가입</a></li>
             </ul>
         </nav>
         <div class="page" id="page1">
             <section class="page_wrap" id="cover_page">
-                <h2 class="tit"></h2><!-- 사이즈 445*56 -->
+                <img src="./data/nonsan_title.png" alt="타이틀이미지" id="page_tit"><!-- 사이즈 445*56 -->
                 <form action="" id="frm1"><input type="text" id="keyword"><input type="submit" id="search"></form>
             </section>
         </div>
@@ -161,7 +167,7 @@
                            </div>
                        </li>
                        <li class="item2">
-                           <img src="./data/event4.jpg" alt="배너2" id="pic">
+                           <img src="./data/event4.jpg" alt="배너2" class="pic">
                            <div class="tit_box">
                                <h3 class="vs_tit">양촌곶감축제</h3>
                                <p class="vs_com">양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 양촌곶감축제 내용입니다 </p>
@@ -169,7 +175,7 @@
                            </div>
                        </li>
                        <li class="item3">
-                           <img src="./data/event5.jpg" alt="배너3" id="pic">
+                           <img src="./data/event5.jpg" alt="배너3" class="pic">
                            <div class="tit_box">
                                <h3 class="vs_tit">황산벌전투재현행사</h3>
                                <p class="vs_com">황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 황산벌전투재현행사 내용입니다 </p>
@@ -200,7 +206,7 @@
             </ul>
             <footer id="ft">
                 <ul class="fnb">
-                    <li><a href="">시청위치</a></li>
+                    <li><a href="loc.html">시청위치</a></li>
                     <li><a href="">TEL.041-746-5114</a></li>
                     <li><a href="">개인정보처리방침</a></li>
                     <li><a href="" class="last">웹접근성</a></li>

@@ -1,29 +1,30 @@
-@charset utf-8;  
+@charset "utf-8";  
   /* 초기화 */
     * {margin: 0; padding: 0; }
-    body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
+    body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
     ul { list-style: none; }
     a {text-decoration: none; }
     button, a, input {border: 0; outline: 0; }
   
   /* 공통서식 */
-    .wrap { width: 100%; height:100%; } 
-    .page { clear:both; width: 100%; height:100%; position:relative; }
-    .page_wrap { width: 1280px; margin:0 auto; }   
-    #tnb { position: relative; width: 100%; height:42px; z-index:60; }  
-    .right_menu { float:right; margin-right: 120px;}
+    ::-webkit-scrollbar { display:none; }
+    .wrap { width: 1920px; min-width: 1280px; height:100%; } 
+    #tnb { position: fixed; width: 1920px; height:42px; z-index:60; line-height: 42px; top:0; background-color: rgba(0,0,0,0.3); } 
+    .right_menu { float:right; padding-right: 130px;}
     #tnb li { float:left; margin-left: 30px; } 
-    #tnb li a { display:block; color:#fff; padding-top: 15px; font-size:14px; }
+    #tnb li a { display:block; color:#fff; font-size:14px; }
     #tnb li a::after { content: "|" ; padding-left: 26px; color: #fff; }
     #tnb li a.last::after { content: ""; }
     #tnb li a:hover { color:#fe3c08; }
-
-    .lst_btn { display:block; width: 40px; height: 35px; background-size: 40px 30px; background-image:url("./data/icon.png/nav2_icon.png"); background-repeat: no-repeat; position:fixed; top:120px; left: 180px; z-index:90; text-indent:-9999px;  cursor:pointer; opacity: 0.5; }  
-    #gnb { position:fixed; top:0; left:-250px; z-index:99; width: 240px; height:100%; background-color:rgba(255,255,255,0.8); transition:0.5s; border-right: 3px solid #ccc; }    
+    .lst_btn { display:block; width: 40px; height: 35px; background-size: 40px 30px; position:fixed; top:120px; left: 180px; z-index:90; text-indent:-9999px;  cursor:pointer; }  
+    .lst_btn .lst_bar { display: block; width: 30px; height: 3px; background-color: #fff; box-shadow: 0px 0px 5px; }
+    .lst_btn .lst_bar:before { content: ""; display: block; width: 30px; height: 3px; background-color: #fff; position: absolute; top: 12px; box-shadow: 0px 0px 5px; }
+    .lst_btn .lst_bar:after { content: ""; display: block; width: 20px; height: 3px; background-color: #fff; position: absolute; top: 24px; box-shadow: 0px 0px 5px; }
+    #gnb { position:fixed; top:0; left:-500px; z-index:99; width: 400px; height:100%; background-color:rgba(255,255,255,0.8); transition:0.5s; border-right: 3px solid #ccc; }    
     #ck1:checked ~ #gnb { left: 0; }   
     #ck1:checked ~ .lst_btn { opacity: 0; transition:0.3s; }
     #ck1 { display:none; }  
-    .close_btn { display:block; background-size: 25px 25px ; background-repeat: no-repeat;  width:36px; height:33px; background-image:url("./data/icon.png/cancle.png"); text-indent:-9999px; margin: 14px; float:right;  cursor:pointer; opacity: 0.5; margin-top: 120px;}
+    .close_btn { display:block; background-size: 25px 25px ; background-repeat: no-repeat;  width:36px; height:33px; background-image:url("./data/icon.png/cancle.png"); text-indent:-9999px; margin: 14px; float:right;  cursor:pointer; opacity: 0.5; margin-top: 30px;}
     .main{clear: both; padding-top: 70px; }
     .main li { line-height: 70px; }
     .main li a { display: block; color: #333; font-size: 24px; text-align: center; }
@@ -32,12 +33,13 @@
     .bottom li { line-height: 50px; }
     .bottom li a { display: block; color: #333; text-align: center; }
     
-    #ft { height: 100px;background: #333; color: #fff; }
+    #ft { position: relative; height: 100px;background: #333; color: #fff; }
     .fnb { float: left; margin-left: 20px; }
     .fnb li { float: left; padding: 10px; }
-    .fnb li a { color: #fff; display: block; line-height: 78px; }
+    .fnb li a { color: rgba(255,255,255,0.6); display: block; line-height: 78px; font-size: 14px; }
+    .fnb li:hover a { color: #fff; } 
     .fnb li a:after { content:"|"; padding-left: 20px; }
     .fnb li a.last:after { content: ""; }
-    .copyright { float: right; line-height: 100px; padding-right: 24px; }
+    .copyright { float: right; line-height: 100px; padding-right: 24px; font-size: 14px; color: rgba(255,255,255,0.6); }
         
     #totop { position: fixed; right: 60px; bottom: 100px; z-index: 999; display: block; width: 60px; height: 60px; text-align: center; line-height: 60px; background: #f0f0f0; color: #333; border-radius: 32px; box-shadow: 0px 0px 12px #333; }

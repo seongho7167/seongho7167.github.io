@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="prefixfree.min.js"></script>
+    <meta name="title" content="논산시를 소개합니다~">
+    <meta name="keywords" content="논산, 여행, 행사, 축제, 딸기, 젓갈, 곶감, 황산벌, 소개">
+    <meta name="description" content="논산소개, 논산은 포효하는 호랑이 형상을 하고 있는한반도의 단전부에 위치해 있는 중요한 힘의 원천지">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="png" href="./data/%EB%85%BC%EC%82%B0%EC%BA%90%EB%A6%AD%ED%84%B0%20%EC%95%84%EC%9D%B4%EC%BD%98.png">
+    <meta property="og:title" content="논산시를 소개합니다.">
+    <meta property="og:description" content="논산소개, 논산은 포효하는 호랑이 형상을 하고 있는한반도의 단전부에 위치해 있는 중요한 힘의 원천지">
+    <meta property="og:image" content="">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="icon" type="png" sizes="32x32" href="./data/논산캐릭터 아이콘.png">
+    <link rel="stylesheet" href="sub_common.css">
+    <style>
+        .hd_tit2 { text-align: center; width: 300px; color:#fff; font-size: 38px; position: absolute; z-index: 99; top:180px; left:810px; }
+        .bcr_box { position: relative; z-index: 99; margin-top: -830px; margin-left: 1520px; }
+        .bcr_box:before { content: ""; display: block; position: absolute; width: 15px; height: 1px; background-color: #fff; transform: rotate(35deg); top: 19px; left: 70px; }
+        .bcr_box:after { content: ""; display: block; position: absolute; width: 15px; height: 1px; background-color: #fff; transform: rotate(-35deg); top: 10px; left: 70px; }
+        .bcr_box li { float: left; margin-left: 25px; }
+        .bcr_box li a { color: #fff; font-size: 14px; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .bcr_box li:hover a { color: #fe3c08; border-bottom: 1px solid #fe3c08 ;}
+        .page { width: 770px; height: 70px; margin: 0 auto; clear: both; margin-top: 160px; position: relative; }
+        .page #keyword2 { width: 760px; height: 60px; background-color: #fff; display: block; margin: 0px auto; border: 3px solid #aaa; transition: 0.3s; }
+        .page #keyword2:focus { box-shadow: 0px 0px 10px; }
+        .page #search2 { width: 50px; height: 50px; position: absolute; background-image: url("./data/icon.png/search.png"); background-position: center; background-repeat: no-repeat; background-size: 30px 30px; top: 7px; left: 710px; background-color: transparent; text-indent: -9999px; }
+        .login_wrap { min-width: 1280px; width: 1920px; position: relative; margin-top: 150px; height: 680px;}
+        .frm { width: 800px; height: 520px; background-color: rgba(0,0,0,0.7); border-radius: 10px; margin: 0 auto; padding: 22px; box-sizing: border-box; }
+        .frm span { display: block; color: #fff; }
+        .frm .wel_box, .wel { width: 450px; text-align: center; line-height: 1.8; font-size: 20px; display: block; margin: 0 auto; }
+/*
+        .frm .wel_box:before { content: ""; display: block; width: 570px; border-bottom: 1px solid #bbb; margin-left: -22px; position: absolute; top:210px; } 
+        .frm .wel_box:after { content: ""; display: block; width: 570px; border-bottom: 1px solid #bbb; margin-left: -22px; position: absolute; top:300px; } 
+*/
+        .frm .wel_box .wel { display: inline; padding-left: 64px; color: #fe3c08; font-weight: bold; }
+        #m_id { display: block;  width: 484px; height: 40px; font-size: 16px; text-indent: 14px; margin: 0px auto; border-radius: 5px; margin-top: 30px; }
+        #m_pw { display: block; width: 484px; height: 40px; font-size: 16px; text-indent: 14px; margin: 0 auto; border-radius: 5px; margin-top: 20px; }
+        .ck { display: none; }
+        .ck_con { display: block; margin-left: 130px; margin-top: 20px; }       
+        .ck_btn { display: block; width: 30px; height: 30px; background-color: #aaa; border-radius: 20px; position: relative; margin-left: 20px; margin-top: 10px; }
+        .ck_btn:before { content: ""; display: block; position: absolute; top:20px; left: -3px; width: 15px; height: 4px; background-color: #fff; border-radius: 5px; transform: rotate(45deg); transform-origin: 100% 100% ;}
+        .ck_btn:after { content: ""; display: block; position: absolute; top:6px; left: 7px; width: 20px; height: 4px; background-color: #fff; border-radius: 5px; transform: rotate(-45deg); transform-origin: 100% 100% ;}
+        #ck2:checked ~ .ck_con .ck_btn { background-color:#fe3c08; }
+        .ck_text { position: absolute; top:247px; left: 775px; }
+        .log_box { display: block; width: 488px; height: 50px; border-radius:5px; background-color: #fe3c08; color: #fff; margin: 25px auto; text-align: center; font-size: 20px; line-height: 2.4; cursor: pointer; margin-bottom: 0px }
+        .login_btn { display: none; }
+        .frm .not1 { font-size: 12px; width: 484px; margin-left: 137px; margin-top: 5px; }
+        .sign { width: 484px; margin: 0 auto; }
+        .sign li { float: left; margin-left: 37px; margin-top: 25px; }
+        .sign li:after { content: "|"; margin-left: 37px; color:#fff; }
+        .sign li:last-child:after { display: none; }
+        .sign li a { color: #fff; }
+        .sign li a:hover { color: #fe3c08 ; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+
+    });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bc_box">
+            <img src="./data/로그인배경.png" alt="로그인배경이미지">
+        </div>
+        <nav id="tnb">
+            <ul class="right_menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li ><a class="last" href="sign.html">회원가입</a></li>
+            </ul>
+        </nav>
+        <div class="hd_wrap">
+            <h2 class="hd_tit">논산에 오신것을 환영합니다</h2>
+            <div class="search_wrap">
+                <form action="" id="frm1">
+                    <input type="checkbox" id="search">
+                    <label for="search" class="sear_btn"><img src="./data/icon.png/search.png" alt="검색아이콘"></label>
+                    <input type="text" id="keyword" placeholder="검색어를 입력하세요." autofocus>
+                </form>
+            </div>
+            <input type="checkbox" id="ck1">
+            <label for="ck1" class="lst_btn">
+                <span class="lst_bar"></span>
+            </label>
+            <nav id="gnb">
+                <label for="ck1" class="close_btn"></label>
+                <ul class="main">
+                    <li><a href="sub1.html">현  황</a></li>
+                    <li><a href="sub2.html">상  징</a></li>
+                    <li><a href="sub3.html">읍면동 소개</a></li>
+                    <li><a href="sub4.html">축제/행사</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="sign.html">회원가입</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1 class="hd_tit2">로그인</h1>
+        <ul class="bcr_box">
+            <li class="brc item1"><a href="index.html">Home</a></li>
+            <li class="brc item2"><a href="login.html">로그인</a></li>
+        </ul>
+        <main class="login_wrap">
+            <form action="" id="frm1" class="frm" method="post" name="">
+                <span class="wel_box">Welcome!</span><span class="wel">여기는 논산시 입니다!</span>
+                <input type="text" name="id" id="m_id" tabindex="1" autofocus required maxlength="15" pattern="[a-zA-Z0-9]{4,15}" placeholder="아이디를 입력해주세요." title="아이디 입력">
+                <input type="password" id="m_pw" name="pw" title="패스워드 입력" autocomplete="off" required pattern="[a-zA-Z0-9]{20}" placeholder="패스워드를 입력해주세요.">
+                <input type="checkbox" id="ck2" class="ck">
+                <label for="ck2" class="ck_con">
+                    <span class="ck_btn"></span>
+                    <span class="ck_text">아이디 저장</span>
+                </label>
+                <label for="log_btn" class="log_box">로그인</label><input type="submit" value="로그인" class="login_btn" id="log_btn">
+                <span class="not1">* 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.</span>
+                <span class="not1">* 논산시 공식 홈페이지는 Internet Explorer 9.0 이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.</span>
+                <ul class="sign">
+                    <li class="item1"><a href="./sign.html">회원가입</a></li>
+                    <li class="item2"><a href="#">아이디 찾기</a></li>
+                    <li class="item3"><a href="#">비밀번호 찾기</a></li>
+                </ul>
+            </form>
+        </main>
+        <footer id="ft">
+                <ul class="fnb">
+                    <li><a href="location.html#page17">우) 32987 충청남도 논산시 시민로210번길 9 내동</a></li>
+                    <li><a href="tel_number.html#page18">TEL.041-746-5114 | FAX. 041-746-5699</a></li>
+                    <li><a href="person_information.html#page19">개인정보처리방침</a></li>
+                    <li><a href="web.html#page20" class="last">웹접근성</a></li>
+                </ul>
+                <p class="copyright">COPYRIGHTⓒ2018NONSAN CITY. ALL RIGHTS RESERVED</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -35,28 +35,34 @@
         #ra3:checked ~ .con_box .item3 { display: block; }
         #ra4:checked ~ .con_box .item4 { display: block; }
         .ra { display: none; }
+        .con_box { position: relative; z-index: 6;}
         .con_box .con { display: none; }
         .btn_box { height: 120px; }
-        .btn_box label { display: block; float: left; width: 310px; height: 120px; text-align: center; line-height: 120px; font-size: 24px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; box-sizing: border-box; font-weight: bold; position: relative; z-index: 5; cursor: pointer; z-index: 5; }
+        .btn_box label { display: block; float: left; width: 413px; height: 120px; text-align: center; line-height: 120px; font-size: 24px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; box-sizing: border-box; font-weight: bold; position: relative; z-index: 5; cursor: pointer; z-index: 5; }
         #ra1:checked ~ .btn_box .con_btn1 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
         #ra2:checked ~ .btn_box .con_btn2 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
         #ra3:checked ~ .btn_box .con_btn3 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
         #ra4:checked ~ .btn_box .con_btn4 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
         .btn_box label span { display: block; margin-top: -15px; }
         .btn_box label .txt { line-height: 0; margin-top: -25px; font-size: 18px; font-weight: normal; }
-        .con_box .con { width: 1240px; height: 760px; position: relative; z-index: 5; }
-        .con_box .con .his_box { margin-top: 40px; } 
-        .con_box .con .his { width: 350px; height: 210px; float: left; padding: 20px; margin-left: 17px; text-align: center; border: 1px solid #777; margin-top: 20px; overflow: hidden; background-color: #fff; }
-        .con_box .con .his:hover { border:1px solid #fe3c08; }
-        .con_box .con .his a { display: block; font-size: 24px; position: relative; }
-        .con_box .con .his a:after { content: ""; display: block; position: absolute; width: 390px; height: 250px; background-color: rgba(0,0,0,0.7); top:-20px; left: -20px; transition: 0.1s; }
-        .con_box .con .his a:hover:after { opacity: 0; }
-        .con_box .con .his a span { display: block; height: 210px; line-height: 210px; color:#fff; position: relative; z-index: 5; transition: 0.1s; }
-        .con_box .con .his a:hover span { opacity: 0; display: none; }
-        .con_box .con .his a p { height: 210px; padding-top: 60px; font-size: 20px; color: #000; }
-
-        
-
+        .brn_btn_box { width: 1240px; position: relative; clear: both; margin-top: 40px; }
+        .brn_btn_box label { display: block; width: 200px; height: 50px; background-color: #fff; text-align: center; line-height: 50px; float: left; margin-left: 5px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; box-shadow: 1px 1px; cursor: pointer; }
+        #rad1:checked ~ .brn_btn_box .item1 { background-color: crimson; color:#fff; }
+        #rad2:checked ~ .brn_btn_box .item2 { background-color: crimson; color:#fff; }
+        #rad3:checked ~ .brn_btn_box .item3 { background-color: crimson; color:#fff; }
+        #rad4:checked ~ .brn_btn_box .item4 { background-color: crimson; color:#fff; }
+        #rad5:checked ~ .brn_btn_box .item5 { background-color: crimson; color:#fff; }
+        #rad6:checked ~ .brn_btn_box .item6 { background-color: crimson; color:#fff; }
+        #rad1:checked ~ .brn_box .it1 { display: block; }
+        #rad2:checked ~ .brn_box .it2 { display: block; }
+        #rad3:checked ~ .brn_box .it3 { display: block; }
+        #rad4:checked ~ .brn_box .it4 { display: block; }
+        #rad5:checked ~ .brn_box .it5 { display: block; }
+        #rad6:checked ~ .brn_box .it6 { display: block; }
+        .brn_box .brn { display: none; }
+        .brn_box .brn img { display: block; margin: 0 auto; }
+        .brn_box .brn h2 { width: 200px; height: 150px; line-height: 150px; text-align: center; margin: 0 auto; }
+        .brn_box .brn p { width: 1020px; padding: 110px; padding-top: 10px; text-align: center;  }
     </style>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script>
@@ -68,7 +74,7 @@
 <body>
     <div class="wrap">
         <div class="bc_box">
-            <img src="./data/현황배경.png" alt="현황배경이미지">
+            <img src="./data/상징배경.png" alt="현황배경이미지">
         </div>
         <nav id="tnb">
             <ul class="right_menu">
@@ -105,10 +111,10 @@
                 </ul>
             </nav>
         </div>
-        <h1 class="hd_tit2">논산시 현황</h1>
+        <h1 class="hd_tit2">논산의 상징</h1>
         <ul class="bcr_box">
             <li class="brc item1"><a href="index.html">Home</a></li>
-            <li class="brc item2"><a href="sub1.html">현황</a></li>
+            <li class="brc item2"><a href="sub2.html">상징</a></li>
         </ul>
         <div class="page" id="page1">
             <form action="" id="frm2">
@@ -120,82 +126,65 @@
             <input type="radio" id="ra1" class="ra" name="rdo" checked>
             <input type="radio" id="ra2" class="ra" name="rdo">
             <input type="radio" id="ra3" class="ra" name="rdo">
-            <input type="radio" id="ra4" class="ra" name="rdo">
             <div class="btn_box">
-                <label for="ra1" class="con_btn1"><span>연혁</span><span class="txt">History</span></label>
-                <label for="ra2" class="con_btn2"><span>위치/기후</span><span class="txt">Location/Climate</span></label>
-                <label for="ra3" class="con_btn3"><span>행정구역</span><span class="txt">Administrative area</span></label>
-                <label for="ra4" class="con_btn4"><span>인구</span><span class="txt">Population</span></label>
+                <label for="ra1" class="con_btn1"><span>도시브랜드</span><span class="txt">City Brand</span></label>
+                <label for="ra2" class="con_btn2"><span>상징물</span><span class="txt">Symbol</span></label>
+                <label for="ra3" class="con_btn3"><span>시민헌장/찬가</span><span class="txt">Citizen's Charter/Song</span></label>
             </div>
             <ul class="con_box">
                 <li class="con item1">
-                    <ul class="his_box">
-                        <li class="his it1">
-                            <a href="">
-                                <span>1914.04.01</span>
-                                <p>연산, 은진, 노성, 석성군을 병합 논산군 설치(15면)</p>
-                            </a>
-                        </li>
-                        <li class="his it2">
-                            <a href="">
-                                <span>1917.10.01</span>
-                                <p>대조곡면을 은진면으로 개칭</p>
-                            </a>
-                        </li>
-                        <li class="his it3">
-                            <a href="">
-                                <span>1931.04.01</span>
-                                <p>강경면이 강경읍으로 승격 (1읍 14면)</p>
-                            </a>
-                        </li>
-                        <li class="his it4">
-                            <a href="">
-                                <span>1938.10.01</span>
-                                <p>논산면이 논산읍으로 승격 (2읍 13면)
-                                    </p>
-                            </a>
-                        </li>
-                        <li class="his it5">
-                            <a href="">
-                                <span>1963.01.01</span>
-                                <p>구자곡면과 전북 익산군 황화면을 합병하여 연무읍으로 승격 (3읍 12면)</p>
-                            </a>
-                        </li>
-                        <li class="his it6">
-                            <a href="">
-                                <span>1983.02.15</span>
-                                <p>가야곡면 중산리 및 양촌리 중 일부가 양촌면으로 편입, 양촌면 신양리가 연산면으로 편입</p>
-                            </a>
-                        </li>
-                        <li class="his it7">
-                            <a href="">
-                                <span>1989.01.01</span>
-                                <p>대덕군 진잠면 남선리를 두마면에 편입</p>
-                            </a>
-                        </li>
-                        <li class="his it8">
-                            <a href="">
-                                <span>1990.02.19</span>
-                                <p>두마면에 충청남도 계룡출장소 설치</p>
-                            </a>
-                        </li>
-                        <li class="his it9">
-                            <a href="">
-                                <span>1996.03.01</span>
-                                <p>논산시 승격과 함께 논산읍이 취암동과 부창동으로 분리(2읍 12면 2동)</p>
-                            </a>
-                        </li>
-                        <li class="his it10">
-                            <a href="">
-                                <span>2003.09.19</span>
-                                <p>논산시에서 충청남도 계룡출장소가 계룡시로 분리(2읍 11면 2동)</p>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="brn_wrap">
+                        <input type="radio" class="ra" id="rad1" name="rad" checked>
+                        <input type="radio" class="ra" id="rad2" name="rad">
+                        <input type="radio" class="ra" id="rad3" name="rad">
+                        <input type="radio" class="ra" id="rad4" name="rad">
+                        <input type="radio" class="ra" id="rad5" name="rad">
+                        <input type="radio" class="ra" id="rad6" name="rad">
+                        <div class="brn_btn_box">
+                            <label for="rad1" class="brn_btn item1">논산브랜드 기본형</label>
+                            <label for="rad2" class="brn_btn item2">논산브랜드 활용형</label>
+                            <label for="rad3" class="brn_btn item3">로고타입</label>
+                            <label for="rad4" class="brn_btn item4">시그니처 영문</label>
+                            <label for="rad5" class="brn_btn item5">시그니처 한문</label>
+                            <label for="rad6" class="brn_btn item6">영문 논산브랜드</label>
+                        </div>
+                        <ul class="brn_box">
+                            <li class="brn it1">
+                                <h2>논산브랜드 기본형</h2>
+                                <p>논산브랜드는 논산시의 이미지를 대내외적으로 표출하는 모든 시각 커뮤니케이션의 핵심이 되는 대표적 상징물이다.
+                                        시각적 이미지의 통일성을 확보하기 위해 개발된 논산브랜드는 조직원들에게 일체감을 조성하고 대내외적으로 논산시의 일관된 이미지를 전달하기 위한 것이므로 사용에 있어서 특별한 주의를 요한다.</p>
+                                <img src="./data/기본형.png" alt="상징 이미지">
+                            </li>
+                            <li class="brn it2">
+                                <h2>논산브랜드 활용형</h2>
+                                <p>논산브랜드 활용형은 기본형에 ‘시’를 더한 디자인으로 선택하여 활용이 가능하다. 활용형은 논산시의 이미지를 대내외적으로 표출하는 모든 시각 커뮤니케이션의 핵심이 되는 대표적 상징물이다. 시각적 이미지의 통일성을 확보하기 위해 개발된 논산브랜드는 조직원들에게 일체감을 조성하고 대내외적으로 논산시의 일관된 이미지를 전달하기 위한 것이므로 사용에 있어서 특별한 주의를 요한다.</p>
+                                <img src="./data/활용형.png" alt="상징 이미지">
+                            </li>
+                            <li class="brn it3">
+                                <h2>로고타입</h2>
+                                <p>로고타입은 논산시의 존재를 명칭을 통하여 구체적으로 전달하는 기능을 가진 것으로 논산브랜드와 함께 논산시의 핵심을 이루는 중요한 요소이다. 로고타입은 각각의 글자꼴 형태에 따라 비례 조정한 것으로 글자의 꼴, 굵기, 비례 등을 임의로 변경해서는 안된다.</p>
+                                <img src="./data/로고타입.png" alt="상징 이미지">
+                            </li>
+                            <li class="brn it4">
+                                <h2>시그니처 영문</h2>
+                                <p>시그니처는 논산브랜드와 로고타입을 적절한 비례로 조합한 것으로 적용 상황에 맞는 조합을 선택 활용할 수 있으며, 모든 원고의 사용은 가이드라인 데이터에 의해 축소 · 확대하여 사용하는 것을 원칙으로 한다.</p>
+                                <img src="./data/시그니처영문.png" alt="상징 이미지">
+                            </li>
+                            <li class="brn it5">
+                                <h2>시그니처 한문</h2>
+                                <p>시그니처는 논산브랜드와 로고타입을 적절한 비례로 조합한 것으로 적용 상황에 맞는 조합을 선택 활용할 수 있으며, 모든 원고의 사용은 가이드라인 데이터에 의해 축소 · 확대하여 사용하는 것을 원칙으로 한다.</p>
+                                <img src="./data/시그니처한문.png" alt="상징 이미지">
+                            </li>
+                            <li class="brn it6">
+                                <h2>영문 논산브랜드</h2>
+                                <p>영문 논산브랜드는 기본형인 국문 논산브랜드 디자인을 영문 로고타입에 적용한 것이다. 국문 논산브랜드를 기본으로 사용하되 영문은 선택적으로 활용한다.</p>
+                                <img src="./data/영문논산브랜드.png" alt="상징 이미지">
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="con item2">2</li>
                 <li class="con item3">3</li>
-                <li class="con item4">4</li>
             </ul>
         </figure>
         <footer id="ft">

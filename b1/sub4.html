@@ -27,14 +27,16 @@
         .page #keyword2 { width: 760px; height: 60px; background-color: #fff; display: block; margin: 0px auto; border: 3px solid #aaa; transition: 0.3s; }
         .page #keyword2:focus { box-shadow: 0px 0px 10px; }
         .page #search2 { width: 50px; height: 50px; position: absolute; background-image: url("./data/icon.png/search.png"); background-position: center; background-repeat: no-repeat; background-size: 30px 30px; top: 7px; left: 710px; background-color: transparent; text-indent: -9999px; }
-        .content_wrap { width: 1240px; height: 1200px; position: relative; clear: both; margin: 80px auto; }
+        .content_wrap { width: 1240px; position: relative; clear: both; margin: 80px auto; overflow: hidden; }
         .content_wrap:before { content: ""; display: block; position: absolute; width: 1240px; height: 119px; border-top: 1px dotted #000; border-bottom: 1px solid crimson;}
         .content_wrap:after { content: ""; display: block; position: absolute; width: 1920px; height: 1180px; background-color: #eee; top: 120px; left: -340px; }
+        #ra1:checked ~ .con_box .item1 { display: block; }
+        .ra { display: none; }
         #ra1:checked ~ .con_box .item1 { display: block; }
         #ra2:checked ~ .con_box .item2 { display: block; }
         #ra3:checked ~ .con_box .item3 { display: block; }
         #ra4:checked ~ .con_box .item4 { display: block; }
-        .ra { display: none; }
+        .con_box { position: relative; z-index: 6;}
         .con_box .con { display: none; }
         .btn_box { height: 120px; }
         .btn_box label { display: block; float: left; width: 310px; height: 120px; text-align: center; line-height: 120px; font-size: 24px; border-top: 3px solid transparent; border-bottom: 3px solid transparent; box-sizing: border-box; font-weight: bold; position: relative; z-index: 5; cursor: pointer; z-index: 5; }
@@ -42,21 +44,16 @@
         #ra2:checked ~ .btn_box .con_btn2 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
         #ra3:checked ~ .btn_box .con_btn3 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
         #ra4:checked ~ .btn_box .con_btn4 { border-top: 3px solid crimson; border-bottom: 3px solid #000; color:crimson; }
-        .btn_box label span { display: block; margin-top: -15px; }
-        .btn_box label .txt { line-height: 0; margin-top: -25px; font-size: 18px; font-weight: normal; }
-        .con_box .con { width: 1240px; height: 760px; position: relative; z-index: 5; }
-        .con_box .con .his_box { margin-top: 40px; } 
-        .con_box .con .his { width: 350px; height: 210px; float: left; padding: 20px; margin-left: 17px; text-align: center; border: 1px solid #777; margin-top: 20px; overflow: hidden; background-color: #fff; }
-        .con_box .con .his:hover { border:1px solid #fe3c08; }
-        .con_box .con .his a { display: block; font-size: 24px; position: relative; }
-        .con_box .con .his a:after { content: ""; display: block; position: absolute; width: 390px; height: 250px; background-color: rgba(0,0,0,0.7); top:-20px; left: -20px; transition: 0.1s; }
-        .con_box .con .his a:hover:after { opacity: 0; }
-        .con_box .con .his a span { display: block; height: 210px; line-height: 210px; color:#fff; position: relative; z-index: 5; transition: 0.1s; }
-        .con_box .con .his a:hover span { opacity: 0; display: none; }
-        .con_box .con .his a p { height: 210px; padding-top: 60px; font-size: 20px; color: #000; }
-
-        
-
+        .btn_box label span { display: block; }
+        .con_box { width: 1240px; }
+        .con_box .con .con_fr { min-height: 100vh; z-index: 80; overflow: auto; overflow-x:hidden; }
+        .con_box .con .con_fr .con_fr_tit { text-align: center; color: #000; line-height: 150px; width: 200px; height: 150px; margin: 0 auto; }
+        .con_box .con .con_fr .con_fr_txt { width: 1020px; padding: 110px; padding-top: 10px; padding-bottom: 30px; text-align: center; }
+        .con_box .con .con_fr .img_box { max-height: 100vh; }
+        .con_box .con .con_fr .img_box { overflow-y: auto; }
+        .con_box .con .con_fr .img_box li img { display: block; margin: 0 auto; }
+        .con_box .con .con_fr .img_box li:first-child { margin-top: -50px;}
+        .con_box .con .con_fr .img_box li:first-child { padding-top: 50px; }
     </style>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script>
@@ -68,7 +65,7 @@
 <body>
     <div class="wrap">
         <div class="bc_box">
-            <img src="./data/현황배경.png" alt="현황배경이미지">
+            <img src="./data/축제배경.png" alt="축제배경이미지">
         </div>
         <nav id="tnb">
             <ul class="right_menu">
@@ -105,10 +102,10 @@
                 </ul>
             </nav>
         </div>
-        <h1 class="hd_tit2">논산시 현황</h1>
+        <h1 class="hd_tit2">축제/행사 소개</h1>
         <ul class="bcr_box">
             <li class="brc item1"><a href="index.html">Home</a></li>
-            <li class="brc item2"><a href="sub1.html">현황</a></li>
+            <li class="brc item2"><a href="sub3.html">축제/행사</a></li>
         </ul>
         <div class="page" id="page1">
             <form action="" id="frm2">
@@ -122,80 +119,47 @@
             <input type="radio" id="ra3" class="ra" name="rdo">
             <input type="radio" id="ra4" class="ra" name="rdo">
             <div class="btn_box">
-                <label for="ra1" class="con_btn1"><span>연혁</span><span class="txt">History</span></label>
-                <label for="ra2" class="con_btn2"><span>위치/기후</span><span class="txt">Location/Climate</span></label>
-                <label for="ra3" class="con_btn3"><span>행정구역</span><span class="txt">Administrative area</span></label>
-                <label for="ra4" class="con_btn4"><span>인구</span><span class="txt">Population</span></label>
+                <label for="ra1" class="con_btn1"><span>논산딸기축제</span></label>
+                <label for="ra2" class="con_btn2"><span>양촌곶감축제</span></label>
+                <label for="ra3" class="con_btn3"><span>강경발효젓갈축제</span></label>
+                <label for="ra4" class="con_btn4"><span>황산벌전투재현행사</span></label>
             </div>
             <ul class="con_box">
                 <li class="con item1">
-                    <ul class="his_box">
-                        <li class="his it1">
-                            <a href="">
-                                <span>1914.04.01</span>
-                                <p>연산, 은진, 노성, 석성군을 병합 논산군 설치(15면)</p>
-                            </a>
-                        </li>
-                        <li class="his it2">
-                            <a href="">
-                                <span>1917.10.01</span>
-                                <p>대조곡면을 은진면으로 개칭</p>
-                            </a>
-                        </li>
-                        <li class="his it3">
-                            <a href="">
-                                <span>1931.04.01</span>
-                                <p>강경면이 강경읍으로 승격 (1읍 14면)</p>
-                            </a>
-                        </li>
-                        <li class="his it4">
-                            <a href="">
-                                <span>1938.10.01</span>
-                                <p>논산면이 논산읍으로 승격 (2읍 13면)
-                                    </p>
-                            </a>
-                        </li>
-                        <li class="his it5">
-                            <a href="">
-                                <span>1963.01.01</span>
-                                <p>구자곡면과 전북 익산군 황화면을 합병하여 연무읍으로 승격 (3읍 12면)</p>
-                            </a>
-                        </li>
-                        <li class="his it6">
-                            <a href="">
-                                <span>1983.02.15</span>
-                                <p>가야곡면 중산리 및 양촌리 중 일부가 양촌면으로 편입, 양촌면 신양리가 연산면으로 편입</p>
-                            </a>
-                        </li>
-                        <li class="his it7">
-                            <a href="">
-                                <span>1989.01.01</span>
-                                <p>대덕군 진잠면 남선리를 두마면에 편입</p>
-                            </a>
-                        </li>
-                        <li class="his it8">
-                            <a href="">
-                                <span>1990.02.19</span>
-                                <p>두마면에 충청남도 계룡출장소 설치</p>
-                            </a>
-                        </li>
-                        <li class="his it9">
-                            <a href="">
-                                <span>1996.03.01</span>
-                                <p>논산시 승격과 함께 논산읍이 취암동과 부창동으로 분리(2읍 12면 2동)</p>
-                            </a>
-                        </li>
-                        <li class="his it10">
-                            <a href="">
-                                <span>2003.09.19</span>
-                                <p>논산시에서 충청남도 계룡출장소가 계룡시로 분리(2읍 11면 2동)</p>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="con_fr">
+                        <h2 class="con_fr_tit">논산딸기축제</h2>
+                        <p class="con_fr_txt">논산딸기축제를 홍보하고자 만화로 축제장을 미리 가보고, 축제를 재미있게 소개하고자 만화로 그려봤습니다. 재미있게 봐주세요 ^^ 만화에 나오는 배경은 실제 농장과 축제장에서 촬영한 사진입니다.</p>
+                        <ul class="img_box">
+                            <li class="img item1"><img src="./data/sub04080302_01.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item2"><img src="./data/sub04080302_02.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item3"><img src="./data/sub04080302_03.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item4"><img src="./data/sub04080302_04.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item5"><img src="./data/sub04080302_05.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item6"><img src="./data/sub04080302_06.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item7"><img src="./data/sub04080302_07.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item8"><img src="./data/sub04080302_08.jpg" alt="딸기축제만화이미지"></li>
+                            <li class="img item9"><img src="./data/sub04080302_09.jpg" alt="딸기축제만화이미지"></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="con item2">2</li>
-                <li class="con item3">3</li>
-                <li class="con item4">4</li>
+                <li class="con item2">                    
+                    <div class="con_fr">
+                        <h2 class="con_fr_tit">양촌곶감축제</h2>
+                        <p class="con_fr_txt">양촌곶감축제를 홍보하고자 만화로 축제장을 미리 가보고, 축제를 재미있게 소개하고자 만화로 그려봤습니다. 재미있게 봐주세요 ^^ 만화에 나오는 배경은 실제 농장과 축제장에서 촬영한 사진입니다.</p>
+                    </div>
+                </li>
+                <li class="con item3">
+                    <div class="con_fr">
+                        <h2 class="con_fr_tit">강경발효젓갈축제</h2>
+                        <p class="con_fr_txt">강경발효젓갈축제를 홍보하고자 만화로 축제장을 미리 가보고, 축제를 재미있게 소개하고자 만화로 그려봤습니다. 재미있게 봐주세요 ^^ 만화에 나오는 배경은 실제 농장과 축제장에서 촬영한 사진입니다.</p>
+                    </div>
+                </li>
+                <li class="con item4">
+                    <div class="con_fr">
+                        <h2 class="con_fr_tit">황산벌전투재현행사</h2>
+                        <p class="con_fr_txt">황산벌전투재현행사를 홍보하고자 만화로 축제장을 미리 가보고, 축제를 재미있게 소개하고자 만화로 그려봤습니다. 재미있게 봐주세요 ^^ 만화에 나오는 배경은 실제 농장과 축제장에서 촬영한 사진입니다.</p>
+                    </div>
+                </li>
             </ul>
         </figure>
         <footer id="ft">
