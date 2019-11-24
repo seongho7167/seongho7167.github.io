@@ -28,9 +28,9 @@
         .vs_box h2 { color: #dfe4e7; font-size: 48px; }
         .vs_box span { display: block; color: #dfe4e7; font-size: 16px; padding-top: 10px; }
         
-        .story_back { position: absolute; left: 0px; top: 850px; opacity: 0.3; }
-        .content_wrap { width: 1280px; height: auto; position: relative; margin: 0 auto; }
-        .bcr_box { width: 160px; height: auto; margin-top: 40px; float: right; position: relative; z-index: 99; }
+        .story_back { position: absolute; left: 0px; top: 850px; opacity: 0.5; }
+        .content_wrap { width: 1280px; height: 1000px; position: relative; margin: 0 auto; }
+        .bcr_box { width: 200px; height: auto; margin-top: 40px; float: right; position: relative; z-index: 99; }
         .bcr_box .item1 { position: relative; cursor: pointer; }
         .bcr_box .item1:before { content: ""; position: absolute; display: block; width: 15px; height: 1px; background-color: #3dbedf; transform: rotate(45deg); left:73px; top: 5px; }
         .bcr_box .item1:after { content: ""; position: absolute; display: block; width: 15px; height: 1px; background-color: #3dbedf; transform: rotate(-45deg); left:73px; top: 15px; }
@@ -38,27 +38,10 @@
         .bcr_box span { display: block; font-size: 14px; color: #3dbedf; float: left; padding-left: 25px; cursor: pointer; }
         .bcr_box .it1 { padding-left: 8px;}
         .bcr_box span:hover { color: #00203b; }
-        .con_box { width: 1280px; height: 675px; position: relative; }
-        .con_box:after { content: ""; display: block; position: absolute; top: 675px; width: 320px; height: 1px; background-color: #00203b; } 
+        .con_box { width: 1280px; height: 330px; position: relative; }
         .con_box .con_tit { padding-top: 120px; font-family: bear; font-size: 60px; color : #3dbedf; }
-        .con_box2 .con_tit { padding-top: 120px; font-family: bear; font-size: 60px; color : #3dbedf; }
         .tit_bar { display: block; width: 35px; height: 6px; background-color: #3dbedf; margin-top: 28px; }
-        .con_text { margin-top: 68px; height: 320px; }
-        .con_text span { display: block; font-family: mel; font-size: 18px; line-height: 2; color: #00203b; } 
-        .con_text .txt.it1 { font-size: 24px; }
-        .con_text .it3 { text-indent: 25px; }
-        .con_text .txt1 { padding-top: 20px; }
-        
-        .intro_box { width: 1195px; height: 650px; margin: 0 auto; position: relative; }
-        .intro_box img { display: block; width: 1195px; height: 650px; }
-        .intro_box:before { content: ""; display: block; position: absolute; width: 1195px; height: 650px; background-color: #00203b; opacity: 0.6; transition: 0.3s; }
-        .intro_box:hover:before { opacity: 0; }
-        .intro_box2 { width: 1280px; height: 620px; position: relative; }
-        .intro_box2 li { width: 303px; height: 303px; float: left; margin-left: 90px; margin-top: 100px; text-align: center; position: relative; }
-        .intro_box2 li:before { content: ""; display: block; position: absolute; width: 303px; height: 303px; border-radius: 400px; background-color: #00203b; opacity: 0.6; transition: 0.3s; }
-        .intro_box2 li:hover:before { opacity: 0; }
-        .intro_box2 li span { display: block; font-size: 22px; color : #00203b; font-family: mel; line-height: 3.8; }
-        
+
         .lnb_wrap { width: 200px; height: 250px; position: fixed; top: 300px; left: 0px; z-index: 999;}
         .lnb_wrap .btn1 { display: block; width: 40px; height: 20px; position: fixed; padding-left: 200px; z-index: 1; z-index: 900; padding-top: 20px; }
         .lnb_wrap .btn_bar { display: block; width: 35px; height: 4px; background-color: #3dbedf; position: relative;  }
@@ -67,7 +50,7 @@
         .lnb_wrap .btn_bar:before { content: ""; display: block; position: absolute; width: 35px; height: 4px; background-color: #3dbedf; top: -13px; transition: 0.3s; }
         .lnb_wrap .btn1:hover .btn_bar:before { transform: rotate(45deg) translateX(14px) translateY(-7px); width: 25px; }
         .lnb_wrap .ck { display: none; }
-        .lnb_wrap .lnb_box { width: 200px; height: 250px; font-family: bear; font-size: 24px; margin-top: 50px; margin-left: -300px; text-align: right; opacity: 0; transition: 0.5s; position: fixed; z-index: 999; }
+        .lnb_wrap .lnb_box {  width: 200px; height: 250px; font-family: bear; font-size: 24px; margin-top: 50px; margin-left: -300px; text-align: right; opacity: 0; transition: 0.5s; position: fixed; z-index: 999;  }
         .lnb_wrap .lnb_box .menu_ck_btn { display: block; cursor: pointer; color:#3dbedf; padding-top: 0px; }
         .menu_ck_btn a { color: #3dbedf; }
         .lnb_wrap .lnb_box .menu_ck_btn:hover a { color: #ff3a1d; }
@@ -83,6 +66,20 @@
         #ck1:checked ~ .lnb_box { margin-left: 0px; opacity: 1; }
         #ck1:checked ~ .btn1 { opacity: 0; }
         #ck1:checked ~ .lnb_box .btn2 { opacity: 1; }
+        
+        .membership { min-width: 1280px; position: relative; margin: 0 auto; }
+        .membership .mem_box { width: 90%; position: relative; margin: 0 auto; }
+        .membership .mem { width: 40%; float: left; border: 1px solid #ccc; margin-left: 5%; height: 250px; margin-top: 5%; border-radius: 50px;}
+        .membership .mem:nth-child(1), .membership .mem:nth-child(2) { margin-top: 20px; }
+        .membership .mem .mem_con_box { width: 100%; height: 250px; position: relative;  }
+        .membership .mem .mem_con_box:before { content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 250px; border-radius: 50px; background-color: #3dbedf; transition: 0.3s; z-index: 5; }
+        .membership .mem .mem_con_box:hover:before { background-color: transparent; }
+        .membership .mem .mem_con_box .mem_icon { display: block; width: 30%; position: absolute; top: 60px; left: 165px; opacity: 1; transition: 0.3s; z-index: 5;  }
+        .membership .mem .mem_con_box:hover .mem_icon { opacity: 0; }
+        .mem_con_fr { width: 100%; height: 250px; position: relative; }
+        .mem_con_fr .mem_tit { text-align: center; height: 60px; line-height: 60px; color: #3dbedf; font-family: bear; padding-top: 15px;}
+        .mem_con_fr .mem_txt { text-align: center; font-family: mel; line-height: 1.8; }
+        .mem_con_fr img { display: block; opacity: 0.3; width: 50%; position: absolute; top: 50px; left: 100px;  }
     </style>
     <script>
     $(document).ready(function(){
@@ -90,7 +87,7 @@
         $(".lnb_wrap").css("display","none");
         $(window).scroll(function(){
             var sc = parseInt($(window).scrollTop());
-            if(sc>=500){
+            if(sc>=300){
                 $(".lnb_wrap .btn1").fadeIn(300);
                 $(".lnb_wrap").fadeIn(300);
                 
@@ -152,10 +149,10 @@
             </nav>
         </header>
         <figure class="vs_wrap">
-            <img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C.png" alt="소개">
+            <img src="./data/mem_background.png" alt="소개">
             <div class="vs_box">
-                <h2 class="vs_tit">피자 알볼로 소개</h2>
-                <span class="vs_con">믿음과 신뢰의 외식기업, 대한민국 전통 피자가게</span>
+                <h2 class="vs_tit">멤버십혜택 안내</h2>
+                <span class="vs_con">피자 알볼로만의 멤버십혜택, 고객의 신뢰와 믿음에 보답하겠습니다.</span>
             </div>
         </figure>
         <nav class="lnb_wrap">
@@ -165,49 +162,71 @@
                 <label for="ck1" class="btn2"><span class="btn_bar2"></span><span class="btn_bar3"></span></label>
                 <li class="lnb item1">
                     <input type="checkbox" value="" class="menu_ck" id="m_ck1">
-                    <label for="m_ck1" class="menu_ck_btn ck1_btn"><a href="./sub1.html">피자알볼로 소개</a></label>
+                    <label for="m_ck1" class="menu_ck_btn ck1_btn"><a href="./sub1.html">멤버십혜택 안내</a></label>
                 </li>
                 <li class="lnb item2">
                     <input type="checkbox" value="" class="menu_ck" id="m_ck2">
-                    <label for="m_ck2" class="menu_ck_btn ck1_btn2"><a href="./sub1_2.html">피자알볼로 비전</a></label>
+                    <label for="m_ck2" class="menu_ck_btn ck1_btn2"><a href="./sub1_2.html">나의 멤버십</a></label>
                 </li>
             </ul>
         </nav>
-        <img src="./data/story_background.png" alt="background_image" class="story_back">
+<!--        <img src="./data/story_background.png" alt="background_image" class="story_back">-->
         <main class="content_wrap">
             <ul class="bcr_box">
                 <li class="bcr item1"><img src="./data/home_ico.png" alt="home">
                 <a href="./index.html"><span class="it1">Home</span></a></li>
-                <li class="bcr item2"><span class="it2">Story</span></li>
+                <li class="bcr item2"><span class="it2">Membership</span></li>
             </ul>
             <div class="con_box">
-                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
+                <h2 class="con_tit">PIZZA ALVOLO <br>MEMBERSHIP</h2>
                 <span class="tit_bar"></span>
-                <p class="con_text">
-                    <span class="txt it1">피자도 요리이고 과학</span>
-                    <span class="txt it2">“좋은 재료에 정성을 쏟아 만드는 것이 알볼로 피자맛의 핵심 레시피이자 경쟁력입니다.” </span>
-                    <span class="txt1 it3">피자를 떠올릴 때, 일반적으로 비만을 유발하고 건강에 좋지 않은 패스트푸드로 저평가 되고 있습니다. 하지만 피자는 우리가 생각하는 것 이상으로 영양학적으로 우수한 </span>
-                    <span class="txt it3">식품이고 과학적인 발효식품입니다. 우리나라의 대부분의 피자가 미국식으로 너무 상업화되다보니 매뉴얼에 의해 정형화되고 자극적인 음식으로 만들어진게 사실입니다. </span>
-                    <span class="txt it3">조리를 전공한 우리 형제는 이탈리아 전통피자에 한국식 피자를 접목 우리 입맛에 맞는 웰빙수제피자를 만들었습니다. 피자도 얼마든지 건강한 요리이자 과학적인 음식이</span>
-                    <span class="txt it3">라는 인식을 많은 사람들에게 꼭 심어주고 싶습니다.</span>
-                </p>
             </div>
-            <div class="con_box2">
-                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
-                <span class="tit_bar"></span>
-                <p class="con_text">
-                    <span class="txt it1">피자로 새로운 세상의 문을 열다.</span>
-                    <span class="txt it3">저희 형제는 어릴 때 부터 비행기와 하늘을 무척 좋아했습니다. 라이트형제가 비행기를 처음 발명하여 성공했듯이 세상에서 가장 맛있는 피자를 만들어 온 세상에 널리 </span>
-                    <span class="txt it3">알리고 싶은 저희 형제의 꿈과 열정을 담고 싶었습니다. 그렇게 해서 탄생한 것이 이태리어로 '비행하다, 비상하다'의 뜻인 알볼로입니다. 피자알볼로만의 최고의 맛과 </span>
-                    <span class="txt it3">서비스를 제공하고 피자알볼로가 점점 비상하는 모습을 보여주어 많은 이들에게 꿈과 희망을 주는 피자가게가 되고 싶습니다.</span>
-                </p>
+            <div class="membership">
+                <ul class="mem_box">
+                    <li class="mem item1">
+                        <div class="mem_con_box">
+                            <img  src="./data/membership1.png" alt="멤버십아이콘1" class="mem_icon">
+                            <div class="mem_con_fr">
+                                <h2 class="mem_tit">탑승준비</h2>
+                                <p class="mem_txt">최초 회원가입 고객</p>
+                                <img src="./data/mem_icon.png" alt="비행기아이콘">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mem item2">
+                        <div class="mem_con_box">
+                            <img src="./data/membership2.png" alt="멤버십아이콘2" class="mem_icon">
+                            <div class="mem_con_fr">
+                                <h2 class="mem_tit">이코노미</h2>
+                                <p class="mem_txt">이전 등급에서 쿠폰 3 적립 시 승급(누적 3) 
+                                    <br> 단품피자 주문 시 사이드메뉴 50%할인 쿠폰
+                                </p>
+                                <img src="./data/mem_icon.png" alt="비행기아이콘">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mem item3">
+                        <div class="mem_con_box">
+                            <img src="./data/membership3.png" alt="멤버십아이콘3" class="mem_icon">
+                            <div class="mem_con_fr">
+                                <h2 class="mem_tit">비즈니스</h2>
+                                <p class="mem_txt">이전 등급에서 쿠폰 5 적립 시 승급(누적 8)<br>단품피자 주문 시 추가 1판 50%할인 쿠폰<br> (동급 혹은 이하 제품에 적용 가능)<br> 비즈니스 등급에서  5 적립 시<br> 단품피자 주문 시 치즈오븐스파게티 무료 쿠폰</p>
+                                <img src="./data/mem_icon.png" alt="비행기아이콘">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mem item4">
+                        <div class="mem_con_box">
+                            <img src="./data/membership4.png" alt="멤버십아이콘4" class="mem_icon">
+                            <div class="mem_con_fr">
+                                <h2 class="mem_tit">퍼스트 클래스</h2>
+                                <p class="mem_txt">이전 등급에서 쿠폰 10 적립 시 승급 (누적 18)<br>생일쿠폰 (모든 피자 4,000원 할인)<br>퍼스트 클래스 전용 프로모션<br>이전 등급 혜택 쿠폰 3종<br>스탬프 26개 추가 적립 시 웰빙피자L 이하 무료 쿠폰</p>
+                                <img src="./data/mem_icon.png" alt="비행기아이콘">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="intro_box"><img src="./data/intro2.png" alt="소개2"></div>
-            <ul class="intro_box2">
-                <li class="intro item1"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C3.png" alt="소개3"><span>도우에 집중하다</span></li>
-                <li class="intro item2"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C4.png" alt="소개4"><span>기본에 집착하다</span></li>
-                <li class="intro item3"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C5.png" alt="소개5"><span>사람을 생각하다</span></li>
-            </ul>
         </main>
         <footer class="ft">
             <a href="" class="flogo"><img src="./data/logo.png" alt="logo"></a>

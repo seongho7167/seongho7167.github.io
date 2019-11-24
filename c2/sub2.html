@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>피자알볼로</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="피자, pizza, 알볼로, 피자알볼로, pizzaalvolo, alvolo, 피자 맛집, 신선한 재료, 수제피자, 수제피자 전문점, 피자 전문전, 온라인 서비스, 온라인 주문">
+    <meta name="description" content="피자알볼로에서는 언제나 맛있고 신선한 재료로 만든 수제피자만을 제공합니다.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="PizzaAlvolo">
+    <meta property="og:description" content="CRAFTED BY HAND.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="PizzaAlvolo">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.11">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/sub_common.css">
+    <style>
+        .con_text .txt.it1 { font-size: 24px; }
+        .con_text .it3 { text-indent: 25px; }
+        .con_text .txt1 { padding-top: 20px; }
+        
+        .lnb_wrap { width: 200px; height: 250px; position: fixed; top: 300px; left: 0px; z-index: 999;}
+        .lnb_wrap .btn1 { display: block; width: 40px; height: 20px; position: fixed; padding-top: 20px; padding-left: 200px; z-index: 1; z-index: 999; }
+        .lnb_wrap .btn_bar { display: block; width: 35px; height: 4px; background-color: #3dbedf; position: relative;  }
+        .lnb_wrap .btn_bar:after { content: ""; display: block; position: absolute; width: 35px; height: 4px; background-color: #3dbedf; top: 13px; transition: 0.3s; }
+        .lnb_wrap .btn1:hover .btn_bar:after { transform: rotate(-45deg) translateX(15px) translateY(8px); width: 25px; }
+        .lnb_wrap .btn_bar:before { content: ""; display: block; position: absolute; width: 35px; height: 4px; background-color: #3dbedf; top: -13px; transition: 0.3s; }
+        .lnb_wrap .btn1:hover .btn_bar:before { transform: rotate(45deg) translateX(14px) translateY(-7px); width: 25px; }
+        .lnb_wrap .ck { display: none; }
+        .lnb_wrap .lnb_box {  width: 200px; height: 250px; font-family: bear; font-size: 24px; margin-top: 50px; margin-left: -300px; text-align: right; opacity: 0; transition: 0.5s; position: fixed; z-index: 999; }
+        .lnb_wrap .lnb_box .menu_ck_btn { display: block; cursor: pointer; color:#3dbedf; padding-top: 20px;  }
+        .lnb_wrap .lnb_box .menu_ck_btn:hover { color: #ff3a1d; }
+/*        .menu_ck:checked + .menu_ck_btn { color:#ff3a1d; }*/
+        .menu_ck { display: none; }
+        .lnb_wrap .btn2 { display: block; width: 40px; height: 40px; position: absolute; top:-40px; left:210px; padding-top: 0px; opacity: 0; transition: 0.3s;  }
+        .lnb_wrap .btn2 .btn_bar2 { display: block; width: 25px; height: 4px; position: absolute; background-color:#3dbedf; top: 0px; left:0px; transform: rotate(-35deg); transition: 0.3s; }
+        .lnb_wrap .btn2:hover .btn_bar2 { width: 35px; transform: rotate(-45deg) translateY(-4px) translateX(-13px); background-color: #ff3a1d; }
+        .lnb_wrap .btn2 .btn_bar3 { display: block; position: absolute; width: 25px; height: 4px; background-color: #3dbedf; top: 13px; left:0px; transform: rotate(35deg); transition: 0.3s; }
+        .lnb_wrap .btn2:hover .btn_bar3 { width: 35px; transform: rotate(45deg) translateY(4px) translateX(-13px); background-color: #ff3a1d; }
+        
+        #ck1:checked ~ .lnb_box { margin-left: 0px; opacity: 1; }
+        #ck1:checked ~ .btn1 { opacity: 0; z-index: -1; }
+        #ck1:checked ~ .lnb_box .btn2 { opacity: 1; }
+        
+        .menu_box.cla1.on { display: none; }
+        .menu_box.cla2.on { display: none; }
+        .menu_box.cla3.on { display: none; }
+        .menu_box.cla4.on { display: none; }
+        .menu_box.cla5.on { display: none; }
+        .menu_wrap { width: 1280px; min-width: 1100px; position: relative; font-family: mel; }
+        .menu_tit_box { width: 1280px; min-width: 1100px; height: 60px; font-family: bear; font-size: 24px; padding-top: 20px; line-height: 60px; }
+        .menu_tit_box .menu_tit { color: #3dbedf; float: left; }
+        .menu_tit_box img  { display: block; float: left; width: 37px; margin-left: -45px; padding-top: 10px; }
+        .menu_tit_box span { display: block;  padding-left: 30px; height: 60px; line-height: 60px; font-family: mel; font-size: 18px; float: left; }
+        
+        .menu_fr { width: 1280px; min-width: 1200px; position: relative; height: 450px; }
+        .menu_fr2 { width: 1280px; min-width: 1200px; position: relative; height: 900px; }
+        .menu_fr3 { width: 1280px; min-width: 1200px; position: relative; height: 1350px; }
+        .menu_fr4 { width: 1280px; min-width: 1200px; position: relative; height: 900px; }
+        .menu_fr5 { width: 1280px; min-width: 1200px; position: relative; height: 1350px; }
+        .menu { width: 33.33333%; float: left; box-sizing: border-box; overflow: hidden; position: relative; margin-top: 15px; }
+        .menu a { display: block; width: 100%; }
+        .menu a:before { content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; background-color: rgba(0,0,0,0.7); height: 355px; opacity: 0; transition: 0.3s; }
+        .menu a:hover:before { opacity: 1; }
+        .menu img { display: block; width: 100%; }
+        .menu .menu_con_box { position: absolute; width: 100%; top: 0; left: 0; opacity: 0; transition: 0.3s; }
+        .menu:hover .menu_con_box { opacity: 1; }
+        .menu .menu_con_box .it_tit { text-align: center; height: 80px; line-height: 80px; color: #fff; padding-top: 50px; }
+        .menu .menu_con_box .txt { padding: 20px 50px; text-align: center; color: #fff; display: block; }
+        .menu .menu_con_box .more { display: block; width: 20%; height: 40px; color: #fff; border: 1px solid #fff; border-radius: 10px; font-size: 24px; text-align: center;  line-height: 40px; margin: 0 auto; margin-top: 60px; }
+        .menu .menu_con_box .more:hover { color: #3dbedf; border: 1px solid #3dbedf; }
+        .menu .menu_con_box .like_box { width: 50%; margin: 0 auto; }
+        .menu .menu_con_box .like { color: #fff; font-size: 20px; height: 40px; line-height: 30px; padding-left: 5px; float: left; margin-left: 5%;}
+        .menu .menu_con_box .like_box .scr { display: block; width: 30px; font-size: 14px; color:#3dbedf; float: left; margin-left: -24px; padding-top: 3px; }
+        .menu .menu_con_box .like_box img { display: block; width: 15%; float: left; margin-left: 20% }
+        .menu .munu_fr_tit { display: block; font-size: 24px; text-align: center; height: 60px; line-height: 60px; margin: 0 auto;}
+    </style>
+    <script>
+    $(document).ready(function(){
+//        $(".ck1_btn").click(function(){
+//            $(".menu_box.cla1").toggleClass("on");
+//        });
+//        $(".ck1_btn2").click(function(){
+//            $(".menu_box.cla2").toggleClass("on");
+//        });
+//        $(".ck1_btn3").click(function(){
+//            $(".menu_box.cla3").toggleClass("on");
+//        });
+//        $(".ck1_btn4").click(function(){
+//            $(".menu_box.cla4").toggleClass("on");
+//        });
+//        $(".ck1_btn5").click(function(){
+//            $(".menu_box.cla5").toggleClass("on");
+//        });
+        
+        $(".ck1_btn").click(function(){
+            $("body, html").animate({scrollTop:'500'}, 500);
+        });
+        $(".ck1_btn2").click(function(){
+            $("body, html").animate({scrollTop:'1200'}, 500);
+        }); 
+        $(".ck1_btn3").click(function(){
+            $("body, html").animate({scrollTop:'2200'}, 500);
+        });
+        $(".ck1_btn4").click(function(){
+            $("body, html").animate({scrollTop:'3600'}, 500);
+        });
+        $(".ck1_btn5").click(function(){
+            $("body, html").animate({scrollTop:'4600'}, 500);
+        });
+        
+//        var ht = parseInt($(window).height());
+        $(".lnb_wrap .btn1").css("display","none");
+        $(".lnb_wrap").css("display","none");
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop());
+            if(sc>=500){
+                $(".lnb_wrap .btn1").fadeIn(300);
+                $(".lnb_wrap").fadeIn(300);
+                
+            } else {
+                $(".lnb_wrap .btn1").fadeOut(300);
+                $(".lnb_wrap").fadeOut(300);
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header class="hd">
+            <a class="logo" href="./index.html"><img src="./data/logo.png" alt="로고"></a>
+            <nav class="tnb_wrap">
+                <ul class="tnb_box">
+                    <li class="tnb item1"><a href="./login.html">로그인</a></li>
+                    <li class="tnb item2"><a href="./join.html">회원가입</a></li>
+                    <li class="tnb item3"><a class="last" href="./mypage.html">마이페이지</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb_wrap">
+                <ul class="gnb_box">
+                    <li class="gnb item1">
+                        <a class="dp1" href="">브랜드</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="./sub1.html">피자알볼로 이야기</a></li>
+                            <li class="sub it2"><a href="./sub1_2.html">피자알볼로 비전</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item2">
+                        <a class="dp1" href="">피자</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="./sub2.html">전체메뉴</a></li>
+                            <li class="sub it2"><a href="./sub2_2.html">세트메뉴</a></li>
+                            <li class="sub it3"><a href="./sub2_3.html">카테고리 메뉴</a></li>
+                            <li class="sub it4"><a href="./sub2_4">1인 메뉴</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="gnb item3">
+                        <a class="dp1" href="">멤버십</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="./sub3.html">멤버십혜택 안내</a></li>
+                            <li class="sub it2"><a href="./sub3_2.html">나의 멤버십</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb item4">
+                        <a class="dp1" href="">새소식</a>
+                        <ul class="sub_box">
+                            <li class="sub it1"><a href="./sub4.html">새로운 메뉴</a></li>
+                            <li class="sub it2"><a href="./sub4_1.html">이벤트</a></li>
+                        </ul>                    
+                    </li>
+                    <li class="gnb item5">
+                        <a class="dp1" href="./sub5.html">매장안내</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <figure class="vs_wrap">
+            <img src="./data/menu_background.png" alt="메뉴백그라운드 이미지">
+            <div class="vs_box">
+                <h2 class="vs_tit">전체 메뉴</h2>
+                <span class="vs_con">맛있고 건강한 피자! 피자알볼로의 다양한 피자를 주문해보세요!</span>
+            </div>
+        </figure>
+        <nav class="lnb_wrap">
+            <input type="checkbox" id="ck1" class="ck">
+            <label for="ck1" class="btn1"><span class="btn_bar"></span></label>
+            <ul class="lnb_box">
+                <label for="ck1" class="btn2">
+                    <span class="btn_bar2"></span>
+                    <span class="btn_bar3"></span>
+                </label>
+                <li class="lnb item1">
+                    <input type="checkbox" value="" class="menu_ck" id="m_ck1">
+                    <label for="m_ck1" class="menu_ck_btn ck1_btn">장인피자</label>
+                </li>
+                <li class="lnb item2">
+                    <input type="checkbox" value="" class="menu_ck" id="m_ck2">
+                    <label for="m_ck2" class="menu_ck_btn ck1_btn2">달인피자</label>
+                </li>
+                <li class="lnb item3">
+                    <input type="checkbox" value="" class="menu_ck" id="m_ck3">
+                    <label for="m_ck3" class="menu_ck_btn ck1_btn3">명품피자</label>
+                </li>
+                <li class="lnb item4">
+                    <input type="checkbox" value="" class="menu_ck" id="m_ck4">
+                    <label for="m_ck4" class="menu_ck_btn ck1_btn4">웰빙피자</label>
+                </li>
+                <li class="lnb item5">
+                    <input type="checkbox" value="" class="menu_ck" id="m_ck5">
+                    <label for="m_ck5" class="menu_ck_btn ck1_btn5">정통피자</label>
+                </li>
+            </ul>
+        </nav>
+        <main class="content_wrap">
+            <ul class="bcr_box">
+                <li class="bcr item1"><img src="./data/home_ico.png" alt="home">
+                <a href="./index.html"><span class="it1">Home</span></a></li>
+                <li class="bcr item2"><span class="it2">Menu</span></li>
+            </ul>
+            <div class="con_box">
+                <h2 class="con_tit">PIZZA ALVOLO <br>MENU</h2>
+                <span class="tit_bar"></span>
+                <div class="menu_wrap">
+                    <div class="menu_box cla1">
+                        <div class="menu_tit_box">
+                            <img src="./data/tit_img.png" alt="타이틀 이미지">
+                            <h2 class="menu_tit">장인피자</h2>
+                            <span>피자 알볼로만의 장인정신으로 만들어진 피자!</span>
+                        </div>
+                        <ul class="menu_fr">
+                            <li class="menu item1">
+                                <a href=""><img src="./data/Busan%20Pizza.png" alt="부산피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">부산피자</h2>
+                                        <span class="txt">부산사나이와 다이나믹한 부산의 느낌을 담은 해산물 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">57</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">부산피자</span>
+                            </li>
+                            <li class="menu item2">
+                                <a href="">
+                                    <img src="./data/Shrimp%20&%20Hot%20Chicken%20Gold.jpg" alt="쉬림프핫치킨골드피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">쉬림프&핫치킨골드피자</h2>
+                                        <span class="txt">매콤한 칠리소스에 버무린 새우와 멕시칸 시즈닝이 첨가된 스파이스치킨의 조화가 으뜸인 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">87</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                
+                                <span class="munu_fr_tit">쉬림프&핫치킨골드피자</span>
+                            </li>
+                            <li class="menu item3">
+                                <a href="">
+                                    <img src="./data/shrimp & tenderloin gold pizza.jpg" alt="쉬림프안심골드피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">쉬림프&안심골드피자</h2>
+                                        <span class="txt">매콤한 칠리소스에 버무린 통통한 새우와 데리야키소스에 버무려진 부드러운 안심이 올려진 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">쉬림프&안심골드피자</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu_box cla2">
+                        <div class="menu_tit_box">
+                            <img src="./data/tit_img.png" alt="타이틀 이미지">
+                            <h2 class="menu_tit">달인피자</h2>
+                            <span>피자 알볼로의 달인실력으로 만들어진 피자!</span>
+                        </div>
+                        <ul class="menu_fr2">
+                            <li class="menu item1">
+                                <a href=""><img src="./data/Ggumeul%20Pizza.jpg" alt="꿈을피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">꿈을피자</h2>
+                                        <span class="txt">생바질을 갈아 만든 바질페스토, 유기농 크랜베리, 해남산 고구마와 파인애플, 호주산 목심 만을 볶아서 만든 불고기가 토핑 된 4가지 맛의 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">63</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">꿈을피자</span>
+                            </li>
+                            <li class="menu item2">
+                                <a href="">
+                                    <img src="./data/Ukke%20Pizza.jpg" alt="어깨피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">어깨피자</h2>
+                                        <span class="txt">쫄깃한 씬도우 위에 또 하나의 바삭한 도우를 올려 3가지 소스와 9가지 인기토핑으로 맛을 담은 팔색조 매력의 피자 </span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">83</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                
+                                <span class="munu_fr_tit">어깨피자</span>
+                            </li>
+                            <li class="menu item3">
+                                <a href="">
+                                    <img src="./data/The-neo%20pizza%20barbeeking.jpg" alt="더너피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">더너피자 바베킹</h2>
+                                        <span class="txt">스파이시치킨 토핑과 양념이 가득~베인 불고기 토핑을 엣지까지 꽉~채우고, 담백한 포테이토 미니피자를 담아 세 가지 맛의 밸런스까지 살린 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">더너피자 바베킹</span>
+                            </li>
+                            <li class="menu item4">
+                                <a href="">
+                                    <img src="./data/Ultra%20Korean%20Gold%20Pizza.jpg" alt="울트라코리언골드피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">울트라코리안골드피자</h2>
+                                        <span class="txt">매콤한 칠리소스에 소불고기, 이태리식 소세지 살라미, 허브갈릭 감자를 넣어 한국인의 입맛에 맞춘 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">울트라코리안골드피자</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu_box cla3">
+                        <div class="menu_tit_box">
+                            <img src="./data/tit_img.png" alt="타이틀 이미지">
+                            <h2 class="menu_tit">명품피자</h2>
+                            <span>피자 알볼로의 명품재료와 실력으로 만들어진 피자!</span>
+                        </div>
+                        <ul class="menu_fr3">
+                            <li class="menu item1">
+                                <a href=""><img src="./data/Jeonju%20bulback%20pizza.jpg" alt="전주불백피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">전주불백피자</h2>
+                                        <span class="txt">숯불 향 가득 직화 간장불고기와 매콤한 고추장불고기. 푸짐한 두 가지 불고기로 만든 누구나 먹을 수 있는 익숙하고 편안한 우리의 맛!</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">63</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">전주불백피자</span>
+                            </li>
+                            <li class="menu item2">
+                                <a href="">
+                                    <img src="./data/Sweet%20Pumpkin%20Gold%20Pizza.jpg" alt="단호박골드피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">단호박골드피자</h2>
+                                        <span class="txt">몸을 든든하게 해주는 영양만점 단호박을 아낌없이 넣은 단호박샐러드의 달콤하고 담백한 맛과 베이컨의 조화를 느낄 수 있는 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">83</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                
+                                <span class="munu_fr_tit">단호박골드피자</span>
+                            </li>
+                            <li class="menu item3">
+                                <a href="">
+                                    <img src="./data/Smile%20Flower%20Pizza%20.jpg" alt="웃음꽃피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">웃음꽃피자</h2>
+                                        <span class="txt">랜치소스의 상큼함과 부드러운 치킨탑핑, 미트토핑, 방울토마토, 할라피뇨를 넣고 진한 향의 그라나파다노치즈로 마무리한 웃음이 절로 나는 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">웃음꽃피자</span>
+                            </li>
+                            <li class="menu item4">
+                                <a href="">
+                                    <img src="./data/Sweet%20Potato%20Gold%20Pizza.jpg" alt="고구마골드피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">고구마골드피자</h2>
+                                        <span class="txt">고구마의 부드럽고 달콤한 맛과 체다치즈와 아몬드의 고소하고 풍부한 맛을 느낄 수 있는 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">고구마골드피자</span>
+                            </li>
+                            <li class="menu item5">
+                                <a href="">
+                                    <img src="./data/Quattro%20Formaggio%20Pizza%20.jpg" alt="콰트로포르마지오 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">콰트로포르마지오</h2>
+                                        <span class="txt">4가지 치즈 그라나파다노, 고르곤졸라, 생모짜렐라치즈, 크림치즈소스를 넣어 만든 이태리식 모듬치즈피자 (꿀소스 제공)</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">콰트로포르마지오</span>
+                            </li>
+                            <li class="menu item6">
+                                <a href="">
+                                    <img src="./data/Sweet%20Garden%20Gold%20Pizza.jpg" alt="스위트가든골드피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">스위트가든골드피자</h2>
+                                        <span class="txt">신선한 야채와 고급 햄 등 다양한 고기류를 듬뿍 얹고 달콤 상큼한 파인애플로 맛을 더한 토핑이 풍성한 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">스위트가든골드피자</span>
+                            </li>
+                            <li class="menu item7">
+                                <a href="">
+                                    <img src="./data/Italian Potato Gold Pizza .jpg" alt="이탈리안통감자골드 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">이탈리안통감자골드피자</h2>
+                                        <span class="txt">허브갈릭으로 구운 담백한 통감자와 부어스첸 소시지의 완벽한 조화를 이루는 이탈리아 프리미엄 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">이탈리안통감자골드피자</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu_box cla4">
+                        <div class="menu_tit_box">
+                            <img src="./data/tit_img.png" alt="타이틀 이미지">
+                            <h2 class="menu_tit">웰빙피자</h2>
+                            <span>피자 알볼로의 웰빙가치관을 가지고 만들어진 피자!</span>
+                        </div>
+                        <ul class="menu_fr4">
+                            <li class="menu item1">
+                                <a href=""><img src="./data/Sweet%20Pumpkin%20Gold.jpg" alt="단호박피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">단호박피자</h2>
+                                        <span class="txt">단호박의 달콤하고 담백한 맛과 아몬드의 고소한 맛을 느낄 수 있는 한국식 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">63</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">단호박피자</span>
+                            </li>
+                            <li class="menu item2">
+                                <a href="">
+                                    <img src="./data/Mokdong%20Pizza.jpg" alt="목동피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">목동피자</h2>
+                                        <span class="txt">신선한 야채, 햄, 페페로니, 깨끗하고 신선한 국내산 우유로 만든 대한민국 임실치즈를 토핑한 건강한 한국식 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">83</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                
+                                <span class="munu_fr_tit">목동피자</span>
+                            </li>
+                            <li class="menu item3">
+                                <a href="">
+                                    <img src="./data/Gorgonzola%20Pizza.jpg" alt="고르곤졸라 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">고르곤졸라</h2>
+                                        <span class="txt">이탈리아의 대표적인 블루치즈로 치즈의 깊고 진한 맛을 느낄 수 있는 이태리 정통 피자 (꿀소스 제공)</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">고르곤졸라</span>
+                            </li>
+                            <li class="menu item4">
+                                <a href="">
+                                    <img src="./data/SWEET%20POTATO.jpg" alt="고구마피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">고구마피자</h2>
+                                        <span class="txt">고구마 샐러드의 부드러움과 고소한 체다치즈, 그리고 아몬드까지 더해 풍부한 맛의 조화를 이룬 웰빙피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">고구마피자</span>
+                            </li>
+                            <li class="menu item5">
+                                <a href="">
+                                    <img src="./data/Hot%20&%20Spicy%20Chicken%20Pizza.jpg" alt="핫&스파이시치킨피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">핫&스파이시치킨피자</h2>
+                                        <span class="txt">매콤한 칠리소스에 버무린 멕시칸 치킨, 할라피뇨, 페페로니 등을 넣어 한국인의 입맛에 맞춘 매운맛 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">핫&스파이시치킨피자</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu_box cla5">
+                        <div class="menu_tit_box">
+                            <img src="./data/tit_img.png" alt="타이틀 이미지">
+                            <h2 class="menu_tit">정통피자</h2>
+                            <span>피자 알볼로만의 정통성을 가지고 만든 피자!</span>
+                        </div>
+                        <ul class="menu_fr5">
+                            <li class="menu item1">
+                                <a href=""><img src="./data/Super%20Deluxe%20Combination%20Pizza.jpg" alt="콤비네이션피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">콤비네이션피자</h2>
+                                        <span class="txt">10가지 재료의 하모니로 남녀노소 누구나 좋아하는 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">63</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">콤비네이션피자</span>
+                            </li>
+                            <li class="menu item2">
+                                <a href="">
+                                    <img src="./data/Potato%20Pizza.jpg" alt="포테이토피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">포테이토피자</h2>
+                                        <span class="txt">담백한 감자와 베이컨, 옥수수, 양파가 어우려진 담백하고 고소한 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">83</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                
+                                <span class="munu_fr_tit">포테이토피자</span>
+                            </li>
+                            <li class="menu item3">
+                                <a href="">
+                                    <img src="./data/Bacon%20Cheddar%20Cheese%20Pizza.jpg" alt="베이컨체다치즈피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">베이컨체다치즈피자</h2>
+                                        <span class="txt">체다치즈의 깊은 맛과 푸짐한 베이컨이 만들어 내는 담백하고 고소한 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">베이컨체다치즈피자</span>
+                            </li>
+                            <li class="menu item4">
+                                <a href="">
+                                    <img src="./data/Bulgogi%20Pizza.jpg" alt="불고기피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">불고기피자</h2>
+                                        <span class="txt">한국식 양념으로 재워 매장에서 직접 볶은 불고기로 맛을 낸 한국식 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">불고기피자</span>
+                            </li>
+                            <li class="menu item5">
+                                <a href="">
+                                    <img src="./data/Vegetables%20Pizza.jpg" alt="야채피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">야채피자</h2>
+                                        <span class="txt">옥수수, 버섯, 양파, 피망 등 신선한 야채의 깔끔한 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">야채피자</span>
+                            </li>
+                            <li class="menu item6">
+                                <a href="">
+                                    <img src="./data/Hawaiian%20Pizza.jpg" alt="하와이안피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">하와이안피자</h2>
+                                        <span class="txt">새콤달콤한 파인애플로 맛을 낸 여성들이 즐겨 찾는 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">하와이안피자</span>
+                            </li>
+                            <li class="menu item7">
+                                <a href="">
+                                    <img src="./data/Pepperoni%20Pizza.jpg" alt="페페로니피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">페페로니피자</h2>
+                                        <span class="txt">페페로니 특유의 진한 향과 매콤함을 맛볼 수 있는 피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">페페로니피자</span>
+                            </li>
+                            <li class="menu item8">
+                                <a href="">
+                                    <img src="./data/Cheese%20Pizza.jpg" alt="치즈피자 이미지">
+                                    <div class="menu_con_box">
+                                        <h2 class="it_tit">치즈피자</h2>
+                                        <span class="txt">청정지역에서 방목 된 소의 최상급 우유만을 사용해서 만든 자연산 치즈피자</span>
+                                        <div class="like_box">
+                                            <img src="./data/like_ico.png" alt="좋아요이미지">
+                                            <span class="scr">99</span>
+                                            <span class="like">맛있어요!</span>
+                                        </div>
+                                        <span class="more">more</span>
+                                    </div>
+                                </a>
+                                <span class="munu_fr_tit">치즈피자</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+        <footer class="ft">
+            <a href="" class="flogo"><img src="./data/logo.png" alt="logo"></a>
+            <ul class="sns_box">
+                <li class="sns item1"><a href="" class="sns_img1"></a></li>
+                <li class="sns item2"><a href="" class="sns_img2"></a></li>
+                <li class="sns item3"><a href="" class="sns_img3"></a></li>
+                <li class="sns item4"><a href="" class="sns_img4"></a></li>
+                <li class="sns item5"><a href="" class="sns_img5"></a></li>
+            </ul>
+            <p class="ft_con">
+                <span>㈜ALVOLO F&C</span>
+                <span>대표 : 이재욱</span>
+                <span>서울시 양천구 신월로 358 남부필타운 2층 전관</span>
+            </p>
+            <p class="ft_con2">
+                <span>사업자번호 : 117-81-73358</span>
+                <span>Tel : 02-2645-8495</span>
+                <span>Fax : 02-2604-5171</span> 
+            </p>
+            <p class="ft_con3">
+                <span>통신판매번호 : 제2015-서울양천-0524호</span>    
+            </p>
+            <p>
+                <span class="copyright">copyright © Alvolo F&C all rights reserved</span>
+            </p>
+        </footer>
+        </main>
+        
+        <a class="totop on" href="#"></a>
+    </div>
+</body>
+</html>

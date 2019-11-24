@@ -28,9 +28,9 @@
         .vs_box h2 { color: #dfe4e7; font-size: 48px; }
         .vs_box span { display: block; color: #dfe4e7; font-size: 16px; padding-top: 10px; }
         
-        .story_back { position: absolute; left: 0px; top: 850px; opacity: 0.3; }
-        .content_wrap { width: 1280px; height: auto; position: relative; margin: 0 auto; }
-        .bcr_box { width: 160px; height: auto; margin-top: 40px; float: right; position: relative; z-index: 99; }
+        .story_back { position: absolute; left: 50%; top: 135px; opacity: 0.3; width: 80%; margin-left: -750px; }
+        .content_wrap { width: 1280px; height: 800px; position: relative; margin: 0 auto; }
+        .bcr_box { width: 200px; height: auto; margin-top: 0px; float: right; position: relative; z-index: 99; }
         .bcr_box .item1 { position: relative; cursor: pointer; }
         .bcr_box .item1:before { content: ""; position: absolute; display: block; width: 15px; height: 1px; background-color: #3dbedf; transform: rotate(45deg); left:73px; top: 5px; }
         .bcr_box .item1:after { content: ""; position: absolute; display: block; width: 15px; height: 1px; background-color: #3dbedf; transform: rotate(-45deg); left:73px; top: 15px; }
@@ -38,28 +38,8 @@
         .bcr_box span { display: block; font-size: 14px; color: #3dbedf; float: left; padding-left: 25px; cursor: pointer; }
         .bcr_box .it1 { padding-left: 8px;}
         .bcr_box span:hover { color: #00203b; }
-        .con_box { width: 1280px; height: 675px; position: relative; }
-        .con_box:after { content: ""; display: block; position: absolute; top: 675px; width: 320px; height: 1px; background-color: #00203b; } 
-        .con_box .con_tit { padding-top: 120px; font-family: bear; font-size: 60px; color : #3dbedf; }
-        .con_box2 .con_tit { padding-top: 120px; font-family: bear; font-size: 60px; color : #3dbedf; }
-        .tit_bar { display: block; width: 35px; height: 6px; background-color: #3dbedf; margin-top: 28px; }
-        .con_text { margin-top: 68px; height: 320px; }
-        .con_text span { display: block; font-family: mel; font-size: 18px; line-height: 2; color: #00203b; } 
-        .con_text .txt.it1 { font-size: 24px; }
-        .con_text .it3 { text-indent: 25px; }
-        .con_text .txt1 { padding-top: 20px; }
         
-        .intro_box { width: 1195px; height: 650px; margin: 0 auto; position: relative; }
-        .intro_box img { display: block; width: 1195px; height: 650px; }
-        .intro_box:before { content: ""; display: block; position: absolute; width: 1195px; height: 650px; background-color: #00203b; opacity: 0.6; transition: 0.3s; }
-        .intro_box:hover:before { opacity: 0; }
-        .intro_box2 { width: 1280px; height: 620px; position: relative; }
-        .intro_box2 li { width: 303px; height: 303px; float: left; margin-left: 90px; margin-top: 100px; text-align: center; position: relative; }
-        .intro_box2 li:before { content: ""; display: block; position: absolute; width: 303px; height: 303px; border-radius: 400px; background-color: #00203b; opacity: 0.6; transition: 0.3s; }
-        .intro_box2 li:hover:before { opacity: 0; }
-        .intro_box2 li span { display: block; font-size: 22px; color : #00203b; font-family: mel; line-height: 3.8; }
-        
-        .lnb_wrap { width: 200px; height: 250px; position: fixed; top: 300px; left: 0px; z-index: 999;}
+        .lnb_wrap { width: 200px; height: 250px; position: fixed; top: 200px; left: 0px; z-index: 999;}
         .lnb_wrap .btn1 { display: block; width: 40px; height: 20px; position: fixed; padding-left: 200px; z-index: 1; z-index: 900; padding-top: 20px; }
         .lnb_wrap .btn_bar { display: block; width: 35px; height: 4px; background-color: #3dbedf; position: relative;  }
         .lnb_wrap .btn_bar:after { content: ""; display: block; position: absolute; width: 35px; height: 4px; background-color: #3dbedf; top: 13px; transition: 0.3s; }
@@ -83,22 +63,46 @@
         #ck1:checked ~ .lnb_box { margin-left: 0px; opacity: 1; }
         #ck1:checked ~ .btn1 { opacity: 0; }
         #ck1:checked ~ .lnb_box .btn2 { opacity: 1; }
+        
+        .login_wrap { min-width: 1280px; position: relative; height: 680px; margin: 0 auto; margin-top: 135px; padding-top: 50px; font-family: mel; }
+        .login_wrap .hd_tit2 { font-family: bear; color: #3dbedf; text-align: center; line-height: 3.4;}
+        .frm { width: 800px; height: 470px; border: 1px solid #ccc; border-radius: 50px; margin: 0 auto; padding: 22px; box-sizing: border-box; }
+        .frm span { display: block; color: #000; }
+        .frm .wel_box, .wel { width: 450px; text-align: center; line-height: 1.8; font-size: 20px; display: block; margin: 0 auto; }
+/*
+        .frm .wel_box:before { content: ""; display: block; width: 570px; border-bottom: 1px solid #bbb; margin-left: -22px; position: absolute; top:210px; } 
+        .frm .wel_box:after { content: ""; display: block; width: 570px; border-bottom: 1px solid #bbb; margin-left: -22px; position: absolute; top:300px; } 
+*/
+        .frm .wel_box .wel { display: inline; padding-left: 64px; color: #fe3c08; font-weight: bold; }
+        #m_id { display: block;  width: 484px; height: 40px; font-size: 16px; text-indent: 14px; margin: 0px auto; border-radius: 5px; margin-top: 30px; }
+        #m_pw { display: block; width: 484px; height: 40px; font-size: 16px; text-indent: 14px; margin: 0 auto; border-radius: 5px; margin-top: 20px; }
+        .ck { display: none; }
+        .ck_con { display: block; margin-left: 130px; margin-top: 20px; position: relative;  }       
+        .ck_btn { display: block; width: 30px; height: 30px; background-color: #aaa; border-radius: 20px; position: relative; margin-left: 20px; margin-top: 10px; }
+        .ck_btn:before { content: ""; display: block; position: absolute; top:20px; left: -3px; width: 15px; height: 4px; background-color: #fff; border-radius: 5px; transform: rotate(45deg); transform-origin: 100% 100% ;}
+        .ck_btn:after { content: ""; display: block; position: absolute; top:6px; left: 7px; width: 20px; height: 4px; background-color: #fff; border-radius: 5px; transform: rotate(-45deg); transform-origin: 100% 100% ;}
+        #ck2:checked ~ .ck_con .ck_btn { background-color:#fe3c08; }
+        .ck_text { position: absolute; top:5px; left: 65px; color:#000; }
+        .ck_con2 { display: block; margin-left: 350px; margin-top: -40px; position: relative;  }       
+        .ck_con2 .ck_btn { display: block; width: 30px; height: 30px; background-color: #aaa; border-radius: 20px; position: relative; margin-left: 20px; margin-top: 10px; }
+        .ck_con2 .ck_btn:before { content: ""; display: block; position: absolute; top:20px; left: -3px; width: 15px; height: 4px; background-color: #fff; border-radius: 5px; transform: rotate(45deg); transform-origin: 100% 100% ;}
+        .ck_con2 .ck_btn:after { content: ""; display: block; position: absolute; top:6px; left: 7px; width: 20px; height: 4px; background-color: #fff; border-radius: 5px; transform: rotate(-45deg); transform-origin: 100% 100% ;}
+        #ck3:checked ~ .ck_con2 .ck_btn { background-color:#fe3c08; }
+        .ck_text { position: absolute; top:5px; left: 65px; color:#000; }
+        .log_box { display: block; width: 488px; height: 50px; border-radius:5px; background-color: #fe3c08; color: #fff; margin: 25px auto; text-align: center; font-size: 20px; line-height: 2.4; cursor: pointer; margin-bottom: 0px }
+        .login_btn { display: none; }
+        .frm .not1 { font-size: 12px; width: 484px; margin-left: 137px; margin-top: 5px; }
+        .sign { width: 484px; margin: 0 auto; }
+        .sign li { float: left; margin-left: 37px; margin-top: 25px; }
+        .sign li:after { content: "|"; margin-left: 37px; color:#000; }
+        .sign li:last-child:after { display: none; }
+        .sign li a { color: #000; }
+        .sign li a:hover { color: #fe3c08 ; }
+        
     </style>
     <script>
     $(document).ready(function(){
-        $(".lnb_wrap .btn1").css("display","none");
-        $(".lnb_wrap").css("display","none");
-        $(window).scroll(function(){
-            var sc = parseInt($(window).scrollTop());
-            if(sc>=500){
-                $(".lnb_wrap .btn1").fadeIn(300);
-                $(".lnb_wrap").fadeIn(300);
-                
-            } else {
-                $(".lnb_wrap .btn1").fadeOut(300);
-                $(".lnb_wrap").fadeOut(300);
-            }
-        });
+
     });
     </script>
 <body>
@@ -151,13 +155,6 @@
                 </ul>
             </nav>
         </header>
-        <figure class="vs_wrap">
-            <img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C.png" alt="소개">
-            <div class="vs_box">
-                <h2 class="vs_tit">피자 알볼로 소개</h2>
-                <span class="vs_con">믿음과 신뢰의 외식기업, 대한민국 전통 피자가게</span>
-            </div>
-        </figure>
         <nav class="lnb_wrap">
             <input type="checkbox" id="ck1" class="ck">
             <label for="ck1" class="btn1"><span class="btn_bar"></span></label>
@@ -165,11 +162,15 @@
                 <label for="ck1" class="btn2"><span class="btn_bar2"></span><span class="btn_bar3"></span></label>
                 <li class="lnb item1">
                     <input type="checkbox" value="" class="menu_ck" id="m_ck1">
-                    <label for="m_ck1" class="menu_ck_btn ck1_btn"><a href="./sub1.html">피자알볼로 소개</a></label>
+                    <label for="m_ck1" class="menu_ck_btn ck1_btn"><a href="./sub1.html">회원 로그인</a></label>
                 </li>
                 <li class="lnb item2">
                     <input type="checkbox" value="" class="menu_ck" id="m_ck2">
-                    <label for="m_ck2" class="menu_ck_btn ck1_btn2"><a href="./sub1_2.html">피자알볼로 비전</a></label>
+                    <label for="m_ck2" class="menu_ck_btn ck1_btn2"><a href="./sub1_2.html">비회원 주문</a></label>
+                </li>
+                <li class="lnb item2">
+                    <input type="checkbox" value="" class="menu_ck" id="m_ck2">
+                    <label for="m_ck2" class="menu_ck_btn ck1_btn2"><a href="./sub1_2.html">비회원 주문조회</a></label>
                 </li>
             </ul>
         </nav>
@@ -178,36 +179,33 @@
             <ul class="bcr_box">
                 <li class="bcr item1"><img src="./data/home_ico.png" alt="home">
                 <a href="./index.html"><span class="it1">Home</span></a></li>
-                <li class="bcr item2"><span class="it2">Story</span></li>
+                <li class="bcr item2"><span class="it2">login</span></li>
             </ul>
-            <div class="con_box">
-                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
-                <span class="tit_bar"></span>
-                <p class="con_text">
-                    <span class="txt it1">피자도 요리이고 과학</span>
-                    <span class="txt it2">“좋은 재료에 정성을 쏟아 만드는 것이 알볼로 피자맛의 핵심 레시피이자 경쟁력입니다.” </span>
-                    <span class="txt1 it3">피자를 떠올릴 때, 일반적으로 비만을 유발하고 건강에 좋지 않은 패스트푸드로 저평가 되고 있습니다. 하지만 피자는 우리가 생각하는 것 이상으로 영양학적으로 우수한 </span>
-                    <span class="txt it3">식품이고 과학적인 발효식품입니다. 우리나라의 대부분의 피자가 미국식으로 너무 상업화되다보니 매뉴얼에 의해 정형화되고 자극적인 음식으로 만들어진게 사실입니다. </span>
-                    <span class="txt it3">조리를 전공한 우리 형제는 이탈리아 전통피자에 한국식 피자를 접목 우리 입맛에 맞는 웰빙수제피자를 만들었습니다. 피자도 얼마든지 건강한 요리이자 과학적인 음식이</span>
-                    <span class="txt it3">라는 인식을 많은 사람들에게 꼭 심어주고 싶습니다.</span>
-                </p>
+            <div class="login_wrap">
+                <h1 class="hd_tit2">회원 로그인</h1>
+                <form action="" id="frm1" class="frm" method="post" name="">
+                    <input type="text" name="id" id="m_id" tabindex="1" autofocus required maxlength="15" pattern="[a-zA-Z0-9]{4,15}" placeholder="아이디를 입력해주세요." title="아이디 입력">
+                    <input type="password" id="m_pw" name="pw" title="패스워드 입력" autocomplete="off" required pattern="[a-zA-Z0-9]{20}" placeholder="패스워드를 입력해주세요.">
+                    <input type="checkbox" id="ck2" class="ck">
+                    <label for="ck2" class="ck_con">
+                        <span class="ck_btn"></span>
+                        <span class="ck_text">아이디 저장</span>
+                    </label>
+                    <input type="checkbox" id="ck3" class="ck">
+                    <label for="ck3" class="ck_con2">
+                        <span class="ck_btn"></span>
+                        <span class="ck_text">자동 로그인</span>
+                    </label>
+                    <label for="log_btn" class="log_box">로그인</label><input type="submit" value="로그인" class="login_btn" id="log_btn">
+                    <span class="not1">* 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.</span>
+                    <span class="not1">* 논산시 공식 홈페이지는 Internet Explorer 9.0 이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.</span>
+                    <ul class="sign">
+                        <li class="item1"><a href="./sign.html">회원가입</a></li>
+                        <li class="item2"><a href="#">아이디 찾기</a></li>
+                        <li class="item3"><a href="#">비밀번호 찾기</a></li>
+                    </ul>
+                </form>
             </div>
-            <div class="con_box2">
-                <h2 class="con_tit">PIZZA ALVOLO <br>STORY</h2>
-                <span class="tit_bar"></span>
-                <p class="con_text">
-                    <span class="txt it1">피자로 새로운 세상의 문을 열다.</span>
-                    <span class="txt it3">저희 형제는 어릴 때 부터 비행기와 하늘을 무척 좋아했습니다. 라이트형제가 비행기를 처음 발명하여 성공했듯이 세상에서 가장 맛있는 피자를 만들어 온 세상에 널리 </span>
-                    <span class="txt it3">알리고 싶은 저희 형제의 꿈과 열정을 담고 싶었습니다. 그렇게 해서 탄생한 것이 이태리어로 '비행하다, 비상하다'의 뜻인 알볼로입니다. 피자알볼로만의 최고의 맛과 </span>
-                    <span class="txt it3">서비스를 제공하고 피자알볼로가 점점 비상하는 모습을 보여주어 많은 이들에게 꿈과 희망을 주는 피자가게가 되고 싶습니다.</span>
-                </p>
-            </div>
-            <div class="intro_box"><img src="./data/intro2.png" alt="소개2"></div>
-            <ul class="intro_box2">
-                <li class="intro item1"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C3.png" alt="소개3"><span>도우에 집중하다</span></li>
-                <li class="intro item2"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C4.png" alt="소개4"><span>기본에 집착하다</span></li>
-                <li class="intro item3"><img src="./data/%EC%95%8C%EB%B3%BC%EB%A1%9C%20%EC%86%8C%EA%B0%9C5.png" alt="소개5"><span>사람을 생각하다</span></li>
-            </ul>
         </main>
         <footer class="ft">
             <a href="" class="flogo"><img src="./data/logo.png" alt="logo"></a>
