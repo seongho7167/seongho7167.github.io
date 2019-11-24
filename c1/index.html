@@ -18,141 +18,80 @@
     <meta property="og:site_name" content="대한민국 청와대">
     <meta property="og:image" content="./data/president_og_img.jpg">
     <meta property="og:updated_time" content="2019.10.05">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+       $(".searching").click(function(){
+           $("#rdo0").val("").prop("checked", true);
+       });
+        var ht = parseInt($(window).height());
+        $(".totop").css("display","none");
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop());
+            if(sc>=ht){
+                $(".totop").fadeIn(500);
+            } else {
+                $(".totop").fadeOut(500);
+            }
+        });
+        $(".totop").click(function(){
+            $("html,body").animate({scrollTop:0},500
+        );
+        });
+        $(window).scroll(function(){
+            var k = parseInt($(window).scrollTop());
+            if(k<=ht) {
+                $(".scl_down").css("opacity","1");
+            }else{
+                $(".scl_down").css("opacity","0");
+            }
+        });
+    });
+    </script>
 </head>
-    <style>
-    * { margin: 0; padding: 0; }
-    html, body { width: 100%; }
-    ul { list-style: none; }
-    a { text-decoration: none; }
-    
-    .hd { width: 100%; height: 50px; background-image: url("./data/hd_bg.jpg"); }
-    #tnb { width: 60%; height: 50px; margin: 0 auto; position: relative; }
-    #tnb ul { width: 100%; height: 50px; background-image: url(./data/earth_icon.png); background-repeat: no-repeat; background-position: 1000px; background-size: 30px 30px; }
-    .tnb1 { float: right; margin-top: 15px; }
-    .tnb1 a { display: block; font-size: 14px; color: #fff; margin-right: 20px;}
-    .tnb1 a:after { content:'|'; padding-left: 20px; }
-    .sel_box { width: 100px; height: 20px; float: right; margin-top: 15px; margin-left: 40px; }
-    #hd_wrap { width: 100%; height: 100px; margin: 0 auto; position: relative; z-index: 10; background-color: rgba(13,14,39,0.7); transition: 0.5s; }
-    #hd_wrap:hover { padding-bottom: 230px;}
-    .mlogo { display: block; width: 160px; height: 80px; float: left; margin-top: 15px; margin-left: 350px; }
-    .mnb { width: 60%; height: 100px; margin-left: 600px; position: absolute; }
-    .mnb li { width: 150px; height: 70px; float: left; margin-top: 30px; font-size: 23px; color: #fff; font-weight: 800; }
-    .mnb .dp1 { color: #fff; }
-    .mnb .m_nav:hover .dp1 { color: #d34035; }
-    .mnb li ul .m_cate { font-size: 16px; width: 80px; height: 30px; margin-left: 50px; }
-    .mnb .m_cate a { display: block; margin-top: -30px; color: #b4b3c6; }
-    .mnb .m_cate a:hover { color : #d34035; }
-    .mnb .sub { width: 150px; height: 0px; overflow: hidden; position: absolute; z-index: 10; margin-left: -50px; margin-top: 39px; transition: 0.5s; }
-    #hd_wrap:hover .sub { height: 230px; }
-    .m_wrap{ width: 100%; height: 1080px; position: absolute; margin: 0 auto;  }    
-    #vs { width: 100%; height: 1080px; position: absolute; }    
-    .img_box { display: block; width: 100%; height: 921px; }
-        
-    .search { width: 100%; height: 300px; position: relative; z-index: 12; margin-top: 600px; }
-    #frm1 { width: 100%; height: 150px; background-color: rgba(13,13,38,0.6); }
-    #search { width: 1000px; height: 100px; float: left; margin-top: 25px; margin-left: 390px; background-color: rgba(13,13,38,0.8); font-size: 24px; text-indent: 400px; }
-    #search_btn { display: block; width: 100px; height: 100px; float: left; margin-top: 26px; margin-left: 10px; border: 2px solid #fff; background-color: rgba(13,13,38,0.8); color: #b4b3c6; font-size: 28px; cursor: pointer; }
-    #search:hover { background-color: #fff; opacity: 0.7; transition: 0.5s; }
-    #search:focus { background-color: #fff; opacity: 0.7; }
-    #search_btn:hover { color: #fff; transition: 0.5s; }
-        
-    .com { width: 60%; height: 550px; position: relative; margin: 0 auto; clear: both; margin-top: 1050px; }
-    .com_tit { width: 100%; height: 100px; float: left; font-size: 28px; }
-    .com_tit h2 { width: 180px;margin:0 auto; text-align: center; }
-    .sns_box { display: block; float: right; width: 200px; height: 50px; margin-top: -40px; position: relative; z-index: 10; }
-    .sns_box #s_ico1 {display: block; float: left; width: 40px; height: 32px; background-image: url(./data/katalk_icon.png); background-repeat: no-repeat; background-position: center center; }
-    .sns_box #s_ico2 {display: block; float: left; width: 40px; height: 32px; background-image: url(./data/facebook_icon.png); background-repeat: no-repeat; background-position: center center; background-size: 30px 30px; }
-    .sns_box #s_ico3 {display: block; float: left; width: 40px; height: 32px; background-image: url(./data/twiter_icon.png); background-repeat: no-repeat; background-position: center center; }
-    .sns_box #s_ico4 {display: block; float: left; width: 40px; height: 32px; background-image: url(./data/instargram_icon.png); background-repeat: no-repeat; background-position: center center; }
-    .sns_box #s_ico5 {display: block; float: left; width: 40px; height: 32px; background-image: url(./data/youtube_icon.png); background-repeat: no-repeat; background-position: center center; }
-    #s_ico1:hover { background-image: url(./data/katalk_icon2.png); }    
-    #s_ico2:hover { background-image: url(./data/facebook_icon2.png); }    
-    #s_ico3:hover { background-image: url(./data/twiter_icon2.png); }    
-    #s_ico4:hover { background-image: url(./data/instargram_icon2.png); }    
-    #s_ico5:hover { background-image: url(./data/youtube_icon2.png); }    
-    #cate { width: 100%; height: 150px; padding-top: 170px;}
-    #cate .c_cate { float: left; margin-left: 105px;}
-    .c_cate h4 { text-align: center; margin-top: 180px; font-size: 18px; color: #0f0f28; }
-    .c_cate #c_ico1 { display: block; float: left; width: 154px; height: 152px; background-image: url(./data/com_icon1.png); background-repeat: no-repeat; background-position: center; }
-    .c_cate #c_ico2 { display: block; float: left; width: 154px; height: 152px; background-image: url(./data/talk_icon1.png); background-repeat: no-repeat; background-position: center; }
-    .c_cate #c_ico3 { display: block; float: left; width: 154px; height: 152px; background-image: url(./data/epoe_icon1.png); background-repeat: no-repeat; background-position: center; }
-    .c_cate #c_ico4 { display: block; float: left; width: 154px; height: 152px; background-image: url(./data/open_icon1.png); background-repeat: no-repeat; background-position: center; }
-    #c_ico1:hover { background-image: url(./data/com_icon2.png);}
-    #c_ico2:hover { background-image: url(./data/talk_icon2.png);}
-    #c_ico3:hover { background-image: url(./data/epoe_icon2.png);}
-    #c_ico4:hover { background-image: url(./data/open_icon2.png);}
-    .com_tit p { display: block; text-align: center; margin-top: 15px; }
-    
-    .news { width: 100%; height: 930px; position: relative; background-color:#efedf3; }    
-    #news_tit { width: 100%; height: 150px; margin: 0 auto; text-align: center; font-size: 28px; background-color: #0f0f28; color: #fff; }
-    #news_tit h2 { padding-top: 15px; }
-    #news_tit p { display: block; margin-top:15px; }
-    .cate { width: 60%; height: 650px; margin: 0 auto; }
-    .cate .cate_lst { display: block; float: left; width: 330px; height: 320px; margin: 40px 22px 0px 22px; background-color: #fff; position: relative; z-index: 15; border: 3px solid transparent; transition: 0.5s; }
-    .cate_lst .cate_img { display: block; width: 330px; height: 175px; }
-    .cate_lst:hover { border: 3px solid #d34035; }
-    .cate_lst a { display: block; width: 330px; height: 320px; color: #000; }
-    .cate_lst a:hover { color: #d34035; }
-    .cate_lst .lst_h { overflow: hidden; width: 330px; height: 25px; padding-top: 5px; text-align: center; }
-    .cate_lst .lst_con { overflow: hidden; width: 316px; height: 60px; padding-top: 7px; text-indent: 5px; text-overflow: ellipsis; margin-left: 10px;  }
-    .cate_lst .lst_date { padding-top: 15px; margin-right: 10px; float: right; }
-    .cate_lst #more { padding-top: 120px; }
-    .cate_lst #more_com { text-align: center; }
-        
-    .site_map { width: 100%; height: 220px; position: relative; background-color: #495375; }
-    .map { width: 60%; height: 300px; margin: 0 auto; }
-    .f_nav { display: block; float: left; margin-left: 140px; margin-top: 30px; }
-    .f_nav a { display: block; color: #fff; font-weight: 900; }
-    .f_nav .f_cate a { display: block; color: #b4b3c6; font-size: 14px; margin-top: 10px; }
-    .ft { width: 100%; height: 220px; position: relative; background-color: #0f0f28; }
-    #ft1 { width: 60%; height: 220px; margin-left: 420px; position: absolute; }    
-    .flogo { display: block; padding-top: 50px; float: left; }
-    #ft1 ul { padding-top: 40px; width: 700px;}
-    #ft1 a { display: block; color: #495375; margin-top: 10px; margin-left: 250px; }
-    #ft1 .copyrights { display: block; color:#495375; text-align: center; margin-top: 50px; }
-    #ft2 {  width: 400px; height: 150px; float: right; padding-top: 40px; margin-right: 300px; position: relative; z-index: 15;}
-    #ft2 .fnb { margin-top: 10px; }
-    #ft2 .fnb a { color: #495375; }
-    .ft .copyrights {display: block; margin-left: 780px; color: #495375; padding-top: 180px; }
-    </style>
 <body>
    <div class="wrap">
-       <header class="hd">
+       <figure id="vs">
+                <img class="img_box" src="./data/president_main1_img.jpeg" alt="메인배너1">
+        </figure>
+        <header class="hd">
           <nav id="tnb">
+               <a href="" class="logo"><img src="./data/president_logo2.png" alt="청와대로고"></a>
                <ul>
-                    <select name="" id="sel1" class="sel_box">
-                      <option value="">한국어</option>
-                      <option value="">English</option>
-                      <option value="">中國語</option>
-                      <option value="">日本語</option>
-                   </select>
                    <li class="tnb1"><a href="">로그인</a></li>
                    <li class="tnb1"><a href="">회원가입</a></li>
-
+                   <li class="tnb1">
+                        <img class="earth_icon" src="./data/earth_icon.png" alt="지구본">
+                        <select name="" id="sel1" class="sel_box">
+                          <option value="">한국어</option>
+                          <option value="">English</option>
+                          <option value="">中國語</option>
+                          <option value="">日本語</option>
+                       </select>
+                   </li>
                </ul>
-                          
            </nav>
            <div id="hd_wrap">
-               <a href=""><figure class="mlogo"><img src="./data/president_logo2.png" alt="청와대로고"></figure></a>
                <nav class="mnb">
                    <ul>
                        <li class="m_nav"><a class="dp1" href="">대통령</a>
                            <ul class="sub">
                                <li class="m_cate"><a href="">공개일정</a></li>
                                <li class="m_cate"><a href="">걸어온길</a></li>
-                               <li class="m_cate"><a href="">대통령의<br> 말과글</a></li>
+                               <li class="m_cate"><a href="">대통령의 말과글</a></li>
                            </ul></li>
                        <li class="m_nav"><a class="dp1" href="">예산운용</a>
                            <ul class="sub">
-                               <li class="m_cate"><a href="">세입예산<br>운용상황</a></li>
-                               <li class="m_cate"><a href="">세출예산<br>운용상황</a></li>
-                               <li class="m_cate"><a href="">사업별<br>설명서</a></li>
+                               <li class="m_cate"><a href="">세입예산 운용상황</a></li>
+                               <li class="m_cate"><a href="">세출예산 운용상황</a></li>
+                               <li class="m_cate"><a href="">사업별 설명서</a></li>
                            </ul></li>
                        <li class="m_nav"><a class="dp1" href="">정책정보</a>
                            <ul class="sub">
                                <li class="m_cate"><a href="">정책설명</a></li>
                                <li class="m_cate"><a href="">국정과제</a></li>
-                               <li class="m_cate"><a href="">정부부처<br>업무보고</a></li>
+                               <li class="m_cate"><a href="">정부부처 업무보고</a></li>
                            </ul></li>
                        <li class="m_nav"><a class="dp1" href="">국민소통</a>
                            <ul class="sub">
@@ -163,24 +102,182 @@
                            </ul></li>
                        <li class="m_nav"><a class="dp1" href="">뉴스</a>
                            <ul class="sub">
-                               <li class="m_cate"><a href="">청와대<br>이야기</a></li>
-                               <li class="m_cate"><a href="">세계속<br>한국</a></li>
-                           </ul></li>
+                               <li class="m_cate"><a href="">청와대 이야기</a></li>
+                               <li class="m_cate"><a href="">세계속 한국</a></li>
+                           </ul>
+                       </li>
                    </ul>
                </nav>
            </div>
         </header>
+        <img class="scl_down" src="./data/totop.png" alt="스크롤 다운">
         <main class="m_wrap">
-            <figure id="vs">
-                <img class="img_box" src="./data/president_main1_img.jpeg" alt="메인배너1">
-            </figure>
-            <div class="search">
-                <form action="" id="frm1">
-                   <input type="text" id="search" class="search_text" placeholder="검색어를 입력해주세요">
-                   <input type="submit" value="검색" id="search_btn">
-                </form>
+            <div class="search_box item1">
+               <input type="radio" name="ra" class="rdo" id="rad1" checked>
+               <input type="radio" name="ra" class="rdo" id="rad2">
+               <div class="rad_btn_box it1">
+                    <label for="rad1" class="rad_btn" id="item1">통합검색</label>
+                    <label for="rad2" class="rad_btn" id="item2">조건검색</label>
+                </div>
+                <div class="search" id="sear1">
+                    <form action="" id="frm1">
+                       <input type="text" id="search" class="search_text" placeholder="검색어를 입력해주세요">
+                       <input type="submit" value="검색" id="search_btn">
+                    </form>
+                </div>
+                <div class="search" id="sear2">
+                    <h2 class="sear2_tit">내가 원하는 키워드를 선택하여 서비스를 찾아보세요.</h2>
+                    <input type="radio" name="ra2" class="rdo" id="rdo0" value="" checked>
+                    <input type="radio" name="ra2" class="rdo" id="rdo1">
+                    <input type="radio" name="ra2" class="rdo" id="rdo2">
+                    <input type="radio" name="ra2" class="rdo" id="rdo3">
+                    <input type="radio" name="ra2" class="rdo" id="rdo4">
+                    <div class="rdo_btn_box">
+                       <label for="rdo1" class="rdo_btn" id="item1">대통령</label>
+                       <label for="rdo2" class="rdo_btn" id="item2">예산운용</label>
+                       <label for="rdo3" class="rdo_btn" id="item3">정책정보</label>
+                       <label for="rdo4" class="rdo_btn" id="item4">국민소통</label>
+                   </div>
+                   <div id="type_sear_box1" class="type_sear_box">
+                       <input type="checkbox" id="sear_ck1" class="sear_ck">
+                       <label for="sear_ck1" class="sear_ck_btn">#공개일정</label>
+                       <input type="checkbox" id="sear_ck2" class="sear_ck">
+                       <label for="sear_ck2" class="sear_ck_btn">#걸어온길</label>
+                       <input type="checkbox" id="sear_ck3" class="sear_ck">
+                       <label for="sear_ck3" class="sear_ck_btn">#대통령의 말과글</label>
+                       <button class="searching"><span>선택한 키워드 검색</span></button>
+                   </div>
+                   <div id="type_sear_box2" class="type_sear_box">
+                       <input type="checkbox" id="sear_ck4" class="sear_ck">
+                       <label for="sear_ck4" class="sear_ck_btn">#세입예산 운용상황</label>
+                       <input type="checkbox" id="sear_ck5" class="sear_ck">
+                       <label for="sear_ck5" class="sear_ck_btn">#세출예산 운용상황</label>
+                       <input type="checkbox" id="sear_ck6" class="sear_ck">
+                       <label for="sear_ck6" class="sear_ck_btn">#사업별 설명서</label>
+                       <button class="searching"><span>선택한 키워드 검색</span></button>
+                   </div>  
+                   <div id="type_sear_box3" class="type_sear_box">
+                       <input type="checkbox" id="sear_ck7" class="sear_ck">
+                       <label for="sear_ck7" class="sear_ck_btn">#정책설명</label>
+                       <input type="checkbox" id="sear_ck8" class="sear_ck">
+                       <label for="sear_ck8" class="sear_ck_btn">#국정과제</label>
+                       <input type="checkbox" id="sear_ck9" class="sear_ck">
+                       <label for="sear_ck9" class="sear_ck_btn">#정부부처 업무보고</label>
+                       <button class="searching"><span>선택한 키워드 검색</span></button>
+                   </div>      
+                   <div id="type_sear_box4" class="type_sear_box">
+                       <input type="checkbox" id="sear_ck10" class="sear_ck">
+                       <label for="sear_ck10" class="sear_ck_btn">#국민청원</label>
+                       <input type="checkbox" id="sear_ck11" class="sear_ck">
+                       <label for="sear_ck11" class="sear_ck_btn">#토론방</label>
+                       <input type="checkbox" id="sear_ck12" class="sear_ck">
+                       <label for="sear_ck12" class="sear_ck_btn">#신문고</label>
+                       <input type="checkbox" id="sear_ck13" class="sear_ck">
+                       <label for="sear_ck13" class="sear_ck_btn">#열린참여</label>
+                       
+                       <button class="searching">선택한 키워드 검색</button>
+                   </div>                
+                </div>
             </div>
         </main>
+        <section class="president">
+            <span class="presi_bc"></span>
+            <h2>문재인 대통령</h2>
+            <p class="presi_txt"><b><font color="#d34035">위대한</font></b> 대한민국, <b><font color="#d34035">정의로운</font></b> 대한민국, <b><font color="#d34035">자랑스러운</font></b> 대한민국, <b><font color="#d34035">당당한</font></b> 대한민국</p>
+            <input type="radio" name="rao" class="ra" id="rao1" checked>
+            <input type="radio" name="rao" class="ra" id="rao2">
+            <div class="rao_btn_box">
+                <label for="rao1" class="rao_btn it1">걸어온길</label>
+                <label for="rao2" class="rao_btn it2">저서</label>
+            </div>
+            <div class="presi_wrap">
+                <ul class="presi_box">
+                    <li class="presi item1"><a href="">
+                            <img src="./data/president1.png" alt="걸어온길1">
+                            <div class="presi_con">
+                                <h4>실향민의 아들</h4>
+                                <p>문재인 대통령은 1953년 1월 24일 경남 거제의 시골 농가에서 실향민의 아들로 태어났다. 그의 부모는 6.25 한국전쟁 당시 흥남에서 피난을 내려와 거제에 정착했다. 초등학교에 입학할 무렵 그의 가족은 부산 영도로 이사하였다. 가난한 집안 형편에도 부산의 명문인 경남중학교와 경남고등학교에 입학하여 우수한 성적을 거뒀다...
+                                </p>
+                            </div>
+                        </a></li>
+                    <li class="presi item2"><a href="">
+                            <img src="./data/president2.png" alt="걸어온길2">
+                            <div class="presi_con">
+                                <h4>격동의 청년기</h4>
+                                <p>고등학교에 입학하고 부조리하고 불공정한사회에 대한 저항심이 싹트기 시작했다. 중요한 시국상황을 맞이할 때마다 시위대열에 동참했다. 고등학교 2학년 때에는 3선 개헌 반대 시위에 참여하였다.1972년 경희대 법학과에 장학생으로 입학한 문재인 대통령은 1975년 유신독재 반대 시위를 이끌다 징역 8월, 집행유예 1년을 선고받고 강제 징집되어 특전사령부에 입대하였다.</p>
+                            </div>
+                        </a></li>
+                    <li class="presi item3"><a href="">
+                            <img src="./data/president3.png" alt="걸어온길3">
+                            <div class="presi_con">
+                                <h4>인권변호사</h4>
+                                <p>1982년, 문재인 대통령은 사법연수원을 차석으로 마쳤지만, 유신반대 시위 전력이 결격 사유가 되어 판사 임용에 탈락하였다. 대형 법률사무소에서 좋은 조건으로 스카우트 제의가 들어왔지만, ‘억울한 사람을 돕고 보람을 찾는 것’이 변호사의 소임이라고 생각한 그는 결국 이런 제안을 마다하고 부산으로 돌아가 변호사 생활을 시작했다. 고 노무현 전 대통령과의 인연도...</p>
+                            </div>
+                        </a></li>
+                    <li class="presi item4"><a href="">
+                            <img src="./data/president4.png" alt="걸어온길4">
+                            <div class="presi_con">
+                                <h4>정치에 눈뜨기 시작하다</h4>
+                                <p>문재인 대통령에게 정치적 관심을 일깨워준 최초의 스승은 바로 아버지였다. 어린 시절, 아버지가 장삿길에서 돌아오실 때마다 책을 사다 주신 덕에 책 읽는 재미를 알게 되었고, 중･고등학교 6년간 닥치는 대로 책을 읽으면서 사회를 바라보는 눈을 길렀다. 집에 이웃집 대학생이 찾아오면 아버지께서 사회 문제에 대해 자세히 설명해주곤 하셨는데...</p>
+                            </div>
+                        </a></li>
+                    <li class="presi item5"><a href="">
+                            <img src="./data/president5.png" alt="걸어온길5">
+                            <div class="presi_con">
+                                <h4>참여정부</h4>
+                                <p>2003년 문재인 대통령은 노무현 전 대통령이 당선된 후 청와대 민정수석 비서관으로 임명되었다. 인권변호사라는 말을 들으면서 권력을 비판하는 역할만 했을 뿐, 국정운영 경험이나 행정경험이 없었던 그였지만, 노무현 전 대통령과 권양숙 여사의 설득 끝에 민정수석 자리를 받아들였다.1년여 동안 청와대 생활을 마치고 민정수석 자리에서 물러난 그는 네팔 히말라야를...</p>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="presi_wrap2">
+                <ul class="presi_box2">
+                    <li class="presi book1"><a href="">
+                            <img src="./data/book1.png" alt="저서1">
+                            <div class="presi_con">
+                                <h4>문재인의 운명</h4>
+                                <p>노무현과 문재인, 두 사람의 운명 같은 동행!
+    제19대 대한민국 대통령 당선기념 특별판『문재인의 운명』. 이 책은 노무현 전 대통령 서거 2주기를 맞아 노 전 대통령이 생전에 “노무현의 친구 문재인이 아니라, 문재인의 친구 노무현”이라고 표현할 만큼 신뢰했던 평생의 동지, 문재인의 시각에서 본 노무현 전 대통령과 참여정부에 대한 증언을 담고 있다.</p>
+                            </div>
+                        </a></li>
+                    <li class="presi book2"><a href="">
+                            <img src="./data/book2.png" alt="저서2">
+                            <div class="presi_con">
+                                <h4>대한민국이 묻는다</h4>
+                                <p>지금 대한민국이 원하는 대한민국을 문재인에게 묻고 문재인이 직접 답한다!
+    세월호 그리고 박근혜 게이트를 겪으며 아주 평범한 국민들조차 남녀노소 구분 없이 촛불을 들고 변혁을 외치기 시작했다. 총체적인 국가 위기 앞에서, 한결 같은 정치인 문재인은 다시 희망을 말한다. 국민 모두의 뜻이 하나로 모인 지금이야말로 아래로부터의 진정한 개혁이 가능하다고. </p>
+                            </div>
+                        </a></li>
+                    <li class="presi book3"><a href="">
+                            <img src="./data/book3.png" alt="저서3">
+                            <div class="presi_con">
+                                <h4>운명에서 희망으로</h4>
+                                <p>문재인의 ‘운명’에서 대한민국의 ‘희망’으로!
+    문재인이 말하고, 심리학자 이나미가 분석하다
+    심리학자가 심층 분석한 문재인의 삶과 생각
+    “우리의 희망과 미래를 문재인에게 맡길 수 있을까?”</p>
+                            </div>
+                        </a></li>
+                    <li class="presi book4"><a href="">
+                            <img src="./data/book4.png" alt="저서4">
+                            <div class="presi_con">
+                                <h4>1219 끝이 시작이다</h4>
+                                <p>18대 대선 후보였던 문재인의 자기 반성과 성찰, 그리고 새로운 시작!
+    문재인의 대선 평가서 『1219 끝이 시작이다』. 이 책은 지난 18대 대선 이후 일 년만에 자기 성찰과 반성, 현 정부에 대한 비판까지 담고 있다. 문재인은 대선 이후 힘들었던 시간과 국민에 대한 미안함 또 박근혜 정부가 현재 행하고 있는 정치적 행보에 대한 평가를 냉정하게 토로하고 있다.</p>
+                            </div>
+                        </a></li>
+                    <li class="presi book5"><a href="">
+                            <img src="./data/book5.png" alt="저서5">
+                            <div class="presi_con">
+                                <h4>사람이 먼저다</h4>
+                                <p>새로운 대한민국을 만들기 위한 문재인의 비전과 약속!
+    문재인의 힘『사람이 먼저다』. 이 책은 문재인이 정치활동을 하면서 현장에서 했던 발언, 정책에 대한 인터뷰, 세상과 소통했던 각종 기록들을 통해 저자가 바라는 새로운 대한민국의 모습을 상상할 수 있도록 구성한 책이다. </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <section class="com">
             <div class="com_tit">
                 <h2>국민소통</h2>
@@ -294,7 +391,8 @@
                            <ul>
                                <li class="f_cate"><a href="">청와대<br>이야기</a></li>
                                <li class="f_cate"><a href="">세계속<br>한국</a></li>
-                           </ul></li>
+                           </ul>
+                       </li>
                    </ul>
                </nav>
             </div>
@@ -303,9 +401,9 @@
             <div id="ft1">
                 <figure class="flogo"><img src="./data/president_flogo.png" alt="하단로고"></figure>
                 <ul>
-                    <li class="fnb2"><a href="">(+82) 02-730-5800</a></li>
-                    <li class="fnb2"><a href="">담당자 : E-mail 보내기</a></li>
-                    <li class="fnb2"><a href="">03048 서울특별시 종로구 청와대로 1 대통령 비서실</a></li>
+                    <li class="fnb2"><a>(+82) 02-730-5800</a></li>
+                    <li class="fnb2"><a>담당자 : E-mail 보내기</a></li>
+                    <li class="fnb2"><a>03048 서울특별시 종로구 청와대로 1 대통령 비서실</a></li>
                 </ul>
             </div>
             <div id="ft2">
@@ -319,6 +417,6 @@
             <p class="copyrights">© Office of the President. All rights reserved.</p>
         </footer>
    </div>
-    
+   <button class="totop"><img src="./data/totop.png" alt="맨위로"></button>
 </body>
 </html>
