@@ -46,15 +46,16 @@
         .btn_box label .txt { line-height: 0; margin-top: -25px; font-size: 18px; font-weight: normal; }
         .con_box .con { width: 1240px; height: 760px; position: relative; z-index: 5; }
         .con_box .con .his_box { margin-top: 40px; } 
-        .con_box .con .his { width: 350px; height: 210px; float: left; padding: 20px; margin-left: 17px; text-align: center; border: 1px solid #777; margin-top: 20px; overflow: hidden; background-color: #fff; }
+        .con_box .con .his { width: 350px; height: 210px; float: left; margin-left: 17px; text-align: center; border: 1px solid #777; margin-top: 20px; overflow: hidden; background-color: #fff; }
         .con_box .con .his:hover { border:1px solid #fe3c08; }
         .con_box .con .his a { display: block; font-size: 24px; position: relative; }
+        .con_box .con .his a img { display: block; width: 500px; }
         .con_box .con .his a:after { content: ""; display: block; position: absolute; width: 390px; height: 250px; background-color: rgba(0,0,0,0.7); top:-20px; left: -20px; transition: 0.1s; }
         .con_box .con .his a:hover:after { opacity: 0; }
-        .con_box .con .his a span { display: block; height: 210px; line-height: 210px; color:#fff; position: relative; z-index: 5; transition: 0.1s; }
+        .con_box .con .his a span { display: block; height: 210px; line-height: 210px; color:#fff; position: absolute; top: 7%; left: 0; z-index: 5; transition: 0.1s; width: 350px; }
         .con_box .con .his a:hover span { opacity: 0; display: none; }
-        .con_box .con .his a p { height: 210px; padding-top: 60px; font-size: 20px; color: #000; }
-
+        .con_box .con .his a p { height: 210px; padding-top: 60px; font-size: 20px; color: #fff; position: absolute; z-index: 10; top: 0; left: 0px; transition: 0.1s; font-size: 16px; width: 350px; text-align: center; }
+        .con_box .con .his a:hover p { opacity: 0; display: none; }
         
 
     </style>
@@ -132,24 +133,28 @@
                     <ul class="his_box">
                         <li class="his it1">
                             <a href="">
+                                <img src="./data/his1.png" alt="역사1">
                                 <span>1914.04.01</span>
                                 <p>연산, 은진, 노성, 석성군을 병합 논산군 설치(15면)</p>
                             </a>
                         </li>
                         <li class="his it2">
                             <a href="">
+                                <img src="./data/his2.jpg" alt="역사2">
                                 <span>1917.10.01</span>
                                 <p>대조곡면을 은진면으로 개칭</p>
                             </a>
                         </li>
                         <li class="his it3">
                             <a href="">
+                                <img src="./data/his3.jpg" alt="역사3">
                                 <span>1931.04.01</span>
                                 <p>강경면이 강경읍으로 승격 (1읍 14면)</p>
                             </a>
                         </li>
                         <li class="his it4">
                             <a href="">
+                                <img src="./data/his4.jpg" alt="역사4">
                                 <span>1938.10.01</span>
                                 <p>논산면이 논산읍으로 승격 (2읍 13면)
                                     </p>
@@ -157,36 +162,42 @@
                         </li>
                         <li class="his it5">
                             <a href="">
+                                <img src="./data/his5.jpg" alt="역사5">
                                 <span>1963.01.01</span>
                                 <p>구자곡면과 전북 익산군 황화면을 합병하여 연무읍으로 승격 (3읍 12면)</p>
                             </a>
                         </li>
                         <li class="his it6">
                             <a href="">
+                                <img src="./data/his6.jfif" alt="역사6">
                                 <span>1983.02.15</span>
                                 <p>가야곡면 중산리 및 양촌리 중 일부가 양촌면으로 편입, 양촌면 신양리가 연산면으로 편입</p>
                             </a>
                         </li>
                         <li class="his it7">
                             <a href="">
+                                <img src="./data/his7.jpg" alt="역사7">
                                 <span>1989.01.01</span>
                                 <p>대덕군 진잠면 남선리를 두마면에 편입</p>
                             </a>
                         </li>
                         <li class="his it8">
                             <a href="">
+                                <img src="./data/his8.jpg" alt="역사8">
                                 <span>1990.02.19</span>
                                 <p>두마면에 충청남도 계룡출장소 설치</p>
                             </a>
                         </li>
                         <li class="his it9">
                             <a href="">
+                                <img src="./data/his9.jpg" alt="역사9">
                                 <span>1996.03.01</span>
                                 <p>논산시 승격과 함께 논산읍이 취암동과 부창동으로 분리(2읍 12면 2동)</p>
                             </a>
                         </li>
                         <li class="his it10">
                             <a href="">
+                                <img src="./data/his10.jpg" alt="역사10">
                                 <span>2003.09.19</span>
                                 <p>논산시에서 충청남도 계룡출장소가 계룡시로 분리(2읍 11면 2동)</p>
                             </a>
