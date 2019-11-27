@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swarobski</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<!--    모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <meta name="keywords" content="스와로브스키, swarobski, 주얼리, 보석, 아름다움">
+    <meta name="description" content="스와로브스키는 1895년 오스트리아의 다니엘 스바로프스키가 티롤 주의 와튼즈에 세운 크리스털 제조 및 판매회사이다. ">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="agoda">
+    <meta property="og:description" content="전세계 200만개 이상의 호텔정보를 한곳에서 확인할수 있는 곳!">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="swarobski">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.27">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="./css/main.css";>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+    
+    <style>
+/*        font-family: 'Noto Sans KR', sans-serif;*/
+        * { padding: 0; margin: 0; }
+        body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        button, label { border: 0; border-color: transparent; outline: 0; }
+        div { width: 100%; }
+        ion-icon { font-size: 2em; color: red; }
+        #wrap { width: 100%; position: relative; }
+        .hd_wrap { width: 100%; height: 9vh; overflow: hidden; position: fixed; top: 0; left: 0; background-color: rgba(255,255,255,0.7); z-index: 10; border-bottom: 1px solid #757575; }
+        .ck { display: none; }
+        .gnb_btn_box { display: block; width: 8%; height: 5vh; padding: 5%; }
+        .gnb_btn_box span { display: block; width: 28px; height: 2px; background-color: #000; margin-top: 8px; transition: 0.3s; }
+        .gnb_btn_box span:first-child { margin-top: 0px; }
+        #ck1:checked ~ .gnb_btn_box span:nth-child(1) { transform: translateX(-4px) translateY(4px) rotate(-45deg); width: 18px; }
+        #ck1:checked ~ .gnb_btn_box span:nth-child(3) { transform: translateX(-4px) translateY(-4px) rotate(45deg); width: 18px; }
+        .sns_box { }
+        .sns_btn { font-size: 2em; color: #000; display: block; position: absolute; top: 0; right: 0; padding: 3.5555555%; font-weight: 100; }
+        .logo_box { width: 100px; margin: 0 auto; }
+        .logo { display: block; position: absolute; top: 0;  background-image: url(./data/swa2.logo.png); width: 100px; background-position: center; height: 50px; background-size: 100px 50px; margin: 0 auto; }
+        .vs_wrap { width: 100%; height: 60vh; position: relative; margin-top: 9vh; }
+        .vs_box { width: 100%; height: 100%; position: relative; }
+        .vs_box .vs { width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0;  transition: 3s; }
+        .vs.on { opacity: 1; }
+        .vs_box .item1 { background-image: url(data/vs01.png); background-repeat: no-repeat; background-size: 100%; }
+        .vs_box .item2 { background-image: url(data/vs02.png); background-repeat: no-repeat; background-size: 100%; }
+        .vs_box .item3 { background-image: url(data/vs03.png); background-repeat: no-repeat; background-size: 100%; }
+        .vs_btn_box { width: 25%; height: 30px; position: relative; margin: 0 auto; margin-top: -18vh;}
+        .vs_btn_box li { position: absolute; top: 7px; width: 15px; height: 15px; border-radius: 25px; background-color: #fafafa; cursor: pointer; }
+        .vs_btn_box .it1 { background-color: transparent; left: 5%; }
+        .vs_btn_box .it2 { left: 30%; }
+        .vs_btn_box .it3 { left: 55%; }
+        .vs_btn_box .it4 { left: 80%; }
+        .vs_btn_fr .on { background-color: #757575; }
+        .vs_btn_box .it1 .stop { display: block; width: 5px; height: 15px; background-color: #fafafa; position: absolute; top:0; }
+        .vs_btn_box .it1 .stop:after { content: ""; display: block; width: 5px; height: 15px; background-color: #fafafa; position: absolute; top:0; left: 10px; }
+        .vs_btn_box .it1 .start { display: block; width: 0; height: 0; border-style: solid; border-width: 8px 0px 8px 15px; border-color: transparent transparent transparent #fff; display: none; }
+        
+        .page { position: relative; width: 80%; height: 40vh; margin: 0 auto; padding: 5%; }
+        .page.item1 { background-image: url(./data/angel1.png); background-size: 100%; background-repeat: no-repeat; text-align: center; }
+        .page.item2 { background-image: url(./data/naughty1.png); background-size: 100%; background-repeat: no-repeat; text-align: center; }
+        .page.item3 { background-image: url(./data/north1.png); background-size: 100%; background-repeat: no-repeat; text-align: center; }
+        .page_tit { color: #757575; padding-top: 2vh; }
+        .page_txt { color: #757575; font-size: 0.7em; }
+        .view { display: block; border: 1px solid #757575; border-radius: 5px; color:#757575; width: 50%; height: 5vh; margin: 0 auto; margin-top: 10vh; line-height: 5vh; font-size: 0.85em; }
+        
+        .ft { width: 100%; height: 26vh; position: relative; border-top: 1px solid #757575; }
+        .ft .fnb_box { width: 90%; padding: 5%; margin: 0 auto; }
+        .fnb_box li { float: left; font-size: 0.7em; color:#757575; padding-left: 4%; }
+        .ft .copyright { color:#757575; font-size: 0.7em; text-align: center; padding-top: 1.5vh; }
+        .ft .ft_txt { display: block; color:#757575; font-size: 0.7em; margin: 0 auto; width: 70%; text-align: center; padding-top: 1.5vh; }
+        
+        .gnb_wrap { position: fixed; top: 9vh; left: -100%; z-index: 20; transition: 0.3s; width: 100%; height: 91vh; background-color: rgba(255,255,255,0.9); }
+        .gnb_wrap_fr { position: relative; width: 90%; height: 32vh; padding: 5%; background-color: #fafafa; margin: 0 auto; }
+        .gnb_wrap_fr.fr2 { background-color: #fff; }
+        .info_txt { display: block; color: :#757575; }
+        .info_txt span { display: block; color: #757575; }
+        .info_txt span:nth-child(2) { font-size: 2em; }
+        .info_txt span b { color: #000; }
+        .login_ar { font-size: 2em; color:#757575; float: right; margin-top: -5.5vh; }
+        .gnb.item1 { background-image: url(./data/mypage.png); width: 75px; height: 75px; }
+        .gnb.item2 { background-image: url(./data/exchange.png); width: 75px; height: 75px; }
+        .gnb.item3 { background-image: url(./data/gift.png); width: 75px; height: 75px; }
+        .gnb { float: left; margin-top: 3vh; margin-left: 25px; }
+        .gnb a { display: block; color: #757575; padding-top: 85px; text-align: center; font-size: 0.8em; }
+        .gnb2 { width: 90%;height: 10vh; border-bottom: 2px solid #fafafa; text-align: center; line-height: 10vh; margin: 0 auto; }
+        .gnb2 a { color: #757575; font-size: 1.2em; }
+        .icon_box { width: 90%; margin: 5%; height: 10vh; line-height: 10vh; }
+        .icon_box li { float: left; margin-left: 45px; text-align: right; position: relative; }
+        .icon_box li a { color: #757575; }
+        .icon_box li .not_icon { position: absolute; top: 15px; left: -35px; color: #757575; }
+        .sns_box2 { width: 100%; height: 0vh; background-color: rgba(255,255,255,0.9); position: absolute; top:0; left: 0; z-index: 10; border-bottom: 2px solid #757575; overflow: hidden; transition: 0.3s; }
+        .sns_box2 .sns2 { float: right; width: 35px; height: 7vh; line-height: 7vh; margin-right: 15px; }
+        .sns_box2 .sns2.it1 { background-image: url(./data/facebook_icon2.png); background-repeat: no-repeat; background-position: center; }
+        .sns_box2 .sns2.it2 { background-image: url(./data/twiter_icon2.png); background-repeat: no-repeat; background-position: center; }
+        .sns_box2 .sns2.it3 { background-image: url(./data/youtube_icon2.png); background-repeat: no-repeat; background-position: center; }
+        .sns_box2 .sns2.it4 { background-image: url(./data/instargram_icon2.png); background-repeat: no-repeat; background-position: center; }
+        .sns_box2 .sns2.it5 { background-image: url(./data/katalk_icon2.png); background-repeat: no-repeat; background-position: center; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var i = 1; 
+            $(".gnb_btn_box").click(function(){
+                if( i == 1 ){
+                    $(".gnb_wrap").css("left","0");
+                } else if ( i == -1 ) { 
+                    $(".gnb_wrap").css("left","-100%");
+                }
+                i=i*-1;
+            });
+            var k = 1; 
+            $(".sns_btn").click(function(){
+                if ( k==1 ){
+                    $(".sns_box2").css("height","7vh");
+                } else if ( k==-1 ){
+                    $(".sns_box2").css("height","0vh");
+                }
+                k=k*-1;
+            });
+            function vsAni(){
+                $(".vs_box li").eq(0).appendTo($(".vs_box"));
+                $(".vs_box li").eq(0).addClass("on");
+                $(".vs_box li").eq(0).siblings().removeClass("on");
+                $(".vs_btn_fr li").eq(0).appendTo($(".vs_btn_fr"));
+                $(".vs_btn_fr li").eq(0).addClass("on");
+                $(".vs_btn_fr li").eq(0).siblings().removeClass("on");
+            };
+            var intv1 = setInterval( function(){ vsAni(); }, 5900);
+            
+            $(".stop").click(function(){
+                    clearInterval(intv1);
+                $(this).css("display","none");
+                $(".start").css("display", "block");
+            });
+            $(".start").click(function(){
+                    var intv1 = setInterval( function(){ vsAni(); }, 5900);
+                $(this).css("display","none");
+                $(".stop").css("display", "block");
+            });
+            $(".vs_btn").click(function(){
+                clearInterval(intv1);
+                var idx = parseInt($(this).index());
+                console.log(idx);
+                if ( idx != 0 ) {
+                    for( var a= 0; a<idx; a++){
+                        $(".vs_box li").eq(0).appendTo($(".vs_box"));
+                        $(".vs_btn_fr li").eq(0).appendTo($(".vs_btn_fr"));
+                    }
+                }
+                var intv1 = setInterval( function(){ vsAni(); }, 5900);
+            });
+        });
+    </script>
+</head>
+<body>
+<!--        <ion-icon name="ios-menu"></ion-icon>-->
+    <div id="wrap">
+        <header class="hd_wrap">
+            <input type="checkbox" id="ck1" class="ck">
+            <label class="gnb_btn_box" for="ck1" >
+                <span class="gnb_bar"></span>
+                <span class="gnb_bar"></span>
+                <span class="gnb_bar"></span>
+            </label>
+            <div class="logo_box"><a href="./index.html" class="logo"></a></div>
+            <div class="sns_box">
+                <ion-icon name="ios-git-compare" class="sns_btn"></ion-icon>
+            </div>
+        </header>
+        <div class="gnb_wrap">
+            <div class="gnb_wrap_fr fr1">
+                <a class="info_txt" href=""><span>스와로브스키 웹앱을 이용하시려면</span><span><b>로그인을</b> 해주세요</span><ion-icon class="login_ar" name="ios-arrow-round-forward"></ion-icon></a>
+                <ul class="gnb_box">
+                    <li class="gnb item1"><a href="">마이페이지</a></li>
+                    <li class="gnb item2"><a href="">전환하기</a></li>
+                    <li class="gnb item3"><a href="">선물하기</a></li>
+                </ul>
+            </div>
+            <div class="gnb_wrap_fr fr2">
+                <ul class="gnb_box2">
+                    <li class="gnb2 item1"><a href="">Best Seller</a></li>
+                    <li class="gnb2 item2"><a href="">SWAROVSKI</a></li>
+                    <li class="gnb2 item3"><a href="">PRODUCTS</a></li>
+                </ul>
+                <ul class="icon_box">
+                    <li class="icon it1"><a href=""><ion-icon class="not_icon" name="ios-megaphone"></ion-icon>공지사항</a></li>
+                    <li class="icon it2"><a href=""><ion-icon class="not_icon" name="ios-notifications"></ion-icon>이벤트</a></li>
+                    <li class="icon it3"><a href=""><ion-icon class="not_icon" name="ios-chatboxes"></ion-icon>문의하기</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sns_box2">
+            <ul class="sns_fr">
+                <li class="sns2 it1"></li>
+                <li class="sns2 it2"></li>
+                <li class="sns2 it3"></li>
+                <li class="sns2 it4"></li>
+                <li class="sns2 it5"></li>
+            </ul>
+        </div>
+        <figure class="vs_wrap">
+            <ul class="vs_box">
+                <li class="vs item1 on"></li>
+                <li class="vs item2"></li>
+                <li class="vs item3"></li>
+            </ul>
+            <ul class="vs_btn_box">
+               <li class="vs_btn it1"><span class="stop"></span><span class="start"></span></li>
+               <div class="vs_btn_fr">
+                   <li class="vs_btn it2 on"></li>
+                   <li class="vs_btn it3"></li>                
+                   <li class="vs_btn it4"></li>                
+               </div>
+            </ul>
+        </figure>
+        <div class="page item1">
+            <div class="page_box">
+                <h2 class="page_tit">MAGIC ANGEL</h2>
+                <span class="page_txt">우아한 로즈 골드 톤 플레이티드 엔젤 네크리스로 사랑하는 사람에게 잊지 못할 크리스마스를 선물하세요.</span>
+                <span class="view">WIEW DETAILS</span>
+            </div>
+        </div>
+        <div class="page item2">
+            <div class="page_box">
+                <h2 class="page_tit">NAUGHTY</h2>
+                <span class="page_txt">차분하고 세련된 분위기가 매력적인 로즈 골드 톤 플레이티드 이어링 & 네크리스 세트입니다. </span>
+                <span class="view">WIEW DETAILS</span>
+            </div>
+        </div>
+        <div class="page item3">
+            <div class="page_box">
+                <h2 class="page_tit">NORTH</h2>
+                <span class="page_txt">겨울 분위기에 꼭 맞는 우아한 레이어드 실루엣의 네크리스입니다. </span>
+                <span class="view">WIEW DETAILS</span>
+            </div>
+        </div>
+        <footer class="ft">
+            <ul class="fnb_box">
+                <li class="fnb item1">로그인<a href=""></a></li>
+                <li class="fnb item2">서비스이용약관<a href=""></a></li>
+                <li class="fnb item3">개인정보처리방침<a href=""></a></li>
+                <li class="fnb item4">영상정보처리방침<a href=""></a></li>
+            </ul>
+            <span class="ft_txt">사업자등록번호 211-86-96129</span>
+            <span class="ft_txt">고객센터 ☏1522-9065</span>
+            <span class="ft_txt">온라인 구매고객상담 kr.shophelp@swarovski.com</span>
+            <p class="copyright">Copyright © 2019 Swarovski.</p>
+        </footer>
+    </div>
+</body>
+</html>
