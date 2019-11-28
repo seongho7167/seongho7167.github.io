@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>우리은행</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<!--    모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <meta name="keywords" content="은행, 우리은행, 우리, 인터넷뱅킹, 공인인증서, 계좌조회, 빠른조회, 환율, 체크카드, 대출, 지점 ,고객지원">
+    <meta name="description" content="인터넷뱅킹, 계좌조회, 이체, 대출, 외화 환전, 공과금납부, 상품신규, 사고신고 안내">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="우리은행">
+    <meta property="og:description" content="인터넷뱅킹, 계좌조회, 이체, 대출, 외화 환전, 공과금납부, 상품신규, 사고신고 안내">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="우리은행">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.28">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <style>
+/*        font-family: 'Noto Sans KR', sans-serif;*/
+        * { padding: 0; margin: 0; }
+        body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        button, label, input { border: 0; border-color: transparent; outline: 0; }
+        .wrap { width: 100%; position: relative; }
+        
+        .hd { width: 100%; position: relative; height: 7vh; margin: 0 auto; border-bottom: 2px solid #f2f1f2; }
+        .search_wrap { width: 90%; height: 90%; padding: 3%; }
+        .sear_btn { width: 30px; height: 30px; border-radius: 30px; background-color: #006098; }
+        .xi-search { display: block; color:#fff; font-size: 1.4em; text-align: center; height: 30px; line-height: 28px; }
+        .frm1 { width: 100vw; height: 0vh; background-color: #f2f1f2; position: absolute; top:7vh; left: 0; overflow: hidden; transition: 0.3s; z-index: 10;}
+        .search_txt { width: 70vw; height: 30px; margin-left: 10vw; border-radius: 5px; float: left; margin-top: 1.3vh; }
+        #sear_btn2 { border-radius: 5px; width: 30px; height: 30px; margin-top: 1.3vh; margin-left: 3px; }
+        .logo { display: block; width: 120px; height: 30px; background-image: url(./data/logo.png); margin: 0 auto; margin-top: -8.5vh; }
+        .gnb_btn_box { width: 30px; height: 30px; position: absolute; top:1.5vh; right: 1.3vh; }
+        .gnb_bar { display: block; width: 25px; height: 2px; background-color: #006098; margin: 0 auto; }
+        .bar2 { margin-top: 8px;}
+        .bar3 { margin-top: 8px;}
+        .gnb_wrap { width: 100vw; height: 100vh; position: relative; background-color: #f2f1f2; display: none; }
+
+        .vs_wrap { position: relative; width: 100%; height: 205px; }
+        .vs_box { position: relative; width: 400%; height: 100%; }
+        .vs { width: 25%; height: 100%; float: left; }
+        .vs.item1 { background-image: url(./data/vs01.png); background-repeat: no-repeat; }
+        .vs.item2 { background-image: url(./data/vs02.png); background-repeat: no-repeat; }
+        .vs.item3 { background-image: url(./data/vs03.png); background-repeat: no-repeat; }
+        .vs.item4 { background-image: url(./data/vs04.png); background-repeat: no-repeat; }
+        .vs_btn_box { width: 100px; height: 20px; position: relative; margin-top: -20px; }
+        .vs_btn_box .vs_btn { display: block; position: absolute; width: 10px; height: 10px; border-radius: 10px; background-color: #ccc; top: 0; transition: 0.1s; }
+        .vs_btn.vsBtn1 { left: 20px;}
+        .vs_btn.vsBtn2 { left: 35px;}
+        .vs_btn.vsBtn3 { left: 50px;}
+        .vs_btn.vsBtn4 { left: 65px;}
+        .vs_btn_box .vs_btn.on { background-color: #006098; width: 13px;}
+        
+        .content_wrap { width: 100%; height: 40vh; position: relative; }
+        .content_tit_box { width: 90%; height: 25px; padding: 5%; border-bottom: 2px solid #f2f1f2; }
+        .content_tit_box h4 { width: 25%; float: left; text-align: center; line-height: 2.6; border-bottom: 3px solid transparent; transition: 0.3; }
+        .content_tit_box h4.on { border-bottom: 3px solid #006098; }
+        .conBox { display: none; }
+        .content_box1 { display: block; }
+        .con_fr { width: 90%; height: 100%; padding: 5%; position: absolute; top: 2.6; }
+        .content { width: 30%; height: 80px; float: left; margin-left: 2%; border: 1px solid #f2f1f2; border-radius: 5px; margin-top: 2vh; position: relative; }
+        .content span { display: block; padding: 5px; }
+        .content img { display: block; position: absolute; right: 5px; top: 45px; }
+
+        .content2 { width: 24%; border: 1px solid #f2f1f2; border-radius: 5px; float: left; box-sizing: border-box; margin: 0.5%; text-align: center; }
+        .content2 span { font-size: 14px;}
+
+        .sns_wrap { widows: 90%; padding: 0% 5%; height: 40px; position: relative; background-color: #f2f1f2; margin-top: 6vh; border-top: 1px solid #ccc;}
+        .sns_box { width: 70%; margin: 0 auto; }
+        .sns { width: 20%; height: 40px; line-height: 40px; }
+        .sns.icon1 { background-image: url(./data/instargram_icon2.png); background-repeat: no-repeat; background-position: center; float: left; background-size: 25px; }
+        .sns.icon2 { background-image: url(./data/katalk_icon2.png); background-repeat: no-repeat; background-position: center; float: left; background-size: 25px; }
+        .sns.icon3 { background-image: url(./data/twiter_icon2.png); background-repeat: no-repeat; background-position: center; float: left; background-size: 25px; }
+        .sns.icon4 { background-image: url(./data/youtube_icon2.png); background-repeat: no-repeat; background-position: center; float: left; background-size: 25px; }
+        .sns.icon5 { background-image: url(./data/facebook_icon2.png); background-repeat: no-repeat; background-position: center; float: left; background-size: 25px; }
+        .ft { width: 100%; height: 10vh; position: relative; border-top: 2px solid #f2f1f2; background-color: #f2f1f2; border-top: 1px solid #ccc; } 
+        .ft_box { width: 90%; margin: 0 auto; margin-top: 7px;}
+        .fnb { float: left; }
+        .fnb:after { content: "|"; color:#aaa; margin-left: 5px;}
+        .fnb:last-child:after { content: "";}
+        .fnb span { color: #aaa; font-size: 12px; margin-left: 5px; }
+        .ft .copyright { font-size: 9px; color: #aaa; text-align: center; margin-top: 40px; }
+
+
+    </style>
+    <script>
+    $(document).ready(function(){
+        var i = 1;
+        $("#sear_btn1").click(function(){
+            if( i==1 ) {
+                $(".frm1").css("height","7vh");
+            } else {
+                $(".frm1").css("height","0vh");
+            }
+            i=i*-1;
+        });
+        var k = 1;
+        $(".gnb_btn_box").click(function(){
+            if(k==1){
+                $(".gnb_wrap").fadeIn(300);
+            } else {
+                $(".gnb_wrap").fadeOut(300);
+            }
+            k = k*-1;
+        });
+        function vsAni(){
+            $(".vs_box").not(":animated").animate({"margin-left":"-100%"}, 500, function(){
+                $(".vs_box li").eq(0).appendTo($(".vs_box"));
+                $(".vs_box").css("margin-left","0");
+                $(".vs_btn_box span").eq(0).appendTo($(".vs_btn_box"));
+                $(".vs_btn_box span").eq(0).addClass("on");
+                $(".vs_btn_box span").eq(0).siblings().removeClass("on");
+            });
+        };
+        var intv1=setInterval(function(){ vsAni();}, 3900);
+
+        $(".content_tit_box h4").click(function(){
+            $(this).addClass("on");
+            $(this).siblings().removeClass("on");
+        });
+        $(".conBox_tit1").click(function(){
+            $(".content_box1").slideDown(300);
+            $(".content_box2").css("display","none");
+            $(".content_box3").css("display","none");
+            $(".content_box4").css("display","none");
+        });
+        $(".conBox_tit2").click(function(){
+            $(".content_box2").slideDown(300);
+            $(".content_box1").css("display","none");
+            $(".content_box3").css("display","none");
+            $(".content_box4").css("display","none");
+        });
+        $(".conBox_tit3").click(function(){
+            $(".content_box3").slideDown(300);
+            $(".content_box1").css("display","none");
+            $(".content_box2").css("display","none");
+            $(".content_box4").css("display","none");
+        });
+        $(".conBox_tit4").click(function(){
+            $(".content_box4").slideDown(300);
+            $(".content_box1").css("display","none");
+            $(".content_box2").css("display","none");
+            $(".content_box3").css("display","none");
+        });
+    });
+    </script>
+</head>
+<body>
+<!--        <ion-icon name="ios-menu"></ion-icon>-->
+    <div class="wrap">
+        <header class="hd">
+            <div class="search_wrap">
+                <button class="sear_btn" id="sear_btn1"><span class="xi-search"></span></button>
+                
+                <form action="" class="frm1">
+                    <input type="text" class="search_txt" id="search1">
+                    <button class="sear_btn" id="sear_btn2"><span class="xi-search"></span></button>
+                </form>
+            </div>
+            <a href="index.html" class="logo"></a>
+            <div class="gnb_btn_box">
+                <span class="gnb_bar bar1"></span>
+                <span class="gnb_bar bar2"></span>
+                <span class="gnb_bar bar3"></span>
+            </div>
+        </header>
+        <nav class="gnb_wrap">
+            <div class="gnb_box">
+
+            </div>
+        </nav>
+        <figure class="vs_wrap">
+            <ul class="vs_box">
+                <li class="vs item1"></li>
+                <li class="vs item2"></li>
+                <li class="vs item3"></li>
+                <li class="vs item4"></li>
+            </ul>
+            <div class="vs_btn_box">
+                <span class="vs_btn vsBtn1 on"></span>
+                <span class="vs_btn vsBtn2"></span>
+                <span class="vs_btn vsBtn3"></span>
+                <span class="vs_btn vsBtn4"></span>
+            </div>
+        </figure>
+        <div class="content_wrap">
+            <div class="content_tit_box">
+                <h4 class="conBox_tit1 on">간편뱅킹</h4>
+                <h4 class="conBox_tit2">상품안내</h4>
+                <h4 class="conBox_tit3">오늘의 환율</h4>
+                <h4 class="conBox_tit4">새소식</h4>
+            </div>
+            <div class="conBox content_box1">
+                <ul class="con_fr content_fr">
+                    <li class="content it1"><span>계좌조회</span><img src="./data/계좌조회.png" alt="계좌조회 아이콘"></li>
+                    <li class="content it2"><span>통장만들기</span><img src="./data/통장만들기.png" alt="통장만들기 아이콘"></li>
+                    <li class="content it3"><span>예적금가입</span><img src="./data/예적금 가입.png" alt="예적금가입 아이콘"></li>
+                    <li class="content it4"><span>환전신청</span><img src="./data/환전신청.png" alt="환전신청 아이콘"></li>
+                    <li class="content it5"><span>카드신청</span><img src="./data/카드신청.png" alt="카드신청 아이콘"></li>
+                    <li class="content it6"><span>퀵대출심사</span><img src="./data/퀵대출심사.png" alt="킉대출심사 아이콘"></li>
+                </ul>
+            </div>
+            <div class="conBox content_box2">
+                <ul class="con_fr content2_fr">
+                    <li class="content2 item1"><img src="./data/icon_set_01.png" alt="예금아이콘"><span>예금</span></li>
+                    <li class="content2 item2"><img src="./data/icon_set_02.png" alt="대출아이콘"><span>대출</span></li>
+                    <li class="content2 item3"><img src="./data/icon_set_03.png" alt="펀드아이콘"><span>펀드</span></li>
+                    <li class="content2 item4"><img src="./data/icon_set_04.png" alt="외환아이콘"><span>외환</span></li>
+                    <li class="content2 item5"><img src="./data/icon_set_05.png" alt="신탁아이콘"><span>신탁</span></li>
+                    <li class="content2 item6"><img src="./data/icon_set_06.png" alt="퇴직연금아이콘"><span>퇴직연금</span></li>
+                    <li class="content2 item7"><img src="./data/icon_set_07.png" alt="보험아이콘"><span>보험</span></li>
+                    <li class="content2 item8"><img src="./data/icon_set_08.png" alt="isa아이콘"><span>ISA</span></li>
+                </ul>
+            </div>
+            <div class="conBox content_box3">
+                <ul class="con_fr content3_fr">
+                    <li class="content3 io1"><img src="" alt=""><span></span></li>
+                    <li class="content3 io2"><img src="" alt=""><span></span></li>
+                    <li class="content3 io3"><img src="" alt=""><span></span></li>
+                    <li class="content3 io4"><img src="" alt=""><span></span></li>
+                </ul>
+            </div>
+            <div class="conBox content_box4">
+                <table class="con_fr tb">
+                    <thead>
+                        <tr>
+                            <th class="col it1">새소식</th>
+                            <th class="col it2">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col it1">[공지] 주택도시보증공사(HUG)관련 업무 일시 중단 안내</td>
+                            <td class="col it2">2019.11.28</td>
+                        </tr>
+                        <tr>
+                            <td class="col it1">[공지] 우리오픈뱅킹서비스 출시 안내</td>
+                            <td class="col it2">2019.10.28</td>
+                        </tr>
+                        <tr>
+                            <td class="col it1">[공지] 우리WON뱅킹 출시 안내</td>
+                            <td class="col it2">2019.08.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="sns_wrap">
+            <ul class="sns_box">
+                <li class="sns icon1"><a href=""></a></li>
+                <li class="sns icon2"><a href=""></a></li>
+                <li class="sns icon3"><a href=""></a></li>
+                <li class="sns icon4"><a href=""></a></li>
+                <li class="sns icon5"><a href=""></a></li>
+            </ul>
+        </div>
+        <footer class="ft">
+            <ul class="ft_box">
+                <li class="fnb"><span>금융소비자보호</span></li>
+                <li class="fnb"><span>개인정보처리방침</span></li>
+                <li class="fnb"><span>우리지킴이</span></li>
+                <li class="fnb"><span>챗봇상담</span></li>
+            </ul>
+            <p class="copyright">COPYRIGHTS WOORI BANK. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+</body>
+</html>
