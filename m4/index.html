@@ -51,7 +51,7 @@
         #xi-search { width: 32px; height: 32px; line-height: 32px; text-align: center;}
         .frm1 { width: 100%; height: 0vh; position: absolute; top: 7vh; left: 0; background-color: rgba(255,255,255,0.7); overflow: hidden; transition: 0.3s; z-index: 10; }
         .search_box { width: 100vw; height: 86vh; position: absolute; top: 7vh; left: -120%; background-color: rgba(255,255,255,0.7); transition: 0.5s;}
-        .search_txt { width: 60vw; height: 7vh; background-color: #769d2e; border-radius: 5px; position: absolute; top: 0; left: 13.6%; text-indent: 10px; }
+        .search_txt { width: 60vw; height: 7vh; background-color: #769d2e; border-radius: 5px; position: absolute; top: 0; left: 13.6%; text-indent: 10px; margin: 0; }
         #sear_btn3 { width: 7vh; height: 7vh; position: absolute; top: 0; left: 74.5%; margin: 0; }
         .sns_box { width: 80%; }
         .sns_box li { float: left; margin: 1vh;}
@@ -160,14 +160,16 @@
                     $(".log_wrap").css("transform","scale(1)");
                 } else {
                     $(".log_wrap").css("transform","scale(0)").animate({"margin-left":"0"},300, function(){
-                        $(".join_wrap").css("transform","scale(0.8)").animate({"left":"110vw"});
+                        $(".join_wrap").css("transform","scale(0.8)").animate({"left":"110vw"}, 500, function(){
+                            $(".join_wrap").css("transition","0s");
+                        });
                     });
                 }
                 f=f*-1;
             });
             $(".join_btn").click(function(){
                 $(".log_wrap").css("transform","scale(0.8").animate({"margin-left":"-120%"}, function(){
-                    $(".join_wrap").animate({"left":"0"}, 500, function(){
+                    $(".join_wrap").stop().animate({"left":"0"}, 500, function(){
                         $(".join_wrap").css("transition","0.5s").css("transform","scale(1)")
                     });
                 });
