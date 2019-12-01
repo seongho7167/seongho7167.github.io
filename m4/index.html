@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>시드물</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<!--    모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <meta name="keywords" content="시드물, 피부의 고향, 피부, 민중기, 남성용화장품, 화장품, 수분크림, 클렌징, 뷰티, 고객만족100%, 시드물민중기">
+    <meta name="description" content="진짜 소비자들의 평가로 만들어진 진짜 뷰티 랭킹">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="시드물">
+    <meta property="og:description" content="진짜 소비자들의 평가로 만들어진 진짜 뷰티 랭킹">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="시드물">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.12.01">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+
+    <style>
+/*        font-family: 'Ibarra Real Nova', 'Noto Sans KR', sans-serif;*/
+/* font-family: 'Ibarra Real Nova', serif; */
+        * { padding: 0; margin: 0; }
+        body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        button, label, input { border: 0; border-color: transparent; outline: 0; }
+        .wrap { width: 100%; position: relative; font-family: 'Ibarra Real Nova', 'Noto Sans KR', sans-serif; }
+
+        .hd { width: 100%; height: 7vh; border-bottom: 2px solid #769d2e; box-sizing: border-box; }
+        .top_icon_btn { border: 1px solid #769d2e; width: 32px; height: 32px; border-radius: 5px; box-sizing: border-box; float: left; margin: 1vh; background-color: #fff; }
+        .sear_btn {  border: 1px solid #769d2e; width: 32px; height: 32px; border-radius: 5px; box-sizing: border-box; float: left; margin: 1vh; }
+        .xi-caret-up { font-size: 1.2em; color: #769d2e; transform: rotate(90deg); }
+        .xi-search { font-size: 1.8em; color: #769d2e; display: block; height: 7vh; line-height: 7vh; text-align: center; }
+        #xi-search { width: 32px; height: 32px; line-height: 32px; text-align: center;}
+        .frm1 { width: 100%; height: 0vh; position: absolute; top: 7vh; left: 0; background-color: rgba(255,255,255,0.7); overflow: hidden; transition: 0.3s; z-index: 10; }
+        .search_box { width: 100vw; height: 86vh; position: absolute; top: 7vh; left: -120%; background-color: rgba(255,255,255,0.7); transition: 0.5s;}
+        .search_txt { width: 60vw; height: 7vh; background-color: #769d2e; border-radius: 5px; position: absolute; top: 0; left: 13.6%; text-indent: 10px; }
+        #sear_btn3 { width: 7vh; height: 7vh; position: absolute; top: 0; left: 74.5%; margin: 0; }
+        .sns_box { width: 80%; }
+        .sns_box li { float: left; margin: 1vh;}
+        .logo { display: block; float: left; width: 110px; height: 30px; background-image: url(./data/sidmool_logo.png); background-size: 100%; background-repeat: no-repeat; position: absolute; top: 1%; left: 50%; margin-left: -55px; }
+        .gnb_btn_box { width: 32px; height: 32px; float: right; margin: 1vh; border: 1px solid #769d2e; border-radius: 5px; position: relative; }
+        .gnb_btn_box span { display: block; position: absolute; width: 24px; height: 2px; background-color: #769d2e; top: 9px; left: 4px; transition: 0.3s;  }
+        .gnb_btn_box span:nth-child(2) { top: 20px; }
+
+        .content_wrap { width: 100%; height: 93vh; position: relative; clear: both;  }
+        .content_wrap .content_box { width: 50%; height: 50%; background-color: #769d2e; float: left; position: relative; }
+        .content_wrap .content_box:nth-child(2) { background-color: #8ebc21; }
+        .content_wrap .content_box:nth-child(3) { background-color: #8ebc21; }
+        .content_fr { width: 85%; height: 90%; background-color: #8ebc21; position: absolute; top: 50%; left: 50%; margin-left: -42%; margin-top: -21vh; }
+        .content_fr.it2, .content_fr.it3 { background-color: #769d2e; }
+        .content_tit { color: #fff; font-family: slash; font-size: 3em; text-align: center; padding-top: 50%; }
+        .content_tit span { display: block; }
+        
+        .log_wrap { position: absolute; top: 7vh; left: 0; width: 100vw; height: 93vh; background-color: #769d2e; transition: 0.5s; transform:scale(0); }
+        .frm2 { position: relative; width: 90vw; height: 87vh; background-color: #8ebc21; margin: 5vw auto; }
+        .log_tit { color:#fff; height: 30vh; line-height: 30vh; text-align: center;}
+        .log_id { width: 65vw; height: 7vh; border-radius: 5px; text-indent: 20px; margin: 0 12.5vw; margin-top: -10vh; }
+        .log_pw { width: 65vw; height: 7vh; border-radius: 5px; text-indent: 20px; margin: 0 12.5vw; margin-top: 3vh; }
+        .check_cir_box { width: 65vw; height: 5vh; margin: 3vh auto;  }
+        .check_cir_box span { margin-left: 2vw; color:#fff; }
+        .check_cir_box span:first-child { margin-left: 0; }
+        .enter { background-color: #769d2e; font-size: 1.2em; border: 2px solid #fff; border-radius: 5px; width: 30vw;height: 5vh; color:#fff; float: left; margin-left: 12.5vw; text-indent: 0; margin-right: 0;}
+        .join_btn { background-color: #769d2e; font-size: 1.2em; border: 2px solid #fff; border-radius: 5px; width: 30vw;height: 5vh; line-height: 5vh; color:#fff; margin-left: 5vw; float: left; box-sizing: border-box; text-align: center; }
+        .id_fr { float: left; margin-right: 5vw; }
+
+        .join_wrap { position: absolute; top: 7vh; left: 110vw; width: 100vw; height: 93vh; background-color: #769d2e;  transform:scale(0.8); }
+        .frm3 { position: relative; width: 90vw; height: 87vh; background-color: #8ebc21; margin: 5vw auto; }
+        .join_title { color:#fff; height: 10vh; line-height: 10vh; text-align: center; }
+        input { display: block; width: 65vw; height: 5vh; border-radius: 5px; text-indent: 20px; margin: 0 12.5vw; }
+        #m_pw, #m_pw2 { margin-top: 2vh; }
+        .gender { width: 15px; height: 15px; float: left; margin: 0;margin-left: 5vw; float: left; margin-top: 2vh; }
+        #m_gen { margin-left: 12.5vw; }
+        #m_gen2 { margin-left: 5vw; }
+        #gen_btn1, #gen_btn2 { margin-left: 2vw; margin-top: 1.2vh; }
+        label { display: block; float: left; margin-left: 12.5vw; color:#fff; margin-top: 2vh; font-size: 14px; }
+        #birth { clear: both; }
+        #j_btn { background-color: #769d2e; text-indent: 0; margin-top: 5vh; color:#fff; border: 1px solid #fff; box-sizing: border-box; }
+
+        .ft { width: 100vw; position: relative; border-top: 2px solid #769d2e; box-sizing: border-box; }
+        .ft_box { width: 90vw; margin: 0 auto; }
+        .ft_box li { float: left; margin-left: 2vh; }
+        .ft_box li:after { content: "|"; margin-left: 2vh; }
+        .ft_box li:last-child:after { content: ""; }
+        .ft_box li span { font-size: 10px; }
+        .ft_txt { clear: both; text-align: center; }
+        .ft_txt span { display: block; font-size: 10px; }
+        .copyright { font-size: 10px; text-align: center; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var a=1;
+            $("#sear_btn1").click(function(event){
+                if(a==1){
+                    $(".frm1").css("height","14vh");
+                } else {
+                    $(".frm1").css("height","0");
+                    $(".search_box").css("left","-120%");
+                }
+                a = a*-1;
+            });
+            var b=1;
+            $("#sear_btn2").click(function(){
+                if(b==1){
+                    $(".search_box").css("left","0");
+                } else {
+                    $(".search_box").css("left","-120%");
+                }
+                b= b*-1;
+            });
+            var c= 1;
+            $(".gnb_btn_box").click(function(){
+                if ( c==1 ){
+                    $(".gnb_btn_box .bar1").css("transform","rotate(-45deg)").css("top","14px");
+                    $(".gnb_btn_box .bar2").css("transform","rotate(45deg)").css("top","14px");
+                } else {
+                    $(".gnb_btn_box .bar1").css("transform","rotate(0deg)").css("top","7px");
+                    $(".gnb_btn_box .bar2").css("transform","rotate(0deg)").css("top","20px");
+                }
+                c = c*-1;
+            });
+            var d=1;
+            $(".id_fr").click(function(){
+                if(d==1){
+                    $(".id_ck").css("color","#ea5514");
+                } else {
+                    $(".id_ck").css("color","#fff");
+                }
+                d=d*-1;
+            });
+            var e=1;
+            $(".pw_fr").click(function(){
+                if(e==1){
+                    $(".pw_ck").css("color","#ea5514");
+                } else {
+                    $(".pw_ck").css("color","#fff");
+                }
+                e=e*-1;
+            });
+            var f=1;
+            $(".gnb_btn_box").click(function(){
+                if(f==1){
+                    $(".log_wrap").css("transform","scale(1)");
+                } else {
+                    $(".log_wrap").css("transform","scale(0)").animate({"margin-left":"0"},300, function(){
+                        $(".join_wrap").css("transform","scale(0.8)").animate({"left":"110vw"});
+                    });
+                }
+                f=f*-1;
+            });
+            $(".join_btn").click(function(){
+                $(".log_wrap").css("transform","scale(0.8").animate({"margin-left":"-120%"}, function(){
+                    $(".join_wrap").animate({"left":"0"}, 500, function(){
+                        $(".join_wrap").css("transition","0.5s").css("transform","scale(1)")
+                    });
+                });
+            })
+            
+        });
+    </script>
+</head>
+<body>
+<!--        <ion-icon name="ios-menu"></ion-icon>-->
+    <div class="wrap">
+        <header class="hd">
+            <div class="search_wrap">
+                <button class="top_icon_btn" id="sear_btn1"><span class="xi-caret-up"></span></button>
+                <form class="frm1">
+                    <div class="sear_btn" id="sear_btn2"><span id="xi-search" class="xi-search"></span></div>
+                    <div class="search_box">
+                        <input type="text" class="search_txt" id="search1" placeholder="검색할 단어를 입력해주세요.">
+                        <div class="sear_btn" id="sear_btn3"><span class="xi-search"></span></div>
+                    </div>
+                    <div class="sns_box">
+                        <ul class="sns_fr">
+                            <li class="sns ico1"><img src="./data/facebook2.png" alt="페이스북 아이콘"></li>
+                            <li class="sns ico2"><img src="./data/katalk2.png" alt="카카오톡 아이콘"></li>
+                            <li class="sns ico3"><img src="./data/twiter2.png" alt="트위터 아이콘"></li>
+                            <li class="sns ico4"><img src="./data/youtube2.png" alt="유튜브 아이콘"></li>
+                            <li class="sns ico5"><img src="./data/instagram2.png" alt="인스타그램 아이콘"></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <a href="index.html" class="logo"></a>
+            <div class="gnb_btn_box">
+                <span class="gnb_bar bar1"></span>
+                <span class="gnb_bar bar2"></span>
+            </div>
+        </header>
+        <div class="content_wrap">
+            <div class="content_box item1">
+                <div class="content_fr it1">
+                    <a href="">
+                        <h2 class="content_tit">
+                            <span>회사</span>
+                            <span>소개</span>
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="content_box item2">
+                <div class="content_fr it2">
+                    <a href="">
+                        <h2 class="content_tit">
+                            <span>제품</span>
+                            <span>소개</span>
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="content_box item3">
+                <div class="content_fr it3">
+                    <a href="">
+                        <h2 class="content_tit">
+                            <span>포토</span>
+                            <span>후기</span>
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="content_box item4">
+                <div class="content_fr it4">
+                    <a href="">
+                        <h2 class="content_tit">
+                            <span>1:1문의</span>
+                            <span>게시판</span>
+                        </h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="log_wrap">
+            <form action="" class="frm2">
+                <h2 class="log_tit">로그인</h2>
+                <input type="text" id="m_id" class="log_id" placeholder="아이디를 입력해주세요" required>
+                <input type="password" id="m+pw" class="log_pw" required placeholder="패스워드를 입력해주세요">
+                <div class="check_cir_box">
+                    <div class="id_fr"><span class="xi-check-circle-o id_ck"></span><span class="id_ck">아이디 저장</span></div>
+                    <div class="pw_fr"><span class="xi-check-circle-o pw_ck"></span><span class="pw_ck">비밀번호 저장</span></div>
+                </div>
+                <input type="submit" value="로그인" class="enter">
+                <div class="join_btn"><span>회원가입</span></div>
+            </form>
+        </div>
+        <div class="join_wrap">
+            <form action="" method="post" name="" class="frm3">
+                <h2 class="join_title">회원가입</h2>
+                <input type="text" id="m_id" title="아이디를 15자리 이내로 입력해주세요." tabindex="1" placeholder="아이디"  required maxlength="15" pattern="[a-zA-Z0-9]{4,15}">
+                <input type="password" id="m_pw" name="pw" title="패스워드를 10자리 이상 20자리 이하로 입력해주세요." autocomplete="off" required pattern="[a-zA-Z0-9]{20}" placeholder="패스워드">
+                <input type="password" id="m_pw2" name="pw2" title="패스워드를 다시한번 입력해주세요." autocomplete="off" required pattern="[a-zA-Z0-9]{20}" placeholder="패스워드 확인">
+                <label for="m_name" id="name"><span>이름(필수)</span></label>
+                <input type="text" id="m_name" placeholder="성함" value="" > 
+                <input type="radio" name="gen" id="m_gen" class="gender" checked required>
+                <label id="gen_btn1" for="m_gen">남성</label>
+                <input type="radio" name="gen" id="m_gen2" class="gender">
+                <label id="gen_btn2" for="m_gen2">여성</label>
+                <label for="m_birth" id="birth"><span>생년월일(필수)</span></label>
+                <input type="date" required id="m_birth">
+                <label id="mob" for="m_tel"><span>휴대폰(필수)</span></label>
+                <input type="tel" name="tel" id="m_tel" pattern="0\d{0,1}-\d{3,4}-\d{4}" placeholder="핸드폰 번호" title="핸드폰 번호를 입력해주세요." required>
+                <label id="mail" for="m_email"><span>메일(필수)</span></label>
+                <input type="email" name="email" id="m_email" pattern="^[a-zA-Z0-9_+.-]+@[a-zA-Z0-9_+.-]+$" placeholder="이메일 입력" title="이메일을 입력해주세요.">
+                <input type="submit" id="j_btn" value="가입하기">
+            </form>
+        </div>
+        <footer class="ft">
+            <ul class="ft_box">
+                <li class="fnb"><span>개인정보처리방침</span></li>
+                <li class="fnb"><span>이용약관</span></li>
+                <li class="fnb"><span>고객센터</span></li>
+                <li class="fnb"><span>사업자정보확인</span></li>
+            </ul>
+            <p class="ft_txt">
+                <span>상호 : 주식회사 시드물</span>
+                <span>주소 : 우)35083 대전광역시 중구 안영로 42(안영동)</span>
+                <span>전화 : 1577-9638</span>
+            </p>
+            <p class="copyright">COPYRIGHTS 2008 SIDMOOL. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+</body>
+</html>
