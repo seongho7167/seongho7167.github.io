@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MARVEL STUDIOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="MARVEL STUDIOS, 마블스튜디오, 영화, 액션, 마블, 헐크, 토르, 아이언맨, 스파이더맨, 앤트맨, 디즈니, 인수, 엔드게임, 어벤져스">
+    <meta name="description" content="캘리포니아 버뱅크에 위치한 월트 디즈니 스튜디오의 자회사이며 케빈 파이기가 사장으로 있다. 2015년 8월 디즈니가 회사 구조를 재편할 때까지 마블 엔터테인먼트의 자회사였다.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MARVEL STUDIOS">
+    <meta property="og:description" content="캘리포니아 버뱅크에 위치한 월트 디즈니 스튜디오의 자회사이며 케빈 파이기가 사장으로 있다. 2015년 8월 디즈니가 회사 구조를 재편할 때까지 마블 엔터테인먼트의 자회사였다.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="MARVEL STUDIOS">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.12.10">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+<!--    font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Passion One', cursive;-->
+<!--
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+-->
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; height: 100%; }
+        html { overflow: hidden; }
+        body { overflow: auto; font-size: 16px; font-family: 'Noto Sans KR', sans-serif; font-size: 18px; background-color: #000; color:#fff; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        h2 { font-family: 'Passion One', cursive; font-size: 4em; }
+        /* 공통 서식 */
+        .wrap { width: 100%; position: relative; }
+        .hd { width: 100%; height: 45px; position: relative; clear: both; background-color: #181818; float: left; margin-top: 30px; }
+        .logo { display: block; width: 110px; height: 45px;  background-image: url(./data/logo.png); background-repeat: no-repeat; background-size: cover; background-position: center center; float: left; margin-left: 50px; }
+        .gnb_btn_box { width: 45px; height: 45px; float: right; margin-right: 50px; position: relative; z-index: 999; }
+        .gnb_btn { display: block; width: 30px; height: 3px; background-color: #fff; position: absolute; left: 50%; margin-left: -15px; animation: gnbAni 5s ease-in-out infinite; }
+        .gnb_btn1 { top: 8px; }
+        .gnb_btn2 { top: 20px; }
+        .gnb_btn3 { top: 32px; }
+        @keyframes gnbAni { 
+            to { opacity: 1; }
+            50% { opacity: 0.4; }
+            from { opacity: 1; }
+        }
+        .gnb_wrap { width: 100vw; height: calc(100vh - 30px); background-color: #181818; position: absolute; top: 0; left: 0; font-family: 'Passion One', cursive; font-size: 1.6em; text-align: center; display: none; z-index: 10;}
+        .gnb_box .gnb { height: 100px; line-height: 100px; position: relative; }
+        .gnb:before { background-color: #000; position: absolute; height: 25%; left: 0%; right: 100%; content: ''; z-index: 1; opacity: 0; transition: all 0.3s ease; width: 30vw; bottom: 0%; }
+        .gnb:hover:before { width: 100vw; opacity: 1; }
+        .gnb:after { background-color: #000; position: absolute; height: 25%; left: 0%; right: 100%; content: ''; z-index: 1; opacity: 0; transition: all 0.3s ease; width: 30vw; bottom: 50%; transition-delay: 0.2s;}
+        .gnb:hover:after { width: 100vw; opacity: 1;}
+        .gnb_box .gnb:first-child { margin-top: 100px; }
+        .gnb_box .gnb a { color: rgba(255,255,255,0.4); backface-visibility: hidden; text-transform: uppercase; display: inline-block; position: relative; z-index: 3; transition: all 0.3s;  }
+        .gnb:hover a { color: #fff; }
+        .gnb span { background-color: #000; position: absolute; height: 25%; left: 0%; right: 100%; z-index: 1; opacity: 0; transition: all 0.3s ease; width: 30vw; bottom: 25%; transition-delay: 0.1s; }
+        .gnb:hover span { width: 100vw; opacity: 1; }
+        .gnb span:after { content:""; background-color: #000; position: absolute; height: 25px; left: 0%; right: 100%; z-index: 1; opacity: 0; transition: all 0.3s ease; width: 30vw; bottom: 50px; transition-delay: 0.3s;}
+        .gnb:hover span:after { width: 100vw; opacity: 1; }
+        .gnb2_box { margin-top: 150px; }
+        .gnb_wrap .gnb2_box .gnb2 { display: inline-block; font-size: 1.3rem; }
+        .gnb_wrap .gnb2_box .gnb2 a { color: rgba(255,255,255,0.4); }
+        .gnb_wrap .gnb2_box .gnb2:hover a { color: #fff; }
+        .gnb2.it1:after { content: "|"; padding-left: 30px; color: rgba(255,255,255,0.4); }
+        .gnb2.it2 { padding-left: 30px;}
+        .gnb_logo { display: block; width: 110px; height: 45px;  background-image: url(./data/logo.png); background-repeat: no-repeat; background-size: cover; background-position: center center; margin: 10px auto; }
+
+        .page { position: relative; width: 100vw; height: 100vh; overflow: hidden; clear: both; text-align: center; }
+        .vs_wrap { position: relative; }
+        .vs_box .main_logo { display: block; position: absolute; top: 10%; left: 50%; z-index: 5; margin-left: -300px; animation: logoAni 30s infinite; }
+        .vs_box .main_img { display: block; border: 2px solid crimson; border-radius: 100%; animation: cirAni 30s infinite; animation-timing-function: cubic-bezier(1,.01,.08,1); margin: 20vh auto; }
+        .cir_box { position: fixed; top: 30%; left: 3vw; width: 20px; height: 50vh; z-index: 3; }
+        .cir_box .cir { width: 12px; height: 12px; border-radius: 15px; background-color: #333; position: absolute; top: 0; left: 4px; cursor: pointer; }
+        .cir_box .cir.on { border: 2px solid crimson; }
+        .cir_box .cir2 { top: 40px; }
+        .cir_box .cir3 { top: 80px; }
+        .cir_box .cir4 { top: 120px; }
+        .cir_box .cir5 { top: 160px; }
+        .cir_box .cir6 { top: 200px; }
+        .cir_box .cir7 { top: 240px; }
+        .cir_box .cir8 { top: 280px; }
+        .cir_box .cir9 { top: 320px; }
+        .cir_box .cir10 { top: 360px; }
+        .txt_box { position: fixed; top: 29.5%; left: 5vw; width: 200px; height: 50vh; z-index: 3;}
+        
+        .txt_box .bar1 { display: block; position: absolute; top: 10px; left: 20px;  width: 8px; height: 8px; border-top: 1px solid crimson; border-left: 1px solid crimson; transition: 0.3s; opacity: 0;  }
+        .bar1.st { top: 0; left: -5px; opacity: 1; }
+        .txt_box .bar1:before { content: ""; display: block; position: absolute; top: 0px; left: 0px; width: 8px; height: 8px; border-bottom: 1px solid crimson; border-left: 1px solid crimson; transition: 0.3s; opacity: 0;  }
+        .bar1.st:before { top: 20px; left: 0px; opacity: 1; }
+        .txt_box .bar1:after { content: ""; display: block; position: absolute; top: 0px; left: 0px; width: 8px; height: 8px; border-top: 1px solid crimson; border-right: 1px solid crimson; transition: 0.3s; opacity: 0; }
+        .bar1.st:after { top: 0px; left: 55px; opacity: 1; }
+        .txt_box .txt1:before { content:""; display: block; position: absolute; top: 10px; left: 20px; width: 8px; height: 8px; border-bottom: 1px solid crimson; border-right: 1px solid crimson; transition: 0.3s; opacity: 0; }
+        .txt1.st:before { top: 20px; left: 50px; opacity: 1; }
+        
+        .txt_box .bar2 { display: block; position: absolute; top: 10px; left: 20px;  width: 8px; height: 8px; border-top: 1px solid crimson; border-left: 1px solid crimson; transition: 0.3s; opacity: 0;  }
+        .bar2.st { top: 0; left: -5px; opacity: 1; }
+        .txt_box .bar2:before { content: ""; display: block; position: absolute; top: 0px; left: 0px; width: 8px; height: 8px; border-bottom: 1px solid crimson; border-left: 1px solid crimson; transition: 0.3s; opacity: 0;  }
+        .bar2.st:before { top: 20px; left: 0px; opacity: 1; }
+        .txt_box .bar2:after { content: ""; display: block; position: absolute; top: 0px; left: 0px; width: 8px; height: 8px; border-top: 1px solid crimson; border-right: 1px solid crimson; transition: 0.3s; opacity: 0; }
+        .bar2.st:after { top: 0px; left: 55px; opacity: 1; }
+        .txt_box .txt2:before { content:""; display: block; position: absolute; top: 10px; left: 20px; width: 8px; height: 8px; border-bottom: 1px solid crimson; border-right: 1px solid crimson; transition: 0.3s; opacity: 0; }
+        .txt2.st:before { top: 20px; left: 50px; opacity: 1; }
+        
+        .txt_box .txt { display: block; color: rgba(255,255,255,0.4); position: absolute; cursor: pointer; }
+        .txt_box .txt:hover { color: #fff;}
+        
+        .txt_box .txt.on { color: #fff;}
+        .txt_box .txt2 { top: 40px; }
+        .txt_box .txt3 { top: 80px; }
+        .txt_box .txt4 { top: 120px; }
+        .txt_box .txt5 { top: 160px; }
+        .txt_box .txt6 { top: 200px; }
+        .txt_box .txt7 { top: 240px; }
+        .txt_box .txt8 { top: 280px; }
+        .txt_box .txt9 { top: 320px; }
+        .txt_box .txt10 { top: 360px; }
+
+        .page .image { display: block; }
+        .page .img1 { width: 100vw; height: auto; }
+        .page1 .img2 { width: 25vw; position: absolute; top: 25vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page1.on .img2 { top: 5vh; opacity: 1; }
+        .page1 .img3 { width: 25vw; position: absolute; top: 60vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page1.on .img3 { top: 40vh; opacity: 1; }
+        .page1 .img4 { width: 25vw; position: absolute; top: 90vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.4s;}
+        .page1.on .img4 { top: 70vh; opacity: 1; }
+        .page2 .img { display: block; }
+        .page2 .img2 { width: 25vw; position: absolute; top: 25vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page2.on .img2 { top: 5vh; opacity: 1; }
+        .page2 .img3 { width: 25vw; position: absolute; top: 60vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page2.on .img3 { top: 40vh; opacity: 1; }
+        .page2 .img4 { width: 25vw; position: absolute; top: 90vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0.4s;}
+        .page2.on .img4 { top: 70vh; opacity: 1; }
+        .page3 .img { display: block; }
+        .page3 .img2 { width: 25vw; position: absolute; top: 25vh; left: 25vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page3.on .img2 { top: 5vh; opacity: 1; }
+        .page3 .img3 { width: 25vw; position: absolute; top: 60vh; left: 25vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page3.on .img3 { top: 40vh; opacity: 1; }
+        .page4 .img { display: block; }
+        .page4 .img2 { width: 25vw; position: absolute; top: 25vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page4.on .img2 { top: 5vh; opacity: 1; }
+        .page4 .img4 { width: 25vw; position: absolute; top: 90vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0.3s;}
+        .page4.on .img4 { top: 60vh; opacity: 1; }
+        .page5 .img { display: block; }
+        .page5 .img2 { width: 25vw; position: absolute; top: 25vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page5.on .img2 { top: 5vh; opacity: 1; }
+        .page5 .img3 { width: 25vw; position: absolute; top: 60vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page5.on .img3 { top: 40vh; opacity: 1; }
+        .page5 .img4 { width: 25vw; position: absolute; top: 90vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.4s;}
+        .page5.on .img4 { top: 70vh; opacity: 1; }
+        .page6 .img { display: block; }
+        .page6 .img2 { width: 25vw; position: absolute; top: 25vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page6.on .img2 { top: 5vh; opacity: 1; }
+        .page6 .img3 { width: 25vw; position: absolute; top: 60vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page6.on .img3 { top: 37vh; opacity: 1; }
+        .page6 .img4 { width: 25vw; position: absolute; top: 90vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0.4s;}
+        .page6.on .img4 { top: 70vh; opacity: 1; }
+        .page7 .img { display: block; }
+        .page7 .img2 { width: 25vw; position: absolute; top: 25vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page7.on .img2 { top: 5vh; opacity: 1; }
+        .page7 .img3 { width: 25vw; position: absolute; top: 60vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page7.on .img3 { top: 37vh; opacity: 1; }
+        .page7 .img4 { width: 25vw; position: absolute; top: 90vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.4s;}
+        .page7.on .img4 { top: 70vh; opacity: 1; }
+        .page8 .img { display: block; }
+        .page8 .img2 { width: 25vw; position: absolute; top: 40vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page8.on .img2 { top: 15vh; opacity: 1; }
+        .page8 .img3 { width: 25vw; position: absolute; top: 80vh; right: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page8.on .img3 { top: 50vh; opacity: 1; }
+        .page9 .img { display: block; }
+        .page9 .img2 { width: 25vw; position: absolute; top: 25vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0s;}
+        .page9.on .img2 { top: 5vh; opacity: 1; }
+        .page9 .img3 { width: 25vw; position: absolute; top: 60vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.2s;}
+        .page9.on .img3 { top: 37vh; opacity: 1; }
+        .page9 .img4 { width: 25vw; position: absolute; top: 90vh; left: 15vw; opacity: 0; transition: 1s; transition-delay: 0.4s;}
+        .page9.on .img4 { top: 70vh; opacity: 1; }
+        
+        .page_tit { position: relative; z-index: 10; margin-top: -110vh; }
+        .page3 .page_tit { margin-top: -120vh; }
+        
+        @keyframes cirAni {
+            0% { transform: rotate(0deg); border: 2px solid crimson; }
+            25% { transform: rotate(180deg); border: 2px solid transparent; }
+            50% { transform: rotate(360deg); border: 2px solid crimson; }
+            75% { transform: rotate(180deg); border: 2px solid transparent; }
+            100% { transform: rotate(0deg); border: 2px solid crimson; }
+        }
+        @keyframes logoAni { 
+            0% { margin-left: -300px; }
+            25% { margin-left: -250px; }
+            75% { margin-left: -350px; }
+            100% { margin-left: -300px;}
+        }
+        @media screen and (max-width: 767px) {
+            
+        }
+        @media screen and (min-width:768px) and (max-width: 959px) {
+            
+        }
+        @media screen and (min-width: 960px) {
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".gnb_btn_box").click(function(){
+                $(".gnb_wrap").slideToggle(500);
+            });
+            var p = $(".page");
+            var ofs = new Array;
+            var pos = new Array;
+            p.each(function(index){
+                ofs[index] = $(this).offset();
+                pos[index] = parseInt(ofs[index].top);
+                pos[0] = 0;
+                console.log(pos[index]);
+            });
+            p.on("mousewheel DOMMouseScroll", function(e){
+                var idx = $(this).index();
+                var eo = e.originalEvent.wheelDelta;
+                console.log(idx);
+                if( eo<0 ) {
+                    if( p.eq(idx) != undefined ){
+                        $("body, html").not(":animated").animate({"scrollTop":pos[idx]+"px"});
+                        $(".cir").eq(idx).addClass("on");
+                        $(".cir").eq(idx).siblings().removeClass("on");
+                        $(".txt").eq(idx).addClass("on");
+                        $(".txt").eq(idx).siblings().removeClass("on");
+                        $(".page"+idx).addClass("on");
+                        $(".page"+idx).siblings().removeClass("on");
+                    }
+                }else if (eo>0 != undefined) {
+                    $("body, html").not(":animated").animate({"scrollTop":pos[idx-2]+"px"});
+                    $(".cir").eq(idx-2).addClass("on");
+                    $(".cir").eq(idx-2).siblings().removeClass("on");
+                    $(".txt").eq(idx-2).addClass("on");
+                    $(".txt").eq(idx-2).siblings().removeClass("on");
+                    $(".page"+(idx-2)).addClass("on");
+                    $(".page"+(idx-2)).siblings().removeClass("on");
+                    
+                }
+            });
+            $(".cir_box span").click(function(){
+                var cir_idx = $(this).index();
+                $("body, html").not(":animated").animate({"scrollTop":pos[cir_idx]+"px"}, 500);
+                $(".cir").eq(cir_idx).addClass("on");
+                $(".cir").eq(cir_idx).siblings().removeClass("on");
+                $(".txt").eq(cir_idx).addClass("on");
+                $(".txt").eq(cir_idx).siblings().removeClass("on");
+                $(".page"+cir_idx).addClass("on");
+                $(".page"+cir_idx).siblings().removeClass("on");
+            });
+            $(".txt_box span").click(function(){
+                var txt_data = $(this).attr("data-txt");
+                $("body, html").not(":animated").animate({"scrollTop":pos[txt_data]+"px"}, 500);
+                $(".cir").eq(txt_data).addClass("on");
+                $(".cir").eq(txt_data).siblings().removeClass("on");
+                $(".txt").eq(txt_data).addClass("on");
+                $(".txt").eq(txt_data).siblings().removeClass("on");
+                $(".page"+txt_data).addClass("on");
+                $(".page"+txt_data).siblings().removeClass("on");
+            });
+            $(".txt").on("mouseover click", function(){
+                var txt_data = $(this).attr("data-txt");
+                $(this).addClass("st");
+                $(this).siblings().removeClass("st");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <a href="" class="logo"></a>
+            <div class="gnb_btn_box">
+                <span class="gnb_btn gnb_btn1"></span>
+                <span class="gnb_btn gnb_btn2"></span>
+                <span class="gnb_btn gnb_btn3"></span>
+            </div>
+            <nav class="gnb_wrap">
+                    <a href="" class="gnb_logo"></a>
+                <ul class="gnb_box">
+                    <li class="gnb item1"><a href="">VIDEOS</a><span></span></li>
+                    <li class="gnb item2"><a href="">CHARACTERS</a><span></span></li>
+                    <li class="gnb item3"><a href="">MOVIES</a><span></span></li>
+                    <li class="gnb item4"><a href="">COMICS</a><span></span></li>
+                    <li class="gnb item5"><a href="">GAMES</a><span></span></li>
+                </ul>
+                <ul class="gnb2_box">
+                    <li class="gnb2 it1"><a href="">Sign in</a></li>
+                    <li class="gnb2 it2"><a href="">Join</a></li>
+                </ul>
+            </nav>
+        </header>
+        <figure class="vs_wrap page" >
+            <div class="vs_box">
+                <img class="main_logo" src="./data/Marvel_logo.png" alt="메인로고">
+                <img class="main_img" src="./data/vs.png" alt="메인이미지">
+            </div>
+        </figure>
+        <div class="page page1"data-page="1">
+            <img src="./data/endgame2.jpg" alt="" class="image img1">
+            <img src="./data/endgame1.jpg" alt="" class="image img2">
+            <img src="./data/endgame3.jpg" alt="" class="image img3">
+            <img src="./data/endgame5.jpg" alt="" class="image img4">
+            <h2 class="page_tit">END GAME</h2>
+        </div>
+        <div class="page page2">
+            <img src="./data/spiderman2.jpg" alt="" class="image img1">
+            <img src="./data/spiderman1.jpg" alt="" class="image img2">
+            <img src="./data/spiderman3.png" alt="" class="image img3">
+            <img src="./data/spiderman4.jpg" alt="" class="image img4">
+            <h2 class="page_tit">SPIDER MAN</h2>
+        </div>
+        <div class="page page3">
+            <img src="./data/hulk1.jpg" alt="" class="image img1">
+            <img src="./data/hulk3.png" alt="" class="image img2">
+            <img src="./data/hulk2.jpg" alt="" class="image img3">
+            <h2 class="page_tit">HULK</h2>
+        </div>
+        <div class="page page4">
+            <img src="./data/daredevil2.jpg" alt="" class="image img1">
+            <img src="./data/daredevil4.jpg" alt="" class="image img2">
+            <img src="./data/daredevil3.jpg" alt="" class="image img4">
+            <h2 class="page_tit">DAREDEVIL</h2>
+        </div>
+        <div class="page page5">
+            <img src="./data/ironman4.jpg" alt="" class="image img1">
+            <img src="./data/ironman1.jpg" alt="" class="image img2">
+            <img src="./data/ironman5.jpg" alt="" class="image img3">
+            <img src="./data/ironman6.png" alt="" class="image img4">
+            <h2 class="page_tit">IRON MAN</h2>
+        </div>
+        <div class="page page6">
+            <img src="./data/deadpul6.jpg" alt="" class="image img1">
+            <img src="./data/deadpul1.png" alt="" class="image img2">
+            <img src="./data/deadpul2.jpg" alt="" class="image img3">
+            <img src="./data/deadpul3.jpg" alt="" class="image img4">
+            <h2 class="page_tit">DEADPOOL</h2>
+        </div>
+        <div class="page page7">
+            <img src="./data/captain1.jpg" alt="" class="image img1">
+            <img src="./data/captain2.jpg" alt="" class="image img2">
+            <img src="./data/captain3.jpg" alt="" class="image img3">
+            <img src="./data/captain4.jpg" alt="" class="image img4">
+            <h2 class="page_tit">CAPTAIN AMERICA</h2>
+        </div>
+        <div class="page page8">
+            <img src="./data/xman4.jpg" alt="" class="image img1">
+            <img src="./data/xman1.jpg" alt="" class="image img2">
+            <img src="./data/xman2.jpg" alt="" class="image img3">
+            <h2 class="page_tit">X-MAN</h2>
+        </div>
+        <div class="page page9">
+            <img src="./data/thor1.jpg" alt="" class="image img1">
+            <img src="./data/thor2.jpg" alt="" class="image img2">
+            <img src="./data/thor3.jpg" alt="" class="image img3">
+            <h2 class="page_tit">THOR</h2>
+        </div>
+        <div class="cir_box">
+            <span class="cir cir1 on"></span>
+            <span class="cir cir2"></span>
+            <span class="cir cir3"></span>
+            <span class="cir cir4"></span>
+            <span class="cir cir5"></span>
+            <span class="cir cir6"></span>
+            <span class="cir cir7"></span>
+            <span class="cir cir8"></span>
+            <span class="cir cir9"></span>
+            <span class="cir cir10"></span>
+        </div>
+        <div class="txt_box">
+            <span class="txt txt1 on st" data-txt="0">INTRO</span>
+            <span class="txt txt2" data-txt="1">AVENGERS</span>
+            <span class="txt txt3" data-txt="2">SPIDER MAN</span>
+            <span class="txt txt4" data-txt="3">HULK</span>
+            <span class="txt txt5" data-txt="4">DAREDEVIL</span>
+            <span class="txt txt6" data-txt="5">IRON MAN</span>
+            <span class="txt txt7" data-txt="6">DEADPOOL</span>
+            <span class="txt txt8" data-txt="7">CAPTAIN AMERICA</span>
+            <span class="txt txt9" data-txt="8">X-MAN</span>
+            <span class="txt txt10" data-txt="9">THOR</span>
+        </div>
+        <div class="bar_box">
+            <span class="txt_bar bar1 st"></span>
+            <span class="txt_bar bar2"></span>
+            <span class="txt_bar bar3"></span>
+            <span class="txt_bar bar4"></span>
+            <span class="txt_bar bar5"></span>
+            <span class="txt_bar bar6"></span>
+            <span class="txt_bar bar7"></span>
+            <span class="txt_bar bar8"></span>
+            <span class="txt_bar bar9"></span>
+            <span class="txt_bar bar10"></span>
+        </div>
+    </div>
+</body>
+</html>
