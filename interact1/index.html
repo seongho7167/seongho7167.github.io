@@ -262,7 +262,29 @@
             100% { margin-left: -300px;}
         }
         @media screen and (max-width: 767px) {
-            
+            .hd { width: 100vw; height: 45px; position: relative; }
+            .logo { position: relative; float: none; margin: 0 auto; }
+            .gnb_btn_box { position: absolute; top: 0; right: 0; margin-right: 20px;}
+            .gnb_logo { margin: 0 auto;}
+            .gnb_box .gnb { margin: 0; height: 50px; line-height: 50px; }
+            .gnb2_box { margin-top: 100px;}
+            .vs_wrap { height: calc(100vh - 75px); }
+            .vs_box .main_logo { width: 50vw; margin-left: 0px; left: 50%; transform: translateX(-50%); animation: logoAni2 20s infinite ease-in-out; }
+            @keyframes logoAni2 { 
+            0% { margin-left: 0px; }
+            25% { margin-left: -10px; }
+            75% { margin-left: 10px; }
+            100% { margin-left: 0px;}
+            }
+            .vs_box .main_img { width: 70vw; height: 70vw; margin-top: 15vh;}
+            .cir_box { display: none;}
+            .txt_box { top: 70vh; width: 90vw; left: 50%; transform: translateX(-50%); }
+            .txt_box .txt6 { top: 0; right: 0;}
+            .txt_box .txt7 { top: 40px; right: 0;}
+            .txt_box .txt8 { top: 80px; right: 0;}
+            .txt_box .txt9 { top: 120px; right: 0;}
+            .txt_box .txt10 { top: 160px; right: 0;}
+            .bar_box { display: none; }
         }
         @media screen and (min-width:768px) and (max-width: 959px) {
             
