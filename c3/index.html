@@ -33,16 +33,17 @@
     <link rel="stylesheet" href="./css/font.css">
 -->
     <style>
+        ::-webkit-scrollbar { display: none; }
         * { padding: 0; margin: 0; }
-        html, body { width: 100vw; height: 100vh; font-family: 'Noto Sans KR', sans-serif; }
+        html, body { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; }
         ul, li { list-style: none; }
         a { text-decoration: none; }
         button { border: 0; outline: 0; background-color: transparent; }
-        .wrap { width: 100vw; height: 100vh; font-family: 'Noto Sans KR', sans-serif; }
-        .hd { width: 100vw; height: 80px; position: relative; }
-        .logo { width: 140px; height: 55px; display: block; float: left; margin-left: 76px; margin-top: 10px; }
+        .wrap { width: 100%; font-family: 'Noto Sans KR', sans-serif; }
+        .hd { width: 100%; height: 80px; position: relative; min-width: 1280px; }
+        .logo { width: 140px; height: 55px; display: block; margin-left: 76px; margin-top: 10px; }
         .logo img { width: 140px; }
-        .gnb_wrap { float: left; margin-left: 300px; margin-top: 25px; height: 60px; }
+        .gnb_wrap { position: absolute; top: 20px; left: 50%; margin-left: -450px; height: 60px; min-width: 900px; }
         .gnb_wrap .gnb { float: left; width: 150px; font-size: 14px; line-height: 40px; height: 60px; position: relative; font-weight: bold; text-align: center; z-index: 99; }
         .gnb_wrap .gnb:after { content: ""; display: block; position: absolute; width: 0px; height: 4px; background-color: #cf0a2c; transition: 0.5s; top: 60px; transform: rotate(180deg); transform-origin: 0% 0%; left:150px; }
         .gnb_wrap .gnb:before { content: ""; display: block; position: absolute; width: 0px; height: 3px; background-color: #cf0a2c; transition: 0.5s; transform: rotate(135deg); top: 61px; left: 150px; transform-origin: 0% 0%; }
@@ -57,12 +58,12 @@
         .sub_box .sub a { color: #fff;}
         .sub_box .sub:hover { background-color: #cf0a2c; }
         .frm1 { position: relative; }
-        .open_btn { display: block; width: 30px; height: 30px; position: absolute; top: 30px; left: 1735px; cursor: pointer; }
+        .open_btn { display: block; width: 30px; height: 30px; position: absolute; top: -25px; right: 150px; cursor: pointer; }
         .open_btn img { display: block; width: 30px; height: 30px; }
         .ck1 { display: none; }
-        .search_box { width: 100vw; height: 0px; background-color: #ddd; position: absolute; top: 80px; visibility: hidden; z-index: 50; }
+        .search_box { width: 100vw; height: 0px; background-color: #ddd; position: absolute; top: 25px; visibility: hidden; z-index: 50; }
         #sr_box:checked ~ .search_box { height: 100px; visibility: visible; }
-        .clo_btn { width: 30px; height: 30px; margin-left: 1745px; display: block; margin-top: 15px;  }
+        .clo_btn { width: 30px; height: 30px; margin-left: 1745px; display: block; margin-top: 15px; cursor: pointer; }
         .clo_btn img { display: block; width: 25px; height: 25px; }
         .search_box .search_fr { width: 675px; height: 40px; display: block; margin: 0 auto; position: relative; visibility: hidden; }
         .search_box .search_fr .search_text { width: 675px; height: 40px; display: block; margin-top: -17px; text-indent: 15px; }
@@ -78,53 +79,30 @@
         .tnb_box li a { color: #333; }
         .tnb_box li a:hover { color: #cf0a2c; }
         
-        .vs_wrap { width: 1850px; height: 1500px; position: relative; font-family: 'Noto Sans KR', sans-serif; }
-        .vs_box li { float: left; margin: 0; padding: 0; position: relative; }
-        .vs_box li a { display: block; overflow: hidden;  }
-        .vs_box li img { display: block; transition: 0.3s; }
-        .vs_wrap .item1 { width: 925px; height: 615px; position: relative; }
-        .vs_wrap .item1:after { content: "무한한 자류를 펼치다"; display: block; position: absolute; top: 0; left: 0; width: 925px; height: 615px; background-color: rgba(0,0,0,0.7); opacity: 0; transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 615px; cursor: pointer; }
-        .vs_wrap .item1:hover:after { opacity: 1; }
-        .vs_wrap .item2 { width: 615px; height: 615px; }
-        .vs_wrap .item2:after { content: "사업분야"; display: block; position: absolute; top: 0; left: 0; width: 615px; height: 615px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 615px; cursor: pointer;  }
-        .vs_wrap .item2:hover:after { opacity: 1; }
-        .vs_wrap .item3 { width: 310px; height: 615px; }
-        .vs_wrap .item3:after { content: "무선이어폰의 새로운 혁명"; display: block; position: absolute; top: 0; left: 0; width: 310px; height: 615px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 615px; cursor: pointer; }
-        .vs_wrap .item3:hover:after { opacity: 1; }
-        .vs_wrap .item4 { width: 310px; height: 275px; }
-        .vs_wrap .item5 { width: 615px; height: 275px; }
-        .vs_wrap .item5:after { content: "기술력 소개"; display: block; position: absolute; top: 0; left: 0; width: 615px; height: 275px; background-color: rgba(0,0,0,0.7); opacity: 0; transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 275px; cursor: pointer; }
-        .vs_wrap .item5:hover:after { opacity: 1; }
-        .vs_wrap .item6 { width: 615px; height: 275px; }
-        .vs_wrap .item6:after { content: "핸드폰 카메라의 새로운 물결"; display: block; position: absolute; top: 0; left: 0; width: 615px; height: 275px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 275px; cursor: pointer; }
-        .vs_wrap .item6:hover:after { opacity: 1; }
-        .vs_wrap .item7 { width: 310px; height: 275px; }
-        .vs_wrap .item8 { width: 310px; height: 310px; }
-        .vs_wrap .item8:after { content: "5G 초시대의 시작"; display: block; position: absolute; top: 0; left: 0; width: 310px; height: 310px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 310px; cursor: pointer;  }
-        .vs_wrap .item8:hover:after { opacity: 1; }
-        .vs_wrap .item9 { width: 310px; height: 300px; clear: both; }
-        .vs_wrap .item10 { width: 615px; height: 610px; margin-top: -310px; }
-        .vs_wrap .item10:after { content: "VR콘텐츠의 중심"; display: block; position: absolute; top: 0px; left: 0; width: 615px; height: 610px; background-color: rgba(0,0,0,0.7);opacity: 0; transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 610px; cursor: pointer; }
-        .vs_wrap .item10:hover:after { opacity: 1; }
-        .vs_wrap .item11 { width: 925px; height: 610px; margin-top: -310px; }
-        .vs_wrap .item11:after { content: "0한 사람들을 위한 0페스티벌"; display: block; position: absolute; top: 0px; left: 0; width: 925px; height: 610px; background-color: rgba(0,0,0,0.7); opacity: 0;transition: 0.3s; color: #fff; text-align: center; font-size: 18px; font-weight: bold; line-height: 610px; cursor: pointer; }
-        .vs_wrap .item11:hover:after { opacity: 1; }
-        .vs_wrap .item1 img { width: 925px; height: 615px; }
-        .vs_wrap li:hover img { transform: scale(1.1); }
-        .vs_wrap .item2 img { width: 615px; height: 615px; }
-        .vs_wrap .item3 img { width: 310px; height: 615px; }
-        .vs_wrap .item4 img { width: 310px; height: 275px; }
-        .vs_wrap .item5 img { width: 615px; height: 275px; }
-        .vs_wrap .item6 img { width: 615px; height: 275px; }
-        .vs_wrap .item7 img { width: 310px; height: 275px; }
-        .vs_wrap .item8 img { width: 310px; height: 310px; }
-        .vs_wrap .item9 img { width: 310px; height: 300px; }
-        .vs_wrap .item10 img { width: 615px; height: 610px; }
-        .vs_wrap .item11 img { width: 925px; height: 610px; }
+        .vs_wrap { min-width: 1280px; max-width: 1920px; padding-right: 70px; font-family: 'Noto Sans KR', sans-serif; overflow: hidden; }
+        .vs_box { position: relative; overflow: hidden; }
+        .vs_box li { float: left; position: relative; overflow: hidden; transition: 0.3s; }
+        .vs_box li.on { background-size: 110%; }
+        .vs_box .item1 { width: 50%; padding-top:33.2973%; background-image: url(./data/vs1.png); background-size: 100%; background-position: center center; background-repeat: no-repeat; }
+        .vs_box .item2 { width: 33.35135%; padding-top: 33.2973%; background-image: url(./data/vs2.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item3 { width: 16.64865%; padding-top: 33.2973%; background-image: url(./data/vs3.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item4 { width: 16.64865%; padding-top: 16.64865%; background-image: url(./data/vs4.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item5 { width: 33.35135%; padding-top: 16.64865%; background-image: url(./data/vs5.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item6 { width: 33.35135%; padding-top: 16.64865%; background-image: url(./data/vs6.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item7 { width: 16.64865%; padding-top: 16.64865%; background-image: url(./data/vs7.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item8 { width: 16.64865%; padding-top: 16.64865%; background-image: url(./data/vs8.png); background-size: 100%;  background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item9 { width: 16.64865%; padding-top: 16.64865%; background-image: url(./data/vs9.png); background-size: 100%; position: absolute; bottom: 0; left: 0; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item10 { width:33.35135%; padding-top: 33.2973%; background-image: url(./data/vs10.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box .item11 { width: 50%; padding-top: 33.2973%; background-image: url(./data/vs11.png); background-size: 100%; background-repeat: no-repeat; background-position: center center; }
+        .vs_box li .vs_con_box { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 3; text-align: center; background-color: rgba(0,0,0,0.7); display: none; }
+        .vs_box li .vs_con_box h2 { color: #fff; font-size: 1.2em; }
+        .vs_box li .vs_con_box .tit1, .vs_box li .vs_con_box .tit2, .vs_box li .vs_con_box .tit3, .vs_box li .vs_con_box .tit10, .vs_box li .vs_con_box .tit11 { padding-top: 28vh; }
+        .vs_box li .vs_con_box .tit5, .vs_box li .vs_con_box .tit6, .vs_box li .vs_con_box .tit8  { padding-top: 13vh;}
         
-        .bar_wrap { width: 70px; height: 970px; position: fixed; top: 0; right:0; }
+        
+        .bar_wrap { width: 70px; height: 970px; position: fixed; top: 0; right:0; z-index: 999; }
         .bar_wrap .pot_box { position: relative; width: 70px; height: 200px; margin-left: 38px; margin-top: 413px; }
-        .bar_wrap .pot_box span { display: block; width: 10px; height: 10px; border-radius: 20px; background-color: #bbb; margin-top: 17px; cursor: pointer; }
+        .bar_wrap .pot_box span { display: block; width: 7px; height: 7px; border-radius: 20px; background-color: #bbb; margin-top: 17px; cursor: pointer; }
         .bar_wrap .pot_box .on { width: 10px; height: 10px; background-color: transparent; border:3px solid #cf0a2c; margin-left: -3px; }
         .bar_wrap .txt { display: block; transform: rotate(90deg); width: 100px; height: 70px; line-height: 70px; margin-left: -5px; margin-top: 160px; }
         .bar_wrap img { display: block; width: 15px; height: 25px; margin-left: 36px; margin-top: 50px; animation: updown 3s infinite ease-in-out; }
@@ -135,7 +113,7 @@
         }
         
         .rdo { display: none; }
-        .con1_wrap { width: 1920px; position: relative; clear: both; height: 812px; background-color: #fffef5; }
+        .con1_wrap { min-width: 1280px; position: relative; clear: both; height: 812px; background-color: #fffef5; }
         .con1_box { width: 1180px; height: 734px; margin: 0 auto; }
         .con1_box .con1_tit { width: 1180px; height: 200px; text-align: center; font-size: 48px; font-weight: bold; line-height: 200px; }
         .con1_box .con1_btn_box { width: 280px; height: 420px; border-right: 1px solid #555; border-left: 1px solid #aaa; float: left; box-sizing: border-box; background-color: #fff; }
@@ -150,7 +128,7 @@
         .con1_box .con1_2_fr ul li:nth-child(3), .con1_box .con1_2_fr ul li:last-child { border-right: 2px solid #555; }
         .con1_box .con1_2_fr ul li span { display: block; color: #333;  padding: 14px; font-size: 14px;  }
         .con1_box .con1_2_fr ul li span:nth-child(1) { padding-top: 80px; }
-        .con1_box .con1_2_fr ul li:hover { background-color: #cf0a2c; transform: scale(1.05); }
+        .con1_box .con1_2_fr ul li:hover { background-color: #cf0a2c; transform: scale(1.05); box-shadow: 0px 0px 5px; }
         .con1_box .con1_2_fr ul li:hover span { color: #fff; }
         
         #ra1:checked ~ .con1_btn_box .con1_btn span { background-color: #cf0a2c; color:#fff; }
@@ -166,7 +144,63 @@
         #ra4:checked ~ .con1_2_fr .con4_fr { display: block; }
         #ra5:checked ~ .con1_2_fr .con5_fr { display: block; }
         #ra6:checked ~ .con1_2_fr .con6_fr { display: block; }
+        
+        .form_wrap:after { content: ""; display: table; clear: both; }
+        .frm2 { width: 100vw; position: absolute; bottom: 0; left: 0; }
+        .search_box2 { width: calc( 100vw / 2); height: 5vh; margin-right: -6vh; box-sizing: border-box; text-align: center; }
+        .search_btn2 { width: 5vh; height: 5vh; background-color: transparent; border: 0; outline: 0; text-indent: -999px; background-image: url(./data/search.png); background-repeat: no-repeat; background-size: 30px; background-position: center center; cursor: pointer; }
+        .time_keyword_box { position: absolute; bottom: 0; width: calc( 100vw / 2); height: 5vh; right: 0; background-color: #fff; border: 1px solid #555; box-sizing: border-box; overflow: hidden;  }
+        .time_keyword { text-align: center; height: 5vh; line-height: 5vh; position: relative; }
+        .tk_tit { position: absolute; height: 5vh; line-height: 5vh; display: block; text-indent: 40px; }
+        .tk a { display: block; color: #555;}
+        .btn_box { position: absolute; right: 100px; top: 0; height: 5vh; line-height: 5vh; }
+        .btn_box button { display: block; font-size: 1em; padding-top: 3px;}
+
     </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        //메인 vs 효과
+        $(".vs_box li").hover(function(){
+            $(this).find(".vs_con_box").fadeToggle(300);
+            $(this).toggleClass("on");
+        });
+
+        //실시간 검색어 기능
+        function tkAni(){
+            $(".time_keyword").not(":animated").animate({"margin-top":"-5vh"}, function(){
+                $(".time_keyword li").eq(0).appendTo($(".time_keyword"));
+                $(".time_keyword").css("margin-top","0");
+            });
+        }
+        function tkAni2(){
+            $(".time_keyword li").eq(9).prependTo($(".time_keyword"));
+            $(".time_keyword").css("margin-top","-5vh");
+            $(".time_keyword").not(":animated").animate({"margin-top":"0"});
+        }
+        $(".up").click(function(){
+            clearInterval(intv1);
+            tkAni();
+            intv1 = setInterval(function(){ tkAni() }, 3000);
+        });
+        $(".down").click(function(){
+            clearInterval(intv1);
+            tkAni2();
+            intv1 = setInterval(function(){ tkAni() }, 3000);
+        })
+        var intv1 = setInterval(function(){ tkAni() }, 3000);
+
+        //페이지 스크롤 기능
+        var vs10Ht = parseInt($(".vs.item10").offset().top);
+        console.log(vs10Ht);
+        $(window).on("mousewheel DOMMouseScroll", function(e){
+            var eoD = e.originalEvent.wheelDelta;
+            if(eoD<0){
+                $("body, html").not(":animated").animate({"scrollTop":"+="+vs10Ht+"px"},500);
+            }
+        });
+    });
+    </script>
 </head>
 <body>
    <div class="wrap">
@@ -243,19 +277,74 @@
                <li class="tnb item4"><a href="">주문확인</a></li>
            </ul>
        </header>
-       <figure class="vs_wrap">
+       <figure class="vs_wrap page page1">
            <ul class="vs_box">
-               <li class="vs item1"><a href=""><img src="./data/vs1.png" alt="ban1"></a></li>
-               <li class="vs item2"><a href=""><img src="./data/vs2.png" alt="ban2"></a></li>
-               <li class="vs item3"><a href=""><img src="./data/vs3.png" alt="ban3"></a></li>
-               <li class="vs item4"><a href=""><img src="./data/vs4.png" alt="ban4"></a></li>
-               <li class="vs item5"><a href=""><img src="./data/vs5.png" alt="ban5"></a></li>
-               <li class="vs item6"><a href=""><img src="./data/vs6.png" alt="ban6"></a></li>
-               <li class="vs item7"><a href=""><img src="./data/vs7.png" alt="ban7"></a></li>
-               <li class="vs item8"><a href=""><img src="./data/vs8.png" alt="ban8"></a></li>
-               <li class="vs item9"><a href=""><img src="./data/vs9.png" alt="ban9"></a></li>
-               <li class="vs item10"><a href=""><img src="./data/vs10.png" alt="ban10"></a></li>
-               <li class="vs item11"><a href=""><img src="./data/vs11.png" alt="ban11"></a></li>
+            <li class="vs item1">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit1">무한의 자유를 펼치다</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item2">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit2">사업분야</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item3">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit3">무선이어폰의 새로운 혁명</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item4">
+                <div class="vs_con_box2">
+                    <h2 class="vs_con_tit tit4"></h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item5">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit5">기술력 소개</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item6">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit6">스마트폰 카메라의 새로운 물결</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item7">
+                <div class="vs_con_box2">
+                    <h2 class="vs_con_tit tit7"></h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item8">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit8">5G 초시대의 시작</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item9">
+                <div class="vs_con_box2">
+                    <h2 class="vs_con_tit tit9"></h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item10">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit10">VR콘텐츠의 중심</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
+            <li class="vs item11">
+                <div class="vs_con_box">
+                    <h2 class="vs_con_tit tit11">0한 사람들을 위한 0페스티벌</h2>
+                    <span class="vs_con_txt"></span>
+                </div>
+            </li>
            </ul>
        </figure>
        <div class="bar_wrap">
@@ -268,7 +357,7 @@
            <span class="txt">scrolldown</span>
            <img src="./data/down_arrow.png" alt="arrow">
        </div>
-       <div class="con1_wrap">
+       <div class="con1_wrap page page2">
            <div class="con1_box">
                <h2 class="con1_tit">궁금하신 점을 고객지원 자주하는 질문에서 찾아보세요.</h2>
                <input type="radio" id="ra1" class="rdo" name="ra" checked>
@@ -334,6 +423,30 @@
                        <li class="con2 item5"><a href=""><span>본격 고객 맞춤형 꿀 tip 서비스 - 바로픽업</span></a></li>
                        <li class="con2 item6"><a href=""><span>관련 자주하는 질문 더보기</span></a></li>
                    </ul>
+               </div>
+               <div class="form_wrap">
+                   <form action="" class="frm2">
+                       <input type="text" class="search_box2" placeholder="skt 제품/서비스명 등을 20자내외로 입력하여주세요.">
+                       <input type="submit" class="search_btn2">
+                   </form>
+                   <div class="time_keyword_box">
+                       <span class="tk_tit">실시간 인기검색어</span>
+                        <ul class="time_keyword">
+                            <li class="tk item1"><a href="">1. 5G 단말기</a></li>
+                            <li class="tk item2"><a href="">2. 갤럭시 폴드 3차 예약판매!</a></li>
+                            <li class="tk item3"><a href="">3. 아이폰 11pro</a></li>
+                            <li class="tk item4"><a href="">4. 수험생들을 위한 skt 만의 특별한 혜택!</a></li>
+                            <li class="tk item5"><a href="">5. 요금제 설명 안내</a></li>
+                            <li class="tk item6"><a href="">6. 골드번호 추첨 이벤트 참여!</a></li>
+                            <li class="tk item7"><a href="">7. 12월 skt 멤버십혜택!</a></li>
+                            <li class="tk item8"><a href="">8. 5G 사용 고객만을 위한 특별한 이벤트!</a></li>
+                            <li class="tk item9"><a href="">9. 데이터 리필방법</a></li>
+                            <li class="tk item10"><a href="">10. 인터넷 TV 저렴하게 이용하는 방법</a></li>
+                        </ul>
+                        <div class="btn_box">
+                            <button class="up">▲</button><button class="down">▼</button>
+                        </div>
+                   </div>
                </div>
            </div>
        </div>
