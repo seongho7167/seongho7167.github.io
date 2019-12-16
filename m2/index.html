@@ -12,11 +12,11 @@
     <link rel="canonical" href="#">
     <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
-    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/icon180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/icon180.png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="agoda">
-    <meta property="og:description" content="전세계 200만개 이상의 호텔정보를 한곳에서 확인할수 있는 곳!">
+    <meta property="og:title" content="swarobski">
+    <meta property="og:description" content="스와로브스키는 1895년 오스트리아의 다니엘 스바로프스키가 티롤 주의 와튼즈에 세운 크리스털 제조 및 판매회사이다.">
     <meta property="og:url" content="">
     <meta property="og:site_name" content="swarobski">
     <meta property="og:image" content="./data/og_img.jpg">
@@ -27,8 +27,8 @@
     <meta property="twitter:description" content="사이트의 상세설명">
     <meta property="twitter:image" content="썸네일 이미지 주소">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="./css/main.css";>
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
     
     <style>
@@ -48,7 +48,7 @@
         .gnb_btn_box span:first-child { margin-top: 0px; }
         #ck1:checked ~ .gnb_btn_box span:nth-child(1) { transform: translateX(-4px) translateY(4px) rotate(-45deg); width: 18px; }
         #ck1:checked ~ .gnb_btn_box span:nth-child(3) { transform: translateX(-4px) translateY(-4px) rotate(45deg); width: 18px; }
-        .sns_box { }
+
         .sns_btn { font-size: 2em; color: #000; display: block; position: absolute; top: 0; right: 0; padding: 3.5555555%; font-weight: 100; }
         .logo_box { width: 100px; margin: 0 auto; }
         .logo { display: block; position: absolute; top: 0;  background-image: url(./data/swa2.logo.png); width: 100px; background-position: center; height: 50px; background-size: 100px 50px; margin: 0 auto; }
@@ -59,16 +59,15 @@
         .vs_box .item1 { background-image: url(data/vs01.png); background-repeat: no-repeat; background-size: 100%; }
         .vs_box .item2 { background-image: url(data/vs02.png); background-repeat: no-repeat; background-size: 100%; }
         .vs_box .item3 { background-image: url(data/vs03.png); background-repeat: no-repeat; background-size: 100%; }
-        .vs_btn_box { width: 25%; height: 30px; position: relative; margin: 0 auto; margin-top: -18vh;}
-        .vs_btn_box li { position: absolute; top: 7px; width: 15px; height: 15px; border-radius: 25px; background-color: #fafafa; cursor: pointer; }
-        .vs_btn_box .it1 { background-color: transparent; left: 5%; }
-        .vs_btn_box .it2 { left: 30%; }
-        .vs_btn_box .it3 { left: 55%; }
-        .vs_btn_box .it4 { left: 80%; }
-        .vs_btn_fr .on { background-color: #757575; }
-        .vs_btn_box .it1 .stop { display: block; width: 5px; height: 15px; background-color: #fafafa; position: absolute; top:0; }
-        .vs_btn_box .it1 .stop:after { content: ""; display: block; width: 5px; height: 15px; background-color: #fafafa; position: absolute; top:0; left: 10px; }
-        .vs_btn_box .it1 .start { display: block; width: 0; height: 0; border-style: solid; border-width: 8px 0px 8px 15px; border-color: transparent transparent transparent #fff; display: none; }
+        .vs_btn_box { width: 25%; height: 15px; position: relative; margin: 0 auto; margin-top: -18vh;}
+        .vs_btn_box .vs_btn.stop { position: absolute; top: 0px; width: 4px; height: 15px;  background-color: #fafafa; cursor: pointer; }
+        .vs_btn_box .vs_btn.stop:after { content: ""; display: block; position: absolute; width: 4px; height: 15px; background-color: #fafafa; left: 8px; }
+        .vs_btn_box .vs_btn.start { position: absolute; border-radius: 0px; width: 0;height: 0; left: 0; top:0px; display: none;  border-style: solid; border-width: 7px 0px 7px 14px; border-color: transparent transparent transparent #fff; }
+        .vs_btn_box_fr_sub { position: relative; width: 100px; height: 15px; margin-top: 0px; margin-left: 17px;}
+        .vs_btn_box_fr_sub_ico { position: absolute; width: 10px; height: 10px; border-radius: 10px; background-color: #fff; top: 50%; margin-top: -5px; left: 10px; }
+        .cir2 { left: 30px;}
+        .cir3 { left: 50px;}
+        .vs_btn_box_fr_sub_ico.on { width: 17px; background-color: #757575; transition: 0.3s;}
         
         .page { position: relative; width: 80%; height: 40vh; margin: 0 auto; padding: 5%; }
         .page.item1 { background-image: url(./data/angel1.png); background-size: 100%; background-repeat: no-repeat; text-align: center; }
@@ -135,34 +134,61 @@
                 $(".vs_box li").eq(0).appendTo($(".vs_box"));
                 $(".vs_box li").eq(0).addClass("on");
                 $(".vs_box li").eq(0).siblings().removeClass("on");
-                $(".vs_btn_fr li").eq(0).appendTo($(".vs_btn_fr"));
-                $(".vs_btn_fr li").eq(0).addClass("on");
-                $(".vs_btn_fr li").eq(0).siblings().removeClass("on");
+                $(".vs_btn_box_fr_sub li").eq(0).appendTo($(".vs_btn_box_fr_sub"));
+                $(".vs_btn_box_fr_sub li").eq(0).addClass("on");
+                $(".vs_btn_box_fr_sub li").eq(0).siblings().removeClass("on");
             };
             var intv1 = setInterval( function(){ vsAni(); }, 5900);
-            
             $(".stop").click(function(){
-                    clearInterval(intv1);
-                $(this).css("display","none");
-                $(".start").css("display", "block");
+                clearInterval(intv1);
+                $(this).css("display", "none");
+                $(".start").css("display","block");
             });
             $(".start").click(function(){
-                    var intv1 = setInterval( function(){ vsAni(); }, 5900);
-                $(this).css("display","none");
-                $(".stop").css("display", "block");
+                vsAni();
+                intv1 = setInterval( function(){ vsAni(); }, 5900);
+                $(this).css("display", "none");
+                $(".stop").css("display","block");
             });
-            $(".vs_btn").click(function(){
-                clearInterval(intv1);
-                var idx = parseInt($(this).index());
-                console.log(idx);
-                if ( idx != 0 ) {
-                    for( var a= 0; a<idx; a++){
-                        $(".vs_box li").eq(0).appendTo($(".vs_box"));
-                        $(".vs_btn_fr li").eq(0).appendTo($(".vs_btn_fr"));
-                    }
-                }
-                var intv1 = setInterval( function(){ vsAni(); }, 5900);
-            });
+            // $(".vs_btn.it1").toggle
+            //     (function(event)
+            //     {
+            //         $(this).find(".stop").css("display", "none");
+            //         $(this).find(".start").css("display", "block");
+            //         clearInterval(intv1);
+            //     },
+            //     function(event)
+            //     {
+            //         $(this).find(".start").css("display", "none");
+            //         $(this).find(".stop").css("display", "block");
+            //         vsAni();
+            //         var intv1 = setInterval( function(){ vsAni(); }, 5900);                
+            //     }
+            //     );
+
+        //    $(".vs_btn_box .vs_btn.stop").click(function(e){
+        //            clearInterval(intv1);
+            //    $(this).css("display","none");
+            //    $(".start").css("display", "block");
+        //    });
+        //    $(".vs_btn_box .vs_btn.start").click(function(e){
+        //            var intv1 = setInterval( function(){ vsAni(); }, 5900);
+            //    $(this).css("display","none");
+            //    $(".stop").css("display", "block");
+        //    });
+        //    $(".vs_box li")
+        //    $(".vs_btn").click(function(){
+        //        clearInterval(intv1);
+        //        var idx = parseInt($(this).index());
+        //        console.log(idx);
+        //        if ( idx != 0 ) {
+        //            for( var a= 0; a<idx; a++){
+        //                $(".vs_box li").eq(0).appendTo($(".vs_box"));
+        //                $(".vs_btn_fr li").eq(0).appendTo($(".vs_btn_fr"));
+        //            }
+        //        }
+        //        var intv1 = setInterval( function(){ vsAni(); }, 5900);
+        //    });
         });
     </script>
 </head>
@@ -214,17 +240,20 @@
         </div>
         <figure class="vs_wrap">
             <ul class="vs_box">
-                <li class="vs item1 on"></li>
-                <li class="vs item2"></li>
-                <li class="vs item3"></li>
+                <li class="vs item1 on" data="1"></li>
+                <li class="vs item2" data="2"></li>
+                <li class="vs item3" data="3"></li>
             </ul>
             <ul class="vs_btn_box">
-               <li class="vs_btn it1"><span class="stop"></span><span class="start"></span></li>
-               <div class="vs_btn_fr">
-                   <li class="vs_btn it2 on"></li>
-                   <li class="vs_btn it3"></li>                
-                   <li class="vs_btn it4"></li>                
-               </div>
+               <li class="vs_btn stop"><span></span></li>
+               <li class="vs_btn start"><span></span></li>
+               <li class="vs_btn_box_fr">
+                    <ul class="vs_btn_box_fr_sub">
+                        <li class="vs_btn_box_fr_sub_ico cir1 on"></li>
+                        <li class="vs_btn_box_fr_sub_ico cir2"></li>                
+                        <li class="vs_btn_box_fr_sub_ico cir3"></li>                
+                    </ul>  
+                </li>
             </ul>
         </figure>
         <div class="page item1">
