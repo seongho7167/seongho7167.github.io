@@ -34,7 +34,7 @@
     <style>
 /*        font-family: 'Noto Sans KR', sans-serif;*/
         * { padding: 0; margin: 0; }
-        body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; }
+        body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
         ul { list-style: none; }
         a { text-decoration: none; }
         button, label, input { border: 0; border-color: transparent; outline: 0; }
@@ -52,7 +52,28 @@
         .gnb_bar { display: block; width: 25px; height: 2px; background-color: #006098; margin: 0 auto; }
         .bar2 { margin-top: 8px;}
         .bar3 { margin-top: 8px;}
-        .gnb_wrap { width: 100vw; height: 100vh; position: relative; background-color: #f2f1f2; display: none; }
+        
+        .gnb_wrap { width: 100vw; height: 100vh; position: relative; background-color: #f2f1f2; display: none; position: absolute; top: 7vh; right: 0; z-index: 20;}
+        .gnb_top_box { width: 100%; height: 12vh; background-color: #006098; border-bottom: 2px solid #ccc;}
+        .login_box { width: 90%; padding: 5%; }
+        .login_box span { display: block;float: left; color: #f2f1f2; }
+        .xi-log-in { font-size: 1.6em; margin-right: 5px; }
+        .login_txt { font-size: 0.85em; font-weight: 100; padding-top: 1px; }
+        .gnb_mid_box { width: 30%; height: 81vh; padding: 2.5%; position: relative; background-color: #fff; }
+        .gnb_mid.on { background: #006098; }
+        .gnb_mid.on a { color: #f2f1f2;}
+        .gnb_mid { width: 90%; padding: 0% 5%; text-align: center; margin: 0 auto; height: 7vh; line-height: 7vh; }
+        .gnb_mid a { color: #000; }
+        .gnb_mid2_box { position: absolute; top: 14vh; left: 42%; }
+        .gnb_mid2_box ul {display: none;}
+        .gnb_mid2_box .on { display: block; }
+        .gnb_mid2 { height: 7vh; line-height: 7vh; border-bottom: 2px solid #ddd; box-sizing: border-box; }
+        .gnb_mid2 a { color: #000; }
+
+        .gnb_ft_box { position: relative; margin-top: -10vh; background-color: #fff; width: 100%; }
+        .gnb_ft_fr { width: 400%; height: 50px; background-color: #fff;}
+        .gnb_ft { float: left; width: 25%; text-align: center; height: 50px; line-height: 45px; }
+        .gnb_ft a { display: block; color: #006098; }
 
         .vs_wrap { position: relative; width: 100%; height: 205px; }
         .vs_box { position: relative; width: 400%; height: 100%; }
@@ -62,16 +83,16 @@
         .vs.item3 { background-image: url(./data/vs03.png); background-repeat: no-repeat; }
         .vs.item4 { background-image: url(./data/vs04.png); background-repeat: no-repeat; }
         .vs_btn_box { width: 100px; height: 20px; position: relative; margin-top: -20px; }
-        .vs_btn_box .vs_btn { display: block; position: absolute; width: 10px; height: 10px; border-radius: 10px; background-color: #ccc; top: 0; transition: 0.1s; }
+        .vs_btn_box .vs_btn { display: block; position: absolute; width: 10px; height: 10px; border-radius: 10px; background-color: #ccc; top: 0; }
         .vs_btn.vsBtn1 { left: 20px;}
         .vs_btn.vsBtn2 { left: 35px;}
         .vs_btn.vsBtn3 { left: 50px;}
         .vs_btn.vsBtn4 { left: 65px;}
         .vs_btn_box .vs_btn.on { background-color: #006098; width: 13px;}
         
-        .content_wrap { width: 100%; height: 40vh; position: relative; }
+        .content_wrap { width: 100%; height: 40vh; position: relative; transition: 0.2s; }
         .content_tit_box { width: 90%; height: 25px; padding: 5%; border-bottom: 2px solid #f2f1f2; }
-        .content_tit_box h4 { width: 25%; float: left; text-align: center; line-height: 2.6; border-bottom: 3px solid transparent; transition: 0.3; }
+        .content_tit_box h4 { width: 25%; float: left; text-align: center; line-height: 2.6; border-bottom: 3px solid transparent; }
         .content_tit_box h4.on { border-bottom: 3px solid #006098; }
         .conBox { display: none; }
         .content_box1 { display: block; }
@@ -82,6 +103,12 @@
 
         .content2 { width: 24%; border: 1px solid #f2f1f2; border-radius: 5px; float: left; box-sizing: border-box; margin: 0.5%; text-align: center; }
         .content2 span { font-size: 14px;}
+
+        .tb { width: 100%; padding: 5%; border-bottom: 3px solid #f2f1f2;}
+        th.it1 { text-align: left; height: 20px; line-height: 20px; padding-bottom: 10px;}
+        th.it2 { text-align: right; height: 20px; line-height: 20px; color:#aaa; font-size: 0.7em; font-weight: 100;}
+        td.it1 { height: 20px; line-height: 20px; font-weight: 100; font-size: 0.7em; display: block; width: 230px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;} 
+        td.it2 { line-height: 20px; font-weight: 100; font-size: 0.7em; color:#aaa; text-align: right; }
 
         .sns_wrap { widows: 90%; padding: 0% 5%; height: 40px; position: relative; background-color: #f2f1f2; margin-top: 6vh; border-top: 1px solid #ccc;}
         .sns_box { width: 70%; margin: 0 auto; }
@@ -160,6 +187,27 @@
             $(".content_box2").css("display","none");
             $(".content_box3").css("display","none");
         });
+        $(".gnb_mid_fr li").click(function(){
+            $(this).css("background", "#006098")
+            $(this).children("a").css("color", "#f2f1f2");
+            $(this).siblings().css("background", "#fff");
+            $(this).siblings().children("a").css("color", "#000");
+        });
+
+        $(".gnb_mid_fr li").click(function(){
+            var t = $(".gnb_mid_fr li");
+            var idx = parseInt($(this).index())+1;
+            $(".gnb_mid2_fr"+idx).slideDown(300);
+            $(".gnb_mid2_fr"+idx).siblings().slideUp(300);
+            console.log(idx);
+        });
+        function ftAni(){
+            $(".gnb_ft_fr").delay(3000).animate({"margin-left":"-100%"}, 500);
+            $(".gnb_ft_fr").delay(3000).animate({"margin-left":"-200%"}, 500);
+            $(".gnb_ft_fr").delay(3000).animate({"margin-left":"-300%"}, 500);
+        };
+        ftAni();
+        var intv1 = setInterval(function(){ ftAni(); },10500);
     });
     </script>
 </head>
@@ -183,8 +231,52 @@
             </div>
         </header>
         <nav class="gnb_wrap">
-            <div class="gnb_box">
-
+            <div class="gnb_top_box">
+                <div class="login_box">
+                    <span class="xi-log-in"></span><span class="login_txt">로그인</span><br>
+                    <span class="login_txt">더 편리해진 금융생활을 만나보세요.</span>
+                </div>
+            </div>
+            <div class="gnb_mid_box">
+                <ul class="gnb_mid_fr">
+                    <li class="gnb_mid item1 on"><a>계좌조회</a></li>
+                    <li class="gnb_mid item2"><a>금융상품</a></li>
+                    <li class="gnb_mid item3"><a>환전환율</a></li>
+                    <li class="gnb_mid item4"><a>뱅킹관리</a></li>
+                </ul>
+            </div>
+            <div class="gnb_mid2_box">
+                <ul class="gnb_mid2_fr1 on">
+                    <li class="gnb_mid2 it1"><a href="">예금/신탁 계좌조회</a></li>
+                    <li class="gnb_mid2 it2"><a href="">서브메뉴2</a></li>
+                    <li class="gnb_mid2 it3"><a href="">서브메뉴3</a></li>
+                    <li class="gnb_mid2 it4"><a href="">서브메뉴4</a></li>
+                </ul>
+                <ul class="gnb_mid2_fr2">
+                    <li class="gnb_mid2 it1"><a href="">입출금</a></li>
+                    <li class="gnb_mid2 it2"><a href="">서브메뉴2</a></li>
+                    <li class="gnb_mid2 it3"><a href="">서브메뉴3</a></li>
+                    <li class="gnb_mid2 it4"><a href="">서브메뉴4</a></li>
+                </ul>
+                <ul class="gnb_mid2_fr3">
+                    <li class="gnb_mid2 it1"><a href="">환전신청</a></li>
+                    <li class="gnb_mid2 it2"><a href="">서브메뉴2</a></li>
+                    <li class="gnb_mid2 it3"><a href="">서브메뉴3</a></li>
+                    <li class="gnb_mid2 it4"><a href="">서브메뉴4</a></li>
+                </ul>
+                <ul class="gnb_mid2_fr4">
+                    <li class="gnb_mid2 it1"><a href="">로그인 비밀번호 재설정</a></li>
+                    <li class="gnb_mid2 it2"><a href="">서브메뉴2</a></li>
+                    <li class="gnb_mid2 it3"><a href="">서브메뉴3</a></li>
+                    <li class="gnb_mid2 it4"><a href="">서브메뉴4</a></li>
+                </ul>
+            </div>
+            <div class="gnb_ft_box">
+                <ul class="gnb_ft_fr">
+                    <li class="gnb_ft co1"><a href="">첫 방문자 이용가이드</a></li>
+                    <li class="gnb_ft co2"><a href="">진짜 여행은 지금부터~!</a></li>
+                    <li class="gnb_ft co3"><a href="">상담 조회만해도 시원한 스벅쿠폰 드려요!</a></li>
+                </ul>
             </div>
         </nav>
         <figure class="vs_wrap">
@@ -239,7 +331,7 @@
                 </ul>
             </div>
             <div class="conBox content_box4">
-                <table class="con_fr tb">
+                <table class="tb">
                     <thead>
                         <tr>
                             <th class="col it1">새소식</th>
