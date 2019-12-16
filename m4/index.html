@@ -159,12 +159,9 @@
                 if(f==1){
                     $(".log_wrap").css("transform","scale(1)");
                 } else {
-                    $(".log_wrap").css("transform","scale(0)").animate({"margin-left":"0"},300, function(){
-                        $(".join_wrap").css("transform","scale(0.8)").animate({"left":"110vw"}, 500, function(){
-                            $(".join_wrap").css("transition","0s");
-                        });
-                    });
-                }
+                    $(".log_wrap").css("transform","scale(0)").animate({"margin-left":"0"},300);
+                    $(".join_wrap").animate({"width":80+"vw", "height":80+"vh"}, 300).animate({"left":110+"vw"}, 500);
+                    };
                 f=f*-1;
             });
             $(".join_btn").click(function(){
