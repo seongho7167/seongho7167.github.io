@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>건국대학교</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="건국대학교">
+    <meta name="description" content="건국대학교는 대한민국 서울특별시에 있는 서울캠퍼스와 충청북도 충주시에 있는 글로컬캠퍼스로 이루어진 사립대학이다.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="건국대학교">
+    <meta property="og:description" content="건국대학교는 대한민국 서울특별시에 있는 서울캠퍼스와 충청북도 충주시에 있는 글로컬캠퍼스로 이루어진 사립대학이다.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="konkuk_university">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.11.11">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<!--    font-family: 'Noto Sans KR', sans-serif;-->
+
+<!--
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+-->
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; height: 100%; }
+        html { overflow: hidden; }
+        body { overflow: auto; font-size: 16px; font-family: 'Noto Sans KR', sans-serif; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        /* 공통 서식 */
+        .wrap { width: 100%; position: relative; }
+        .background { position: absolute; display: block; width: 100%; height: 30px; background-color: #092f19; top: 0; left: 0; }
+        .background2 { position: absolute; display: block; width: 100%; height: 250px; background-color: #004a26; top: 30px; left: 0; }
+        .hd { width: 70%; position: relative; clear: both; margin: 0 auto; z-index: 3; overflow: hidden; }
+        .hd:after { content: ""; display: table; clear: both; }
+        .tnb_wrap { float: right; }
+        .tnb { float: left; }
+        .tnb a { color: rgba(255,255,255,0.5); display: block; padding-left: 14px; font-size: 14px; height: 30px; line-height: 30px; }
+        .tnb a:hover { color: #fff; }
+        .tnb a:after { content: "|"; padding-left: 14px; }
+        .tnb:last-child a:after { content:""; padding-left: 0px; }
+        /* 헤더 탑 */
+        .gnb_wrap { position: relative; padding-top: 20px; width: 100%; overflow: hidden; }
+        .gnb_wrap:after { content: ""; display: table; clear: both; }
+        .gnb_box { position: relative; z-index: 3; display: flex; flex-flow: row nowrap; justify-content: space-around; width: calc(100% - 166px); width: 60%; }
+        .logo { display: block; width: 166px; height: 58px; background-image: url(./data/logo.png); background-size: 100%; background-position: center  center; background-repeat: no-repeat; position: relative; z-index: 3; float: left; }
+        .gnb { text-align: center; height: 80px; line-height: 50px; cursor: pointer; }
+        .gnb:first-child { padding-left: 100px;}
+        .gnb .dp1 { display: block; color:#fff; font-size: 18px; }
+        .frm1 { float: right; margin-top: -70px; position: relative; }
+        .search_box { width: 200px; height: 30px; border-radius: 30px; border: 0; text-indent: 20px; display: none; position: relative; margin-right: 40px; }
+        .xi-search { color: rgba(255,255,255,0.5); font-size: 1.6em; cursor: pointer; display: block; position: absolute; top: 3px; right: 0;}
+        .xi-search:hover { color: #fff; }
+        .xi-search.on { color:#fff; }
+        .sub_wrap { position: relative; width: 720px; height: 30px; margin: 0 auto; z-index: 3; margin-top: -25px; }
+        .sub_wrap:after { content: ""; display: block; clear: both; }
+        .sub_box { position: absolute; top: 0; left: 0; display: none;  width: 730px; height: 50px; }
+        .sub_box.on { display: block; }
+        .sub_box li { float: left; padding-left: 50px; }
+        .sub_box li:first-child { padding-left: 0;}
+        .sub_box li a { color: rgba(255,255,255,0.5); font-size: 14px; }
+        .sub_box li a:hover { color: #fff; }
+
+        .vs_wrap { width: 1200px; height: auto; margin: 0 auto; overflow: hidden; position: relative; z-index: 3; margin-top: 30px; }
+        .vs_wrap:after { content: ""; display: block; clear: both; }
+        .vs_box { width: 400%; }
+        .vs_box:after { content: ""; display: block; clear: both; }
+        .vs_box li { width: 25%; height: 250px; float: left; border-radius: 15px; border: 2px solid #092f19; box-sizing: border-box; }
+        .vs_box .img1 { background-image: url(./data/visual_1.jpg); background-size: 1200px; background-position: center center; background-repeat: no-repeat; }
+        .btn_box { position: relative; width: 100%; height: 30px; background-color: #333; }
+        .btn_box button { position: absolute; }
+        
+        @media screen and (max-width: 767px) {
+            .background2 { height: 150px;}
+            .hd { width: 100vw; height: 14vh; padding: 20px; padding-top: 40px; box-sizing: border-box; }
+            .tnb_wrap { display: none; }
+            .gnb_wrap { height: 58px; padding-top: 0px; margin-top: -10px; }
+            .logo { float: none; width: 120px; position: absolute; top: 0px; left: 50%;  margin-left: -60px; z-index: 5; }
+            .gnb { display: none; }
+            
+            .xi-bars { color: rgba(255,255,255); font-size: 1.6em; cursor: pointer; display: block; position: absolute; }
+            .xi-close { color: rgba(255,255,255); font-size: 1.6em; cursor: pointer; display: block; position: absolute; display: none; }
+            .mo.gnb_wrap { width: 80vw; height: 100vh; background-color: rgba(255,255,255,0.8); position: absolute; top: 10px; left: 0; z-index: 99; }
+            .mo.gnb_wrap:after { content: ""; display: table; clear: both; }
+            
+            
+        }
+        @media screen and (min-width:768px) and (max-width: 959px) {
+            
+        }
+        @media screen and (min-width: 960px) {
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".xi-search").click(function(){
+                $(".search_box").fadeToggle(150);
+                $(".xi-search").toggleClass("on");
+            });
+            $(".gnb").click(function(){
+                var idx = $(this).index();
+                $(".sub_wrap").find(".sub_box").eq(idx).fadeToggle(150);
+                $(".sub_wrap").find(".sub_box").eq(idx).siblings().fadeOut();
+            });
+
+        });
+    </script>
+</head>
+<body>
+   <div class="wrap">
+        <span class="background"></span>
+        <span class="background2"></span>
+        <header class="hd">
+           <div class="mo op_gnb_btn">
+               <span class="xi-bars"></span>
+               <span class="xi-close"></span>
+           </div>
+            <nav class="tnb_wrap">
+                <ul class="tnb_box">
+                    <li class="tnb item1"><a href="">english</a></li>
+                    <li class="tnb item2"><a href="">chinese</a></li>
+                    <li class="tnb item3"><a href="">건국제안</a></li>
+                    <li class="tnb item4"><a href="">건국대윤리경영</a></li>
+                    <li class="tnb item5"><a href="">ku메일</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb_wrap">
+                <a href="" class="logo"></a>
+                <ul class="gnb_box">
+                    <li class="gnb item1">
+                        <a class="dp1">대학소개</a>
+                    </li>
+                    <li class="gnb item2">
+                        <a class="dp1">입학안내</a>
+                        
+                    </li>
+                    <li class="gnb item3">
+                        <a class="dp1">학사안내</a>
+                        
+                    </li>
+                    <li class="gnb item4">
+                        <a class="dp1">대학생활</a> 
+                        
+                    </li>
+                    <li class="gnb item5">
+                        <a class="dp1">정보광장</a>
+                        
+                    </li>
+                </ul>
+                <div class="sub_wrap">
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">역사와 교육이념</a></li>
+                        <li class="sub it2"><a href="">캠퍼스 안내</a></li>
+                        <li class="sub it3"><a href="">현황 및 규정</a></li>
+                    </ul>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">대학</a></li>
+                        <li class="sub it2"><a href="">대학원</a></li>
+                    </ul>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">학사일정</a></li>
+                        <li class="sub it2"><a href="">수업</a></li>
+                        <li class="sub it3"><a href="">학적</a></li>
+                    </ul>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">공지사항</a></li>
+                        <li class="sub it2"><a href="">묻고답하기</a></li>
+                        <li class="sub it3"><a href="">자료실</a></li>
+                    </ul>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">장학제도</a></li>
+                        <li class="sub it2"><a href="">학생활동</a></li>
+                        <li class="sub it3"><a href="">복지/편의시설</a></li>
+                    </ul>
+                </div>
+                <form action="" class="frm1" id="form">
+                    <input type="text" class="search_box" placeholder="검색어를 입력해주세요.">
+                    <span class="xi-search"></span>
+                </form>
+            </nav>
+        </header>
+        <div class="mo gnb_wrap">
+            <ul class="mo gnb_box">
+               <li class="mo gnb"><a href="">대학소개</a></li>
+               <li class="mo gnb"><a href="">입학안내</a></li>
+               <li class="mo gnb"><a href="">학사안내</a></li>
+               <li class="mo gnb"><a href="">대학생활</a></li>
+               <li class="mo gnb"><a href="">정보광장</a></li>
+            </ul>
+        </div>
+        <figure class="vs_wrap">
+            <ul class="vs_box">
+                <li class="vs img1"></li>
+                <li class="vs img2"></li>
+                <li class="vs img3"></li>
+                <li class="vs img4"></li>
+            </ul>
+            <div class="btn_box">
+                <button class="left">◀</button>
+                <button class="right">▶</button>
+            </div>
+            <div class="cir_box">
+                <span class="circle" id="cir1"></span>
+                <span class="circle" id="cir2"></span>
+                <span class="circle" id="cir3"></span>
+                <span class="circle" id="cir4"></span>
+            </div>
+            <div class="ss_box">
+                <span class="stop"></span>
+                <span class="start"></span>
+            </div>
+        </figure>
+        <div class="page page1">
+            <h2 class="page_tit">공지사항</h2>
+            <ul class="noti_box">
+                <li class="noti item1">학사</li>
+                <li class="noti item2">장학</li>
+                <li class="noti item3">취창업</li>
+                <li class="noti item4">국제</li>
+                <li class="noti item5">입학</li>
+                <li class="noti item6">학생</li>
+            </ul>
+        </div>
+        <div class="page page2">
+            <h2 class="page_tit">건국sns</h2>
+            <ul class="sns_box">
+                <li class="sns it1">유튜브</li>
+                <li class="sns it2">네이버tv</li>
+                <li class="sns it3">페이스북</li>
+                <li class="sns it4">인스타그램</li>
+                <li class="sns it5">블로그</li>
+                <li class="sns it6">캠퍼스투어</li>
+            </ul>
+        </div>
+        <div class="page page3">
+            <h2 class="page_tit">주요서비스</h2>
+            <ul class="service_box">
+                <li class="service ser1">칭찬마당</li>
+                <li class="service ser2">연구실안전관리시스템</li>
+                <li class="service ser3">산학협력단 연구행정시스템</li>
+                <li class="service ser4">건국대학교 이캠퍼스</li>
+                <li class="service ser5">사회봉사센터</li>
+                <li class="service ser6">증명서 발급 신청</li>
+            </ul>
+        </div>
+        <div class="page page4">
+            <h2 class="page_tit">행정기관 / 연구기관</h2>
+            <ul class="info_box">
+                <li class="info info1">학생지원팀</li>
+                <li class="info info2">장학복지팀</li>
+                <li class="info info3">학생상담센터</li>
+                <li class="info info4">인권센터</li>
+                <li class="info info5">장애학생지원센터</li>
+                <li class="info info6">인사팀</li>
+                <li class="info info7">취업지원/진로교육센터</li>
+                <li class="info info8">현장실습지원센터</li>
+                <li class="info info9">IPP사업단</li>
+                <li class="info info10">창업지원단</li>
+                <li class="info info11">총무·구매팀-총무</li>
+                <li class="info info12">총무·구매팀-구매</li>
+                <li class="info info13">재무팀</li>
+                <li class="info info14">관재팀</li>
+                <li class="info info15">국제처</li>
+                <li class="info info16">정보통신처</li>
+                <li class="info info17">대외협력실</li>
+                <li class="info info18">홍보실</li>
+                <li class="info info19">공학교육혁신사업단</li>
+                <li class="info info20">공학교육연구센터</li>
+                <li class="info info21">일우헌</li>
+                <li class="info info22">상허기념도서관</li>
+                <li class="info info23">산학협력단</li>
+                <li class="info info24">박물관</li>
+                <li class="info info25">출판부</li>
+                <li class="info info26">KU:L HOUSE</li>
+                <li class="info info27">KU미디어센터</li>
+                <li class="info info28">언어교육원</li>
+                <li class="info info29">미래지식교육원</li>
+                <li class="info info30">교수학습지원센터</li>
+                <li class="info info31">E-CAMPUS</li>
+                <li class="info info32">노동조합</li>
+                <li class="info info33">부설연구소</li>
+                <li class="info info34">특수연구소</li>
+                <li class="info info35">생물안전위원회</li>
+                <li class="info info36">교책연구원</li>
+                <li class="info info37">동물병원</li>
+                <li class="info info38">스마트팩토리</li>
+                <li class="info info39">BIO공동기기원</li>
+                <li class="info info40">Tech공동기기원</li>
+                <li class="info info41">PRIME사업단</li>
+                <li class="info info42">LINC+사업단</li>
+                <li class="info info43">SW중심대학사업단</li>
+            </ul>
+        </div>
+        <div class="page page5">
+            <h2 class="page_tit">대학</h2>
+            <ul class="col_box">
+                <li class="col col1">문과대학</li>
+                <li class="col col2">이과대학</li>
+                <li class="col col3">건축대학</li>
+                <li class="col col4">공과대학</li>
+                <li class="col col5">사회과학대학</li>
+                <li class="col col6">경영대학</li>
+                <li class="col col7">KU융합과학기술원</li>
+                <li class="col col8">상허생명과학대학</li>
+                <li class="col col9">수의과대학</li>
+                <li class="col col10">예술디자인대학</li>
+                <li class="col col11">사범대학</li>
+                <li class="col col12">상허교양대학</li>
+            </ul>
+        </div>
+        <div class="page page6">
+            <h2 class="page_tit">대학원</h2>
+            <ul class="con_box">
+                <li class="con">일반대학원</li>
+                <li class="con">전문대학원</li>
+                <li class="con">특수대학원</li>
+            </ul>
+        </div>
+   </div>    
+</body>
+</html>
