@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>인천광역시청</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="인천광역시, 인천, 광역시, 인청광역시청, 시청, 뉴스, 소식, 정보공개, 민원, 위치">
+    <meta name="description" content="새로운 인천특별시대 인천광역시청입니다. 전자민원 서비스와 각 분야별 시정소식을 제공합니다.">
+    <link rel="canonical" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/fav32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./data/fav32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/fav180.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="180x180" href="./data/fav180.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="인천광역시청">
+    <meta property="og:description" content="새로운 인천특별시대 인천광역시청입니다. 전자민원 서비스와 각 분야별 시정소식을 제공합니다.">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="인천광역시청">
+    <meta property="og:image" content="./data/og_img.jpg">
+    <meta property="og:updated_time" content="2019.12.11">
+    <meta property="fb:app_id" content="페이스북의 앱아이디">
+    <meta property="twitter:card" content="summary 앱이나 사이트의 요약">
+    <meta property="twitter:title" content="사이트의 제목">
+    <meta property="twitter:description" content="사이트의 상세설명">
+    <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+<!--    font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Passion One', cursive;-->
+<!--
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./css/font.css">
+-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; height: 100%; }
+        html { overflow: hidden; }
+        body { overflow: auto; font-size: 16px; font-family: 'Noto Sans KR', sans-serif; font-size: 18px; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        button { border:0; background-color: transparent; outline: 0;}
+        
+        #wrap { width: 100%; height: 100%; position: relative; }
+        .vs_wrap { width: 100vw; height: 100vh; overflow: hidden; clear: both; }
+        .vs_wrap:after { content: ""; display: table; clear: both; }
+        .vs_box { position: relative; width: 1920px; height: 100vh; }
+        .vs_box:after { content:""; display: block; clear: both; }
+        .vs_box .vs { position: absolute; top: 0; left: 0; z-index: 1; opacity: 0; transition: 1s; }
+        .vs_box .vs.on { z-index: 3; opacity: 1; transition: 1s; }
+        .vs video { width: 1920px; height: auto; }
+        .vs .vidBg { display: block; position: absolute; top: 0; left: 0; width: 1920px; height: 100vh; background-color: rgba(0,0,0,0.25); z-index: 7;}
+
+        .btn_txt_box { position: absolute; bottom: 190px; left: 57.2vw; }
+        .btn_txt_box li { color: #aaa; position: absolute; left: 0; z-index: 7; width: 200px; height: 30px; font-size: 0.8em; cursor: pointer;  }
+        .btn_txt_box .btn_txt1 { left: 0; }
+        .btn_txt_box .btn_txt2 { left: 210px; }
+        .btn_txt_box .btn_txt3 { left: 420px; }
+        .btn_txt_box li.on { color: #fff; }
+
+        .btn_box { min-width: 650px; position: absolute; bottom: 140px; left: 57.2vw; z-index: 10; }
+        .btn_box li { width: 200px; height: 3px; background-color: #aaa; float: left; margin-left: 10px; position: relative; cursor: pointer; }
+        .btn_box li:first-child { margin-left: 0px;}
+        .btn_box li span { width: 0px; height: 3px; background-color: #005b9e; position: absolute; top: 0; left: 0; }
+
+        .ss_box { width: 20px; height: 20px; position: absolute; bottom: 130px; left: 90vw; z-index: 10; }
+        .ss_box .item1 span { width: 3px; height: 17px; background-color: #aaa; display: block; position: relative; }
+        .ss_box .item1 span:after { content: ""; width: 3px; height: 17px; background-color: #aaa; display: block; position: absolute;top: 0; left: 10px; }
+        .ss_box .item2 { position: absolute; top: 0; left: 0;  display: none; }
+        .ss_box .item2 span { display: block; position: relative; border-style: solid; border-width: 8px 0px 8px 14px; border-color:  transparent transparent transparent #aaa; }
+        .vs .vs_tit { position: absolute; top: 25vh; left: -20%; color: #fff; z-index: 7; font-size: 3em; transition: all 0.5s; opacity: 0; transition-delay: 1s; }
+        .vs.on .vs_tit { opacity: 1; left: 5%; }
+        .vs .vs_txt { position: absolute; top: 36vh; left: -20%; color: #fff; z-index: 7; font-size: 1.05em; transition: all 0.5s; opacity: 0; transition-delay: 1s; }
+        .vs.on .vs_txt { opacity: 1; left: 5%; }
+        .xi-mouse { position: absolute; top: 80vh; left: 10vw; color: rgba(255,255,255,0.7); z-index: 7; font-size: 1.8em; animation: mouseAni 7s ease-in-out infinite; }
+        .Mtxt { display: block; position: absolute; top: 80vh; left: 7vw; color: rgba(255,255,255,0.7); z-index: 7; font-size: 1.1em; }
+        .Mtxt:before { content: ""; display: block; width: 1px; height: 100px; position: absolute; top: 0; left: 57px; background-color: rgba(255,255,255,0.3); }
+        .Mtxt:after { content: ""; display: block; width: 1px; height: 0px; position: absolute; top: 0; left: 57px; background-color: #fff;  animation: MtxtUp 7s ease-in-out infinite; }
+        .vs .more { display:block; color: rgba(255,255,255); position: absolute; top: 45vh; left: -20%; z-index: 7; cursor: pointer; transition: left 0.5s 1s; opacity: 0; width: 60px; height: 35px; text-align: center; line-height: 30px; border: 1px solid #fff; border-radius: 5px; }
+        .vs.on .more { left: 5%; opacity: 1; }
+        .vs.on .more:hover { color: #005b9e; border:1px solid transparent; }
+        .vs .more:before { content: ""; display: block; position: absolute; top: -21px; left: -21px; width: 100px; height: 75px; border: 2px solid #005b9e; border-radius: 5px; transition: 0.3s; transition-delay: 0.15s; opacity: 0; }
+        .vs .more:after { content: ""; display: block; position: absolute; top: -21px; left: -21px; width: 100px; height: 75px; border: 2px solid #005b9e; border-radius: 5px; transition: 0.3s; opacity: 0; }
+        .vs .more:hover:before { top: -1px; left: -1px; width: 60px; height: 35px; opacity: 1; }
+        .vs .more:hover:after { top: -1px; left: -1px; width: 60px; height: 35px; opacity: 1; }
+
+        @keyframes MtxtUp {
+            0% { height: 0px; }
+            50% { height: 100px; }
+            100% { height: 0px; }
+        }
+        @keyframes mouseAni {
+            0% { top: 80vh; color: rgba(255,255,255,0.7); }
+            50% { top: 87vh; color: rgba(255,255,255,1); }
+            100% { top: 80vh; color: rgba(255,255,255,0.7); }
+        }
+        .gnb_wrap { width: 100vw; height: 110px; background-color: #fff; position: relative; margin-top: -100px; z-index: 10; border-bottom: 2px solid #535759; }
+        .gnb_wrap .gnb_bg { content: ""; display: none; position: absolute; top: 110px; left: 0px; width: 100vw; height: 220px; background-color: #005b9e; }
+        .logo { display: block; background-image: url(./data/logo.png); background-repeat: no-repeat; width: 161px; height: 110px; background-position: center center; float: left; margin-left: 24px; }
+        .gnb_box { position: absolute; width: 50vw; height: 70px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; top: 50%; left: 50%; margin-left: -25vw; margin-top: -15px; text-align: center; }
+        .gnb_box:hover .sub_box { height: 210px; }
+        .gnb { position: relative; width: 10vw; cursor: pointer; }
+        .gnb .dp1 { color: #535759; font-size: 1.2em; }
+        .gnb:hover .dp1 { color: #005b9e; }
+        .gnb:before { content: ""; display: block; position: absolute; top: -20px; left: 50%; margin-left: -100px ; opacity: 1; width: 200px; height: 70px; border: 2px solid transparent; border-radius: 5px; transition: 0.3s; }
+        .gnb:hover:before {  top: -6px; left: 50%; margin-left: -60px ; opacity: 1; width: 120px; height: 45px; border: 2px solid #005b9e; }
+        .gnb:after { content: ""; display: block; position: absolute; top: -20px; left: 50%; margin-left: -100px ; opacity: 1; width: 200px; height: 70px; border: 2px solid transparent; border-radius: 5px; transition: 0.3s; transition-delay: 0.15s; }
+        .gnb:hover:after {  top: -6px; left: 50%; margin-left: -60px ; opacity: 1; width: 120px; height: 45px; border: 2px solid #005b9e; }
+        .sub_box { position: absolute; height: 210px; top: 75px; left: 0; width: 10vw; display: none; }
+        .sub_box .sub a { display: block; height: 40px; line-height: 40px; color: rgba(255,255,255,0.7); font-size: 0.8em; font-weight: 100; position: relative; z-index: 7; }
+        .sub_box .sub:hover a { color : #fff; }
+        .sub_box .sub a:before { content: ""; display: block; position: absolute; width: 0vw; height: 1px; background-color: #fff; right: -2vw; opacity: 0; transition: 0.3s; }
+        .sub_box .sub a:after { content: ""; display: block; position: absolute; width: 0vw; height: 1px; background-color: #fff; left: -2vw; opacity: 0; transition: 0.3s; }
+        .sub_box .sub:hover a:before { content: ""; display: block; position: absolute; width: 6vw; height: 1px; background-color: #fff; right: 2vw; opacity: 1; }
+        .sub_box .sub:hover a:after { content: ""; display: block; position: absolute; width: 6vw; height: 1px; background-color: #fff; left: 2vw; opacity: 1; }
+        .gnb2_wrap { float: right; margin-right: 10vw; margin-top: 25px; }
+        .gnb2_box li { float: left; margin-left: 20px; }
+        .gnb2_box li a { color: #535759; font-size: 0.7em; }
+        .gnb2_box li:first-child:after { content: "|"; padding-left: 20px; }
+        .gnb2_box li a:hover { color: #005b9e; }
+        .sel { position: absolute; top: 71px; right: 14vw; display: none; }
+        .xi-cog { display: block; float: left; font-size: 1.4em; color: #535759; cursor: pointer; margin-left: 30px; margin-top: 17px; }
+        .xi-cog:hover { color: #005b9e; }
+        .xi-refresh { display: none; font-size: 1.4em; color: #535759; cursor: pointer; position: absolute; top: 70px; right: 12.5vw; }
+        .xi-refresh:hover { color: #005b9e; }
+        .sear_btn { display: block; position: absolute; font-size: 1.4em; color: #535759; cursor: pointer; top: 70px; right: 10vw; }
+        .xi-search:hover { color: #005b9e; }
+        .frm { width: 100vw; height: 15vh; background-color: #005b9e; position: absolute; top: 110px; left: 0; display: none; }
+        .search_box { width: 50vw; height: 5vh; display: block; margin: 0 auto; margin-top: 5vh; text-align: center; font-size: 1.1em; }
+        .search_btn { width: 5vh; height: 5vh; position: absolute; top: 5vh; left: 75.2vw; text-indent: -999px; }
+        .sear_btn2 { position: absolute; top: 5.5vh; left: 75.4vw; font-size: 2em; }
+        .content_wrap { width: 100vw; height: 100%; position: relative; clear: both; overflow: hidden; }
+        .content_wrap:after { content: ""; display: block; position: absolute; width: 90vw; height: 30vh; background-color: #535759; opacity: 0.7; bottom: 0; right: 0;}
+        .content_txt_box { width: 100vw; height: 30vh; padding-top: 15vw; position: relative; }
+        .content_tit { display: block; font-size: 3em; position: absolute; top: 17vw; left: 10vw; }
+        .content_txt { display: block; font-size: 0.8em; position: absolute; top: 23vw; left: 10vw; }
+        .content_wrap .content_box { position: relative; width: 180vw; height: 100vh; margin-left: 50vw; padding-top: 15vw; z-index: 7; overflow: hidden; }
+        .content_wrap .content { float: left; margin-left: 2vw; }
+        .content_wrap .content span { color: #fff; display: block; padding: 3px 20px; }
+        .content_wrap .con_com { font-size: 1.3em; }
+        .content_wrap .con_com2 { font-size: 0.8em; width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .content_wrap .content .con_com3 { font-size: 0.8em; float: right; padding-top: 20px; }
+        .content_btn_box { position: absolute; width: 100px; height: 50px; background-color: #ccc; top: 27vw; left: 10vw; }
+        .content_btn { display: inline-block; width: 50px; height: 50px; background-color: #535759; float: left; }
+        .CBright { border-left: 1px solid #fff;}
+        .xi-angle-left-thin, .xi-angle-right-thin { color: #fff; font-size: 2.4em;}
+        .content2_wrap { width: 100vw; height: 100%; position: relative; clear: both; }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            var video1 = document.getElementById("video1");
+            var video2 = document.getElementById("video2");
+            var video3 = document.getElementById("video3");
+            var i = 0;
+            function restartPlay1() { video1.currentTime = 0; video1.play(); }
+            function restartPlay2() { video2.currentTime = 0; video2.play(); }
+            function restartPlay3() { video3.currentTime = 0; video3.play(); }
+            function nextAni(){
+                $(".vs_box .vs").stop().eq(1).addClass("on");
+                setTimeout(function(){
+                    $(".vs_box .vs").stop().eq(1).siblings().removeClass("on");
+                    $(".vs_box .vs").stop().eq(0).appendTo($(".vs_box"));
+                }, 1000);
+            };
+            function txtAni(){
+                $(".btn_txt_box").not(":animated").find("li").eq(0).addClass("on");
+                $(".btn_txt_box").find("li").eq(0).siblings().removeClass("on");
+                setTimeout(function(){
+                    $(".btn_txt_box").find("li").eq(0).appendTo($(".btn_txt_box"));
+                }, 6000);
+            };
+            txtAni();
+            var intv3 = setInterval( function() { txtAni(); }, 7000); 
+            function barAni(){
+                if(i==3) {
+                    i = 1;
+                } else {
+                    i++;
+                }
+                $(".btn").find(".bar").eq(i-1).animate({"width":"200px"}, 7000);
+                setTimeout(function(){
+                    $(".it"+i).siblings().find(".bar").css("width","0");
+                }, 50);   
+            } 
+            $(".it1, .btn_txt1").click(function(){
+                clearInterval(intv);
+                clearInterval(intv2);
+                clearInterval(intv3);
+                restartPlay1();
+                $(".vs.item1").addClass("on");
+                $(".vs.item1").prependTo($(".vs_box"));
+                setTimeout(function(){
+                    $(".vs.item1").siblings().removeClass("on");
+                }, 1000);
+                $(".vs.item3").appendTo($(".vs_box"));
+                $(".bar1").css("width","0px");
+                $(".bar1").stop().animate({"width":"200px"}, 7000);
+                $(".bar2").stop().css("width","0");
+                $(".bar3").stop().css("width","0");
+                $(".btn_txt_box").find(".btn_txt1").prependTo($(".btn_txt_box")).addClass("on");
+                $(".btn_txt_box").find(".btn_txt1").siblings().removeClass("on");
+                $(".btn_txt_box").find(".btn_txt3").appendTo($(".btn_txt_box"));
+                i=1;
+                intv = setInterval( function(){ nextAni(); }, 7000);
+                intv2 = setInterval ( function(){ barAni(); }, 7000);
+                intv3 = setInterval( function() { txtAni(); }, 7000); 
+            });
+            $(".it2, .btn_txt2").click(function(){
+                clearInterval(intv);
+                clearInterval(intv2);
+                clearInterval(intv3);
+                restartPlay2();
+                $(".vs.item2").addClass("on");
+                $(".vs.item2").prependTo($(".vs_box"));
+                setTimeout(function(){
+                    $(".vs.item2").siblings().removeClass("on");
+                }, 1000);
+                $(".vs.item1").appendTo($(".vs_box"));
+                $(".bar2").css("width","0px");
+                $(".bar2").stop().animate({"width":"200px"}, 7000);
+                $(".bar1").stop().css("width","0");
+                $(".bar3").stop().css("width","0");
+                $(".btn_txt_box").stop().find(".btn_txt2").prependTo($(".btn_txt_box")).addClass("on");
+                $(".btn_txt_box").stop().find(".btn_txt2").siblings().removeClass("on");
+                $(".btn_txt_box").find(".btn_txt1").appendTo($(".btn_txt_box"));
+                i=2;
+                intv = setInterval( function(){ nextAni(); }, 7000);
+                intv2 = setInterval ( function(){ barAni(); }, 7000);
+                intv3 = setInterval( function() { txtAni(); }, 7000); 
+            });
+            $(".it3, .btn_txt3").click(function(){
+                clearInterval(intv);
+                clearInterval(intv2);
+                clearInterval(intv3);
+                restartPlay3();
+                $(".vs.item3").addClass("on");
+                $(".vs.item3").prependTo($(".vs_box"));
+                setTimeout(function(){
+                    $(".vs.item3").siblings().removeClass("on");
+                }, 1000);
+                $(".vs.item2").appendTo($(".vs_box"));
+                $(".bar3").css("width","0px");
+                $(".bar3").stop().animate({"width":"200px"}, 7000);
+                $(".bar1").stop().css("width","0");
+                $(".bar2").stop().css("width","0");
+                $(".btn_txt_box").stop().find(".btn_txt3").prependTo($(".btn_txt_box")).addClass("on");
+                $(".btn_txt_box").stop().find(".btn_txt3").siblings().removeClass("on");
+                $(".btn_txt_box").find(".btn_txt2").appendTo($(".btn_txt_box"));
+                i=0;
+                intv = setInterval( function(){ nextAni(); }, 7000);
+                intv2 = setInterval ( function(){ barAni(); }, 7000);
+                intv3 = setInterval( function() { txtAni(); }, 7000); 
+            });
+            barAni();
+            var intv = setInterval( function(){ nextAni(); }, 7000);
+            var intv2 = setInterval ( function(){ barAni(); }, 7000); 
+
+            $(".ss_box .item1").click(function(){
+                video1.pause(); video1.currentTime = 0;
+                video2.pause(); video2.currentTime = 0;
+                video3.pause(); video3.currentTime = 0;
+                clearInterval(intv);
+                clearInterval(intv2);
+                clearInterval(intv3);
+                $(".btn span").stop().css("width","0");
+                $(".ss_box .item1").css("display","none");
+                $(".ss_box .item2").css("display","block");
+            });
+            $(".ss_box .item2").click(function(){
+                clearInterval(intv);
+                clearInterval(intv2);
+                clearInterval(intv3);
+                $(".vs.item1").prependTo($(".vs_box"));
+                $(".vs.item1").addClass("on");
+                $(".vs.item1").siblings().removeClass("on");
+                $(".vs.item3").appendTo($(".vs_box"));
+                $(".btn_txt_box").find(".btn_txt1").prependTo($(".btn_txt_box")).addClass("on");
+                $(".btn_txt_box").find(".btn_txt1").siblings().removeClass("on");
+                $(".btn_txt_box").find(".btn_txt3").appendTo($(".btn_txt_box"));
+                video1.play();
+                video2.play();
+                video3.play();
+                i=0;
+                barAni();
+                intv = setInterval( function(){ nextAni(); }, 7000);
+                intv2 = setInterval ( function(){ barAni(); }, 7000);
+                intv3 = setInterval( function() { txtAni(); }, 7000);
+                $(".ss_box .item2").css("display","none");
+                $(".ss_box .item1").css("display","block");
+                console.log(i);
+            });
+
+            $(".gnb_box").on("mouseover", function(){
+                $(this).stop().css("height", " 300px");
+                $(".gnb_bg").stop().slideDown(300);
+                $(".sub_box").stop().slideDown(300);
+            });
+            $(".gnb_box").on("mouseleave", function(){
+                $(this).stop().css("height", "70px");
+                $(".gnb_bg").stop().slideUp(300);
+                $(".sub_box").stop().slideUp(300);
+            });
+            $(".xi-cog").on("click", function(){
+                $(this).css("display", "none");
+                $(".sel").css("display","block");
+                $(".xi-refresh").css("display","block");
+            });
+            $(".xi-refresh").on("click", function(){
+                $(this).css("display", "none");
+                $(".sel").css("display","none");
+                $(".xi-cog").css("display","block");
+            });
+            $(".sear_btn").on("click", function(){
+                $(".frm").fadeToggle(300);
+            });
+            $(".CBB").find(".CBleft").click(function(){
+                $(".content_box li").eq(0).stop().animate({"margin-left":"-360px"}, 300, function(){
+                    $(".content_box li").eq(0).appendTo($(".content_box"));
+                    $(".content_box li").eq(8).css("margin-left", "2vw");
+                });
+                $(".content_box li").eq(2).css("opacity","0.6");
+
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <div class="vs_wrap">
+            <ul class="vs_box">
+                <li class="vs item1 on">
+                    <video class="video" id="video1" src="./data/timelapse1.mp4" muted autoplay playsinline loop></video>
+                    <span class="vidBg"></span>
+                    <h2 class="vs_tit">이민자의 마지막 고국땅, 인천</h2>
+                    <p class="vs_txt">인천항은 고국을 떠나는 회한의 눈물과 미지의 세계에 대한 두려움,<br> 그리고 새로운 삶을 시작하려는 기대감이 교차하는 공간이었다.</p>
+                    <span class="more">more</span>
+                </li>
+                <li class="vs item2">
+                    <video class="video" id="video2" src="./data/timelapse2.mp4" muted autoplay playsinline loop></video>
+                    <span class="vidBg"></span>
+                    <h2 class="vs_tit">개항이후 인천
+                    </h2>
+                    <p class="vs_txt">제물포 개항은 인천지역사회에 또다른 시련을 가져왔다. </p>
+                    <span class="more">more</span>
+                </li>
+                <li class="vs item3">
+                    <video class="video" id="video3" src="./data/timelapse3.mp4" muted autoplay playsinline loop></video>
+                    <span class="vidBg"></span>
+                    <h2 class="vs_tit">인천의 최초 명칭은 미추홀(彌鄒忽)이다.</h2>
+                    <p class="vs_txt"> 태종 13년 주(州)자를 가진 도호부 이하의 군·현 명을 산(山), 천(川) 두 글자 중 하나로 개정토록 하여<br> 현재의 인천으로 탄생하게 되었고, 그날 (1413년 10월 15일)을 기려 ‘인천시민의 날’ 이 제정되었다.</p>
+                    <span class="more">more</span>
+                </li>
+            </ul>
+            <ul class="btn_txt_box">
+                <li class="btn_txt1 on" >이민자의 마지막 고국땅, 인천</li>
+                <li class="btn_txt2" >개항이후 인천</li>
+                <li class="btn_txt3" >제물포 개항은 인천지역사회에 또다른 시련을 가져왔다.</li>
+            </ul>
+            <ul class="btn_box">
+                <li class="btn it1"><span class="bar bar1"></span></li>
+                <li class="btn it2"><span class="bar bar2"></span></li>
+                <li class="btn it3"><span class="bar bar3"></span></li>
+            </ul>
+            <ul class="ss_box">
+                <li class="ss item1"><span class="stop"></span></li>
+                <li class="ss item2"><span class="start"></span></li>
+            </ul>
+            <span class="xi-mouse"></span>
+            <span class="Mtxt">scroll</span>
+        </div>
+        <nav class="gnb_wrap">
+            <span class="gnb_bg"></span>
+            <a href="" class="logo"></a>
+            <ul class="gnb_box">
+                <li class="gnb item1">
+                    <a href="" class="dp1">소통광장</a>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">시민청원</a></li>
+                        <li class="sub it2"><a href="">시민제안</a></li>
+                        <li class="sub it3"><a href="">설문조사</a></li>
+                        <li class="sub it4"><a href="">공모전</a></li>
+                        <li class="sub it5"><a href="">이벤트</a></li>
+                    </ul>
+                </li>
+                <li class="gnb item2">
+                    <a href="" class="dp1">민원</a>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">민원정보</a></li>
+                        <li class="sub it2"><a href="">민원편람</a></li>
+                        <li class="sub it3"><a href="">민원조회</a></li>
+                        <li class="sub it4"><a href="">민원상담/신청</a></li>
+                        <li class="sub it5"><a href="">부패공익신고</a></li>
+                    </ul>
+                </li>
+                <li class="gnb item3">
+                    <a href="" class="dp1">정보공개</a>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">행정자료실</a></li>
+                        <li class="sub it2"><a href="">정보공개</a></li>
+                        <li class="sub it3"><a href="">공공데이터개방</a></li>
+                        <li class="sub it4"><a href="">정책실명제</a></li>
+                        <li class="sub it5"><a href="">청렴인천</a></li>
+                    </ul>
+                </li>
+                <li class="gnb item4">
+                    <a href="" class="dp1">인천소개</a>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">인천정보</a></li>
+                        <li class="sub it2"><a href="">시청안내</a></li>
+                        <li class="sub it3"><a href="">인천역사</a></li>
+                        <li class="sub it4"><a href="">인천통계</a></li>
+                        <li class="sub it5"><a href="">국제교류</a></li>
+                    </ul>
+                </li>
+                <li class="gnb item5">
+                    <a href="" class="dp1">뉴스/소식</a>
+                    <ul class="sub_box">
+                        <li class="sub it1"><a href="">새소식</a></li>
+                        <li class="sub it2"><a href="">주요행사정보</a></li>
+                        <li class="sub it3"><a href="">보도자료</a></li>
+                        <li class="sub it4"><a href="">바로잡습니다</a></li>
+                        <li class="sub it5"><a href="">고시/공고</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="gnb2_wrap">
+                <ul class="gnb2_box">
+                    <li class="gnb2 it1"><a href="">Login</a></li>
+                    <li class="gnb2 it2"><a href="">Join</a></li>
+                </ul>
+                <span class="xi-cog"></span>
+                <select name="" id="sel1" class="sel">
+                    <option value="" class="opt opt1">한국어</option>
+                    <option value="" class="opt opt2">English</option>
+                    <option value="" class="opt opt3">中國語</option>
+                </select>
+                <span class="xi-refresh"></span>
+                <span class="xi-search sear_btn"></span>
+                <form action="" class="frm" id="frm1">
+                    <input type="text" class="search_box" placeholder="검색할 단어를 입력해주세요.">
+                    <input type="submit" value="검색" class="search_btn">
+                    <span class="xi-search sear_btn2"></span>
+                </form>
+            </div>
+        </nav>
+        <div class="content_wrap">
+            <div class="content_txt_box">
+                <h2 class="content_tit">INCHEON NEWS</h2>
+                <p class="content_txt">인천시에서 진행하고 있는 다양한 행사와 서비스를 확인할 수 있습니다.</p>
+            </div>
+            <div class="content_btn_box CBB">
+                <button class="content_btn CBleft"><span class="xi-angle-left-thin"></span></button>
+                <button class="content_btn CBright"><span class="xi-angle-right-thin"></span></button>
+            </div>
+            
+            <ul class="content_box">
+                <svg>
+                    <defs>
+                        <filter id="filter1">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="50"></feGaussianBlur>
+                        </filter>
+                    </defs>
+                </svg>
+                
+                <li class="content co1" filter="url(#filter1)">
+                    <img src="./data/con_tit01.jpg" alt="뉴스이미지" class="content_img">
+                    <span class="con_com">안전</span>
+                    <span class="con_com2">인천시의 생활안전 공공앱 "안심in"은 범죄를 예방하고, 24시간 시민의 안전한 샐활환경 조성을 위해 구축된 모바일 앱으로서</span>
+                    <span class="con_com3">2019-12-13</span>
+                </li>
+                <li class="content co2">
+                    <img src="./data/con_tit02.jpg" alt="문화체육관광 이미지" class="content_img">
+                    <span class="con_com">문화체육관광</span>
+                    <span class="con_com2">시민들과 함께 한 해를 마무리하고 새해를 맞이하며 새로운 각오와 다짐을 위한 2019년 송년 제야 문화축제를 개최하오니</span>
+                    <span class="con_com3">2019-12-12</span>
+                </li>
+                <li class="content co3">
+                    <img src="./data/con_tit03.jpg" alt="행정 이미지" class="content_img">
+                    <span class="con_com">행정</span>
+                    <span class="con_com2">영종도에 "인천 사회참여형 I-MoD서비스"를 시작합니다. 인천광역시는 국토교통부와 함께 영종지역을 대상으로 </span>
+                    <span class="con_com3">2019-12-06</span>
+                </li>
+                <li class="content co4">
+                    <img src="./data/con_tit04.jpg" alt="환경 이미지" class="content_img">
+                    <span class="con_com">환경</span>
+                    <span class="con_com2">범국가적인 미세먼지 저감 분위기 조성을 위해 미세먼지 고농도 계절(12월~3월)기간 행정 공공기관의 차량2부제를 실시합니다.</span>
+                    <span class="con_com3">2019-11-29</span>
+                </li>
+                <li class="content co5">
+                    <img src="./data/con_tit05.jpg" alt="행정 이미지" class="content_img">
+                    <span class="con_com">행정</span>
+                    <span class="con_com2">지방세징수법 제11조 및 같은 법 시행령 제19조의 규정에 따라 인천광역시 지방세심의위원회 심의를 거쳐</span>
+                    <span class="con_com3">2019-11-20</span>
+                </li>
+                <li class="content co6">
+                    <img src="./data/con_tit06.jpg" alt="행정 이미지" class="content_img">
+                    <span class="con_com">행정</span>
+                    <span class="con_com2">시민을 위한 소통, 문화, 휴식 공간으로 조성중인 인천애뜰이 2019년 11월 1일에 정식 개장함</span>
+                    <span class="con_com3">2019-10-05</span>
+                </li>
+                <li class="content co7">
+                    <img src="./data/con_tit07.jpg" alt="행정 이미지" class="content_img">
+                    <span class="con_com">교통</span>
+                    <span class="con_com2">최근 지속적으로 증가하고 있는 인천의 교통사고 사망자 줄이기 대책</span>
+                    <span class="con_com3">2019-09-27</span>
+                </li>
+                <li class="content co8">
+                    <img src="./data/con_tit08.jpg" alt="환경 이미지" class="content_img">
+                    <span class="con_com">환경</span>
+                    <span class="con_com2">2019년 6월 1일부터 시민들의 건강보호 및 쾌적한 생활 환경조성을 위해 노후 경유차에 대해 운행제한</span>
+                    <span class="con_com3">2019-05-29</span>
+                </li>
+                <li class="content co9">
+                    <img src="./data/con_tit09.jpg" alt="행정 이미지" class="content_img">
+                    <span class="con_com">행정</span>
+                    <span class="con_com2">120미추홀센터는 365일 24시간 전문상담원이 민원안내 서비스를 제공하고 있습니다.</span>
+                    <span class="con_com3">2019-04-05</span>
+                </li>
+            </ul>
+        </div>
+        <div class="content2_wrap">
+            <div class="content_txt_box">
+                <h2 class="content_tit">INCHEON TOUR</h2>
+                <p class="content_txt">다양하고 알찬 인천여행 정보를 제공합니다!</p>
+            </div>
+            <div class="content_btn_box CBB2">
+                <button class="content_btn CBleft"><span class="xi-angle-left-thin"></span></button>
+                <button class="content_btn CBright"><span class="xi-angle-right-thin"></span></button>
+            </div>
+            <ul class="content2_box">
+                <li class="content co1">
+                    <img src="./data/trip01.png" alt="투어이미지1" class="content_img">
+                    <h2 class="con_tit">덕적도</h2>
+                    <span class="con_com">덕적도</span>
+                    <span class="con_com2">서해안 대표 국민 휴양지</span>
+                    <span class="con_com3">덕적도 투어 바로가기</span>
+                </li>
+                <li class="content co2">
+                    <img src="./data/trip02.png" alt="투어이미지2" class="content_img">
+                    <h2 class="con_tit">소래습지생태공원</h2>
+                    <span class="con_com">소래습지생태공원</span>
+                    <span class="con_com2"></span>
+                    <span class="con_com3">소래습지생태공원 투어 바로가기</span>
+                </li>
+                <li class="content co3">
+                    <img src="./data/trip03.png" alt="투어이미지3" class="content_img">
+                    <h2 class="con_tit">백령도</h2>
+                    <span class="con_com">백령도</span>
+                    <span class="con_com2">신이 빚은 마지막 선물</span>
+                    <span class="con_com3">백령도 투어 바로가기</span>
+                </li>
+                <li class="content co4">
+                    <img src="./data/trip04.png" alt="투어이미지4" class="content_img">
+                    <h2 class="con_tit">석모도</h2>
+                    <span class="con_com">석모도</span>
+                    <span class="con_com2">온천과 휴양림이 있는 힐링의 섬</span>
+                    <span class="con_com3">석모도 투어 바로가기</span>
+                </li>
+                <li class="content co5">
+                    <img src="./data/trip05.png" alt="투어이미지5" class="content_img">
+                    <h2 class="con_tit">팔미도</h2>
+                    <span class="con_com">팔미도</span>
+                    <span class="con_com2">대한민국 최초 등대가 있는 섬</span>
+                    <span class="con_com3">팔미도 투어 바로가기</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
