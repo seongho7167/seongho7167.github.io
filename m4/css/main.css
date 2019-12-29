@@ -5,7 +5,8 @@
 body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
 ul { list-style: none; }
 a { text-decoration: none; }
-button, label, input { border: 0; border-color: transparent; outline: 0; }
+button, label { border: 0; background-color: transparent; outline: 0; }
+input { border: 0; outline: 0; }
 .wrap { width: 100%; position: relative; font-family: 'Ibarra Real Nova', 'Noto Sans KR', sans-serif; }
 
 .hd { width: 100%; height: 7vh; border-bottom: 2px solid #769d2e; box-sizing: border-box; }
@@ -16,7 +17,7 @@ button, label, input { border: 0; border-color: transparent; outline: 0; }
 #xi-search { width: 32px; height: 32px; line-height: 32px; text-align: center;}
 .frm1 { width: 100%; height: 0vh; position: absolute; top: 7vh; left: 0; background-color: rgba(255,255,255,0.7); overflow: hidden; transition: 0.3s; z-index: 10; }
 .search_box { width: 100vw; height: 86vh; position: absolute; top: 7vh; left: -120%; background-color: rgba(255,255,255,0.7); transition: 0.5s;}
-.search_txt { width: 60vw; height: 7vh; background-color: #769d2e; border-radius: 5px; position: absolute; top: 0; left: 13.6%; text-indent: 10px; margin: 0; }
+.search_txt { width: 60vw; height: 7vh; background-color: #769d2e; border-radius: 5px; position: absolute; top: 0; left: 13.6%; text-indent: 10px; margin: 0; color:#fff; }
 #sear_btn3 { width: 7vh; height: 7vh; position: absolute; top: 0; left: 74.5%; margin: 0; }
 .sns_box { width: 80%; }
 .sns_box li { float: left; margin: 1vh;}
@@ -42,7 +43,7 @@ button, label, input { border: 0; border-color: transparent; outline: 0; }
 .check_cir_box { width: 65vw; height: 5vh; margin: 3vh auto;  }
 .check_cir_box span { margin-left: 2vw; color:#fff; }
 .check_cir_box span:first-child { margin-left: 0; }
-.enter { background-color: #769d2e; font-size: 1.2em; border: 2px solid #fff; border-radius: 5px; width: 30vw;height: 5vh; color:#fff; float: left; margin-left: 12.5vw; text-indent: 0; margin-right: 0;}
+.enter { background-color: #769d2e; font-size: 1.2em; border: 2px solid #fff; border-radius: 5px; width: 30vw;height: 5vh; color:#fff; float: left; margin-left: 12.5vw; margin-right: 0; text-align: center; box-sizing: border-box;}
 .join_btn { background-color: #769d2e; font-size: 1.2em; border: 2px solid #fff; border-radius: 5px; width: 30vw;height: 5vh; line-height: 5vh; color:#fff; margin-left: 5vw; float: left; box-sizing: border-box; text-align: center; }
 .id_fr { float: left; margin-right: 5vw; }
 
