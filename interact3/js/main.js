@@ -183,7 +183,7 @@ $(document).ready(function(){
         $(".content_box li").eq(0).siblings().css("opacity","0.6");
         $(".content_box li").eq(0).css("opacity","1");
     });
-    $(window).on("mousewheel DOMMouseScroll", function(e){
+    $(window).on("mousewheel DOMMouseScroll swipe", function(e){
         var gw_ht = parseInt($(".gnb_wrap").offset().top);
         var ht = parseInt($("body").scrollTop());
         var eo = e.originalEvent.wheelDelta;
