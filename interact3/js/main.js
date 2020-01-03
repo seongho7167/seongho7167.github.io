@@ -183,35 +183,36 @@ $(document).ready(function(){
         $(".content_box li").eq(0).siblings().css("opacity","0.6");
         $(".content_box li").eq(0).css("opacity","1");
     });
-    $(window).on("mousewheel DOMMouseScroll", function(event){
+    $(window).on("mousewheel DOMMouseScroll", function(e){
         var gw_ht = parseInt($(".gnb_wrap").offset().top);
         var ht = parseInt($("body").scrollTop());
-        if (gw_ht<50 && gw_ht<0) {
+        var eo = e.originalEvent.wheelDelta;
+        if (eo<0 && gw_ht<50 && gw_ht<0) {
             $(".gnb_wrap").css("position","fixed").css("top","0").css("margin-top","0");
-        } else if (ht<1000 && gw_ht==0) {
+        } else if ( eo>0 && ht<1000 && gw_ht==0) {
             $(".gnb_wrap").css("position","relative").css("margin-top","-100px");
         }
         console.log(gw_ht);
         console.log(ht);
-        if(ht>1800 && ht<2200) {
+        if(eo<0 && ht>1800 && ht<2200) {
             $(".content2_box").find(".co1, .co2").addClass("on");
-        } else if (ht>2400 && ht<3000) {
+        } else if (eo<0 && ht>2400 && ht<3000) {
             $(".content2_box").find(".co3, .co4").addClass("on");
-        } else if ( ht>3000 ){
+        } else if (eo<0 && ht>3000 ){
             $(".content2_box").find(".co5").addClass("on");
         }
-        if(ht<1800) {
+        if(eo>0 && ht<1800) {
             $(".content2_box").find(".co1, .co2").removeClass("on");
-        } else if (ht<2400 && ht>1800) {
+        } else if (eo>0 && ht<2400 && ht>1800) {
             $(".content2_box").find(".co3, .co4").removeClass("on");
-        } else if ( ht<3000 && ht>2400 ){
+        } else if (eo>0 && ht<3000 && ht>2400 ){
             $(".content2_box").find(".co5").removeClass("on");
         }
-        if(ht>800 && ht<1600){
+        if(eo<0 && ht>800 && ht<1600){
             $(".content_wrap_Bg").css("width","90vw");
             $(".content_wrap .content_box").css("padding-top","5vw").css("opacity","1").css("z-index","7");
             $(".content_btn_box").css("left", "10vw").css("opacity","1");
-        } else if (ht<800) {
+        } else if (eo>0 && ht<800) {
             $(".content_wrap_Bg").css("width","0vw");
             $(".content_wrap .content_box").css("padding-top","0vw").css("opacity","0").css("z-index","-1");
             $(".content_btn_box").css("left", "-10vw").css("opacity","0");
