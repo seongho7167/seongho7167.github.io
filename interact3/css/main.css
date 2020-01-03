@@ -117,7 +117,7 @@
     .CBright { border-left: 1px solid #fff;}
     .xi-angle-left-thin, .xi-angle-right-thin { color: #fff; font-size: 2.4em;}
     .content2_wrap { width: 100vw; height: auto; position: relative; clear: both; }
-    .content2_box { position: relative; width: 80vw; height: 240vh; margin: 0 auto; padding-top: 15vw; z-index: 7; }
+    .content2_box { position: relative; width: 80vw; height: 240vh; margin: 0 auto; padding-top: 5vw; z-index: 7; }
     .content2_box:after{ content:""; display: table; clear: both; }
     .content2_box .content { position: absolute; transition: 1s; opacity: 0; z-index: -1; }
     .content2_box .co1 { top: 0vw; left: 0; }
@@ -126,11 +126,11 @@
     .content2_box .co4 { top: 40vw; right: 0; transition-delay: 0.5s; }
     .content2_box .co5 { top: 70vw; left: 0; }
     .content2_box .content.on { position: absolute; opacity: 1; z-index: 3; }
-    .content2_box .co1.on { top: 15vw; left: 0; }
-    .content2_box .co2.on { top: 20vw; right: 0;}
-    .content2_box .co3.on { top: 50vw; left: 0; }
-    .content2_box .co4.on { top: 55vw; right: 0;}
-    .content2_box .co5.on { top: 85vw; left: 0; }
+    .content2_box .co1.on { top: 5vw; left: 0; }
+    .content2_box .co2.on { top: 10vw; right: 0;}
+    .content2_box .co3.on { top: 40vw; left: 0; }
+    .content2_box .co4.on { top: 45vw; right: 0;}
+    .content2_box .co5.on { top: 75vw; left: 0; }
     .content2_box .content:after { content: ""; position: absolute; display: block; width: 0px; height: 9vh; background-color: #fff; bottom: 0; left: 0; transition: 0.5s; }
     .content2_box .content:hover:after { width: 760px;}
     .content2_box .con_tit { position: absolute; bottom: 7vh; left: 3vh; color: #fff; transition: 0.3s; z-index: 3; }
@@ -163,6 +163,7 @@
     .ft_con2 .copyright { clear: both; margin-left: -35px; }
 
     @media screen and (max-width:767px){
+        html, body { overflow: visible; }
         #wrap { width: 100vw; height: 100vh; position: relative; }
         .vs_box { width: 1300px; height: 100vh; overflow: hidden; }
         .vs video { width: 100%; margin-left: -350px; }
