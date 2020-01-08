@@ -11,7 +11,7 @@ h2 { font-family: 'Passion One', cursive; font-size: 4em; }
 .wrap { width: 100%; position: relative; }
 .hd { width: 100%; height: 45px; position: relative; clear: both; background-color: #181818; float: left; margin-top: 30px; }
 .logo { display: block; width: 110px; height: 45px;  background-image: url(./data/logo.png); background-repeat: no-repeat; background-size: cover; background-position: center center; float: left; margin-left: 50px; }
-.gnb_btn_box { width: 45px; height: 45px; float: right; margin-right: 50px; position: relative; z-index: 999; }
+.gnb_btn_box { width: 45px; height: 45px; float: right; margin-right: 50px; position: relative; z-index: 999; cursor: pointer; }
 .gnb_btn { display: block; width: 30px; height: 3px; background-color: #fff; position: absolute; left: 50%; margin-left: -15px; animation: gnbAni 5s ease-in-out infinite; }
 .gnb_btn1 { top: 8px; }
 .gnb_btn2 { top: 20px; }
