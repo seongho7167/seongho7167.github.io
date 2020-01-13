@@ -1,0 +1,67 @@
+@charset "utf-8";
+::-webkit-scrollbar { display: none; }
+* { margin: 0; padding: 0; }
+body, html { width: 100vw; height: 100vh; font-family: 'Noto Sans KR', sans-serif; }
+ul { list-style: none; }
+a { text-decoration: none; }
+button { border:0; background-color: transparent; outline: 0; }
+
+/* 배경색 : #E5DFEB
+중간색 : #A098A5
+어둠공간 : #290E14
+포인트색 : #6C0D0f */
+
+.hd { display: none; }
+.container { width: 100vw; height: 100vh; }
+.wrap { position: relative; width: 100vw; height: 100vh; transform-style: preserve-3d; transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); margin: 0 auto; margin-top: 0vh; transition: 1s; transition-timing-function: cubic-bezier(0,1.09,1,.93); }
+.wrap.out { width: 60vw; height: 60vh; margin-top: 20vh; backface-visibility: hidden; }
+.page { width: 100%; height: 100%; position: absolute; backface-visibility: hidden;  }
+.page_bc { display: block; width: 94%; height: 96%; background-color: #E5DFEB; position: absolute; top: 2%; left: 3%; }
+.page1 { transform: translate3d(0, 0, 10vw); overflow: hidden; }
+.page2 { transform: rotateY(-90deg) translate3d(0, 0, 10vw); }
+.page3 { transform: rotateY(90deg) translate3d(0, 0, 10vw); }
+.page4 { transform: rotateY(180deg) translate3d(0, 0, 10vw); backface-visibility: visible;  }
+.page5 { transform: rotateX(-90deg) translate3d(0, 0vw, 10vh); }
+
+.center_container { position: relative; z-index: 3; width: 92%; height: 96%; padding: 2% 4%; }
+.lt_side_box { width: 25%; height: 130%; margin-top: -2vw; margin-left: -10vw; overflow: hidden; opacity: 0; transition: 0.5s; }
+.lt_side_box.in { opacity: 1; margin-left: -4vw; }
+.lt_side_box_bc { background-color: #A098A5; width: 30vw; height: 100vw; position: absolute; top: -30vh; left: -50vw; transform: rotate(20deg); opacity: 0.7; transition: 0.5s; }
+.lt_side_box.in .lt_side_box_bc { left: -20vw; }
+.lt_side_fr { position: absolute; top: 2vw; left: 4vw; color:#290E14; }
+.lt_side_tit_bar { display: block; width: 50px; height: 1px; background-color: #290E14; position: absolute; left: 55px; top: 13px; }
+.rt_side_box { width: 57px; position: absolute; height: 250px; bottom: 0; right: -5vw; opacity: 0; transition: 0.5s; }
+.rt_side_box.in { right: 0; opacity: 1; }
+.sns_icon { width: 35px; margin: 10px auto; cursor: pointer; }
+.sns_icon .sns { display: block; width: 100%; cursor: pointer; }
+
+.center_box { width: 50vh; height: 50vh; position: absolute; top: 50%; left: 50%; margin-top: -25vh; margin-left: -25vh; text-align: center; line-height: 43vh; }
+.center_box .ct_txt { color: #290E14; font-size: 2rem; font-weight: bold; }
+.center_fr { position: absolute; top: 0; left: 0; width: 50vh; height: 50vh; transform: rotateZ(45deg); overflow: hidden; border: 1px solid transparent; box-sizing: border-box; transition: 0.7s; }
+.center_box_line { display: block; width: 0vh; height: 1px; background-color: #290E14; position: absolute; transition: 0.5s; animation: center_box_lineAni 1s cubic-bezier(.16,.77,1,.93); animation-fill-mode: both; }
+.cb_line1 { top: 0; left: 0; }
+.cb_line2 { top: 50vh; left: 0.1vh; transform: rotate(-90deg); transform-origin: 0% 100%; animation-delay: 0.5s; }
+.cb_line3 { top: 0vh; right: 0vh; transform: rotate(-90deg); transform-origin: 100% 100%; animation-delay: 0.5s; }
+.cb_line4 { bottom: 0; right: 0; }
+@keyframes center_box_lineAni {
+    from { width: 0; }
+    to { width: 50vh; }
+}
+.center_title { transform: rotateZ(-45deg); position: absolute; top: 50%; left: 50%; line-height: 0; font-size: 2rem; margin-left: -52px; margin-top: -10px; cursor: pointer; animation: titleAni 1.5s infinite; }
+@keyframes titleAni {
+    from { transform: rotateZ(-45deg) scale(1); }
+    50% { transform: rotateZ(-45deg) scale(1.1); }
+    100% { transform: rotateZ(-45deg) scale(1); }
+}
+.list_wrap { position: absolute; line-height: 0; top: 35%; left: 0; width: 100vw; margin-top: -20px; display: none; transition: 1s; }
+.list_wrap.out { width: 60vw; }
+.list_box { width: 70%; display: flex; justify-content: space-around; margin: 0 auto; }
+.list_box .list_txt { text-align: center; border: 1px solid #290E14; width: 13vw; height: 13vw; border-radius: 100%; line-height: 13vw;transition: 0.3s;  color:#290E14; }
+.list_box .list_txt.out { width: 10vw; height: 10vw; border-radius: 100%; line-height: 10vw; }
+.list_txt:hover { transform: scale(1.2); color:#fff; background-color: #290E14; }
+.list_txt a { display: block; font-size: 2rem; font-weight: bold; cursor: pointer; }
+@keyframes listAni { 
+    0% { transform: scale(1); color: #290E14; }
+    50% { transform: scale(1.2); color: #fff; background-color: #290E14; }
+    100% { transform: scale(1); color: #290E14; }
+}
