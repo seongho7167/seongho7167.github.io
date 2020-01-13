@@ -17,7 +17,7 @@ $(document).ready(function(){
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
         setTimeout(function(){
-            $(".wrap").not(":animated").css("transform","rotateY(-90deg)");
+            $(".wrap").not(":animated").css("transform","rotateY(180deg)");
         }, 1200);
         setTimeout(function(){
             $(".wrap").removeClass("out");
@@ -30,7 +30,7 @@ $(document).ready(function(){
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
         setTimeout(function(){
-            $(".wrap").not(":animated").css("transform","rotateY(180deg)");
+            $(".wrap").not(":animated").css("transform","rotateY(270deg)");
         }, 1200);
         setTimeout(function(){
             $(".wrap").removeClass("out");
