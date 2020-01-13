@@ -114,4 +114,45 @@ $(document).ready(function(){
             $(".hd").css("display","none");
         }, 2300)
     });
+
+    $(".gnb_box .item2").click(function(){
+        $(".wrap").addClass("out");
+        setTimeout(function(){
+            $(".wrap").not(":animated").css("transform","rotateY(90deg)");
+        }, 1200);
+        setTimeout(function(){
+            $(".wrap").removeClass("out");
+            $(".hd").css("display","block");
+        }, 2300)
+    });
+    $(".gnb_box .item3").click(function(){
+        $(".wrap").addClass("out");
+        setTimeout(function(){
+            $(".wrap").not(":animated").css("transform","rotateY(180deg)");
+        }, 1200);
+        setTimeout(function(){
+            $(".wrap").removeClass("out");
+            $(".hd").css("display","block");
+        }, 2300)
+    });
+    $(".gnb_box .item4").click(function(){
+        $(".wrap").addClass("out");
+        setTimeout(function(){
+            $(".wrap").not(":animated").css("transform","rotateY(270deg)");
+        }, 1200);
+        setTimeout(function(){
+            $(".wrap").removeClass("out");
+            $(".hd").css("display","block");
+        }, 2300)
+    });
+    $(".gnb_box .item5").click(function(){
+        $(".wrap").addClass("out");
+        setTimeout(function(){
+            $(".wrap").not(":animated").css("transform","rotateX(90deg)");
+        }, 1200);
+        setTimeout(function(){
+            $(".wrap").removeClass("out");
+            $(".hd").css("display","block");
+        }, 2300)
+    });
 });
