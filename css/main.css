@@ -67,7 +67,7 @@ button { border:0; background-color: transparent; outline: 0; }
 }
 
 /* 헤더부분 */
-.hd { position: absolute; top: 0; left: 0; z-index: 10; height: 100vh; width: 10vw; }
+.hd { position: absolute; top: 0; left: 0; z-index: 10; height: 100vh; width: 3vw; }
 .hd_bc { background-color: #A098A5; width: 30vw; height: 100vw; position: absolute; top: -30vh; left: -50vw; transform: rotate(20deg); opacity: 0.7; transition: 0.5s; transition-delay: 0.2s; }
 .hd:hover .hd_bc { left: -20vw; }
 .gnb_box { position: absolute; height: 330px; top: 50%; margin-top: -200px; left: -100px; transition: 0.5s; width: 100px; transition-delay: 0.2s; }
@@ -85,3 +85,54 @@ button { border:0; background-color: transparent; outline: 0; }
 .gnb_cir { width: 10px; height: 10px; border-radius: 30px; background-color: #A098A5; margin-top: 15px; transition: 0.3s; cursor: pointer; }
 .gnb_cir.on { background-color: #290E14; }
 .gnb_cir:hover { background-color: #290E14; }
+
+.page2 { overflow: hidden; }
+.page2 .page_bc2 { display: block; background-color: #A098A5; width: 50vw; height: 60vh; position: absolute; top: 50%; margin-top: -30vh; right: -70vw; border-radius: 15px; transition: 0.5s; opacity: 0; }
+.page2 .page_bc2.in { right: 10vw; opacity: 0.6; }
+.photo_box { position: absolute; top: 50%; left: 31%; margin-top: -20vh; width: 15vw; height: 39.45vh; z-index: 5; }
+.photo_line { display: block; position: absolute; height: 1px; }
+.photo_line1 { top: 0; left: 0; transform-origin: 0% 0%; width: 0vw; background-color: #290E14; }
+.photo_line2 { top: 0; right: 0; transform-origin: 100% 0%; width: 1px; height: 0vh; background-color: #290E14; }
+.photo_line3 { bottom: 0; right: 0; transform-origin: 100% 100%; width: 0vw; background-color: #290E14; }
+.photo_line4 { bottom: 0; left: 0; transform-origin: 0% 100%; width: 1px; height: 0vh; background-color: #290E14; }
+@keyframes photo_lineAni {
+    from { width: 0vw; }
+    to { width: 15vw; }
+}
+@keyframes photo_lineAni2 {
+    from { height: 0vh; }
+    to { height: 39.45vh; }
+}
+.photo_fr { position: absolute; top: 50%; left: 31%; margin-top: -20vh; width: 15vw; height: auto; overflow: hidden; background-color: #A098A5; border-radius: 0px; border: 1px solid transparent; border-radius: 15px; box-sizing: border-box; transition: 0.5s; opacity: 0; }
+.photo_fr.out { border: 1px solid #290E14; border-radius: 15px; opacity: 1;}
+.photo_fr .myPhoto { display: block; width: 100%; opacity: 0; transition: 1s; }
+.photo_fr.out .myPhoto { opacity: 1; }
+.about_frame { position: absolute; top: 32%; right: -50%; width: 40vw; height: 39vh; overflow: hidden; transition: 0.5s; opacity: 0; }
+.about_frame.in { right: 5%; opacity: 1; }
+.about_container { position: absolute; top: 0; left: 0; width: 40vw; height: 40vh; color:#290E14; transition: 0.5s; }
+.about_container2 { top: 40vh; }
+.about_container3 { top: 80vh; }
+.about_tit { font-size: 2rem; line-height: 3.4; }
+.about_con_box .about_con { display: block; padding-top: 15px; }
+.about_btn_box { width: 2vw; height: 12vh; position: absolute; top: 50%; left: 70%; margin-top: -6vh; }
+.about_btn_box:hover .about_btn { transform: scale(1.6); }
+.about_btn { width: 10px; height: 10px; background-color: #fff; border-radius: 20px; margin-top: 25px; cursor: pointer; transition: 0.3s; margin-left: 10px; }
+.about_btn.on { background-color: #6C0D0f; transform: scale(1.6); }
+
+/* Load animation */
+@keyframes 
+load { 
+    0% { stroke-dashoffset:0 }
+}
+
+.page3 { text-align: center; }
+/* Container */
+.progress { position: relative; display: inline-block; padding: 0; text-align: center; padding-top: 33vh; opacity: 0; transition: 0.5s; }
+
+/* Item */
+.progress>li { display: inline-block; position: relative; text-align: center; color: #290E14; font-family: Lato; font-weight: 100; margin: 2rem; }
+.progress>li:before { content: attr(data-name); position: absolute; width: 100%; bottom: -2rem; font-weight: 400; }
+.progress>li:after { content: attr(data-percent); position: absolute; width: 100%; top: 3.7rem; left: 0; font-size: 2rem; text-align: center; }
+.progress svg { width: 10rem; height: 10rem; }
+.progress svg:nth-child(2) { position: absolute; left: 0; top: 0; transform: rotate(-90deg); transform: rotate(-90deg); }
+.progress svg:nth-child(2) path { fill: none; stroke-width: 25; stroke-dasharray: 629; stroke: #E5DFEB; }

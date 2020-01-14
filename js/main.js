@@ -3,6 +3,8 @@ $(document).ready(function(){
         $(".wrap").addClass("out");
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
+        $(".gnb_cir_box .gnb_cir2").addClass("on");
+        $(".gnb_cir_box .gnb_cir2").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateY(90deg)");
         }, 1200);
@@ -10,25 +12,44 @@ $(document).ready(function(){
             $(".wrap").removeClass("out");
             $(".hd").css("display","block");
         }, 2300)
+        setTimeout(function(){
+            $(".photo_line1").css("animation","photo_lineAni 2s");
+            $(".photo_line3").css("animation","photo_lineAni 2s");
+            $(".photo_line2").css("animation","photo_lineAni2 2s");
+            $(".photo_line4").css("animation","photo_lineAni2 2s");
+            setTimeout(function(){
+                $(".photo_fr").addClass("out");
+                $(".page2 .page_bc2").addClass("in");
+                $(".about_frame").addClass("in");
+            }, 2000);
+        }, 3700)
     });
 
     $(".list_box .list2").click(function(){
         $(".wrap").addClass("out");
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
+        $(".gnb_cir_box .gnb_cir3").addClass("on");
+        $(".gnb_cir_box .gnb_cir3").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateY(180deg)");
         }, 1200);
         setTimeout(function(){
             $(".wrap").removeClass("out");
             $(".hd").css("display","block");
-        }, 2300)
+        }, 2300);
+        setTimeout(function(){
+            $(".progress").css("opacity","1");
+            $(".progress svg:nth-child(2) path").css("animation", "load 3s");
+        }, 3700);
     });
 
     $(".list_box .list3").click(function(){
         $(".wrap").addClass("out");
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
+        $(".gnb_cir_box .gnb_cir4").addClass("on");
+        $(".gnb_cir_box .gnb_cir4").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateY(270deg)");
         }, 1200);
@@ -41,6 +62,8 @@ $(document).ready(function(){
         $(".wrap").addClass("out");
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
+        $(".gnb_cir_box .gnb_cir5").addClass("on");
+        $(".gnb_cir_box .gnb_cir5").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateX(90deg)");
         }, 1200);
@@ -104,6 +127,8 @@ $(document).ready(function(){
         $(".wrap").addClass("out");
         $(".list_wrap").addClass("out");
         $(".list_box").find(".list_txt").addClass("out");
+        $(".gnb_cir_box .gnb_cir1").addClass("on");
+        $(".gnb_cir_box .gnb_cir1").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotate(0deg)");
         }, 1200);
@@ -117,6 +142,8 @@ $(document).ready(function(){
 
     $(".gnb_box .item2").click(function(){
         $(".wrap").addClass("out");
+        $(".gnb_cir_box .gnb_cir2").addClass("on");
+        $(".gnb_cir_box .gnb_cir2").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateY(90deg)");
         }, 1200);
@@ -124,19 +151,38 @@ $(document).ready(function(){
             $(".wrap").removeClass("out");
             $(".hd").css("display","block");
         }, 2300)
+        setTimeout(function(){
+            $(".photo_line1").css("animation","photo_lineAni 2s");
+            $(".photo_line3").css("animation","photo_lineAni 2s");
+            $(".photo_line2").css("animation","photo_lineAni2 2s");
+            $(".photo_line4").css("animation","photo_lineAni2 2s");
+            setTimeout(function(){
+                $(".photo_fr").addClass("out");
+                $(".page2 .page_bc2").addClass("in");
+                $(".about_frame").addClass("in");
+            }, 2000);
+        }, 3700)
     });
     $(".gnb_box .item3").click(function(){
         $(".wrap").addClass("out");
+        $(".gnb_cir_box .gnb_cir3").addClass("on");
+        $(".gnb_cir_box .gnb_cir3").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateY(180deg)");
         }, 1200);
         setTimeout(function(){
             $(".wrap").removeClass("out");
             $(".hd").css("display","block");
-        }, 2300)
+        }, 2300);
+        setTimeout(function(){
+            $(".progress").css("opacity","1");
+            $(".progress svg:nth-child(2) path").css("animation", "load 3s");
+        }, 3700);     
     });
     $(".gnb_box .item4").click(function(){
         $(".wrap").addClass("out");
+        $(".gnb_cir_box .gnb_cir4").addClass("on");
+        $(".gnb_cir_box .gnb_cir4").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateY(270deg)");
         }, 1200);
@@ -147,6 +193,8 @@ $(document).ready(function(){
     });
     $(".gnb_box .item5").click(function(){
         $(".wrap").addClass("out");
+        $(".gnb_cir_box .gnb_cir5").addClass("on");
+        $(".gnb_cir_box .gnb_cir5").siblings().removeClass("on");
         setTimeout(function(){
             $(".wrap").not(":animated").css("transform","rotateX(90deg)");
         }, 1200);
@@ -155,4 +203,25 @@ $(document).ready(function(){
             $(".hd").css("display","block");
         }, 2300)
     });
+
+    $(".about_btn_box li").click(function(){
+        $(this).addClass("on");
+        $(this).siblings().removeClass("on");
+    });
+    $(".about_btn2").click(function(){
+        $(".about_container1").css("top","-40vh");
+        $(".about_container2").css("top","0vh");
+        $(".about_container3").css("top","40vh");
+    });
+    $(".about_btn3").click(function(){
+        $(".about_container1").css("top","-80vh");
+        $(".about_container2").css("top","-40vh");
+        $(".about_container3").css("top","0vh");
+    });
+    $(".about_btn1").click(function(){
+        $(".about_container1").css("top","0vh");
+        $(".about_container2").css("top","40vh");
+        $(".about_container3").css("top","80vh");
+    });
+
 });
