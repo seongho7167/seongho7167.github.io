@@ -1,0 +1,135 @@
+html {
+		overflow: hidden;
+	}
+	body {
+		position: absolute;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 100%;
+		background:#fff;
+	}
+	#screen {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border: 1px solid #A098A5;
+		
+		background: #E5DFEB;
+		overflow: hidden;
+	}
+	#screen .grid {
+		position: absolute;
+		background: #A098A5;
+		font-size: 0px;
+		overflow: hidden;
+	}
+	#screen .txt {
+		position: absolute;
+		font-size: 14px;
+		color: #290E14;
+		font-family: arial;
+		overflow: hidden;
+	}
+	#screen .menu {
+		position: absolute;
+		font-size: 12px;
+		color: #fff;
+		font-family: arial;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	#screen .menubackgroundcolor {
+		opacity: 0.7;
+		filter: alpha(opacity=70);
+	}
+	#screen .wrapper {
+		position:absolute;
+		left: 2%;
+		top: 2%;
+		width: 96%;
+		height: 96%;
+		overflow: hidden;
+	}
+	#screen .wrapper img {
+		float: left;
+		margin-right: 6px;
+		margin-bottom: 0px;
+	}
+	#screen h1 {
+		position:relative;
+		top: 50px;
+		width: 100%;
+		text-align: center;
+		letter-spacing: 0px;
+		font-size: 1.6em;
+	}
+	#screen .menucontent {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		font-size: 64px;
+		letter-spacing: 0px;
+		font-weight: bold;
+		top: 35px;
+	}
+	#screen .submenucontent {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	
+	#screen .submenutitle {
+		position: absolute;
+		top: 5px;
+		font-size: 18px;
+		font-weight: bold;
+		left: 5px;
+	}
+	#screen .submenu {
+		position: absolute;
+		width: 100%;
+		top: 55px;
+	}
+	
+	#screen .submenuline {
+		position: relative;
+		height: 18px;
+		font-size: 14px;
+		margin-top: 1px;
+	}
+	
+	#screen .lineover {
+		background: #fff;
+		color: #0064a0;
+		font-weight: bold;
+	}
+	
+	#loader {
+		position:absolute;
+		left: 50%;
+		top: 50%;
+		width: 50px;
+		margin-left: -25px;
+		margin-top: -14px;
+		text-align: center;
+		font-family: arial;
+		font-size: 24px;
+		font-weight: bold;
+		color: #fff;
+		background: #000;
+		outline: #111 solid 3px;
+		opacity: 0.6;
+		filter: alpha(opacity=60);
+		z-index: 1000;
+	}
+	#htmlBank {
+		display: none;
+		visibility: hidden;
+	}
+	.wrapper p { font-size: 1rem; font-weight: bold; line-height: 1.8; }
+	.txt { text-align: center; }
+	.txt:hover a { color: #6C0D0f; }
+	.txt:hover .xi-external-link { color: #6C0D0f; }
+	.txt > a { font-size: 1.3rem; color: #290E14; display: block; margin-top: 43px; font-weight: bold; }
+	.xi-external-link { font-size: 1.3rem; color:#290E14; }
