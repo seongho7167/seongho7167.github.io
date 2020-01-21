@@ -17,7 +17,7 @@ button { border:0; background-color: transparent; outline: 0; }
 .gnb_btn_fr { position: absolute; top: 50%; left: 6.5%; z-index: 10; }
 .gnb_btn_line_box { width: 40px; height: 40px; float: left; position: relative; z-index: 10; cursor: pointer; }
 .gnb_btn { display: block; width: 30px; height: 2px; background-color: #333; margin: 0 auto; margin-top: 8px; transition: 0.3s; }
-.menu { float: left; margin-top: 10px; transform: rotate(-90deg); transition: 0.3s; margin-left: -10px; position: relative; z-index: 10; cursor: pointer; color: #333; font-weight: bold; }
+.menu { float: left; margin-top: 10px; transform: rotate(-90deg); transition: 0.3s; margin-left: -10px; position: relative; z-index: 10; cursor: pointer; color: #fff; font-weight: bold; }
 .gnb_btn_fr:hover .menu { color: #333; }
 .menu_bc { display: block; width: 15vw; height: 100vh; position: absolute; top: -50vh; left: -14.3vw; background-color: rgba(255,255,255); transition: 0.3s; }
 .gnb_btn_fr:hover .menu { transform: rotate(0deg); margin-left: 0px; }
@@ -45,10 +45,11 @@ button { border:0; background-color: transparent; outline: 0; }
 .page_wrap { width: 96%; height: 96%; margin: 0 auto; margin-top: 2%; }
 .page { width: 100%; height: 100%; background-color: #efefef; position: relative; }
 .vs_box { width: 100%; height: 100%; }
-#sec { display: block; width: 2px; height: 13vw; position: absolute; background-color: crimson; bottom: 50.7%; left: 48.3%; transform-origin: 0% 100%; }
+.intro_bc { display: block; width: 100%; height: 100%; background-image: url("../img/intro_bc.jpg"); background-size: cover; background-position: center center; overflow: hidden;  position: absolute; top: 0; left: 0; opacity: 0.95;}
+#sec { display: block; width: 2px; height: 13vw; position: absolute; background-color: crimson; bottom: 48.5%; left: 48.15%; transform-origin: 0% 100%; }
 .con_box { position: absolute; top: 30%; left: 15%; }
-.con_box span { display: block; padding-top: 20px; }
-#time { padding-top: 20px; }
+.con_box span { display: block; padding-top: 20px; color: #fff; }
+#time { padding-top: 20px; color: #fff; }
 
 .page_tit { font-size: 1.2rem; text-align: center; padding-top: 20px; }
 .tit_bar { display: block; width: 35px; height: 3px; background-color: crimson; position: absolute; top: 100px; left: 50%; margin-left: -17px; }
@@ -80,7 +81,7 @@ button { border:0; background-color: transparent; outline: 0; }
 .per_tit2 { display: block; font-size: 0.85rem; }
 .num { display: block; clear: both; float: right;}
 .pro_bar { display: block; width: 100%; height: 3px; background-color: #ccc; clear: both; }
-.pro_bar2.on { display: block; width: 10%; height: 3px; background-color: crimson; margin-top: -3px; transition: 1s cubic-bezier(0,.69,.42,1); }
+.pro_bar2 { display: block; width: 0%; height: 3px; background-color: crimson; margin-top: -3px; transition: 1s cubic-bezier(0,.69,.42,1); }
 .percentage1 .proBar1.on { width: 92%; }
 .percentage1 .proBar2.on { width: 85%; }
 .percentage1 .proBar3.on { width: 70%; }
@@ -90,3 +91,18 @@ button { border:0; background-color: transparent; outline: 0; }
 .percentage2 .proBar3.on { width: 75%; }
 .percentage3 .proBar1.on { width: 50%; }
 .percentage3 .proBar2.on { width: 80%; }
+
+#page4 { height: auto; }
+.port_wrap { width: 100%; height: auto; }
+.port_box { width: 80%; height: auto; display: flex; justify-content: space-around; flex-wrap: wrap; margin: 0 auto; margin-top: 100px; }
+.port { width: 32%; overflow: hidden; min-width: 300px; text-align: center; position: relative; margin-top: 2%; }
+.img_fr { width: 100%; height: 88%; overflow: hidden; }
+.port img { display: block; width: 100%; transition: 0.3s; position: relative; }
+.port_img_bc { position: absolute; top: 0; left: 0; width: 100%; height: 88%; background-color: rgba(0,0,0,0.7); opacity: 0; transition: 0.3s; }
+.port:hover .port_img_bc { opacity: 1; }
+.port_tit { padding-top: 14px; cursor: pointer; } 
+.port_tit a { color: #333; }
+.port_tit a:hover { color: crimson; }
+.port:hover a { color:crimson; }
+.wrapper { padding: 30px; }
+.wrapper p { color:#fff; font-size: 0.9rem; line-height: 30px;}
