@@ -25,95 +25,159 @@
     <meta property="twitter:title" content="사이트의 제목">
     <meta property="twitter:description" content="사이트의 상세설명">
     <meta property="twitter:image" content="썸네일 이미지 주소">
+    <link rel="stylesheet" href="./css/chain.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nanum+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-<!--    font-family: 'Noto Sans KR', sans-serif;    -->
+<!--   font-family: 'Montserrat', sans-serif;    -->
+<!-- font-family: 'Nanum Gothic', sans-serif; -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="js/main.js"></script>
     <script src="./js/prefixfree.min.js"></script>
-    <link rel="stylesheet" href="./css/Grid_Interface_transfer.css"> 
-    <script src="./js/grid_interface_layout.js"></script>
-</head>
+    <style>
+        
+    </style>
+    <script>
+    $(document).ready(function(){
+        var second = document.getElementById("sec");
+        function clock(){
+            var time=new Date();
+            var ss = time.getSeconds();
+            ss=ss*360/60;
+            second.style.transform = "rotate("+ss+"deg)";
+        }
+        setInterval(function(){ clock(); }, 1000)
+        clock();
+
+        var time = document.getElementById("time");
+        function clock2(){
+            var t = new Date();
+            var h = t.getHours();
+            var ampm;
+            if(h>=12) {
+                ampm="PM"; h=h-12; 
+            } else {
+                ampm="AM";
+            }
+            var m = t.getMinutes();
+            var s = t.getSeconds(); 
+            h = compare(h);
+            m = compare(m);
+            s = compare(s); 
+            time.innerText = "방문하신 현재 시간은  "+h+":"+m+":"+s+"  "+ampm+"  입니다.";
+        }
+        function compare(x){
+            if(x<10){
+                return "0"+x;
+            } else {
+                return x;
+            }
+        }
+        setInterval(function(){ clock2();}, 1000);
+    });
+    </script>
 <body>
     <div class="container">
-        <header class="hd">
-            <span class="hd_bc"></span>
-            <nav class="gnb_wrap">
-                <ul class="gnb_box">
-                    <li class="gnb item1"><a class="gnb_tit">INTRO</a></li>
-                    <li class="gnb item2"><a class="gnb_tit">ABOUT</a></li>
-                    <li class="gnb item3"><a class="gnb_tit">ABILITY</a></li>
-                    <li class="gnb item4"><a class="gnb_tit">PORTFOLIO</a></li>
-                    <li class="gnb item5"><a class="gnb_tit">CONTACT</a></li>
-                </ul>
-            </nav>
-            <ul class="gnb_cir_box">
-                <li class="gnb_cir gnb_cir1 on"></li>
-                <li class="gnb_cir gnb_cir2"></li>
-                <li class="gnb_cir gnb_cir3"></li>
-                <li class="gnb_cir gnb_cir4"></li>
-                <li class="gnb_cir gnb_cir5"></li>
-            </ul>
+        <header class="hd_wrap">
+            <div class="gnb_btn_box">
+                <input type="checkbox" class="ckBox" id="gnb_btn">
+                <label class="gnb_btn_fr" for="gnb_btn">
+                    <div class="gnb_btn_line_box">
+                        <span class="gnb_btn line1"></span>
+                        <span class="gnb_btn line2"></span>
+                        <span class="gnb_btn line3"></span>
+                    </div>
+                    <div class="menu">MENU</div>
+                    <nav class="gnb_wrap">
+                        <ul class="gnb_box">
+                            <li class="gnb item1" data-gnb="1">INTRO</li>
+                            <li class="gnb item2" data-gnb="2">ABOUT</li>
+                            <li class="gnb item3" data-gnb="3">ABILITIES</li>
+                            <li class="gnb item4" data-gnb="4">PORTFOLIO</li>
+                            <li class="gnb item5" data-gnb="5">CONTACT</li>
+                        </ul>
+                    </nav>
+                    <span class="menu_bc"></span>
+                </label>
+                <span class="gnb_bc"></span>
+            </div>
         </header>
-        <figure class="wrap">
-            <!-- 인트로페이지 영역 -->
-            <div class="page page1">
-                <span class="page_bc"></span>
-                <div class="center_container">
-                    <div class="lt_side_box">
-                        <span class="lt_side_box_bc"></span>
-                        <div class="lt_side_fr">
-                            <he4 class="lt_side_tit">INTRO</he4>
-                            <span class="lt_side_tit_bar"></span>
-                            <p class="lt_side_txt">웹개발의 꿈을 가진 Front-End Developer 양성호의 <br>포트폴리오 웹사이트 방문을 환영합니다.</p>
+        <aside class="sns_wrap">
+            <ul class="sns_box">
+                <li class="sns sns_ico1"><a href="#"><img src="./img/icon/katalk.png" alt="카카오톡"></a></li>
+                <li class="sns sns_ico2"><a href="https://seongho7167.github.io"><img src="./img/icon/github2.png" alt="깃허브"></a></li>
+                <li class="sns sns_ico3"><a href="./data/portfolio.pdf"><img src="./img/icon/portfolio2.png" alt="포폴자료"></a></li>
+            </ul>
+        </aside>
+        <div class="home_box"><a href="index.html" class="home">SeongHo Yang</a></div>
+        <main class="page_wrap">
+            <!-- 인트로페이지 -->
+            <div class="page" id="page1" data-page="1">
+                <div class="vs_box">
+                    <div class="it24">
+                        <div id="level">
+                            <div id="content">
+                                <span id="gears">
+                                    <!-- <div id="gears-static"></div> -->
+                                    <div id="gear-system-1">
+                                        <div class="shadow" id="shadow15"></div>
+                                        <div id="gear15"></div>
+                                        <div class="shadow" id="shadow14"></div>
+                                        <div id="gear14"></div>
+                                        <div class="shadow" id="shadow13"></div>
+                                        <div id="gear13"></div>
+                                    </div>
+                                    <div id="gear-system-2">
+                                        <div class="shadow" id="shadow10"></div>
+                                        <div id="gear10"></div>
+                                        <div class="shadow" id="shadow3"></div>
+                                        <div id="gear3"></div>
+                                    </div>
+                                    <div id="gear-system-3">
+                                        <div class="shadow" id="shadow9"></div>
+                                        <div id="gear9"></div>
+                                        <div class="shadow" id="shadow7"></div>
+                                        <div id="gear7"></div>
+                                    </div>
+                                    <div id="gear-system-4">
+                                        <div class="shadow" id="shadow6"></div>
+                                        <div id="gear6"></div>
+                                        <div id="gear4"></div>
+                                    </div>
+                                    <div id="gear-system-5">
+                                        <div class="shadow" id="shadow12"></div>
+                                        <div id="gear12"></div>
+                                        <div class="shadow" id="shadow11"></div>
+                                        <div id="gear11"></div>
+                                        <div class="shadow" id="shadow8"></div>
+                                        <div id="gear8"></div>
+                                    </div>
+                                    <div class="shadow" id="shadow1"></div>
+                                    <div id="gear1"></div>
+                                    <div id="gear-system-6">
+                                        <div class="shadow" id="shadow5"></div>
+                                        <div id="gear5"></div>
+                                        <div id="gear2"></div>
+                                    </div>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <ul class="rt_side_box">
-                        <li class="sns_icon it1"><img src="./img/icon/katalk.png" alt="카카오톡" class="sns"></li>
-                        <li class="sns_icon it2"><img src="./img/icon/facebook.png" alt="페이스북" class="sns"></li>
-                        <li class="sns_icon it3"><img src="./img/icon/instagram.png" alt="인스타그램" class="sns"></li>
-                        <li class="sns_icon it4"><img src="./img/icon/twiter.png" alt="트위터" class="sns"></li>
-                    </ul>
-                    <div class="center_box">
-                        <!-- <p class="center_txt">
-                            <span class="ct_txt it1">W</span>
-                            <span class="ct_txt it2">E</span>
-                            <span class="ct_txt it3">L</span>
-                            <span class="ct_txt it4">C</span>
-                            <span class="ct_txt it5">O</span>
-                            <span class="ct_txt it6">M</span>
-                            <span class="ct_txt it7">E</span>
-                            <span class="ct_txt it7">!</span>
-                        </p> -->
-                        <div class="center_fr">
-                            <span class="center_box_line cb_line1"></span>
-                            <span class="center_box_line cb_line2"></span>
-                            <span class="center_box_line cb_line3"></span>
-                            <span class="center_box_line cb_line4"></span>
-                            <h4 class="center_title">HERE!</h4>
-                        </div>
+                    <span id="sec"></span>
+                </div>
+                <div class="con_box">
+                    <div class="conImg_fr">
+                        <img src="" alt="" class="con_img">
                     </div>
-                    <div class="list_wrap">
-                        <div class="list_box">
-                            <div class="list_txt"><a class="list list1">ABOUT</a></div>
-                            <div class="list_txt"><a class="list list2">ABILITY</a></div>
-                            <div class="list_txt"><a class="list list3">PORTFOLIO</a></div>
-                            <div class="list_txt"><a class="list list4">CONTACT</a></div>
-                        </div>
-                    </div>
+                    <p class="con_txt"> <span>웹개발의 꿈을 가진 Front-End Developer 양성호의</span> <span>포트폴리오 웹사이트 방문을 환영합니다.</span></p>
+                    <div id="time"></div>
                 </div>
             </div>
-            <!-- 어바웃 영역 -->
-            <div class="page page2">
-                <span class="page_bc"></span>
-                <span class="page_bc2"></span>
-                <div class="photo_box">
-                    <span class="photo_line photo_line1"></span>
-                    <span class="photo_line photo_line2"></span>
-                    <span class="photo_line photo_line3"></span>
-                    <span class="photo_line photo_line4"></span>
-                </div>
+            
+            <!-- 어바웃페이지 -->
+            <div class="page" id="page2" data-page="2">
+                <h2 class="about_tit">ABOUT</h2>
                 <div class="photo_fr">
                     <img src="./img/myPhoto.png" alt="portfolio_img" class="myPhoto">
                 </div>
@@ -152,198 +216,205 @@
                     </ul>
                 </div>
             </div>
-            <!-- 어빌리티 영역 -->
-            <div class="page page3">
-                <span class="page_bc"></span>
-                <ul class="progress">
-                    <!--  HTML5 Item  -->
-                    <li data-name="HTML5 Skill" data-percent="93%"> <svg viewBox="-10 -10 220 220">
-                      <g fill="none" stroke-width="6" transform="translate(100,100)">
-                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
-                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
-                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
-                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
-                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
-                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
-                      </g>
-                      </svg> <svg viewBox="-10 -10 220 220">
-                      <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="590"></path>
-                      </svg> </li>
-                    <!--  CSS Item  -->
-                    <li data-name="CSS Skill" data-percent="91%"> <svg viewBox="-10 -10 220 220">
-                      <g fill="none" stroke-width="6" transform="translate(100,100)">
-                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
-                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
-                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
-                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
-                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
-                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
-                      </g>
-                      </svg> <svg viewBox="-10 -10 220 220">
-                      <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="570"></path>
-                      </svg> </li>
-                    <!--  jQuery Item  -->
-                    <li data-name="jQuery Skill" data-percent="85%"> <svg viewBox="-10 -10 220 220">
-                      <g fill="none" stroke-width="6" transform="translate(100,100)">
-                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
-                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
-                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
-                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
-                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
-                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
-                      </g>
-                      </svg> <svg viewBox="-10 -10 220 220">
-                      <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="520"></path>
-                      </svg> </li>
-                    <!--  Javascript Item  -->
-                    <li data-name="Javascript Skill" data-percent="65%"> <svg viewBox="-10 -10 220 220">
-                      <g fill="none" stroke-width="6" transform="translate(100,100)">
-                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
-                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
-                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
-                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
-                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
-                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
-                      </g>
-                      </svg> <svg viewBox="-10 -10 220 220">
-                      <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="435"></path>
-                      </svg> </li>
-                    <!--  PHP Item  -->
-                    <li data-name="PHP Skill" data-percent="58%"> <svg viewBox="-10 -10 220 220">
-                      <g fill="none" stroke-width="6" transform="translate(100,100)">
-                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
-                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
-                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
-                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
-                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
-                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
-                      </g>
-                      </svg> <svg viewBox="-10 -10 220 220">
-                      <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="364"></path>
-                      </svg> </li>
-                    
-                    <!--  Design Item  -->
-                    <li data-name="Design Tool Skill" data-percent="95%"> <svg viewBox="-10 -10 220 220">
-                      <g fill="none" stroke-width="6" transform="translate(100,100)">
-                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
-                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
-                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
-                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
-                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
-                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
-                      </g>
-                      </svg> <svg viewBox="-10 -10 220 220">
-                      <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="600"></path>
-                      </svg> </li>
-                    
-                    
-                  </ul>
-                  <!--  Defining Angle Gradient Colors  --> 
-                  <svg width="0" height="0">
-                  <defs>
-                    <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
-                      <stop stop-color="#618099"/>
-                      <stop offset="100%" stop-color="#8e6677"/>
-                    </linearGradient>
-                    <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
-                      <stop stop-color="#8e6677"/>
-                      <stop offset="100%" stop-color="#9b5e67"/>
-                    </linearGradient>
-                    <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
-                      <stop stop-color="#9b5e67"/>
-                      <stop offset="100%" stop-color="#9c787a"/>
-                    </linearGradient>
-                    <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
-                      <stop stop-color="#9c787a"/>
-                      <stop offset="100%" stop-color="#817a94"/>
-                    </linearGradient>
-                    <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
-                      <stop stop-color="#817a94"/>
-                      <stop offset="100%" stop-color="#498a98"/>
-                    </linearGradient>
-                    <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
-                      <stop stop-color="#498a98"/>
-                      <stop offset="100%" stop-color="#618099"/>
-                    </linearGradient>
-                  </defs>
-                  </svg>
-            </div>
-            <!-- 포트폴리오 영역 -->
-            <div class="page page4">
-                <span class="page_bc"></span>
-                <div class="portfolio_container">
-                  <div id="screen"></div>
-                  <div id="htmlBank">
-                    <div id="txt1">
-                      <div class="wrapper">
-                        <p>
-                          마블 스튜디오 웹사이트 리뉴얼 - 포트폴리오 작업<br>
-                          2019.11 - 2019.12<br>
-                          웹 표준, 웹 접근성, Cross-Browsing<br>
-                          HTML/CSS/jQuery<br>
-                          기획/디자인/개발 참여도 100%<br>
-                        </p>
-                      </div>
-                    </div>
-                    <div id="txt2">
-                      <div class="wrapper">
-                        <!-- <img src="./img/logo.png" alt="인천시청 로고"> -->
-                        <p>
-                          인천광역시청 웹사이트 리뉴얼 - 포트폴리오 작업<br>
-                          2019.11 - 2019.12<br>
-                          웹 표준, 웹 접근성, Cross-Browsing<br>
-                          HTML/CSS/jQuery/Javascript/php<br>
-                          기획/디자인/개발 참여도 100%<br>
-                        </p>
-                      </div>
-                    </div>
-                    <div id="txt3">
-                      <div class="wrapper">
-                        <img src="./graphicID_3018_grey.jpg">
-                        Us bodi eleig&auml;dol l&auml;g&uuml;pt&auml;n tem, ix b&uuml;dedis kilas lanan oms. Po gal&auml;danefa neodons n&auml;m&auml;dikum div, g&ouml; dotols&ouml;v esasenols p&ouml;pa eli. L&auml;tikan sevob t&auml;len it iui, cif kildeg m&ouml;bemi s&uuml;mon el. B&uuml; ililoms kitimo lekl&auml;ra ele, ome l&auml; bibinolavanas elovegivol, fulons olikis temunods g&ouml; tab. Kinikis-li lebeg at bos, d&uuml;nanes klin&uuml;kols mid it. Ek&auml;lols ioatham pardols se &auml;nu, klin&uuml;kols lad&auml;ls tils dat v&uuml;. Beg vo isufof prodi, klotem p&ouml;ti temunods omi ba, gospul taledi v&ouml;naoloveikod ye p&ouml;p.
-                        <br><br>
-                        <img src="./graphicID_1199_grey.jpg">
-                        Ini meb&ouml;n zitevon &ouml;n. Pl&auml; lo kudols-li oglidols tal&auml;ntis, ga d&ouml;botis kime kohorti igo, do ofs jabata panemof-li. Tem benodi guverale pel&ouml;p&uuml;kols se, lio ya lad&auml;ls not&uuml;kols&ouml;d, vom ko neflenis p&ouml;pa suf&auml;l&ouml;n. Iv maf ekobikons godi lecenols&ouml;d, mem se padeid&ouml;n pardols. Ta folmilanas telid nek, num t&auml; atanes disi pardols. Bil k&uuml; aminadab foginan pejonedon, sui edabinon latik temi ed, bu get lecedons luslugols tim&uuml;.
-                      </div>
-                    </div>
-                    <div id="txt4">
-                      <div class="wrapper">
-                        <img src="./graphicID_1185_grey.jpg">
-                        Caiphas p&ouml;pe sof&auml;lik ek li&ouml;, &uuml;n lif telans zibi. Iboidom latik pamojedon ye kas, flukis mutols sid n&ouml;. Me fred penegen&uuml;koms vi&auml;n bod, di dek&ouml;mom&ouml;d d&uuml;n&ouml;n fenig plu. Fluks obl&auml;fom zunon-li et pl&auml;, us fenols foginani kela nen. Sep se ledutoti magot prodi, fo sal binob geran, vio m&ouml; finots paf&ouml;lon suf&auml;l&ouml;n.
-                        <br><br>
-                        <img src="./graphicID_2564_grey.jpg">
-                        At esasenols olik p&ouml;pe son, foi letuvatam temak&auml;d vi&auml;n k&uuml;. Binols&ouml;s figabim soelik mot p&ouml;. Fluk&ouml;n klotem s&ouml;kol&ouml;d no iui, bel bi geted&ouml;n pakrod&ouml;n ukravom. Ut guverale lebeg olifon mal, k&uuml; alphaeus givoti l&ouml;f.	
-                      </div>
-                    </div>
-                    <div id="txt41">
-                      <div class="wrapper">
-                        <img src="./graphicID_3215_grey.jpg">
-                        P&ouml;fans vinig sui vo, ods flit&auml;ms vipi volut bi. No ata maita nem&ouml;gik tim&uuml;l, ni binobs klop&ouml;n ok&auml;lom nos. Ols me klop posavon sejedon, ai l&auml;g&uuml;pt&auml;n ted&ouml;n uno&auml;dol j&uuml;s. Ya futi okoedoms vilon ofs, ya beg blods podesumon.		</div>
-                    </div>
-                    <!-- <a href="./seongho7167.github.io/interact3" id="goto2">사이트로 바로가기<span class="xi-external-link"></span></a> -->
-                    <div id="thumb1"> 
-                      <img src="./img/eve02.png">
-                    </div>
-                    <div id="thumb2"> 
-                      <img src="./thu_eve05.jpg">
-                    </div>
-                    <div id="thumb3"> 
-                      <img src="./thu_eve02.jpg">
-                    </div>
-                    
-                  </div>
-                  <script src="./js/parameters.js"></script>
+            <!-- 어빌리티페이지 -->
+            <div class="page" id="page3" data-page="3">
+                <h2 class="abilities_tit">ABILITIES</h2>
+                <div class="abilities_wrap">
+                    <ul class="abil_box">
+                        <li class="abil abil1">
+                            <img src="" alt="" class="tit_img">
+                            <h4 class="abil_tit">DEVELPMENT</h4>
+                            <p class="abil_txt">
+                                <span>웹표준, 웹접근성에 맞는 마크업을 구현합니다.
+                                </span>
+                                <span>데스크탑, 반응형, 모바일 웹페이지를 만듭니다.
+                                </span>
+                                <span>Cross Browsering을 지원 합니다.</span>
+                            </p>
+                            <ul class="abil_per_box">
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">HTML</h4>
+                                        <span class="per_tit2">(html5)</span>
+                                        <span class="num">92%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar1"></span>
+                                    </div>
+                                </li>
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">CSS</h4>
+                                        <span class="per_tit2">(css3, flexbox, grid, mediaquery)</span>
+                                        <span class="num">85%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar2"></span>
+                                    </div>
+                                </li>
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">Javascript</h4>
+                                        <span class="per_tit2">(jQuery)</span>
+                                        <span class="num">70%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar3"></span>
+                                    </div>
+                                </li>
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">PHP</h4>
+                                        <span class="per_tit2">(PHP)</span>
+                                        <span class="num">50%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar4"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="abil abil2">
+                            <img src="" alt="" class="tit_img">
+                            <h4 class="abil_tit">DESIGN</h4>
+                            <p class="abil_txt">
+                                <span>UI/UX 를 정확히 이해하고 이를 바탕으로 디자인합니다.</span>
+                                <span>Web, Mobile, Apps, Logos, Icons, Banners 등을 디자인합니다.
+                                </span>
+                                <span>인디자인의 기능을 이해하고 활용하여 브로셔 등을 제작합니다.
+                                </span>
+                            </p>
+                            <ul class="abil_per_box">
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">Photoshop</h4>
+                                        <span class="num">85%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar1"></span>
+                                    </div>
+                                </li>
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">Illustrator</h4>
+                                        <span class="num">90%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar2"></span>
+                                    </div>
+                                </li>
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">Indesign</h4>
+                                        <span class="num">75%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar3"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="abil abil3">
+                            <img src="" alt="" class="tit_img">
+                            <h4 class="abil_tit">OTHERS</h4>
+                            <p class="abil_txt">
+                                <span>간단한 영상편집을 할 수 있습니다.</span>
+                                <span>OA 프로그램을 사용한 업무가 가능합니다.</span>
+                            </p>
+                            <ul class="abil_per_box">
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">After Effects</h4>
+                                        <span class="num">50%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar1"></span>
+                                    </div>
+                                </li>
+                                <li class="abil_per percentage1">
+                                    <div class="per_fr">
+                                        <h4 class="per_tit">Office Tools</h4>
+                                        <span class="per_tit2">(hwp, word, excel, p.p)</span>
+                                        <span class="num">80%</span>
+                                    </div>
+                                    <div class="pro_bar_box">
+                                        <span class="pro_bar"></span>
+                                        <span class="pro_bar2 proBar2"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- 컨택트 영역 -->
-            <div class="page page5">
-                <span class="page_bc"></span>
-                컨택트
+            <!-- 포트폴리오 페이지 -->
+            <div class="page" id="page4" data-page="4">
+                <div class="port_wrap">
+                    <ul class="port_box">
+                        <li class="port port1">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="http://seongho4511.dothome.co.kr/interact3/">인천광역시청</a></h4>
+                        </li>
+                        <li class="port port2">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="https://seongho7167.github.io/c1">청와대</a></h4>
+                        </li>
+                        <li class="port port3">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="https://seongho7167.github.io/b1">논산시청</a></h4>
+                        </li>
+                        <li class="port port4">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="http://seongho4511.dothome.co.kr/c1">한국사진작가협회</a></h4>
+                        </li>
+                        <li class="port port5">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="http://seongho1072.dothome.co.kr/happyCity">행정중심복합도시건설청</a></h4>
+                        </li>
+                        <li class="port port6">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="https://seongho7167.github.io/interact1">MARVEL STUDIOS</a></h4>
+                        </li>
+                        <li class="port port7">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="https://seongho7167.github.io/c2">피자 알볼로</a></h4>
+                        </li>
+                        <li class="port port8">
+                            <img src="" alt="" class="port_img">
+                            <h4 class="port_tit"><a href="https://seongho7167.github.io/my1">COFFEE ENGLAND</a></h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="works_wrap">
+                    <ul class="works_box">
+                        <li class="works works1">
+                            <img src="" alt="" class="works_img">
+                            <h4 class="works_tit">캣톡플러스</h4>
+                        </li>
+                        <li class="works works2">
+                            <img src="" alt="" class="works_img">
+                            <h4 class="works_tit">TOM&TOMS</h4>
+                        </li>
+                        <li class="works works3">
+                            <img src="" alt="" class="works_img">
+                            <h4 class="works_tit">대전시민천문대 브로셔</h4>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </figure>
-        <footer class="ft">
-
-        </footer>
+            <!-- 콘택트 페이지 -->
+            <div class="page" id="page5" data-page="5">
+                contact
+            </div>
+        </main>
     </div>
 </body>
 </html>
