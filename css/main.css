@@ -43,10 +43,50 @@ button { border:0; background-color: transparent; outline: 0; }
 .sns a img { display: block; width: 100%; }
 
 .page_wrap { width: 96%; height: 96%; margin: 0 auto; margin-top: 2%; }
-.page { width: 100%; height: 100%; background-color: #efefef; }
+.page { width: 100%; height: 100%; background-color: #efefef; position: relative; }
 .vs_box { width: 100%; height: 100%; }
 #sec { display: block; width: 2px; height: 13vw; position: absolute; background-color: crimson; bottom: 50.7%; left: 48.3%; transform-origin: 0% 100%; }
 .con_box { position: absolute; top: 30%; left: 15%; }
 .con_box span { display: block; padding-top: 20px; }
 #time { padding-top: 20px; }
 
+.page_tit { font-size: 1.2rem; text-align: center; padding-top: 20px; }
+.tit_bar { display: block; width: 35px; height: 3px; background-color: crimson; position: absolute; top: 100px; left: 50%; margin-left: -17px; }
+.photo_fr { width: 500px; height: auto; overflow: hidden; float: left; margin-left: 19vw; border-radius: 500px; box-shadow: 3px 3px 15px #333; margin-top: 150px;}
+.photo_fr img { width: 100%; }
+.about_frame { width: 80%; height: 40%; margin: 0 auto; padding-top: 150px; position: relative; }
+.about_container { width: 30%; height: auto; overflow: hidden; padding-left: 150px; box-shadow: 3px 3px 8px #333; position: absolute; right: 13vw; top: 150px; padding-bottom: 14px; opacity: 0.5; }
+.about_container2 { top: 360px;}
+.about_container3 { top: 520px;}
+.about_container.on { opacity: 1; animation: aboutAni 0.6s;  }
+@keyframes aboutAni {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.about_tit2 { font-size: 1.4rem; height: 35px; line-height: 35px; padding-top: 14px;}
+.about_con_box span { display: block; padding-top: 10px; font-size: 0.9rem; }
+.about_con1 { padding-top: 0; }
+
+.abilities_wrap { width: 80%; height: 80vh; margin: 0 auto; margin-top: 15vh; }
+.abil_box { display: flex; justify-content: space-around; width: 80%; height: auto; margin: 0 auto; }
+.abil { width: 25%; background-color: rgba(255,255,255,0.8); padding: 2% 3%; text-align: center; }
+.abil_icon { font-size: 2.2rem; padding-bottom: 35px; }
+.abil_tit { font-weight: bold; font-size: 1.4rem; }
+.abil_txt { text-align: left; }
+.abil_txt span { display: block; font-size: 0.9rem; padding-top: 30px; }
+.per_fr { text-align: left; padding-top: 50px; }
+.per_tit { float: left; }
+.per_tit2 { display: block; font-size: 0.85rem; }
+.num { display: block; clear: both; float: right;}
+.pro_bar { display: block; width: 100%; height: 3px; background-color: #ccc; clear: both; }
+.pro_bar2.on { display: block; width: 10%; height: 3px; background-color: crimson; margin-top: -3px; transition: 1s cubic-bezier(0,.69,.42,1); }
+.percentage1 .proBar1.on { width: 92%; }
+.percentage1 .proBar2.on { width: 85%; }
+.percentage1 .proBar3.on { width: 70%; }
+.percentage1 .proBar4.on { width: 50%; }
+.percentage2 .proBar1.on { width: 85%; }
+.percentage2 .proBar2.on { width: 90%; }
+.percentage2 .proBar3.on { width: 75%; }
+.percentage3 .proBar1.on { width: 50%; }
+.percentage3 .proBar2.on { width: 80%; }
