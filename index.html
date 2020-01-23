@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
@@ -26,516 +26,616 @@
     <meta property="twitter:description" content="사이트의 상세설명">
     <meta property="twitter:image" content="썸네일 이미지 주소">
     <link rel="stylesheet" href="./css/chain.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/css/demo-switch.css">
+    <link rel="stylesheet" href="./css/css/demo.css">
+    <link rel="stylesheet" href="./css/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Nanum+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <!--   font-family: 'Montserrat', sans-serif;    -->
 <!-- font-family: 'Nanum Gothic', sans-serif; -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
     <script src="./js/prefixfree.min.js"></script>
-    <style>
-        
-    </style>
-    <script>
-    $(document).ready(function(){
-        var second = document.getElementById("sec");
-        function clock(){
-            var time=new Date();
-            var ss = time.getSeconds();
-            ss=ss*360/60;
-            second.style.transform = "rotate("+ss+"deg)";
-        }
-        setInterval(function(){ clock(); }, 1000)
-        clock();
-
-        var time = document.getElementById("time");
-        function clock2(){
-            var t = new Date();
-            var h = t.getHours();
-            var ampm;
-            if(h>=12) {
-                ampm="PM"; h=h-12; 
-            } else {
-                ampm="AM";
-            }
-            var m = t.getMinutes();
-            var s = t.getSeconds(); 
-            h = compare(h);
-            m = compare(m);
-            s = compare(s); 
-            time.innerText = "방문하신 현재 시간은  "+h+":"+m+":"+s+"  "+ampm+"  입니다.";
-        }
-        function compare(x){
-            if(x<10){
-                return "0"+x;
-            } else {
-                return x;
-            }
-        }
-        setInterval(function(){ clock2();}, 1000);
-    });
-    </script>
-<body>
-    <div class="container">
-        <header class="hd_wrap">
-            <div class="gnb_btn_box">
-                <input type="checkbox" class="ckBox" id="gnb_btn">
-                <label class="gnb_btn_fr" for="gnb_btn">
-                    <div class="gnb_btn_line_box">
-                        <span class="gnb_btn line1"></span>
-                        <span class="gnb_btn line2"></span>
-                        <span class="gnb_btn line3"></span>
-                    </div>
-                    <div class="menu">MENU</div>
-                    <nav class="gnb_wrap">
-                        <ul class="gnb_box">
-                            <li class="gnb item1" data-gnb="1">INTRO</li>
-                            <li class="gnb item2" data-gnb="2">ABOUT</li>
-                            <li class="gnb item3" data-gnb="3">ABILITIES</li>
-                            <li class="gnb item4" data-gnb="4">PORTFOLIO</li>
-                            <li class="gnb item5" data-gnb="5">CONTACT</li>
-                        </ul>
-                    </nav>
-                    <span class="menu_bc"></span>
-                </label>
-                <span class="gnb_bc"></span>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" href="./css/main.css">
+    <script>document.documentElement.className = 'js';</script>
+<body class="demo-2">
+    <svg class="hidden">
+        <symbol id="icon-arrow" viewBox="0 0 24 24">
+            <title>arrow</title>
+            <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+        </symbol>
+        <symbol id="icon-drop" viewBox="0 0 24 24">
+            <title>drop</title>
+            <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+        </symbol>
+        <symbol id="icon-caret" viewBox="0 0 24 24">
+            <title>caret</title>
+            <polygon points="15.7,16.6 11.1,12 15.7,7.4 14.3,6 8.3,12 14.3,18"/>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <title>menu</title>
+            <path d="M23.8,6H0.1V3h23.7V6z M23.8,10.5H0.1v3h23.7V10.5z M14.2,18h-14v3h14V18z"/>
+        </symbol>
+        <symbol id="icon-cross" viewBox="0 0 24 24">
+            <title>cross</title>
+            <path d="M14.1,12l7.3,7.3l-2.1,2.1L12,14.1l-7.3,7.3l-2.1-2.1L9.9,12L2.6,4.7l2.1-2.1L12,9.9l7.3-7.3l2.1,2.1L14.1,12z"/>
+        </symbol>
+    </svg>
+    <main class="view">
+        <div class="content_wrap">
+            <div class="deco">
+                <p class="deco__text">YANG SEONGHO'S PORTFOLIO WEBSITE!</p>
             </div>
-        </header>
-        <div class="home_box"><a href="index.html" class="home">SeongHo Yang</a></div>
-        <main class="page_wrap">
-            <!-- 인트로페이지 -->
-            <div class="page" id="page1" data-page="1">
-                <div class="vs_box">
-                    <span class="intro_bc"></span>
-                    <div class="it24">
-                        <div id="level">
-                            <div id="content">
-                                <span id="gears">
-                                    <!-- <div id="gears-static"></div> -->
-                                    <div id="gear-system-1">
-                                        <div class="shadow" id="shadow15"></div>
-                                        <div id="gear15"></div>
-                                        <div class="shadow" id="shadow14"></div>
-                                        <div id="gear14"></div>
-                                        <div class="shadow" id="shadow13"></div>
-                                        <div id="gear13"></div>
-                                    </div>
-                                    <div id="gear-system-2">
-                                        <div class="shadow" id="shadow10"></div>
-                                        <div id="gear10"></div>
-                                        <div class="shadow" id="shadow3"></div>
-                                        <div id="gear3"></div>
-                                    </div>
-                                    <div id="gear-system-3">
-                                        <div class="shadow" id="shadow9"></div>
-                                        <div id="gear9"></div>
-                                        <div class="shadow" id="shadow7"></div>
-                                        <div id="gear7"></div>
-                                    </div>
-                                    <div id="gear-system-4">
-                                        <div class="shadow" id="shadow6"></div>
-                                        <div id="gear6"></div>
-                                        <div id="gear4"></div>
-                                    </div>
-                                    <div id="gear-system-5">
-                                        <div class="shadow" id="shadow12"></div>
-                                        <div id="gear12"></div>
-                                        <div class="shadow" id="shadow11"></div>
-                                        <div id="gear11"></div>
-                                        <div class="shadow" id="shadow8"></div>
-                                        <div id="gear8"></div>
-                                    </div>
-                                    <div class="shadow" id="shadow1"></div>
-                                    <div id="gear1"></div>
-                                    <div id="gear-system-6">
-                                        <div class="shadow" id="shadow5"></div>
-                                        <div id="gear5"></div>
-                                        <div id="gear2"></div>
-                                    </div>
-                                </span>
+            <header class="kim-header">
+                <div class="kim-links">
+                    <button class="btn btn--menu">
+                        <svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg>
+                        <svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>
+                    </button>
+                </div>
+                <p class="kim-header__info">UI/UX Design<br/>Frontend<br/>Development</p>
+                <span class="kim-header__deco">portfolio</span>
+            </header>
+        </div>
+        <input type="checkbox" id="nav_ckBox" class="nav_ck">
+        <nav class="tabsnav tabsnav--vertical tabsnav--zeru">
+            <label class="tabsnav__item" for="nav_ckBox">
+                <div class="tabsnav__bar"></div>
+                <h3 class="tabsnav__title">ABOUT</h3>
+            </label>
+            <label class="tabsnav__item" for="nav_ckBox">
+                <div class="tabsnav__bar"></div>
+                <h3 class="tabsnav__title">ABILITIES</h3>
+            </label>
+            <label class="tabsnav__item" for="nav_ckBox">
+                <div class="tabsnav__bar"></div>
+                <h3 class="tabsnav__title">PORTFOLIO</h3>
+            </label>
+            <label class="tabsnav__item" for="nav_ckBox">
+                <div class="tabsnav__bar"></div>
+                <h3 class="tabsnav__title">WORKS</h3>
+            </label>
+            <label class="tabsnav__item" for="nav_ckBox">
+                <div class="tabsnav__bar"></div>
+                <h3 class="tabsnav__title">CONTACT</h3>
+            </label>
+        </nav>
+        <div class="tabscontent">
+            <div class="tabscontent__item">
+                <div class="column">
+                    <!-- 어바웃페이지 -->
+                    <div class="page" id="page2" data-page="2">
+                        <h2 class="page_tit about_tit">ABOUT</h2>
+                        <span class="tit_bar"></span>
+                        <div class="photo_fr">
+                            <img src="./img/myPhoto.png" alt="portfolio_img" class="myPhoto">
+                        </div>
+                        <div class="about_frame">
+                            <div class="about_container about_container1 on">
+                                <h2 class="about_tit2">Profile</h2>
+                                <p class="about_con_box">
+                                    <span class="about_con about_con1">이름 : 양성호</span>
+                                    <span class="about_con about_con2">나이 : 31세(1990.08.21)</span>
+                                    <span class="about_con about_con3">주소 : 대전광역시 동구 달기장1길</span>
+                                    <span class="about_con about_con4">연락처 : 010-8688-7167</span>
+                                    <span class="about_con about_con5">E-mail : seongho4511@naver.com</span>
+                                </p>
+                            </div>
+                            <div class="about_container about_container2">    
+                                <h2 class="about_tit2">History</h2>
+                                <p class="about_con_box">
+                                    <span class="about_con about_con1">2014.03 ~ 2018.02 : 건국대학교 시각광고디자인 전공</span>
+                                    <span class="about_con about_con1">2017.12 ~ 2018.08 : 퍼펙트사인 디자이너 사원</span>
+                                    <span class="about_con about_con2">2018.11 ~ 2019.08 : 피에스엔마케팅 소매사업부 매니저</span>
+                                </p>
+                            </div>
+                            <div class="about_container about_container3">
+                                <h2 class="about_tit2">License</h2>
+                                <p class="about_con_box">
+                                    <span class="about_con about_con1">운전면허 2종 보통</span>
+                                    <span class="about_con about_con2">GTQ(그래픽기술자격) 포토샵 1급</span>
+                                    <span class="about_con about_con3">ACS포토샵, 일러스트레이터/span>
+                                    <span class="about_con about_con4">디자인 중등 정교사 자격증 2급</span>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <span id="sec"></span>
-                </div>
-                <div class="con_box">
-                    <div class="conImg_fr">
-                        <img src="" alt="" class="con_img">
-                    </div>
-                    <p class="con_txt"> <span>웹개발의 꿈을 가진 Front-End Developer 양성호의</span> <span>포트폴리오 웹사이트 방문을 환영합니다.</span></p>
-                    <div id="time"></div>
                 </div>
             </div>
-            
-            <!-- 어바웃페이지 -->
-            <div class="page" id="page2" data-page="2">
-                <h2 class="page_tit about_tit">ABOUT</h2>
-                <span class="tit_bar"></span>
-                <div class="photo_fr">
-                    <img src="./img/myPhoto.png" alt="portfolio_img" class="myPhoto">
-                </div>
-                <div class="about_frame">
-                    <div class="about_container about_container1 on">
-                        <h2 class="about_tit2">Profile</h2>
-                        <p class="about_con_box">
-                            <span class="about_con about_con1">이름 : 양성호</span>
-                            <span class="about_con about_con2">나이 : 31세(1990.08.21)</span>
-                            <span class="about_con about_con3">주소 : 대전광역시 동구 달기장1길</span>
-                            <span class="about_con about_con4">연락처 : 010-8688-7167</span>
-                            <span class="about_con about_con5">E-mail : seongho4511@naver.com</span>
-                        </p>
-                    </div>
-                    <div class="about_container about_container2">    
-                        <h2 class="about_tit2">History</h2>
-                        <p class="about_con_box">
-                            <span class="about_con about_con1">2014.03 ~ 2018.02 : 건국대학교 시각광고디자인 전공</span>
-                            <span class="about_con about_con1">2017.12 ~ 2018.08 : 퍼펙트사인 디자이너 사원</span>
-                            <span class="about_con about_con2">2018.11 ~ 2019.08 : 피에스엔마케팅 소매사업부 매니저</span>
-                        </p>
-                    </div>
-                    <div class="about_container about_container3">
-                        <h2 class="about_tit2">License</h2>
-                        <p class="about_con_box">
-                            <span class="about_con about_con1">운전면허 2종 보통</span>
-                            <span class="about_con about_con2">GTQ(그래픽기술자격) 포토샵 1급</span>
-                            <span class="about_con about_con3">ACS포토샵, 일러스트레이터/span>
-                            <span class="about_con about_con4">디자인 중등 정교사 자격증 2급</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- 어빌리티페이지 -->
-            <div class="page" id="page3" data-page="3">
-                <h2 class="page_tit abilities_tit">ABILITIES</h2>
-                <span class="tit_bar"></span>
-                <div class="abilities_wrap">
-                    <ul class="abil_box">
-                        <li class="abil abil1">
-                            <span class="xi-devices abil_icon"></span>
-                            <h4 class="abil_tit">DEVELPMENT</h4>
-                            <p class="abil_txt">
-                                <span>웹표준, 웹접근성에 맞는 마크업을 구현합니다.
-                                </span>
-                                <span>데스크탑, 반응형, 모바일 웹페이지를 만듭니다.
-                                </span>
-                                <span>Cross Browsering을 지원 합니다.</span>
-                            </p>
-                            <ul class="abil_per_box">
-                                <li class="abil_per percentage1">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">HTML</h4>
-                                        <span class="per_tit2">(html5)</span>
-                                        <span class="num">92%</span>
-                                    </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar1"></span>
-                                    </div>
+            <div class="tabscontent__item">
+                <div class="column">
+                    <div class="page" id="page3" data-page="3">
+                        <h2 class="page_tit abilities_tit">ABILITIES</h2>
+                        <span class="tit_bar"></span>
+                        <div class="abilities_wrap">
+                            <ul class="abil_box">
+                                <li class="abil abil1">
+                                    <span class="xi-devices abil_icon"></span>
+                                    <h4 class="abil_tit">DEVELPMENT</h4>
+                                    <p class="abil_txt">
+                                        <span>웹표준, 웹접근성에 맞는 마크업을 구현합니다.
+                                        </span>
+                                        <span>데스크탑, 반응형, 모바일 웹페이지를 만듭니다.
+                                        </span>
+                                        <span>Cross Browsering을 지원 합니다.</span>
+                                    </p>
+                                    <ul class="abil_per_box">
+                                        <li class="abil_per percentage1">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">HTML</h4>
+                                                <span class="per_tit2">(html5)</span>
+                                                <span class="num">92%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar1"></span>
+                                            </div>
+                                        </li>
+                                        <li class="abil_per percentage1">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">CSS</h4>
+                                                <span class="per_tit2">(css3, flexbox, grid, mediaquery)</span>
+                                                <span class="num">85%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar2"></span>
+                                            </div>
+                                        </li>
+                                        <li class="abil_per percentage1">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">Javascript</h4>
+                                                <span class="per_tit2">(jQuery)</span>
+                                                <span class="num">70%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar3"></span>
+                                            </div>
+                                        </li>
+                                        <li class="abil_per percentage1">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">PHP</h4>
+                                                <span class="per_tit2">(PHP)</span>
+                                                <span class="num">50%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar4"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="abil_per percentage1">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">CSS</h4>
-                                        <span class="per_tit2">(css3, flexbox, grid, mediaquery)</span>
-                                        <span class="num">85%</span>
-                                    </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar2"></span>
-                                    </div>
+                                <li class="abil abil2">
+                                    <span class="xi-border-color abil_icon"></span>
+                                    <h4 class="abil_tit">DESIGN</h4>
+                                    <p class="abil_txt">
+                                        <span>UI/UX 를 정확히 이해하고 이를 바탕으로 디자인합니다.</span>
+                                        <span>Web, Mobile, Apps, Logos, Icons, Banners 등을 디자인합니다.
+                                        </span>
+                                        <span>인디자인의 기능을 이해하고 활용하여 브로셔 등을 제작합니다.
+                                        </span>
+                                    </p>
+                                    <ul class="abil_per_box">
+                                        <li class="abil_per percentage2">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">Photoshop</h4>
+                                                <span class="num">85%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar1"></span>
+                                            </div>
+                                        </li>
+                                        <li class="abil_per percentage2">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">Illustrator</h4>
+                                                <span class="num">90%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar2"></span>
+                                            </div>
+                                        </li>
+                                        <li class="abil_per percentage2">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">Indesign</h4>
+                                                <span class="num">75%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar3"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="abil_per percentage1">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">Javascript</h4>
-                                        <span class="per_tit2">(jQuery)</span>
-                                        <span class="num">70%</span>
-                                    </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar3"></span>
-                                    </div>
-                                </li>
-                                <li class="abil_per percentage1">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">PHP</h4>
-                                        <span class="per_tit2">(PHP)</span>
-                                        <span class="num">50%</span>
-                                    </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar4"></span>
-                                    </div>
+                                <li class="abil abil3">
+                                    <span class="xi-chart-bar abil_icon"></span>
+                                    <h4 class="abil_tit">OTHERS</h4>
+                                    <p class="abil_txt">
+                                        <span>간단한 영상편집을 할 수 있습니다.</span>
+                                        <span>OA 프로그램을 사용한 업무가 가능합니다.</span>
+                                    </p>
+                                    <ul class="abil_per_box">
+                                        <li class="abil_per percentage3">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">After Effects</h4>
+                                                <span class="num">50%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar1"></span>
+                                            </div>
+                                        </li>
+                                        <li class="abil_per percentage3">
+                                            <div class="per_fr">
+                                                <h4 class="per_tit">Office Tools</h4>
+                                                <span class="per_tit2">(hwp, word, excel, p.p)</span>
+                                                <span class="num">80%</span>
+                                            </div>
+                                            <div class="pro_bar_box">
+                                                <span class="pro_bar"></span>
+                                                <span class="pro_bar2 proBar2"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="abil abil2">
-                            <span class="xi-border-color abil_icon"></span>
-                            <h4 class="abil_tit">DESIGN</h4>
-                            <p class="abil_txt">
-                                <span>UI/UX 를 정확히 이해하고 이를 바탕으로 디자인합니다.</span>
-                                <span>Web, Mobile, Apps, Logos, Icons, Banners 등을 디자인합니다.
-                                </span>
-                                <span>인디자인의 기능을 이해하고 활용하여 브로셔 등을 제작합니다.
-                                </span>
-                            </p>
-                            <ul class="abil_per_box">
-                                <li class="abil_per percentage2">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">Photoshop</h4>
-                                        <span class="num">85%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabscontent__item">
+                <div class="column">
+                    <div class="page" id="page4" data-page="4">
+                        <h2 class="page_tit pofol_tit">PORTFOLIO</h2>
+                        <span class="tit_bar"></span>
+                        <div class="content">
+                            <div class="slideshow">
+                                <div id="slide-1" class="slide" style="background-image: url(img/2d.jpg)" data-slide="1"></div>
+                                <div id="slide-2" class="slide" style="background-image: url(img/3d.jpg)" data-slide="2"></div>
+                                <div id="slide-3" class="slide" style="background-image: url(img/4d.jpg)" data-slide="3"></div>
+                                <div id="slide-4" class="slide" style="background-image: url(img/5d.jpg)" data-slide="4"></div>
+                                <div id="slide-5" class="slide" style="background-image: url(img/6d.jpg)" data-slide="5"></div>
+                                <div id="slide-6" class="slide" style="background-image: url(img/7d.jpg)" data-slide="6"></div>
+                                <div id="slide-7" class="slide" style="background-image: url(img/8d.jpg)" data-slide="7"></div>
+                                <div id="slide-8" class="slide" style="background-image: url(img/9d.jpg)" data-slide="8"></div>
+                                <div class="pieces" style="background-image: url(img/2d.jpg)"></div>
+                            </div>
+                            
+                            <nav class="menu">
+                                <a class="menu__item menu__item--current on" href="#slide-1" data-image="img/2d.jpg">인천광역시청 리뉴얼<span>HTML/CSS/jQuery/Javascript/php</span></a>
+                                <a href="http://seongho4511.dothome.co.kr/interact3/" target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-2" data-image="img/3d.jpg">청와대 리뉴얼<span>HTML/CSS/jQuery</span></a>
+                                <a href="https://seongho7167.github.io/c1" target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-3" data-image="img/4d.jpg">논산시청 리뉴얼<span>HTML/CSS/jQuery</span></a>
+                                <a href="https://seongho7167.github.io/b1" target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-4" data-image="img/5d.jpg">한국사진작가협회 리뉴얼<span>그누보드 활용</span></a>
+                                <a href="http://seongho4511.dothome.co.kr/c1"  target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-5" data-image="img/6d.jpg">행정중심복합도시건설청<span>그누보드 활용</span></a>
+                                <a href="http://seongho1072.dothome.co.kr/happyCity" target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-6" data-image="img/7d.jpg">MARVEL STUDIOS 리뉴얼<span>HTML/CSS/jQuery</span></a>
+                                <a href="https://seongho7167.github.io/interact1" target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-7" data-image="img/8d.jpg">피자 알볼로 리뉴얼<span>HTML/CSS/jQuery</span></a>
+                                <a href="https://seongho7167.github.io/c2" target="blank" class="site_lnk">사이트 바로가기</a>
+                                <a class="menu__item" href="#slide-8" data-image="img/9d.jpg">COFFEE ENGLAND 제작<span>HTML/CSS/jQuery</span></a>
+                                <a href="https://seongho7167.github.io/my1" target="blank" class="site_lnk">사이트 바로가기</a>
+                            </nav>
+                        </div>
+                        <script>
+                        $(".menu .menu__item").eq(4).click(function(){
+                            $(".slideshow").css("height","52vh");
+                        });
+                        $(".menu .menu__item").eq(4).siblings().click(function(){
+                            $(".slideshow").not(".animated").animate({"height":"75vh"}, 500);
+                        });
+                        $(".menu .menu__item").click(function(){
+                            $(this).addClass("on");
+                            $(this).siblings().removeClass("on");
+                        });
+                        </script>
+                        <!-- <div class="port_wrap">
+                            <ul class="port_box">
+                                <li class="port port1">
+                                    <div class="img_fr">
+                                        <img src="./img/eve02.png" alt="인천광역시청" class="port_img">
                                     </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar1"></span>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              인천광역시청 웹사이트 리뉴얼<br>
+                                              2019.11 - 2019.12<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery/Javascript/php<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                          </div>
                                     </div>
+                                    <h4 class="port_tit"><a href="http://seongho4511.dothome.co.kr/interact3/" target="blank">인천광역시청</a></h4>
                                 </li>
-                                <li class="abil_per percentage2">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">Illustrator</h4>
-                                        <span class="num">90%</span>
+                                <li class="port port2">
+                                    <div class="img_fr">
+                                        <img src="./img/eve03.png" alt="청와대" class="port_img">
                                     </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar2"></span>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              청와대 웹사이트 리뉴얼<br>
+                                              2019.10 - 2019.11<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                        </div>
                                     </div>
+                                    <h4 class="port_tit"><a href="https://seongho7167.github.io/c1" target="blank">청와대</a></h4>
                                 </li>
-                                <li class="abil_per percentage2">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">Indesign</h4>
-                                        <span class="num">75%</span>
+                                <li class="port port3">
+                                    <div class="img_fr">
+                                        <img src="./img/eve07.png" alt="논산시청" class="port_img">
                                     </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar3"></span>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              논산시청 웹사이트 리뉴얼<br>
+                                              2019.09 - 2019.10<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                        </div>
                                     </div>
+                                    <h4 class="port_tit"><a href="https://seongho7167.github.io/b1" target="blank">논산시청</a></h4>
+                                </li>
+                                <li class="port port4">
+                                    <div class="img_fr">
+                                        <img src="./img/eve08.png" alt="한국사진작가협회" class="port_img">
+                                    </div>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              한국사진작가협회<br>
+                                              그누보드 활용 제작 <br>
+                                              2019.12 - 2019.12<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery/php<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="port_tit"><a href="http://seongho4511.dothome.co.kr/c1" target="blank">한국사진작가협회</a></h4>
+                                </li>
+                                <li class="port port5">
+                                    <div class="img_fr">
+                                        <img src="./img/eve09.png" alt="행정중심복합도시건설청" class="port_img">
+                                    </div>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              행정중심복합도시건설청<br>
+                                              그누보드 활용 제작 <br>
+                                              2019.12 - 2019.12<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery/php<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="port_tit"><a href="http://seongho1072.dothome.co.kr/happyCity" target="blank">행정중심복합도시건설청</a></h4>
+                                </li>
+                                <li class="port port6">
+                                    <div class="img_fr">
+                                        <img src="./img/eve01.png" alt="MARVEL STUDIOS" class="port_img">
+                                    </div>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              마블 스튜디오 웹사이트 리뉴얼<br>
+                                              2019.11 - 2019.12<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                          </div>
+                                    </div>
+                                    <h4 class="port_tit"><a href="https://seongho7167.github.io/interact1" target="blank">MARVEL STUDIOS</a></h4>
+                                </li>
+                                <li class="port port7">
+                                    <div class="img_fr">
+                                        <img src="./img/eve04.png" alt="피자 알볼로" class="port_img">
+                                    </div>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              피자 알볼로 웹사이트 리뉴얼<br>
+                                              2019.11 - 2019.11<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="port_tit"><a href="https://seongho7167.github.io/c2" target="blank">피자 알볼로</a></h4>
+                                </li>
+                                <li class="port port8">
+                                    <div class="img_fr">
+                                        <img src="./img/eve06.png" alt="COFFEE ENGLAND" class="port_img">
+                                    </div>
+                                    <div class="port_img_bc">
+                                        <div class="wrapper">
+                                            <p>
+                                              COFFEE ENGLAND 웹사이트 제작<br>
+                                              2019.10 - 2019.11<br>
+                                              웹 표준, 웹 접근성, Cross-Browsing<br>
+                                              HTML/CSS/jQuery<br>
+                                              기획/디자인/개발 참여도 100%<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="port_tit"><a href="https://seongho7167.github.io/my1" target="blank">COFFEE ENGLAND</a></h4>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="abil abil3">
-                            <span class="xi-chart-bar abil_icon"></span>
-                            <h4 class="abil_tit">OTHERS</h4>
-                            <p class="abil_txt">
-                                <span>간단한 영상편집을 할 수 있습니다.</span>
-                                <span>OA 프로그램을 사용한 업무가 가능합니다.</span>
-                            </p>
-                            <ul class="abil_per_box">
-                                <li class="abil_per percentage3">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">After Effects</h4>
-                                        <span class="num">50%</span>
-                                    </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar1"></span>
-                                    </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="tabscontent__item">
+                <div class="column">
+                    <div class="page" id="page5" data-page="5">
+                        <div class="works_wrap">
+                            <h2 class="page_tit works_tit">WORKS</h2>
+                            <span class="tit_bar"></span>
+                            <ul class="works_box">
+                                <li class="works works1">
+                                    <img src="./img/catalk.jpg" alt="work1" class="works_img">
+                                    <h4 class="works_tit">캣톡플러스</h4>
                                 </li>
-                                <li class="abil_per percentage3">
-                                    <div class="per_fr">
-                                        <h4 class="per_tit">Office Tools</h4>
-                                        <span class="per_tit2">(hwp, word, excel, p.p)</span>
-                                        <span class="num">80%</span>
-                                    </div>
-                                    <div class="pro_bar_box">
-                                        <span class="pro_bar"></span>
-                                        <span class="pro_bar2 proBar2"></span>
-                                    </div>
+                                <li class="works works2">
+                                    <img src="./img/tom.jpg" alt="work2" class="works_img">
+                                    <h4 class="works_tit">TOM&TOMS</h4>
+                                </li>
+                                <li class="works works3">
+                                    <img src="./img/works1.jpg" alt="work3" class="works_img">
+                                    <h4 class="works_tit">대전시민천문대</h4>
+                                </li>
+                                <li class="works works4">
+                                    <img src="./img/works2.jpg" alt="work4" class="works_img">
+                                    <h4 class="works_tit">보졸레누보</h4>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- 포트폴리오 페이지 -->
-            <div class="page" id="page4" data-page="4">
-                <h2 class="page_tit pofol_tit">PORTFOLIO</h2>
-                <span class="tit_bar"></span>
-                <div class="port_wrap">
-                    <ul class="port_box">
-                        <li class="port port1">
-                            <div class="img_fr">
-                                <img src="./img/eve02.png" alt="인천광역시청" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      인천광역시청 웹사이트 리뉴얼<br>
-                                      2019.11 - 2019.12<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery/Javascript/php<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                  </div>
-                            </div>
-                            <h4 class="port_tit"><a href="http://seongho4511.dothome.co.kr/interact3/">인천광역시청</a></h4>
-                        </li>
-                        <li class="port port2">
-                            <div class="img_fr">
-                                <img src="./img/eve03.png" alt="청와대" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      청와대 웹사이트 리뉴얼<br>
-                                      2019.10 - 2019.11<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                </div>
-                            </div>
-                            <h4 class="port_tit"><a href="https://seongho7167.github.io/c1">청와대</a></h4>
-                        </li>
-                        <li class="port port3">
-                            <div class="img_fr">
-                                <img src="./img/eve07.png" alt="논산시청" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      논산시청 웹사이트 리뉴얼<br>
-                                      2019.09 - 2019.10<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                </div>
-                            </div>
-                            <h4 class="port_tit"><a href="https://seongho7167.github.io/b1">논산시청</a></h4>
-                        </li>
-                        <li class="port port4">
-                            <div class="img_fr">
-                                <img src="./img/eve08.png" alt="한국사진작가협회" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      한국사진작가협회<br>
-                                      그누보드 활용 제작 <br>
-                                      2019.12 - 2019.12<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery/php<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                </div>
-                            </div>
-                            <h4 class="port_tit"><a href="http://seongho4511.dothome.co.kr/c1">한국사진작가협회</a></h4>
-                        </li>
-                        <li class="port port5">
-                            <div class="img_fr">
-                                <img src="./img/eve09.png" alt="행정중심복합도시건설청" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      행정중심복합도시건설청<br>
-                                      그누보드 활용 제작 <br>
-                                      2019.12 - 2019.12<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery/php<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                </div>
-                            </div>
-                            <h4 class="port_tit"><a href="http://seongho1072.dothome.co.kr/happyCity">행정중심복합도시건설청</a></h4>
-                        </li>
-                        <li class="port port6">
-                            <div class="img_fr">
-                                <img src="./img/eve01.png" alt="MARVEL STUDIOS" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      마블 스튜디오 웹사이트 리뉴얼<br>
-                                      2019.11 - 2019.12<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                  </div>
-                            </div>
-                            <h4 class="port_tit"><a href="https://seongho7167.github.io/interact1">MARVEL STUDIOS</a></h4>
-                        </li>
-                        <li class="port port7">
-                            <div class="img_fr">
-                                <img src="./img/eve04.png" alt="피자 알볼로" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      피자 알볼로 웹사이트 리뉴얼<br>
-                                      2019.11 - 2019.11<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                </div>
-                            </div>
-                            <h4 class="port_tit"><a href="https://seongho7167.github.io/c2">피자 알볼로</a></h4>
-                        </li>
-                        <li class="port port8">
-                            <div class="img_fr">
-                                <img src="./img/eve06.png" alt="COFFEE ENGLAND" class="port_img">
-                            </div>
-                            <div class="port_img_bc">
-                                <div class="wrapper">
-                                    <p>
-                                      COFFEE ENGLAND 웹사이트 제작<br>
-                                      2019.10 - 2019.11<br>
-                                      웹 표준, 웹 접근성, Cross-Browsing<br>
-                                      HTML/CSS/jQuery<br>
-                                      기획/디자인/개발 참여도 100%<br>
-                                    </p>
-                                </div>
-                            </div>
-                            <h4 class="port_tit"><a href="https://seongho7167.github.io/my1">COFFEE ENGLAND</a></h4>
-                        </li>
-                    </ul>
-                </div>
-                <div class="works_wrap">
-                    <h2 class="works_tit">collage works</h2>
-                    <ul class="works_box">
-                        <li class="works works1">
-                            <img src="./img/catalk.jpg" alt="work1" class="works_img">
-                            <h4 class="works_tit">캣톡플러스</h4>
-                        </li>
-                        <li class="works works2">
-                            <img src="./img/tom.jpg" alt="work2" class="works_img">
-                            <h4 class="works_tit">TOM&TOMS</h4>
-                        </li>
-                        <li class="works works3">
-                            <img src="./img/works1.jpg" alt="work3" class="works_img">
-                            <h4 class="works_tit">대전시민천문대</h4>
-                        </li>
-                        <li class="works works4">
-                            <img src="./img/works2.jpg" alt="work4" class="works_img">
-                            <h4 class="works_tit">보졸레누보</h4>
-                        </li>
-                    </ul>
+            <div class="tabscontent__item">
+                <div class="column">
+                    <div class="page" id="page6" data-page="6">
+                        <h2 class="page_tit contact_tit">CONTACT</h2>
+                        <span class="tit_bar"></span>
+                        <div class="contact_wrap">
+                            <h4 class="contact_txt">Thank you for reading My Portfolio!</h4>
+                            <span class="tel">Tel : 010-8688-7167</span>
+                            <span class="email">E-mail : seongho4511@naver.com</span>
+                            <ul class="contact_icon_box">
+                                <li class="sns sns_ico2"><a href="https://seongho7167.github.io" target="blank"><span>깃허브</span><img src="./img/icon/github2.png" alt="깃허브"></a></li>
+                                <li class="sns sns_ico3"><a href="./data/portfolio.pdf" target="blank"><span>포트폴리오PDF</span><img src="./img/icon/portfolio2.png" alt="포폴자료"></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- 콘택트 페이지 -->
-            <div class="page" id="page5" data-page="5">
-                <h2 class="page_tit contact_tit">CONTACT</h2>
-                <span class="tit_bar"></span>
-                <div class="contact_wrap">
-                    <h4 class="contact_txt">Thank you for reading My Portfolio!</h4>
-                    <span class="tel">Tel : 010-8688-7167</span>
-                    <span class="email">E-mail : seongho4511@naver.com</span>
-                    <ul class="contact_icon_box">
-                        <li class="sns sns_ico2"><a href="https://seongho7167.github.io"><span>깃허브</span><img src="./img/icon/github2.png" alt="깃허브"></a></li>
-                        <li class="sns sns_ico3"><a href="./data/portfolio.pdf"><span>포트폴리오PDF</span><img src="./img/icon/portfolio2.png" alt="포폴자료"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </main>
-        <aside class="sns_wrap">
+            <button class="btn btn--back"><label class="nav_cls_btn" for="nav_ckBox"></label><svg class="icon icon--caret"><use xlink:href="#icon-caret"></use></svg></button>
+        </div>
+    </main>
+        <!-- <div class="home_box"><a href="index.html" class="home">SeongHo Yang</a></div> -->
+        <!-- <aside class="sns_wrap">
             <ul class="sns_box">
                 <li class="sns sns_ico1"><a href="#"><img src="./img/icon/katalk.png" alt="카카오톡"></a></li>
                 <li class="sns sns_ico2"><a href="https://seongho7167.github.io"><img src="./img/icon/github2.png" alt="깃허브"></a></li>
                 <li class="sns sns_ico3"><a href="./data/portfolio.pdf"><img src="./img/icon/portfolio2.png" alt="포폴자료"></a></li>
             </ul>
-        </aside>
-    </div>
+        </aside> -->
+    <script src="js/anime.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script src="js/tabsnav.js"></script>
+    <script src="js/demo2.js"></script>
+    <script src="./js/js/anime.min.js"></script>
+    <script src="./js/js/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/js/main.js"></script>
+    <script>
+     $(".about_container").on("mouseover", function(){
+        $(this).addClass("on");
+        $(this).siblings().removeClass("on");
+    });
+    $(".tabsnav .tabsnav__item").eq(1).click(function(){
+        $(".pro_bar2").addClass("on");
+    });
+    $(".nav_cls_btn").click(function(){
+        $(".pro_bar2").removeClass("on");
+    });
+    </script>
+    <script>
+    {
+        imagesLoaded(document.body, { background: true }, () => document.body.classList.remove('loading'));
+        
+        const menuItems = Array.from(document.querySelectorAll('.menu > .menu__item'));
+        
+        const piecesObj = new Pieces(document.querySelector('.slideshow > .pieces'), {
+            pieces: {rows: 14, columns: 12},
+            delay: [0,40],
+            hasTilt: true,
+            tilt: {
+                maxRotationX: -1, 
+                maxRotationY: -1, 
+                maxTranslationX: -5, 
+                maxTranslationY: -2
+            }
+        });
+        
+        let isAnimating = false;
+        let current = 0;
+
+        const openImage = (ev, item, pos) => {
+            ev.preventDefault();
+            if ( isAnimating || current === pos ) {
+                return false;
+            }
+            isAnimating = true;
+            menuItems[current].classList.remove('menu__item--current');
+            current = pos;
+            menuItems[current].classList.add('menu__item--current');
+            const imgsrc = item.dataset.image;
+
+            piecesObj.animate({
+                duration: 200,
+                easing: 'easeOutQuad',
+                delay: (t,i,l) => {
+                    return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+                },
+                translateX: (t,i) => {
+                    return anime.random(-50,50)+'px';
+                },
+                translateY: (t,i) => { 
+                    return anime.random(-800,-200)+'px';
+                },
+                rotateZ: (t,i) => { 
+                    return anime.random(-45,45)+'deg';
+                },
+                opacity: 0,
+                complete: () => {
+                    piecesObj.setImage(imgsrc);
+
+                    piecesObj.animate({
+                        duration: 500,
+                        easing: [0.3,1,0.3,1],
+                        delay: (t,i,l) => {
+                            return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+                        },
+                        translateX: 0,
+                        translateY: () => {
+                            return [anime.random(200,800)+'px','0px'];
+                        },
+                        rotateZ: 0,
+                        opacity: {
+                            value: 1,
+                            duration: 500,
+                            easing: 'linear'
+                        },
+                        complete: () => {
+                            isAnimating = false;
+                        }
+                    });
+                }
+            });
+        };
+
+        menuItems.forEach((item,pos) => item.addEventListener('click', (ev) => openImage(ev,item,pos)));
+    }
+    </script>
 </body>
 </html>
