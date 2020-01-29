@@ -126,3 +126,5 @@ h4 { font-weight: normal;}
 .contact_icon_box .sns a img { display: block; float: left; width: 35px; height: 35px; }
 
 .nav_cls_btn { cursor: pointer; }
+
+.tabsnav__item:hover .tabsnav__title { color:#ff764b; }
