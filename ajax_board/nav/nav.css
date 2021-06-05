@@ -1,0 +1,6 @@
+@charset "utf-8";
+.top_nav {width: 50%;height: 100px; margin-left:25%; display:flex; justify-content: flex-start;}
+.top_nav > dl {margin-right:6%;cursor:pointer;display:block;font-size:18px;text-align:left;height:22px;overflow-y:hidden}
+.top_nav > dl:hover {color:#999}
+.top_nav > dl > dt {text-align: left;color:#222;}
+.top_nav > dl > dt:hover {color:blue;text-decoration: underline;}
