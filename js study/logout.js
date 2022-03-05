@@ -6,9 +6,6 @@
 	##### 설명 ##### 
 	로그아웃을 위한 함수임.
 
-	##### 업데이트로그 ##### 
-	2020.07.12 김형석 신규
-
 */
 //로그아웃
 function logout(login_uid){
@@ -24,6 +21,7 @@ function logout(login_uid){
 					return false;
 				}
 				if(data.result == 'success'){
+					sessionStorage.clear();
 					alert('정상적으로 로그아웃 되었습니다.');
 					location.href='/';
 				}
