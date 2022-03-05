@@ -1,11 +1,14 @@
 /*
-    obj : e.target (클릭 변경한 select node)
-    table : 변경 테이블
-    pk : 변경 테이블 uid column
+	##### 입력 #####
+	obj : e.target (클릭 변경한 select node)
+	table : 변경 테이블 (string)
+	pk : 변경 테이블 uid column (string)
 
-    use_chk column 업데이트 함수
+	##### 출력 #####
+	table의 use_chk 컬럼을 업데이트하고 결과에 따라 메시지와 target node 의 css 를 변경함
 
-    2021.10.07 양성호 신규
+	##### 설명 #####
+	use_chk column 업데이트 함수
 */
 function item_use_chk_func(obj,table,pk,uid){
 	var use_chk_val = $(obj).val();
