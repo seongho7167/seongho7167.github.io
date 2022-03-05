@@ -1,15 +1,12 @@
 /*
 ##### 입력 #####
-arr1: 연관배열 1
+obj: dhmlx grid object
 
 ##### 출력 #####
 obj: perm_state 에 따라 들어온 obj 를 변경하여 리턴한다.
 
 ##### 설명 #####
 perm 체크 후 들어온 객체를 권한에 맞게 수정한다.
-
-##### 업데이트로그 #####
-2021.10.12 양성호 신규
 
 */
 function perm_dhx_chk(obj) {
