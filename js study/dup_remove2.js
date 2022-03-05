@@ -10,9 +10,6 @@ result_arr 중복이 제거된 새로운 배열
 ##### 설명 #####
 2개의 연관배열에서 한 key를 기준으로 중복되는 데이터를 제거하고 새로운 배열로 리턴한다.
 
-##### 업데이트로그 #####
-2021.10.12 양성호 신규
-
 */
 function dup_remove2(arr1,arr2,okey){
 	var valuesArray1 = arr1.reduce(function(prev, item) {
