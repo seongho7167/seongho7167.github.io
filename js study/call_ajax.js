@@ -4,11 +4,8 @@
 
 	##### 사용예시 #####
 	call_ajax('login_info', {}, function(json){
-		debug(json);
+		console.log(json);
 	});
-
-	##### 업데이트로그 #####
-	2020.07.15 김태일 신규
 
 */
 
