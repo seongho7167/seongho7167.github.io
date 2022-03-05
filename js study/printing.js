@@ -9,10 +9,6 @@
 	인쇄할 대상의 영역을 함수안에 선언할 수 있음.
 	선언하지 않는다면 전체페이지를 인쇄함
 
-	##### 업데이트로그 #####
-	2020.07.31 김형석 신규
-	2022.01.21 양성호 수정 ( html 문서 복제는 이벤트가 따라오지 못하는 문제가 발생, 해결은 복제가 아닌 기존 html 위에 인쇄 window를 생성하고 기존 html은 css로 처리함 )
-
 */
 function printing(target=null){
 	var initBody = document.querySelector('html');
@@ -38,17 +34,3 @@ function printing(target=null){
 	}
 	window.print();
 }
-// function printing(target=null){
-// 	var initBody = $('body').html();
-// 	window.onbeforeprint = function(){
-// 		if(target){
-// 			$('body').html($(target).html());
-// 		}else{
-// 			$('body').html($('body').html());
-// 		}
-// 	}
-// 	window.onafterprint = function(){
-// 		$('body').html(initBody);
-// 	}
-// 	window.print();
-// }
