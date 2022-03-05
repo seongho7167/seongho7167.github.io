@@ -6,10 +6,8 @@
 
     ##### 설명 #####
     grid에서 검색창의 검색어를 검색하고 결과값으로 그리드를 파싱함.
-
-    ##### 업데이트로그 #####
-    2021.06.28 양성호 신규
 */
+
 function search_func(base_item_data,item_list_grid,row = null){
     if($("#ck_all").length > 0 ){
         document.getElementById("ck_all").checked = false; // 전체체크박스 값을 false 처리 함
