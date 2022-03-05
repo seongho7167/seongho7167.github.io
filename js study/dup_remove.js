@@ -11,9 +11,6 @@ result_arr 중복이 제거된 arr2 배열
 ##### 설명 #####
 arr2에서 arr1과 같은 키를 기준으로 데이터 제거 후 남은 arr2 리턴
 
-##### 업데이트로그 #####
-2021.10.12 양성호 신규
-
 */
 
 function dup_remove(arr1,arr2,okey){
