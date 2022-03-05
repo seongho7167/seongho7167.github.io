@@ -6,8 +6,6 @@
     ##### 설명 #####
     grid의 체크박스를 모두 false 처리 함
 
-    ##### 업데이트로그 #####
-    2022.01.04 양성호 신규
 */
 
 function clear_checkbox(grid,data){
