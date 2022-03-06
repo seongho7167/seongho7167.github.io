@@ -1,7 +1,8 @@
+
+<?php
 /*
 	클라이언트 접속 ip 주소를 확인하고 리턴함
 */
-<?php
 function client_ip() {
 	$res = '';
 	if (getenv('HTTP_CLIENT_IP'))
